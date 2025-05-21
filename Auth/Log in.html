@@ -1,0 +1,201 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in</title>
+
+    <!-- for tailwindcss styles -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Nunito Sans Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Libre Franklin Font-->
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin&display=swap" rel="stylesheet">
+
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+
+            /* Font */
+            .Nunito-Sans {
+                font-family: 'Nunito Sans', sans-serif;
+            }
+
+            .Libre-Franklin {
+                font-family: 'Libre Franklin';
+            }
+        }
+    </style>
+
+</head>
+
+<!--background-->
+
+<body class="h-screen w-full flex justify-around items-center">
+
+
+    <!--the form-->
+    <div class="bg-white p-3 Nunito-Sans">
+
+        <form>
+            <!--titles-->
+            <div class="py-3 cursor-default">
+                <div class="flex justify-center">
+                    <img src="../img/Auth/Logo black.png" alt="logo" class="w-24 pb-7">
+                </div>
+                <p class="font-semibold text-2xl flex Libre-Franklin">Login</p>
+                <p class="text-sm pt-1.5 text-[#112211]/75">Login to access your Golobe account</p>
+            </div>
+
+            <!--inputs-->
+            <div class="space-y-10">
+
+                <!--email input-->
+                <div class="text-sm mt-7 space-y-1.5 relative">
+                    <input type="email" name="" id="email" autocomplate="off"
+                        class="pb-1 w-full md:w-80 border-b border-gray-400 focus:border-b-gray-900 outline-none transition-color peer">
+                    <label for="email" id="email-label"
+                        class="absolute left-0 -top-1 cursor-text text-gray-500 peer-focus:text-xs peer-focus:-top-6 peer-focus:text-gray-900 transition-all">Email
+                    </label>
+                </div>
+
+                <!--email input-->
+                <div class="text-sm mt-7 space-y-1.5 relative">
+                    <input type="password" name="" id="password" autocomplate="off"
+                        class="pb-1 w-full md:w-80 border-b border-gray-400 focus:border-b-gray-900 outline-none transition-color peer">
+                    <label for="password" id="password-label"
+                        class="absolute left-0 -top-1 cursor-text text-gray-500 peer-focus:text-xs peer-focus:-top-6 peer-focus:text-gray-900 transition-all">Password</label>
+                </div>
+            </div>
+
+            <!--Remember Password and Forgot Password button-->
+            <div class="pt-6 flex items-center justify-between gap-2 text-xs text-gray-900">
+                <div class="flex items-center gap-1">
+                    <input type="checkbox" name="Remember" id="">
+                    <label for="Remember">Remember Password</label>
+                </div>
+
+                <div class="flex items-center gap-1 text-[#FF8682] hover:text-[#ff544f] hover:underline transition-all">
+                    <a href="./Forget password.html">Forgot Password</a>
+                </div>
+
+            </div>
+
+            <!--submit button-->
+            <div class="mt-8 flex justify-center">
+                <a href="../Admin/Dashboard.html" type="submit"
+                    class="bg-[#1E2227] cursor-pointer flex justify-center rounded-md text-white text-sm p-1 py-2 w-full hover:bg-[#131519] transition-all">Login</a>
+            </div>
+
+        </form>
+
+        <!--go to creat acount page-->
+        <div class="text-xs flex justify-center gap-2 mt-2 mb-3">
+            <p class="cursor-default">Don’t have an account?</p>
+            <a href="./Sign up.html"
+                class="cursor-pointer text-[#FF8682] border-b-[1.5px] border-[#FF8682] hover:text-[#ff544f] hover:border-[#ff544f]">Sign
+                up</a>
+        </div>
+
+        <!-- other methods to log in-->
+        <div class="">
+
+            <!-- the text-->
+            <div class="flex items-center py-2">
+                <div class="w-full border-b border-[#112211]/25"></div>
+                <p class="text-[#112211]/50 text-xs px-2 whitespace-nowrap">Or login with</p>
+                <div class="w-full border-b border-[#112211]/25"></div>
+            </div>
+
+            <!-- the buttons-->
+            <div class="grid grid-cols-3 gap-3 w-full">
+
+                <!-- facebook-->
+                <button class="flex justify-center items-center border border-[#1E2227] rounded-md p-2 hover:bg-[#f5f5f5] transition-all">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M24 12.0733C24 5.40546 18.6274 0 12 0C5.37262 0 0 5.40536 0 12.0733C0 18.0994 4.38825 23.0943 10.125 24V15.5633H7.07812V12.0733H10.125V9.41343C10.125 6.38755 11.9166 4.71615 14.6575 4.71615C15.9705 4.71615 17.3438 4.95195 17.3438 4.95195V7.92313H15.8306C14.3398 7.92313 13.875 8.85381 13.875 9.80864V12.0733H17.2031L16.6711 15.5633H13.875V24C19.6117 23.0943 24 18.0995 24 12.0733Z"
+                            fill="#1877F2" />
+                    </svg>
+                </button>
+
+                <!-- google-->
+                <button
+                    class="flex justify-center items-center border border-[#1E2227] rounded-md p-2 hover:bg-[#f5f5f5] transition-all">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M21.8055 10.0415H21V10H12V14H17.6515C16.827 16.3285 14.6115 18 12 18C8.6865 18 6 15.3135 6 12C6 8.6865 8.6865 6 12 6C13.5295 6 14.921 6.577 15.9805 7.5195L18.809 4.691C17.023 3.0265 14.634 2 12 2C6.4775 2 2 6.4775 2 12C2 17.5225 6.4775 22 12 22C17.5225 22 22 17.5225 22 12C22 11.3295 21.931 10.675 21.8055 10.0415Z"
+                            fill="#FFC107" />
+                        <path
+                            d="M3.15283 7.3455L6.43833 9.755C7.32733 7.554 9.48033 6 11.9998 6C13.5293 6 14.9208 6.577 15.9803 7.5195L18.8088 4.691C17.0228 3.0265 14.6338 2 11.9998 2C8.15883 2 4.82783 4.1685 3.15283 7.3455Z"
+                            fill="#FF3D00" />
+                        <path
+                            d="M12.0002 22C14.5832 22 16.9302 21.0115 18.7047 19.404L15.6097 16.785C14.5719 17.5742 13.3039 18.001 12.0002 18C9.39916 18 7.19066 16.3415 6.35866 14.027L3.09766 16.5395C4.75266 19.778 8.11366 22 12.0002 22Z"
+                            fill="#4CAF50" />
+                        <path
+                            d="M21.8055 10.0415H21V10H12V14H17.6515C17.2571 15.1082 16.5467 16.0766 15.608 16.7855L15.6095 16.7845L18.7045 19.4035C18.4855 19.6025 22 17 22 12C22 11.3295 21.931 10.675 21.8055 10.0415Z"
+                            fill="#1976D2" />
+                    </svg>
+
+                </button>
+
+                <!-- apple-->
+                <button
+                    class="flex justify-center items-center border border-[#1E2227] rounded-md p-2 hover:bg-[#f5f5f5] transition-all">
+                    <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M14.5172 10.5555C14.5078 8.95703 15.232 7.75234 16.6945 6.86406C15.8766 5.69219 14.6391 5.04766 13.0078 4.92344C11.4633 4.80156 9.77344 5.82344 9.15469 5.82344C8.50078 5.82344 7.00547 4.96563 5.82891 4.96563C3.40078 5.00313 0.820312 6.90156 0.820312 10.7641C0.820312 11.9055 1.02891 13.0844 1.44609 14.2984C2.00391 15.8969 4.01484 19.8133 6.1125 19.75C7.20937 19.7242 7.98516 18.9719 9.4125 18.9719C10.7977 18.9719 11.5148 19.75 12.7383 19.75C14.8547 19.7195 16.6734 16.1594 17.2031 14.5563C14.3648 13.218 14.5172 10.6375 14.5172 10.5555ZM12.0539 3.40703C13.2422 1.99609 13.1344 0.711719 13.0992 0.25C12.0492 0.310938 10.8352 0.964844 10.1437 1.76875C9.38203 2.63125 8.93437 3.69766 9.03047 4.9C10.1648 4.98672 11.2008 4.40313 12.0539 3.40703Z"
+                            fill="black" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <img src="../img/Auth/Log in.jpg" alt="Log in" class="h-screen pt-10 hidden md:flex">
+
+</body>
+
+<!--for input styles-->
+<script>
+
+    // for email input
+    let label = document.getElementById('email-label');
+    document.getElementById('email')
+        .addEventListener('input', event => {
+            let input = event.target;
+
+            if (event.target.value) {
+                ['border-gray-900'].forEach(c => input.classList.add(c));
+                ['text-xs', '-top-6', 'text-gray-900'].forEach(c => label.classList.add(c));
+            } else {
+                ['border-gray-900'].forEach(c => input.classList.remove(c));
+                ['text-xs', '-top-6', 'text-gray-900'].forEach(c => label.classList.remove(c));
+            }
+        }
+        )
+
+
+    // for password input
+    let label2 = document.getElementById('password-label');
+    document.getElementById('password')
+        .addEventListener('input', event => {
+            let input2 = event.target;
+
+            if (event.target.value) {
+                ['border-gray-900'].forEach(c => input2.classList.add(c));
+                ['text-xs', '-top-6', 'text-gray-900'].forEach(c => label2.classList.add(c));
+            } else {
+                ['border-gray-900'].forEach(c => input2.classList.remove(c));
+                ['text-xs', '-top-6', 'text-gray-900'].forEach(c => label2.classList.remove(c));
+            }
+        }
+        )
+
+</script>
+
+</html>
