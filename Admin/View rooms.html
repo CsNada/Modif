@@ -405,7 +405,6 @@
                     <form>
 
                         <!-- the modal -->
-                        <!-- الغلاف العام للمودال -->
                         <div id="modal-wrapper" class="fixed inset-0 z-50 hidden">
                             <!-- overlay-->
                             <div id="modal-overlay"
@@ -478,7 +477,8 @@
                                                     <!-- Rent Amount / Guest -->
                                                     <div class="w-2/3">
                                                         <label for="Guest"
-                                                            class="text-xs font-semibold pb-0.5 px-0.5">Rent Amount / Guest</label>
+                                                            class="text-xs font-semibold pb-0.5 px-0.5">Rent Amount /
+                                                            Guest</label>
                                                         <input type="text" name="Guest" id="Guest"
                                                             placeholder="Rent Amount / Guest"
                                                             class="bg-black p-1.5 rounded-md outline-none w-full">
@@ -487,7 +487,8 @@
                                                     <!-- Per Month -->
                                                     <div class="w-1/3">
                                                         <label for="Month"
-                                                            class="text-xs font-semibold pb-0.5 px-0.5">Per Month</label>
+                                                            class="text-xs font-semibold pb-0.5 px-0.5">Per
+                                                            Month</label>
                                                         <input type="text" name="Month" id="Month"
                                                             placeholder="Per Month"
                                                             class="bg-black p-1.5 rounded-md outline-none w-full">
@@ -500,18 +501,184 @@
                                         <div class="step hidden w-[370px]" data-step="1">
                                             <!-- title -->
                                             <h1 class="font-semibold text-lg px-1.5">Hostel Allocation</h1>
+
+                                            <!-- the dropdown menu -->
+                                            <div class="py-4">
+                                                <select name="Allocation" id="Allocation"
+                                                    class="bg-black rounded-md w-full p-1">
+                                                    <option value="H1">H1</option>
+                                                    <option value="H2">H2</option>
+                                                    <option value="H3">H3</option>
+                                                </select>
+                                            </div>
+
+                                            <!-- Select Floors -->
+                                            <div>
+                                                <p class="text-[#B0B0B0] text-sm">Select Floors</p>
+
+                                                <!-- buttons area to select -->
+                                                <div class="grid grid-cols-6 gap-2 my-4 bg-black rounded-md p-2">
+
+                                                    <label class="cursor-pointer">
+                                                        <input type="checkbox" name="floor" value="13"
+                                                            class="sr-only peer">
+                                                        <div
+                                                            class="w-10 h-10 flex items-center justify-center bg-[#212121] text-[#B0B0B0] rounded-md transition-colors duration-200 peer-checked:bg-[#797979] peer-checked:text-black">
+                                                            1
+                                                        </div>
+                                                    </label>
+                                                    <label class="cursor-pointer">
+                                                        <input type="checkbox" name="floor" value="13"
+                                                            class="sr-only peer">
+                                                        <div
+                                                            class="w-10 h-10 flex items-center justify-center bg-[#212121] text-[#B0B0B0] rounded-md transition-colors duration-200 peer-checked:bg-[#797979] peer-checked:text-black">
+                                                            1
+                                                        </div>
+                                                    </label>
+                                                    <label class="cursor-pointer">
+                                                        <input type="checkbox" name="floor" value="13"
+                                                            class="sr-only peer">
+                                                        <div
+                                                            class="w-10 h-10 flex items-center justify-center bg-[#212121] text-[#B0B0B0] rounded-md transition-colors duration-200 peer-checked:bg-[#797979] peer-checked:text-black">
+                                                            1
+                                                        </div>
+                                                    </label>
+                                                    <label class="cursor-pointer">
+                                                        <input type="checkbox" name="floor" value="13"
+                                                            class="sr-only peer">
+                                                        <div
+                                                            class="w-10 h-10 flex items-center justify-center bg-[#212121] text-[#B0B0B0] rounded-md transition-colors duration-200 peer-checked:bg-[#797979] peer-checked:text-black">
+                                                            1
+                                                        </div>
+                                                    </label>
+                                                    <label class="cursor-pointer">
+                                                        <input type="checkbox" name="floor" value="13"
+                                                            class="sr-only peer">
+                                                        <div
+                                                            class="w-10 h-10 flex items-center justify-center bg-[#212121] text-[#B0B0B0] rounded-md transition-colors duration-200 peer-checked:bg-[#797979] peer-checked:text-black">
+                                                            1
+                                                        </div>
+                                                    </label>
+                                                    <label class="cursor-pointer">
+                                                        <input type="checkbox" name="floor" value="13"
+                                                            class="sr-only peer">
+                                                        <div
+                                                            class="w-10 h-10 flex items-center justify-center bg-[#212121] text-[#B0B0B0] rounded-md transition-colors duration-200 peer-checked:bg-[#797979] peer-checked:text-black">
+                                                            1
+                                                        </div>
+                                                    </label>
+                                                    <label class="cursor-pointer">
+                                                        <input type="checkbox" name="floor" value="13"
+                                                            class="sr-only peer">
+                                                        <div
+                                                            class="w-10 h-10 flex items-center justify-center bg-[#212121] text-[#B0B0B0] rounded-md transition-colors duration-200 peer-checked:bg-[#797979] peer-checked:text-black">
+                                                            1
+                                                        </div>
+                                                    </label>
+                                                    <label class="cursor-pointer">
+                                                        <input type="checkbox" name="floor" value="13"
+                                                            class="sr-only peer">
+                                                        <div
+                                                            class="w-10 h-10 flex items-center justify-center bg-[#212121] text-[#B0B0B0] rounded-md transition-colors duration-200 peer-checked:bg-[#797979] peer-checked:text-black">
+                                                            1
+                                                        </div>
+                                                    </label>
+                                                    <label class="cursor-pointer">
+                                                        <input type="checkbox" name="floor" value="13"
+                                                            class="sr-only peer">
+                                                        <div
+                                                            class="w-10 h-10 flex items-center justify-center bg-[#212121] text-[#B0B0B0] rounded-md transition-colors duration-200 peer-checked:bg-[#797979] peer-checked:text-black">
+                                                            1
+                                                        </div>
+                                                    </label>
+
+
+                                                </div>
+                                            </div>
                                         </div>
 
                                         <!-- modal 3 -->
                                         <div class="step hidden w-[370px]" data-step="2">
                                             <!-- title -->
-                                            <h1 class="font-semibold text-lg px-1.5">step 3</h1>
+                                            <h1 class="font-semibold text-lg px-1.5">Room Distribution</h1>
+                                            <p class="px-1.5">Total Rooms : 456</p>
+
+                                            <div class="grid grid-cols-2 gap-4 px-1.5 py-4">
+
+                                                <!-- Floor Number -->
+                                                <div class="space-y-2 flex flex-col items-center">
+                                                    <p class="text-[#B0B0B0] text-sm px-0.5">Floor Number</p>
+                                                    <p class="w-32 bg-black rounded-md p-1 text-center">1</p>
+                                                    <p class="w-32 bg-black rounded-md p-1 text-center">2</p>
+                                                    <p class="w-32 bg-black rounded-md p-1 text-center">3</p>
+                                                    <p class="w-32 bg-black rounded-md p-1 text-center">4</p>
+                                                </div>
+
+                                                <!-- Number of Rooms -->
+                                                <div class="space-y-2 flex flex-col items-center">
+                                                    <p class="text-[#B0B0B0] text-sm px-0.5">Number of Rooms</p>
+                                                    <input type="text" class="w-32 bg-black rounded-md p-1 text-center">
+                                                    <input type="text" class="w-32 bg-black rounded-md p-1 text-center">
+                                                    <input type="text" class="w-32 bg-black rounded-md p-1 text-center">
+                                                    <input type="text" class="w-32 bg-black rounded-md p-1 text-center">
+                                                </div>
+                                            </div>
                                         </div>
 
                                         <!-- modal 4 -->
                                         <div class="step hidden w-[370px]" data-step="3">
                                             <!-- title -->
-                                            <h1 class="font-semibold text-lg px-1.5">step 4</h1>
+                                            <h1 class="font-semibold text-lg px-1.5">Furniture Management</h1>
+
+                                            <!-- حاوية الصفوف -->
+                                            <div id="rowsContainer" class="space-y-2 mb-4">
+                                                <!-- صف أول افتراضي -->
+                                                <div class="row flex items-center space-x-2 space-x-reverse">
+                                                    <select
+                                                        class="flex-1 bg-gray-800 text-gray-200 px-3 py-2 rounded focus:outline-none">
+                                                        <option value="" disabled selected>Select Furniture</option>
+                                                        <option>Chair</option>
+                                                        <option>Table</option>
+                                                        <option>Bed</option>
+                                                        <option>Sofa</option>
+                                                    </select>
+                                                    <input type="number" min="0" value="1"
+                                                        class="w-20 bg-gray-800 text-gray-200 px-3 py-2 rounded focus:outline-none text-center" />
+                                                    <!-- زر الإزالة -->
+                                                    <div
+                                                        class="remove-btn text-white bg-red-600 hover:bg-red-700 rounded-full w-8 h-8 flex items-center justify-center transition">
+                                                        &times;
+                                                </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- زر إضافة وحيد أسفل الصفوف -->
+                                            <div class="flex justify-center">
+                                                <div id="addRowBtn"
+                                                    class="w-10 h-10 bg-white text-black rounded-full hover:bg-gray-200 transition">
+                                                    +
+                                            </div>
+                                            </div>
+
+                                            <!-- قالب صف للاستنساخ -->
+                                            <template id="row-template">
+                                                <div class="row flex items-center space-x-2 space-x-reverse">
+                                                    <select
+                                                        class="flex-1 bg-gray-800 text-gray-200 px-3 py-2 rounded focus:outline-none">
+                                                        <option value="" disabled selected>Select Furniture</option>
+                                                        <option>Chair</option>
+                                                        <option>Table</option>
+                                                        <option>Bed</option>
+                                                        <option>Sofa</option>
+                                                    </select>
+                                                    <input type="number" min="0" value="1"
+                                                        class="w-20 bg-gray-800 text-gray-200 px-3 py-2 rounded focus:outline-none text-center" />
+                                                    <div
+                                                        class="remove-btn text-white bg-red-600 hover:bg-red-700 rounded-full w-8 h-8 flex items-center justify-center transition">
+                                                        &times;
+                                                </div>
+                                                </div>
+                                            </template>
                                         </div>
 
                                         <!-- modal 5 -->
@@ -549,6 +716,7 @@
     </div>
 </body>
 
+<!-- for open, close and switch the modals -->
 <script>
     const openBtn = document.getElementById('open-modal');
     const closeBtn = document.getElementById('close-modal');
@@ -650,6 +818,29 @@
             nextBtn.textContent = 'Proceed';
         }
     }
+</script>
+
+<script>
+    const container = document.getElementById('rowsContainer');
+    const addBtn = document.getElementById('addRowBtn');
+    const template = document.getElementById('row-template').content;
+
+    // إضافة صف جديد
+    addBtn.addEventListener('click', () => {
+        const newRow = document.importNode(template, true);
+        container.appendChild(newRow);
+    });
+
+    // تفويض حذف الصفوف
+    container.addEventListener('click', e => {
+        if (e.target.classList.contains('remove-btn')) {
+            const row = e.target.closest('.row');
+            // إذا بقي صف واحد فقط لا نسمح بالحذف (اختياري)
+            if (container.children.length > 1) {
+                row.remove();
+            }
+        }
+    });
 </script>
 
 </html>
