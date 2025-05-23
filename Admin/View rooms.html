@@ -3,7 +3,7 @@
 
 <head>
 
-    <title>Properties</title>
+    <title>View Rooms</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -352,198 +352,193 @@
             </div>
 
             <!-- page -->
-            <div class="p-5 px-7 pb-10">
+            <div class="px-7 py-10">
 
-                <!-- the header -->
-                <div class="py-2 pb-7 flex justify-between items-center">
-                    <!-- title -->
-                    <div class="space-y-2 w-fit text-nowrap">
-                        <h1 class="text-[#000000] text-2xl font-semibold">Properties</h1>
-                        <p class="text-[#85878D] text-sm">Access and review all Properties</p>
-                    </div>
+                <div class="p-6 px-8 space-y-5">
 
-                    <!-- serach -->
-                    <div class="flex gap-3 w-full pr-5">
-                        <div class="relative flex justify-end w-full">
-                            <!-- button -->
-                            <div id="searchBox"
-                                class="flex items-center bg-white border border-[#E7EAE9] rounded-md overflow-hidden transition-all duration-300 ease-in-out w-10 h-10">
-                                <!-- input -->
-                                <input id="searchInput" type="text" placeholder="search"
-                                    class="p-0 bg-transparent text-sm focus:outline-none w-0 transition-all duration-300 ease-in-out flex-none" />
-                                <!-- -->
-                                <button type="submit" id="searchBtn" class="w-12 h-12 flex items-center justify-center">
-                                    <svg width="17" height="17" viewBox="0 0 20 20" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M0.31927 8.64118C0.31927 7.56337 0.521361 6.55291 0.925542 5.60982C1.33614 4.66032 1.90071 3.8263 2.61925 3.10775C3.3378 2.38279 4.16861 1.81822 5.1117 1.41404C6.06121 1.00986 7.07487 0.807769 8.15268 0.807769C9.23692 0.807769 10.2506 1.00986 11.1937 1.41404C12.1432 1.81822 12.9772 2.38279 13.6957 3.10775C14.4143 3.8263 14.9756 4.66032 15.3798 5.60982C15.7904 6.55291 15.9957 7.56337 15.9957 8.64118C15.9957 9.48804 15.8642 10.2932 15.6012 11.0566C15.3445 11.8201 14.9885 12.5162 14.533 13.1449L18.9212 17.5524C19.0559 17.6807 19.1554 17.8315 19.2195 18.0047C19.2901 18.1779 19.3254 18.3608 19.3254 18.5532C19.3254 18.8227 19.2645 19.0665 19.1426 19.2846C19.0207 19.5027 18.8539 19.6728 18.6421 19.7947C18.4304 19.923 18.1866 19.9871 17.9108 19.9871C17.7183 19.9871 17.5322 19.9518 17.3526 19.8813C17.1794 19.8171 17.0222 19.7145 16.8811 19.5733L12.4639 15.1562C11.8481 15.5668 11.1744 15.8908 10.443 16.1282C9.71808 16.3591 8.95463 16.4746 8.15268 16.4746C7.07487 16.4746 6.06121 16.2725 5.1117 15.8683C4.16861 15.4641 3.3378 14.9028 2.61925 14.1842C1.90071 13.4657 1.33614 12.6349 0.925542 11.6918C0.521361 10.7423 0.31927 9.72541 0.31927 8.64118ZM2.36905 8.64118C2.36905 9.44313 2.5166 10.1938 2.81172 10.893C3.11325 11.5923 3.53026 12.2082 4.06276 12.7407C4.59525 13.2668 5.21114 13.6806 5.91044 13.9821C6.60974 14.2837 7.35715 14.4344 8.15268 14.4344C8.95463 14.4344 9.70525 14.2837 10.4045 13.9821C11.1038 13.6806 11.7165 13.2668 12.2426 12.7407C12.7751 12.2082 13.1921 11.5923 13.4936 10.893C13.7952 10.1938 13.9459 9.44313 13.9459 8.64118C13.9459 7.84565 13.7952 7.09824 13.4936 6.39894C13.1921 5.69964 12.7751 5.08375 12.2426 4.55126C11.7165 4.01876 11.1038 3.60496 10.4045 3.30984C9.70525 3.00831 8.95463 2.85754 8.15268 2.85754C7.35715 2.85754 6.60974 3.00831 5.91044 3.30984C5.21114 3.60496 4.59525 4.01876 4.06276 4.55126C3.53026 5.08375 3.11325 5.69964 2.81172 6.39894C2.5166 7.09824 2.36905 7.84565 2.36905 8.64118Z"
-                                            fill="black" />
-                                    </svg>
+                    <!-- Total Rooms and +Add Roomsbutton-->
+                    <div class="text-xs font-semibold text-white flex gap-5">
 
-                                </button>
-                            </div>
+                        <!-- Total Rooms box -->
+                        <div
+                            class="flex justify-between items-center gap-2 p-2 px-5 bg-[#141414] cursor-default rounded-md">
+                            <p>Total Rooms:</p>
+                            <p>456</p>
+                        </div>
+
+                        <!-- Add Rooms button (to open the modal)-->
+                        <div id="open-modal"
+                            class="p-2 px-7 bg-[#141414] hover:bg-black transition-all cursor-default rounded-md cursor-pointer">
+                            <p>+ Add Rooms</p>
                         </div>
                     </div>
 
-                    <!-- Add a new property button and filters -->
-                    <div class="text-nowrap flex gap-3 items-center">
+                    <!-- the four boxes -->
+                    <div class="grid grid-cols-4 gap-8">
 
-                        <!-- filters -->
-                        <div class="text-sm flex gap-2 items-center">
-                            <p class="text-[#85878D]">Filter by</p>
-                            <button class="text-[#4A4C4F]">location</button>
-                            <p class="text-[#85878D]">|</p>
-                            <button class="text-[#4A4C4F]">availability</button>
+                        <!-- box 1: Occupied-->
+                        <div class="p-3 flex flex-col gap-3 rounded-md bg-[#141414]">
+                            <p class="text-white text-sm">Occupied</p>
+                            <p class="text-[#00FFF5] text-2xl font-bold">358</p>
                         </div>
 
-                        <!-- Add a new property -->
-                        <div>
-                            <a href="./Add properties.html"
-                                class="text-white bg-[#4A4C4F] hover:bg-[#3e3f42] transition-all p-1.5 px-3 rounded-md text-xs font-semibold">Add
-                                a new property</a>
+                        <!-- box 2: Vacant-->
+                        <div class="p-3 flex flex-col gap-3 rounded-md bg-[#141414]">
+                            <p class="text-white text-sm">Vacant</p>
+                            <p class="text-[#FFE605] text-2xl font-bold">98</p>
+                        </div>
+
+                        <!-- box 3: Types-->
+                        <div class="p-3 flex flex-col gap-3 rounded-md bg-[#141414]">
+                            <p class="text-white text-sm">Types</p>
+                            <p class="text-white text-2xl font-bold">14</p>
+                        </div>
+
+                        <!-- box 4: Tenants-->
+                        <div class="p-3 flex flex-col gap-3 rounded-md bg-[#141414]">
+                            <p class="text-white text-sm">Tenants</p>
+                            <p class="text-white text-2xl font-bold">750</p>
                         </div>
                     </div>
 
-                </div>
+                    <!-- add room form -->
+                    <form>
 
-                <!-- boxes area -->
-                <div class="grid grid-cols-3 xl:grid-cols-4 gap-5">
-
-                    <!-- box 1 -->
-                    <div class="shadow rounded-md p-3">
-
-                        <img src="" alt="" class="w-full h-28 rounded-md object-cover bg-[#C4C4C4]">
-
-                        <!-- name and delete icon -->
-                        <div class="flex justify-between gap-2 pt-2">
-
-                            <!-- names -->
-                            <div>
-                                <h1 class="text-[#211C37] font-bold text-sm py-1 pt-2 text-sm">Hotel Name - Riyadh
-                                    Branch</h1>
-                                <p class="text-[#1C1D1D] text-[9px]">60 Rooms</p>
+                        <!-- the modal -->
+                        <!-- الغلاف العام للمودال -->
+                        <div id="modal-wrapper" class="fixed inset-0 z-50 hidden">
+                            <!-- overlay-->
+                            <div id="modal-overlay"
+                                class="absolute inset-0 bg-black bg-opacity-50 transition-opacity duration-300 opacity-0">
                             </div>
 
-                            <!-- delete icon -->
-                            <button class="cursor-pointer">
-                                <svg width="16" height="16" viewBox="0 0 12 12" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M2.66699 12C2.30033 12 1.98655 11.8696 1.72566 11.6087C1.46477 11.3478 1.3341 11.0338 1.33366 10.6667V2H0.666992V0.666667H4.00033V0H8.00033V0.666667H11.3337V2H10.667V10.6667C10.667 11.0333 10.5365 11.3473 10.2757 11.6087C10.0148 11.87 9.70077 12.0004 9.33366 12H2.66699ZM4.00033 9.33333H5.33366V3.33333H4.00033V9.33333ZM6.66699 9.33333H8.00033V3.33333H6.66699V9.33333Z"
-                                        fill="black" />
-                                </svg>
+                            <!-- modal black box-->
+                            <div class="flex items-center justify-center min-h-screen px-4">
+                                <div id="modal-box"
+                                    class="bg-[#2E2E2E] rounded-md overflow-hidden transform transition-all duration-300 ease-out opacity-0 scale-95">
 
-                            </button>
-                        </div>
+                                    <!-- back and close buttons -->
+                                    <div class="flex justify-between p-4">
 
-                        <!-- buttons -->
-                        <div class="flex gap-3 text-white text-xs font-semibold pt-4">
-                            <a href="./View rooms.html" class="bg-[#1E1F27] hover:bg-[#131419] transition-all rounded-md p-1.5 px-4">View Rooms</a>
-                            <a href="" class="bg-[#5C798E] hover:bg-[#526c7f] transition-all rounded-md p-1.5 px-4">Edit Hotel Info</a>
-                        </div>
-                    </div>
+                                        <!-- back button -->
+                                        <div>
+                                            <div disabled id="prevBtn" class="p-1 cursor-pointer">
+                                                <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M17.5 22.5L10 15L17.5 7.5L19.25 9.25L13.5 15L19.25 20.75L17.5 22.5Z"
+                                                        fill="white" />
+                                                </svg>
 
-                    <!-- box 2 -->
-                    <div class="shadow rounded-md p-3">
+                                            </div>
+                                        </div>
 
-                        <img src="" alt="" class="w-full h-28 rounded-md object-cover bg-[#C4C4C4]">
+                                        <!-- close button -->
+                                        <div id="close-modal" class="p-1 cursor-pointer">
+                                            <svg width="16" height="16" viewBox="0 0 18 18" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M17.5666 1.56639C17.641 1.492 17.7 1.4037 17.7403 1.30652C17.7805 1.20934 17.8012 1.10518 17.8012 0.999985C17.8012 0.894795 17.7805 0.790635 17.7403 0.693452C17.7 0.596269 17.641 0.507966 17.5666 0.433585C17.4922 0.359204 17.4039 0.300203 17.3068 0.259948C17.2096 0.219693 17.1054 0.198975 17.0002 0.198975C16.895 0.198975 16.7909 0.219693 16.6937 0.259948C16.5965 0.300203 16.5082 0.359204 16.4338 0.433585L9.00023 7.86879L1.56663 0.433585C1.49225 0.359204 1.40395 0.300203 1.30676 0.259948C1.20958 0.219693 1.10542 0.198975 1.00023 0.198975C0.895039 0.198975 0.790879 0.219693 0.693696 0.259948C0.596513 0.300203 0.50821 0.359204 0.433829 0.433585C0.359448 0.507966 0.300447 0.596269 0.260192 0.693452C0.219938 0.790635 0.199219 0.894795 0.199219 0.999985C0.199219 1.10518 0.219938 1.20934 0.260192 1.30652C0.300447 1.4037 0.359448 1.492 0.433829 1.56639L7.86903 8.99998L0.433829 16.4336C0.283611 16.5838 0.199219 16.7875 0.199219 17C0.199219 17.2124 0.283611 17.4162 0.433829 17.5664C0.584048 17.7166 0.787788 17.801 1.00023 17.801C1.21267 17.801 1.41641 17.7166 1.56663 17.5664L9.00023 10.1312L16.4338 17.5664C16.584 17.7166 16.7878 17.801 17.0002 17.801C17.2127 17.801 17.4164 17.7166 17.5666 17.5664C17.7168 17.4162 17.8012 17.2124 17.8012 17C17.8012 16.7875 17.7168 16.5838 17.5666 16.4336L10.1314 8.99998L17.5666 1.56639Z"
+                                                    fill="white" />
+                                            </svg>
 
-                        <!-- name and delete icon -->
-                        <div class="flex justify-between gap-2 pt-2">
+                                        </div>
 
-                            <!-- names -->
-                            <div>
-                                <h1 class="text-[#211C37] font-bold text-sm py-1 pt-2 text-sm">Hotel Name - Riyadh
-                                    Branch</h1>
-                                <p class="text-[#1C1D1D] text-[9px]">60 Rooms</p>
+                                    </div>
+
+                                    <!-- modals container -->
+                                    <div id="steps-container" class="px-4 text-white">
+
+                                        <!-- modal 1 -->
+                                        <div class="step hidden w-[370px]" data-step="0">
+                                            <h1 class="font-semibold text-lg px-1.5">Add Rooms</h1>
+
+                                            <!-- inputs -->
+                                            <div class="space-y-2 py-4">
+
+                                                <!-- Name of Room -->
+                                                <div>
+                                                    <label for="name" class="text-xs font-semibold pb-0.5 px-0.5">Name
+                                                        of Room</label>
+                                                    <input type="text" name="name" id="name" placeholder="Name of Room"
+                                                        class="bg-black p-1.5 rounded-md outline-none w-full">
+                                                </div>
+
+                                                <!-- Occupancy -->
+                                                <div>
+                                                    <label for="Occupancy"
+                                                        class="text-xs font-semibold pb-0.5 px-0.5">Occupancy</label>
+                                                    <input type="text" name="Occupancy" id="Occupancy"
+                                                        placeholder="Occupancy"
+                                                        class="bg-black p-1.5 rounded-md outline-none w-full">
+                                                </div>
+
+                                                <!-- Rent Amount / Guest and Per Month -->
+                                                <div class="flex gap-4">
+                                                    <!-- Rent Amount / Guest -->
+                                                    <div class="w-2/3">
+                                                        <label for="Guest"
+                                                            class="text-xs font-semibold pb-0.5 px-0.5">Rent Amount / Guest</label>
+                                                        <input type="text" name="Guest" id="Guest"
+                                                            placeholder="Rent Amount / Guest"
+                                                            class="bg-black p-1.5 rounded-md outline-none w-full">
+                                                    </div>
+
+                                                    <!-- Per Month -->
+                                                    <div class="w-1/3">
+                                                        <label for="Month"
+                                                            class="text-xs font-semibold pb-0.5 px-0.5">Per Month</label>
+                                                        <input type="text" name="Month" id="Month"
+                                                            placeholder="Per Month"
+                                                            class="bg-black p-1.5 rounded-md outline-none w-full">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- modal 2 -->
+                                        <div class="step hidden w-[370px]" data-step="1">
+                                            <!-- title -->
+                                            <h1 class="font-semibold text-lg px-1.5">Hostel Allocation</h1>
+                                        </div>
+
+                                        <!-- modal 3 -->
+                                        <div class="step hidden w-[370px]" data-step="2">
+                                            <!-- title -->
+                                            <h1 class="font-semibold text-lg px-1.5">step 3</h1>
+                                        </div>
+
+                                        <!-- modal 4 -->
+                                        <div class="step hidden w-[370px]" data-step="3">
+                                            <!-- title -->
+                                            <h1 class="font-semibold text-lg px-1.5">step 4</h1>
+                                        </div>
+
+                                        <!-- modal 5 -->
+                                        <div class="step hidden w-[700px]" data-step="4">
+                                            <!-- title -->
+                                            <h1 class="font-semibold text-lg px-1.5">step 5</h1>
+
+                                            <button type="submit" id="submitWizard"
+                                                class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded">
+                                                Proceed
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Proceed buttons for go to the next modal -->
+                                    <div class="flex justify-center bg-[#2E2E2E] p-4">
+                                        <div id="nextBtn"
+                                            class="px-4 py-2 text-black rounded-md bg-[#EBEBEB] hover:bg-[#e1e1e1] transition-all cursor-pointer">
+                                            Proceed
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-
-                            <!-- delete icon -->
-                            <button class="cursor-pointer">
-                                <svg width="16" height="16" viewBox="0 0 12 12" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M2.66699 12C2.30033 12 1.98655 11.8696 1.72566 11.6087C1.46477 11.3478 1.3341 11.0338 1.33366 10.6667V2H0.666992V0.666667H4.00033V0H8.00033V0.666667H11.3337V2H10.667V10.6667C10.667 11.0333 10.5365 11.3473 10.2757 11.6087C10.0148 11.87 9.70077 12.0004 9.33366 12H2.66699ZM4.00033 9.33333H5.33366V3.33333H4.00033V9.33333ZM6.66699 9.33333H8.00033V3.33333H6.66699V9.33333Z"
-                                        fill="black" />
-                                </svg>
-
-                            </button>
                         </div>
+                    </form>
 
-                        <!-- buttons -->
-                        <div class="flex gap-3 text-white text-xs font-semibold pt-4">
-                            <a href="./View rooms.html" class="bg-[#1E1F27] hover:bg-[#131419] transition-all rounded-md p-1.5 px-4">View Rooms</a>
-                            <a href="" class="bg-[#5C798E] hover:bg-[#526c7f] transition-all rounded-md p-1.5 px-4">Edit Hotel Info</a>
-                        </div>
-                    </div>
 
-                    <!-- box 3 -->
-                    <div class="shadow rounded-md p-3">
-
-                        <img src="" alt="" class="w-full h-28 rounded-md object-cover bg-[#C4C4C4]">
-
-                        <!-- name and delete icon -->
-                        <div class="flex justify-between gap-2 pt-2">
-
-                            <!-- names -->
-                            <div>
-                                <h1 class="text-[#211C37] font-bold text-sm py-1 pt-2 text-sm">Hotel Name - Riyadh
-                                    Branch</h1>
-                                <p class="text-[#1C1D1D] text-[9px]">60 Rooms</p>
-                            </div>
-
-                            <!-- delete icon -->
-                            <button class="cursor-pointer">
-                                <svg width="16" height="16" viewBox="0 0 12 12" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M2.66699 12C2.30033 12 1.98655 11.8696 1.72566 11.6087C1.46477 11.3478 1.3341 11.0338 1.33366 10.6667V2H0.666992V0.666667H4.00033V0H8.00033V0.666667H11.3337V2H10.667V10.6667C10.667 11.0333 10.5365 11.3473 10.2757 11.6087C10.0148 11.87 9.70077 12.0004 9.33366 12H2.66699ZM4.00033 9.33333H5.33366V3.33333H4.00033V9.33333ZM6.66699 9.33333H8.00033V3.33333H6.66699V9.33333Z"
-                                        fill="black" />
-                                </svg>
-
-                            </button>
-                        </div>
-
-                        <!-- buttons -->
-                        <div class="flex gap-3 text-white text-xs font-semibold pt-4">
-                            <a href="./View rooms.html" class="bg-[#1E1F27] hover:bg-[#131419] transition-all rounded-md p-1.5 px-4">View Rooms</a>
-                            <a href="" class="bg-[#5C798E] hover:bg-[#526c7f] transition-all rounded-md p-1.5 px-4">Edit Hotel Info</a>
-                        </div>
-                    </div>
-
-                    <!-- box 4 -->
-                    <div class="shadow rounded-md p-3">
-
-                        <img src="" alt="" class="w-full h-28 rounded-md object-cover bg-[#C4C4C4]">
-
-                        <!-- name and delete icon -->
-                        <div class="flex justify-between gap-2 pt-2">
-
-                            <!-- names -->
-                            <div>
-                                <h1 class="text-[#211C37] font-bold text-sm py-1 pt-2 text-sm">Hotel Name - Riyadh
-                                    Branch</h1>
-                                <p class="text-[#1C1D1D] text-[9px]">60 Rooms</p>
-                            </div>
-
-                            <!-- delete icon -->
-                            <button class="cursor-pointer">
-                                <svg width="16" height="16" viewBox="0 0 12 12" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M2.66699 12C2.30033 12 1.98655 11.8696 1.72566 11.6087C1.46477 11.3478 1.3341 11.0338 1.33366 10.6667V2H0.666992V0.666667H4.00033V0H8.00033V0.666667H11.3337V2H10.667V10.6667C10.667 11.0333 10.5365 11.3473 10.2757 11.6087C10.0148 11.87 9.70077 12.0004 9.33366 12H2.66699ZM4.00033 9.33333H5.33366V3.33333H4.00033V9.33333ZM6.66699 9.33333H8.00033V3.33333H6.66699V9.33333Z"
-                                        fill="black" />
-                                </svg>
-
-                            </button>
-                        </div>
-
-                        <!-- buttons -->
-                        <div class="flex gap-3 text-white text-xs font-semibold pt-4">
-                            <a href="./View rooms.html" class="bg-[#1E1F27] hover:bg-[#131419] transition-all rounded-md p-1.5 px-4">View Rooms</a>
-                            <a href="" class="bg-[#5C798E] hover:bg-[#526c7f] transition-all rounded-md p-1.5 px-4">Edit Hotel Info</a>
-                        </div>
-                    </div>
                 </div>
 
             </div>
@@ -554,45 +549,107 @@
     </div>
 </body>
 
-<!-- for the search bar animation -->
 <script>
-    const box = document.getElementById('searchBox');
-    const input = document.getElementById('searchInput');
-    const btn = document.getElementById('searchBtn');
-    let open = false;
+    const openBtn = document.getElementById('open-modal');
+    const closeBtn = document.getElementById('close-modal');
+    const wrapper = document.getElementById('modal-wrapper');
+    const overlay = document.getElementById('modal-overlay');
+    const box = document.getElementById('modal-box');
+    const steps = Array.from(document.querySelectorAll('.step'));
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const submitBtn = document.getElementById('submitWizard');
 
-    btn.addEventListener('click', () => {
-        open = !open;
+    let currentStep = 0;
 
-        if (open) {
-            // 1) make the box taller 
-            box.classList.replace('w-10', 'w-64');
-            // 2) show the input
-            requestAnimationFrame(() => {
-                input.classList.replace('w-0', 'w-full');
-                input.classList.replace('p-0', 'p-3');
-                input.focus();
-            });
+    // دوال فتح/إغلاق المودال مع أنيميشن
+    function showModal() {
+        wrapper.classList.remove('hidden');
+        requestAnimationFrame(() => {
+            overlay.classList.replace('opacity-0', 'opacity-100');
+            box.classList.replace('opacity-0', 'opacity-100');
+            box.classList.replace('scale-95', 'scale-100');
+        });
+        renderStep();
+    }
+    function hideModal() {
+        overlay.classList.replace('opacity-100', 'opacity-0');
+        box.classList.replace('opacity-100', 'opacity-0');
+        box.classList.replace('scale-100', 'scale-95');
+        setTimeout(() => wrapper.classList.add('hidden'), 300);
+    }
+
+    openBtn.addEventListener('click', showModal);
+    overlay.addEventListener('click', hideModal);
+    closeBtn.addEventListener('click', hideModal);
+
+    // عرض الخطوة الحالية وإدارة أزرار Prev/Next
+    function renderStep() {
+        steps.forEach(s => s.classList.add('hidden'));
+        steps[currentStep].classList.remove('hidden');
+        prevBtn.disabled = (currentStep === 0);
+        nextBtn.textContent = (currentStep === steps.length - 1) ? 'Proceed' : 'Proceed';
+    }
+
+    // زر التالي
+    nextBtn.addEventListener('click', () => {
+        if (currentStep < steps.length - 1) {
+            currentStep++;
+            renderStep();
         } else {
-            // hide the input 
-            input.classList.replace('w-full', 'w-0');
-            input.classList.replace('p-3', 'p-0');
-            // make the box small
-            setTimeout(() => {
-                box.classList.replace('w-64', 'w-10');
-            }, 300);
+            // عند الضغط "إنهاء" يمكن إغلاق المودال أو إرسال قيمة
+            hideModal();
         }
     });
 
-    // colse when click in somewhere else 
-    document.addEventListener('click', e => {
-        if (open && !box.contains(e.target)) {
-            open = false;
-            input.classList.replace('w-full', 'w-0');
-            input.classList.replace('p-3', 'p-0');
-            setTimeout(() => box.classList.replace('w-64', 'w-10'), 300);
+    // زر السابق
+    prevBtn.addEventListener('click', () => {
+        if (currentStep > 0) {
+            currentStep--;
+            renderStep();
         }
     });
+
+    // مثال: عند إرسال الفورم في الخطوة الأخيرة تعرض رسالة نجاح ثم تغلق بعد 2 ثواني
+    submitWizard?.addEventListener('click', e => {
+        e.preventDefault();
+        steps[currentStep].innerHTML = `
+        <div class="text-center py-6">
+          <svg xmlns="http://www.w3.org/2000/svg"
+               class="mx-auto h-16 w-16 text-green-400 mb-4"
+               fill="none" viewBox="0 0 24 24"
+               stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M5 13l4 4L19 7" />
+          </svg>
+          <h2 class="text-xl font-semibold">تم الإرسال!</h2>
+        </div>
+      `;
+        // بعد ثانيتين أغلق المودال
+        setTimeout(hideModal, 2000);
+    });
+
+    function renderStep() {
+        // إخفاء كل الخطوات ثم إظهار الحالية
+        steps.forEach(s => s.classList.add('hidden'));
+        steps[currentStep].classList.remove('hidden');
+
+        // زر السابق: يختفي في الخطوة الأولى ويظهر في البقية
+        if (currentStep === 0) {
+            prevBtn.classList.add('hidden');
+        } else {
+            prevBtn.classList.remove('hidden');
+        }
+
+        // زر التالي: يختفي في الخطوة الأخيرة ويظهر في البقية
+        if (currentStep === steps.length - 1) {
+            nextBtn.classList.add('hidden');
+        } else {
+            nextBtn.classList.remove('hidden');
+            nextBtn.textContent = 'Proceed';
+        }
+    }
 </script>
 
 </html>

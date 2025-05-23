@@ -525,49 +525,68 @@
                         <!-- the modal -->
                         <div id="modal-wrapper" class="fixed inset-0 z-50 hidden">
                             <!-- overlay -->
-                            <div id="modal-overlay" class="absolute inset-0 bg-black bg-opacity-50 opacity-0 transition-opacity duration-300"></div>
+                            <div id="modal-overlay"
+                                class="absolute inset-0 bg-black bg-opacity-50 opacity-0 transition-opacity duration-300">
+                            </div>
 
                             <!-- modal box-->
                             <div class="flex items-center justify-center min-h-screen">
-                                <div id="modal-box" class="w-[750px] bg-[#2E2E2E] rounded-md p-7 flex flex-col items-center justify-center text-white transform transition-all duration-300 ease-out opacity-0 scale-75">
-                                    <h1 class="text-lg font-semibold pb-6">Confirm</h1>
-                                    <div class="flex gap-4">
-                                        <div class="space-y-2">
-                                            <h1>Name of Hostel : H6</h1>
-                                            <p class="text-[#B0B0B0] text-sm">Number of Floors : 7</p>
-                                            <p class="text-[#B0B0B0] text-sm">Number of Kitchens/ Cafeterias : 7</p>
-                                            <p class="text-[#B0B0B0] text-sm">Number of Washrooms : 7</p>
-                                            <h1 class="text-md pt-5">Hostel Address</h1>
-                                            <p class="text-[#B0B0B0] text-sm">
-                                                Plot number 206, Tihri Nagar, Main Hawai Sadak Jaipur - Rajasthan -
-                                                302021 India
-                                            </p>
-                                        </div>
-                                        <div>
-                                            <div class="grid grid-cols-2 gap-3 pb-3">
-                                                <img src="" alt=""
-                                                    class="h-16 w-28 bg-[#EEF7FF] object-cover rounded-md">
-                                                <img src="" alt=""
-                                                    class="h-16 w-28 bg-[#EEF7FF] object-cover rounded-md">
-                                                <img src="" alt=""
-                                                    class="h-16 w-28 bg-[#EEF7FF] object-cover rounded-md">
-                                                <img src="" alt=""
-                                                    class="h-16 w-28 bg-[#EEF7FF] object-cover rounded-md">
+                                <div id="modal-box"
+                                    class="w-[750px] bg-[#2E2E2E] rounded-md flex flex-col items-center justify-center text-white transform transition-all duration-300 ease-out opacity-0 scale-75">
+
+                                   <!-- the modal content that will changes after add hotel button clicked -->
+                                    <div id="modal-content">
+
+                                        <div class="p-7 flex flex-col justify-center items-center">
+                                            <h1 class="text-lg font-semibold pb-6">Confirm</h1>
+
+                                            <!-- info -->
+                                            <div class="flex gap-4">
+                                                <div class="space-y-2">
+                                                    <h1>Name of Hostel : H6</h1>
+                                                    <p class="text-[#B0B0B0] text-sm">Number of Floors : 7</p>
+                                                    <p class="text-[#B0B0B0] text-sm">Number of Kitchens/ Cafeterias : 7
+                                                    </p>
+                                                    <p class="text-[#B0B0B0] text-sm">Number of Washrooms : 7</p>
+                                                    <h1 class="text-md pt-5">Hostel Address</h1>
+                                                    <p class="text-[#B0B0B0] text-sm">
+                                                        Plot number 206, Tihri Nagar, Main Hawai Sadak Jaipur -
+                                                        Rajasthan -
+                                                        302021 India
+                                                    </p>
+                                                </div>
+                                                <div>
+                                                    <div class="grid grid-cols-2 gap-3 pb-3">
+                                                        <img src="" alt=""
+                                                            class="h-16 w-28 bg-[#EEF7FF] object-cover rounded-md">
+                                                        <img src="" alt=""
+                                                            class="h-16 w-28 bg-[#EEF7FF] object-cover rounded-md">
+                                                        <img src="" alt=""
+                                                            class="h-16 w-28 bg-[#EEF7FF] object-cover rounded-md">
+                                                        <img src="" alt=""
+                                                            class="h-16 w-28 bg-[#EEF7FF] object-cover rounded-md">
+                                                    </div>
+                                                    <video src="" poster=""
+                                                        class="h-28 w-full bg-[#EEF7FF] object-cover rounded-md"></video>
+                                                </div>
                                             </div>
-                                            <video src="" poster=""
-                                                class="h-28 w-full bg-[#EEF7FF] object-cover rounded-md"></video>
+
+                                            <!-- buttons -->
+                                            <div class="text-sm font-semibold flex gap-10 pt-7 text-center">
+                                                <button id="addHostel" type="submit"
+                                                    class="bg-[#4A4C4F] hover:bg-[#3e3f42] transition-all rounded-md p-2 w-36">
+                                                    Add Hostel
+                                                </button>
+                                                <div id="close-modal"
+                                                    class="bg-[#667085] hover:bg-[#5b6477] transition-all rounded-md p-2 w-36 cursor-pointer">
+                                                    Back
+                                                </div>
+                                            </div>
                                         </div>
+
+
                                     </div>
-                                    <div class="text-sm font-semibold flex gap-10 pt-7 text-center">
-                                        <button type="submit"
-                                            class="bg-[#4A4C4F] hover:bg-[#3e3f42] transition-all rounded-md p-2 w-36">
-                                            Add Hostel
-                                        </button>
-                                        <div id="close-modal"
-                                            class="bg-[#667085] hover:bg-[#5b6477] transition-all rounded-md p-2 w-36 cursor-pointer">
-                                            Back
-                                        </div>
-                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -640,6 +659,37 @@
     openBtn.addEventListener('click', showModal);
     closeBtn.addEventListener('click', hideModal);
     overlay.addEventListener('click', hideModal);
+</script>
+
+<!-- for change the modal contant -->
+<script>
+    const addBtn = document.getElementById('addHostel');
+    const contentEl = document.getElementById('modal-content');
+
+    addBtn.addEventListener('click', e => {
+        e.preventDefault();
+
+        // استبدال محتوى المودال بعلامة الصح
+        contentEl.innerHTML = `
+      <div class="flex flex-col gap-10 items-center justify-center w-[750px] h-[410px] bg-white rounded-md">
+        <img src="../img/Auth/Logo black.png" alt="" class="h-14">
+        <svg width="72" height="57" viewBox="0 0 112 97" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M93 50.5C93 76.1812 72.1812 97 46.5 97C20.8188 97 0 76.1812 0 50.5C0 24.8188 20.8188 4 46.5 4C72.1812 4 93 24.8188 93 50.5ZM9.3 50.5C9.3 71.045 25.955 87.7 46.5 87.7C67.045 87.7 83.7 71.045 83.7 50.5C83.7 29.955 67.045 13.3 46.5 13.3C25.955 13.3 9.3 29.955 9.3 50.5Z" fill="#1E2228"/>
+            <path d="M26 44L47 65L108 4" stroke="#1E2128" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    `;
+
+        // colse the modal and go to Properties.html page
+        setTimeout(() => {
+            hideModal(); // close the modal 
+            // switch the page
+            setTimeout(() => {
+                window.location.href = './Properties.html';
+            }, 300);
+        }, 1000);
+    });
+
 </script>
 
 </html>
