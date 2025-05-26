@@ -3,7 +3,7 @@
 
 <head>
 
-    <title>Invoices</title>
+    <title>Settings</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -82,7 +82,8 @@
                     </li>
 
                     <!-- Invoices -->
-                    <li class="bg-[#FFFFFF] rounded text-[#1E2227] font-bold mb-1 pl-1">
+                    <li
+                        class="hover:bg-[#FFFFFF] transition-all duration-100 rounded text-[#FFFFFF] hover:text-[#1E2227] hover:fill-[#1E2227] mb-1 pl-1">
                         <a href="./Invoices.html" class="flex gap-2 items-center p-2">
                             <svg width="19" height="19" viewBox="0 0 27 36" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -122,8 +123,7 @@
                     </li>
 
                     <!-- Employees -->
-                    <li
-                        class="hover:bg-[#FFFFFF] transition-all duration-100 rounded text-[#FFFFFF] hover:text-[#1E2227] hover:fill-[#1E2227] mb-1 pl-1">
+                    <li class="hover:bg-[#FFFFFF] transition-all duration-100 rounded text-[#FFFFFF] hover:text-[#1E2227] hover:fill-[#1E2227] mb-1 pl-1">
                         <a href="./Employees.html" class="flex gap-2 items-center p-2">
                             <svg width="19" height="19" viewBox="0 0 28 36" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -340,256 +340,152 @@
             </div>
 
             <!-- page -->
-            <div class="p-5 px-7">
+            <div class="p-5 px-20 pt-10 space-y-6">
 
-                <!-- the three boxes in the top -->
-                <div class="grid grid-cols-3 gap-10 py-5">
+                <!-- profile -->
+                <div class="flex justify-between items-center pt-4">
+                    <!-- user porfile -->
+                    <div class="flex justify-center items-center gap-3">
+                        <img src="../img/Admin/profile.jpg" alt="" class="size-16 rounded-full object-cover border">
 
-                    <!-- Total Earnings -->
-                    <div class="bg-[#DCFAED] rounded-md p-4 px-8">
-                        <p class="text-black/80">Total Earnings</p>
-                        <p class="text-2xl text-green-600 font-semibold">SAR 430.00</p>
-                        <p class="text-[10px] text-gray-700 font-semibold">as of 01-December 2022</p>
-                    </div>
-
-                    <!-- Pending Payments -->
-                    <div class="bg-[#F5F6F8] rounded-md p-4 px-8">
-                        <p class="text-black/80">Pending Payments</p>
-                        <p class="text-2xl text-[#413B89] font-semibold">SAR 100.00</p>
-                        <p class="text-[10px] text-gray-700 font-semibold">as of 01-December 2022</p>
-                    </div>
-
-                    <!-- Conversion Method -->
-                    <div class="bg-white border border-gray-200 rounded-md p-4 px-6 space-y-4">
-
-                        <!-- header  -->
-                        <div class="flex justify-between items-center">
-                            <p class="text-black/80">Conversion Method</p>
-
-                            <a href="">
-                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M9.60039 6.59999C9.60039 6.26862 9.33176 5.99999 9.00039 5.99999C8.66902 5.99999 8.40039 6.26862 8.40039 6.59999L8.40039 8.40001H6.60039C6.26902 8.40001 6.00039 8.66864 6.00039 9.00001C6.00039 9.33139 6.26902 9.60001 6.60039 9.60001H8.40039V11.4C8.40039 11.7314 8.66902 12 9.00039 12C9.33176 12 9.60039 11.7314 9.60039 11.4V9.60001H11.4004C11.7318 9.60001 12.0004 9.33138 12.0004 9.00001C12.0004 8.66864 11.7318 8.40001 11.4004 8.40001H9.60039V6.59999Z"
-                                        fill="#413B89" />
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M9.00039 0.399994C4.25074 0.399994 0.400391 4.25035 0.400391 8.99999C0.400391 13.7496 4.25074 17.6 9.00039 17.6C13.75 17.6 17.6004 13.7496 17.6004 8.99999C17.6004 4.25035 13.75 0.399994 9.00039 0.399994ZM1.60039 8.99999C1.60039 4.91309 4.91348 1.59999 9.00039 1.59999C13.0873 1.59999 16.4004 4.91309 16.4004 8.99999C16.4004 13.0869 13.0873 16.4 9.00039 16.4C4.91348 16.4 1.60039 13.0869 1.60039 8.99999Z"
-                                        fill="#413B89" />
-                                </svg>
-
-                            </a>
-                        </div>
-
-                        <div class="flex justify-between items-center">
-
-                            <!-- bank account number  -->
-                            <div class="flex gap-1 items-center justify-center">
-                                <div>
-                                    <svg width="15" height="14" viewBox="0 0 18 17" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M16.1305 3.11109C16.4002 3.51465 16.4002 4.07643 16.4002 5.2V15.4H16.8002C17.1316 15.4 17.4002 15.6686 17.4002 16C17.4002 16.3314 17.1316 16.6 16.8002 16.6H0.800195C0.468824 16.6 0.200195 16.3314 0.200195 16C0.200195 15.6686 0.468824 15.4 0.800195 15.4H1.2002V5.2C1.2002 4.07643 1.2002 3.51465 1.46984 3.11109C1.58658 2.93638 1.73658 2.78638 1.91128 2.66965C2.26426 2.4338 2.73829 2.40424 3.60342 2.40053C3.60013 2.63364 3.60016 2.87724 3.60019 3.1284L3.6002 3.2V4.2H2.8002C2.46882 4.2 2.2002 4.46863 2.2002 4.8C2.2002 5.13137 2.46882 5.4 2.8002 5.4H3.6002V6.6H2.8002C2.46882 6.6 2.2002 6.86863 2.2002 7.2C2.2002 7.53137 2.46882 7.8 2.8002 7.8H3.6002V9H2.8002C2.46882 9 2.2002 9.26863 2.2002 9.6C2.2002 9.93137 2.46882 10.2 2.8002 10.2H3.6002V15.4H4.8002V3.2C4.8002 1.69151 4.8002 0.937258 5.26882 0.468629C5.73745 0 6.4917 0 8.0002 0H9.6002C11.1087 0 11.8629 0 12.3316 0.468629C12.8002 0.937258 12.8002 1.69151 12.8002 3.2V15.4H14.0002V10.2H14.8002C15.1316 10.2 15.4002 9.93137 15.4002 9.6C15.4002 9.26863 15.1316 9 14.8002 9H14.0002V7.8H14.8002C15.1316 7.8 15.4002 7.53137 15.4002 7.2C15.4002 6.86863 15.1316 6.6 14.8002 6.6H14.0002V5.4H14.8002C15.1316 5.4 15.4002 5.13137 15.4002 4.8C15.4002 4.46863 15.1316 4.2 14.8002 4.2H14.0002V3.2L14.0002 3.12841C14.0002 2.87724 14.0003 2.63365 13.997 2.40053C14.8621 2.40424 15.3361 2.4338 15.6891 2.66965C15.8638 2.78638 16.0138 2.93638 16.1305 3.11109ZM9.4002 13.6C9.4002 13.2686 9.13157 13 8.8002 13C8.46882 13 8.2002 13.2686 8.2002 13.6V15.4H9.4002V13.6ZM6.6002 10.4C6.6002 10.0686 6.86882 9.8 7.2002 9.8H10.4002C10.7316 9.8 11.0002 10.0686 11.0002 10.4C11.0002 10.7314 10.7316 11 10.4002 11H7.2002C6.86882 11 6.6002 10.7314 6.6002 10.4ZM7.2002 7.4C6.86882 7.4 6.6002 7.66863 6.6002 8C6.6002 8.33137 6.86882 8.6 7.2002 8.6H10.4002C10.7316 8.6 11.0002 8.33137 11.0002 8C11.0002 7.66863 10.7316 7.4 10.4002 7.4H7.2002ZM6.8002 4C6.8002 2.78497 7.78517 1.8 9.0002 1.8C10.2152 1.8 11.2002 2.78497 11.2002 4C11.2002 5.21503 10.2152 6.2 9.0002 6.2C7.78517 6.2 6.8002 5.21503 6.8002 4ZM8.0002 4C8.0002 3.44772 8.44791 3 9.0002 3C9.55248 3 10.0002 3.44772 10.0002 4C10.0002 4.55228 9.55248 5 9.0002 5C8.44791 5 8.0002 4.55228 8.0002 4Z"
-                                            fill="#413B89" />
-                                    </svg>
-
-                                </div>
-                                <p class="text-sm font-semibold">1502********4832</p>
-                            </div>
-
-                            <!-- icon buttons  -->
-                            <div class="flex items-center gap-1.5">
-                                <button class="cursor-pointer">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M8.67427 5.44169C10.2972 4.48056 11.1087 4 11.9998 4C12.8909 4 13.7024 4.48056 15.3253 5.44169L15.8743 5.76677C17.4972 6.72789 18.3087 7.20846 18.7543 8C19.1998 8.79154 19.1998 9.75267 19.1998 11.6749V12.3251C19.1998 14.2473 19.1998 15.2085 18.7543 16C18.3087 16.7915 17.4972 17.2721 15.8743 18.2332L15.3253 18.5583C13.7024 19.5194 12.8909 20 11.9998 20C11.1087 20 10.2972 19.5194 8.67427 18.5583L8.12534 18.2332C6.50237 17.2721 5.69088 16.7915 5.24534 16C4.7998 15.2085 4.7998 14.2473 4.7998 12.3251V11.6749C4.7998 9.75267 4.7998 8.79154 5.24534 8C5.69088 7.20846 6.50237 6.72789 8.12534 5.76677L8.67427 5.44169Z"
-                                            stroke="#0EAD69" stroke-width="1.2" />
-                                        <circle opacity="0.5" cx="11.9996" cy="12" r="2.4" stroke="#0EAD69"
-                                            stroke-width="1.2" />
-                                    </svg>
-
-                                </button>
-
-                                <!-- delete button -->
-                                <button class="cursor-pointer">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M18.8003 7.2H5.2002" stroke="#C10B0E" stroke-opacity="0.8"
-                                            stroke-width="1.2" stroke-linecap="round" />
-                                        <path
-                                            d="M17.4665 9.2L17.0986 14.7193C16.957 16.8432 16.8862 17.9052 16.1942 18.5526C15.5022 19.2 14.4379 19.2 12.3092 19.2H11.6905C9.56188 19.2 8.49756 19.2 7.80556 18.5526C7.11355 17.9052 7.04275 16.8432 6.90116 14.7193L6.5332 9.2"
-                                            stroke="#C10B0E" stroke-opacity="0.8" stroke-width="1.2"
-                                            stroke-linecap="round" />
-                                        <path opacity="0.5" d="M10 11.2L10.4 15.2" stroke="#C10B0E" stroke-opacity="0.8"
-                                            stroke-width="1.2" stroke-linecap="round" />
-                                        <path opacity="0.5" d="M13.9996 11.2L13.5996 15.2" stroke="#C10B0E"
-                                            stroke-opacity="0.8" stroke-width="1.2" stroke-linecap="round" />
-                                        <path opacity="0.5"
-                                            d="M7.59961 7.2C7.64431 7.2 7.66666 7.2 7.68693 7.19949C8.34568 7.1828 8.92683 6.76393 9.15098 6.14426C9.15788 6.1252 9.16495 6.10399 9.17908 6.06158L9.25675 5.82857C9.32306 5.62967 9.35621 5.53021 9.40018 5.44576C9.57562 5.10886 9.9002 4.87491 10.2753 4.81502C10.3693 4.8 10.4741 4.8 10.6838 4.8H13.3154C13.5251 4.8 13.6299 4.8 13.7239 4.81502C14.099 4.87491 14.4236 5.10886 14.599 5.44576C14.643 5.53021 14.6762 5.62966 14.7425 5.82857L14.8201 6.06158C14.8343 6.10394 14.8413 6.12521 14.8482 6.14426C15.0724 6.76393 15.6535 7.1828 16.3123 7.19949C16.3326 7.2 16.3549 7.2 16.3996 7.2"
-                                            stroke="#C10B0E" stroke-opacity="0.8" stroke-width="1.2" />
-                                    </svg>
-
-
-                                </button>
-                            </div>
+                        <!-- namd  -->
+                        <div>
+                            <p class="font-semibold">Alexa Rawles</p>
+                            <p class="text-sm text-black/50">alexarawles@gmail.com</p>
                         </div>
                     </div>
-                </div>
 
-                <!-- Payment History -->
-                <div class="pb-7">
-                    <h1 class="text-[#49454F] text-lg font-semibold">Payment History</h1>
+                    <!-- buttons -->
+                    <div class="flex justify-center items-center gap-6">
 
-                    <div class="flex justify-between items-center">
-                        <p class="text-sm text-[#49454F]">Track all your payment transactions related to property
-                            listings. View detailed information
-                            for each property and payment status.</p>
-
-                        <!-- the button  -->
-                        <a href=""
-                            class="cursor-pointer border border-gray-400 px-5 py-1 text-xs font-semibold text-gray-500 flex gap-3 items-center justify-center rounded-md hover:bg-gray-100 transition-all">
-                            <p>export</p>
-                            <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                        <!-- User Management -->
+                        <a href="./User Management.html" class="flex justify-center items-center gap-1.5 w-fit">
+                            <svg width="24" height="23" viewBox="0 0 25 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
-                                <path d="M0.875 0.75L7.125 7L0.875 13.25" stroke="#5D6679" stroke-width="1.5"
-                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <ellipse cx="12.5007" cy="8" rx="4.16667" ry="4" fill="#32646B" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M12.4995 13C8.67685 13 5.54125 15.4205 5.23274 18.5005C5.20522 18.7752 5.43168 19 5.70783 19H19.2912C19.5673 19 19.7938 18.7752 19.7662 18.5005C19.4577 15.4205 16.3221 13 12.4995 13Z"
+                                    fill="#32646B" />
                             </svg>
 
+                            <p class="text-xs font-semibold text-gray-900">User Management</p>
                         </a>
+
+                        <!-- log out  -->
+                        <button class="px-7 py-2 text-white text-xs font-semibold bg-[#1E2227] rounded-md">Log
+                            out</button>
                     </div>
                 </div>
 
-                <!-- Tabs buttons to switch the sections -->
-                <div class="relative">
-                    <div class="relative flex flex-wrap gap-5 items-center px-2 text-sm font-medium py-2">
-                        <!-- the sections name -->
-                        <button onclick="selectTab(0)"
-                            class="relative z-10 text-black px-5 py-2 rounded-full border border-black bg-white"
-                            id="tab-0">All</button>
-                        <button onclick="selectTab(1)"
-                            class="relative z-10 text-black/80 px-5 py-2 rounded-full border bg-white" id="tab-1">
-                            Complete</button>
-                        <button onclick="selectTab(2)"
-                            class="relative z-10 text-black/80 px-5 py-2 rounded-full border bg-white"
-                            id="tab-2">Pending</button>
-                        <button onclick="selectTab(3)"
-                            class="relative z-10 text-black/80 px-5 py-2 rounded-full border bg-white"
-                            id="tab-3">Rejected</button>
+                <form action="" class="grid grid-cols-2 gap-5 py-5">
+
+                    <!-- Full Name -->
+                    <div class="flex flex-col gap-1">
+                        <label for="name" class="text-xs font-semibold">Full Name</label>
+                        <input name="name" type="text" placeholder="Full Name" value="full name"
+                            class="bg-gray-100 rounded-md p-1 px-2">
                     </div>
 
-                </div>
+                    <!-- Nick Name -->
+                    <div class="flex flex-col gap-1">
+                        <label for="Nick" class="text-xs font-semibold">Nick Name</label>
+                        <input name="Nick" type="text" placeholder="Nick Name" value="nick name"
+                            class="bg-gray-100 rounded-md p-1 px-2">
+                    </div>
 
-                <!-- table area based on the tab switch -->
-                <div class="py-5">
+                    <!-- Gender -->
+                    <div class="flex flex-col gap-1">
+                        <label for="Gender" class="text-xs font-semibold">Gender</label>
+                        <select name="Gender" id="Gender" class="bg-gray-100 rounded-md p-1 px-2">
+                            <option value="Gender">Gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                    </div>
 
-                    <!-- All -->
-                    <div id="content-0" class="tab-content block">
-                        <!-- the table -->
-                        <div class="rounded-md shadow p-5">
+                    <!-- Country -->
+                    <div class="flex flex-col gap-1">
+                        <label for="Country" class="text-xs font-semibold">Country</label>
+                        <input name="Country" type="text" placeholder="Country" value="Country"
+                            class="bg-gray-100 rounded-md p-1 px-2">
+                    </div>
 
-                            <!-- the table (All) -->
-                            <table class="text-left text-sm border-collapse w-full">
-                                <thead class="text-[#667085]">
-                                    <tr>
-                                        <th class="py-2">Customer</th>
-                                        <th class="py-2">Room number</th>
-                                        <th class="py-2">Room floor</th>
-                                        <th class="py-2">Property Name</th>
-                                        <th class="py-2">City</th>
-                                        <th class="py-2">Amount (SAR)</th>
-                                        <th class="py-2">Status</th>
-                                    </tr>
-                                </thead>
+                    <!-- Language -->
+                    <div class="flex flex-col gap-1">
+                        <label for="Language" class="text-xs font-semibold">Language</label>
+                        <input name="Language" type="text" placeholder="Language" value="Language"
+                            class="bg-gray-100 rounded-md p-1 px-2">
+                    </div>
 
-                                <tbody class="table-body">
+                    <!-- Notifications -->
+                    <div class="flex flex-col gap-1 justify-cente">
+                        <label for="Notifications" class="text-xs font-semibold">Notifications</label>
 
-                                    <!-- row 1 -->
-                                    <tr class="border-t">
-                                        <td class="py-4 font-semibold text-[#2B2F38]">hamad@gmail.com</td>
-                                        <td class="py-4 text-[#5D6679]">A101</td>
-                                        <td class="py-4 text-[#5D6679]">Floor - 1</td>
-                                        <td class="py-4 text-[#5D6679]">Al-Raha Apartment</td>
-                                        <td class="py-4 text-[#5D6679]">Riyadh</td>
-                                        <td class="py-4 text-[#5D6679]">400</td>
-                                        <td><div class="bg-[#FEECEB] rounded-full w-fit text-[10px] font-bold py-0.5 px-2 text-[#892020]/50">Rejected</div></td>
-                                    </tr>
+                        <label class="flex items-center justify-between space-x-4 cursor-pointer">
+                            <span class="text-gray-500 text-sm">Allow system notifications</span>
 
-                                    <!-- row 2 -->
-                                    <tr class="border-t">
-                                        <td class="py-4 font-semibold text-[#2B2F38]">hamad@gmail.com</td>
-                                        <td class="py-4 text-[#5D6679]">A101</td>
-                                        <td class="py-4 text-[#5D6679]">Floor - 1</td>
-                                        <td class="py-4 text-[#5D6679]">Al-Raha Apartment</td>
-                                        <td class="py-4 text-[#5D6679]">Riyadh</td>
-                                        <td class="py-4 text-[#5D6679]">400</td>
-                                        <td><div class="bg-[#E7F8F0] rounded-full w-fit text-[10px] font-bold py-0.5 px-2 text-[#15996A]/50">Complete</div></td>
-                                    </tr>
+                            <!-- Toggle -->
+                            <div class="relative">
+                                <input type="checkbox" class="sr-only peer" />
+                                <div
+                                    class="w-10 h-5 bg-gray-300 rounded-full peer-checked:bg-lime-500 transition-colors">
+                                </div>
+                                <div
+                                    class="absolute top-0.5 left-0.5 w-4 h-4 bg-white rounded-full transition-all peer-checked:translate-x-5">
+                                </div>
+                            </div>
+                        </label>
 
-                                    <!-- row 3 -->
-                                    <tr class="border-t">
-                                        <td class="py-4 font-semibold text-[#2B2F38]">hamad@gmail.com</td>
-                                        <td class="py-4 text-[#5D6679]">A101</td>
-                                        <td class="py-4 text-[#5D6679]">Floor - 1</td>
-                                        <td class="py-4 text-[#5D6679]">Al-Raha Apartment</td>
-                                        <td class="py-4 text-[#5D6679]">Riyadh</td>
-                                        <td class="py-4 text-[#5D6679]">400</td>
-                                        <td><div class="bg-[#FEF4E6] rounded-full w-fit text-[10px] font-bold py-0.5 px-2 text-[#9A8E22]/50">Pending</div></td>
-                                    </tr>
+                    </div>
 
-                                    <!-- more rows -->
-                                </tbody>
-                            </table>
+                    <!-- My email Address -->
+                    <div>
+                        <p class="font-semibold pt-4">My email Address</p>
+
+                        <!-- the email -->
+                        <div class="flex items-center gap-3 py-4">
+                            <!-- email icon  -->
+                            <div class="p-2 rounded-full bg-[#4182F9]/10 w-fit">
+                                <svg width="23" height="24" viewBox="0 0 23 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M16.1491 4.09583H6.78798C3.97964 4.09583 2.10742 5.49999 2.10742 8.77638V15.3292C2.10742 18.6055 3.97964 20.0097 6.78798 20.0097H16.1491C18.9574 20.0097 20.8296 18.6055 20.8296 15.3292V8.77638C20.8296 5.49999 18.9574 4.09583 16.1491 4.09583ZM16.5891 9.79674L13.659 12.137C13.0412 12.6332 12.2549 12.8765 11.4685 12.8765C10.6822 12.8765 9.8865 12.6332 9.27803 12.137L6.34801 9.79674C6.04845 9.55335 6.00164 9.10402 6.23567 8.80446C6.47906 8.50491 6.91903 8.44874 7.21859 8.69213L10.1486 11.0324C10.8601 11.6034 12.0676 11.6034 12.7791 11.0324L15.7091 8.69213C16.0087 8.44874 16.458 8.49555 16.692 8.80446C16.9354 9.10402 16.8886 9.55335 16.5891 9.79674Z"
+                                        fill="#4182F9" />
+                                </svg>
+
+                            </div>
+
+                            <!-- email  -->
+                            <div>
+                                <p>alexarawles@gmail.com</p>
+                                <p class="text-black/50 text-sm">1 month ago</p>
+                            </div>
                         </div>
+
+                        <!-- +Add Email Address -->
+                        <div class="px-5 py-1 text-[#4182F9] bg-[#4182F9]/10 rounded-md cursor-pointer hover:bg-[#4182F9]/15 transition-all text-sm w-fit">+Add Email Address</div>
                     </div>
 
-                    <!-- Complete -->
-                    <div id="content-1" class="tab-content hidden">
-                        table Complete 
+                    <!-- save button  -->
+                    <div class="flex items-end justify-end">
+                        <button type="submit" class="px-7 py-2 text-white text-xs font-semibold bg-[#1E2227] rounded-md w-fit h-fit">Save Changes</button>
                     </div>
-
-                    <!-- Pending -->
-                    <div id="content-2" class="tab-content hidden">
-                        table content 
-                    </div>
-
-                    <!-- Pending -->
-                    <div id="content-3" class="tab-content hidden">
-                        table Pending 
-                    </div>
-                </div>
-
+                    
+                </form>
             </div>
+
+
         </div>
 
     </div>
 
+
+
+
+
+
+
+
 </body>
 
 </html>
-
-<!-- for switch between the sections -->
-<script>
-    function selectTab(index) {
-        const buttons = document.querySelectorAll('button[id^="tab-"]');
-        const contents = document.querySelectorAll('.tab-content');
-        const indicator = document.getElementById('tabIndicator');
-        const selected = buttons[index];
-
-        // change the selected tab 
-        buttons.forEach(btn => {
-            btn.classList.remove('text-black', 'border-black', 'bg-gray-50');
-            btn.classList.add('text-black/80');
-        });
-        // reset the others tab 
-        selected.classList.remove('text-black/80');
-        selected.classList.add('text-black', 'border-black', 'bg-gray-50');
-
-        // تحديث عرض الأقسام
-        contents.forEach(div => div.classList.add('hidden'));
-        document.getElementById('content-' + index).classList.remove('hidden');
-    }
-
-    window.addEventListener('DOMContentLoaded', () => {
-        selectTab(0); // select the first tab by default 
-    });
-</script>
