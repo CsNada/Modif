@@ -3,7 +3,7 @@
 
 <head>
 
-    <title>Rooms</title>
+    <title>Employees</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -51,13 +51,14 @@
                 <ul>
 
                     <!-- dashboard -->
-                    <li class="bg-[#FFFFFF] rounded text-[#1E2227] font-bold mb-1 pl-1.5">
+                    <li
+                        class="hover:bg-[#FFFFFF] transition-all duration-100 rounded text-[#FFFFFF] hover:text-[#1E2227] hover:fill-[#1E2227] mb-1 pl-1.5">
                         <a href="./Dashboard.html" class="flex gap-2 items-center p-2">
                             <svg width="17" height="17" viewBox="0 0 23 23" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M12.7413 7.64476V0H22.9343V7.64476H12.7413ZM0 12.7413V0H10.193V12.7413H0ZM12.7413 22.9343V10.193H22.9343V22.9343H12.7413ZM0 22.9343V15.2895H10.193V22.9343H0ZM2.54825 10.193H7.64476V2.54825H2.54825V10.193ZM15.2895 20.386H20.386V12.7413H15.2895V20.386ZM15.2895 5.09651H20.386V2.54825H15.2895V5.09651ZM2.54825 20.386H7.64476V17.8378H2.54825V20.386Z"
-                                    fill="#1E2227" />
+                                    fill="currentColor" />
                             </svg>
 
                             <p>Dashboard</p>
@@ -122,8 +123,7 @@
                     </li>
 
                     <!-- Employees -->
-                    <li
-                        class="hover:bg-[#FFFFFF] transition-all duration-100 rounded text-[#FFFFFF] hover:text-[#1E2227] hover:fill-[#1E2227] mb-1 pl-1">
+                    <li class="bg-[#FFFFFF] rounded text-[#1E2227] font-bold mb-1 pl-1">
                         <a href="./Employees.html" class="flex gap-2 items-center p-2">
                             <svg width="19" height="19" viewBox="0 0 28 36" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -349,72 +349,70 @@
             </div>
 
             <!-- page -->
-            <div class="p-5 px-7">
+            <div class="p-5 px-7 pt-10 space-y-6">
 
-                <!-- the table -->
-                    <div class="rounded-md shadow p-5   ">
-                        <!-- the table -->
-                        <div class="tab-content">
+                <!-- <div class="flex justify-end">
+                    <div class="flex gap-2 text-[#0079FF] text-xs font-semibold items-center px-5 py-1 border w-fit rounded-md cursor-pointer bg-blue-100/75 hover:bg-blue-200/75 transition-all">
+                        <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M3.898 0.00699997L4 0C4.18124 7.6429e-06 4.35634 0.0656426 4.49293 0.184767C4.62952 0.303891 4.71835 0.468446 4.743 0.648L4.75 0.75V3.249L7.25 3.25C7.43124 3.25001 7.60634 3.31564 7.74293 3.43477C7.87952 3.55389 7.96835 3.71845 7.993 3.898L8 4C7.99999 4.18124 7.93436 4.35634 7.81523 4.49293C7.69611 4.62952 7.53155 4.71835 7.352 4.743L7.25 4.75L4.75 4.749V7.25C4.74999 7.43124 4.68436 7.60634 4.56523 7.74293C4.44611 7.87952 4.28155 7.96835 4.102 7.993L4 8C3.81876 7.99999 3.64366 7.93436 3.50707 7.81523C3.37048 7.69611 3.28165 7.53155 3.257 7.352L3.25 7.25V4.749L0.75 4.75C0.568762 4.74999 0.393658 4.68436 0.257069 4.56523C0.120481 4.44611 0.0316483 4.28155 0.00699997 4.102L0 4C7.6429e-06 3.81876 0.0656426 3.64366 0.184767 3.50707C0.303891 3.37048 0.468446 3.28165 0.648 3.257L0.75 3.25L3.25 3.249V0.75C3.25001 0.568762 3.31564 0.393658 3.43477 0.257069C3.55389 0.120481 3.71845 0.0316483 3.898 0.00699997Z"
+                                fill="#0079FF" />
+                        </svg>
 
-                            <table class="w-full text-left text-sm border-collapse">
-                                <thead class="text-[#667085]">
-                                    <tr>
-                                        <th class="py-2">Room Number</th>
-                                        <th class="py-2">Name</th>
-                                        <th class="py-2">Entry date</th>
-                                        <th class="py-2">Exit date</th>
-                                        <th class="py-2">Booking source</th>
-                                        <th class="py-2">Status</th>
-                                    </tr>
-                                </thead>
-
-                                <tbody class="table-body">
-
-                                    <!-- row 1 -->
-                                    <tr class="border-t">
-                                        <td class="py-4 font-semibold text-[#2B2F38]">A203</td>
-                                        <td class="py-4 text-[#5D6679]">Alexander</td>
-                                        <td class="py-4 text-[#5D6679]">2025/04/29</td>
-                                        <td class="py-4 text-[#5D6679]">2025/04/29</td>
-                                        <td class="py-4 text-[#5D6679]">Airbnb</td>
-                                        <td class="py-4 text-[#5D6679]">Log in today</td>
-                                    </tr>
-
-                                    <!-- row 2 -->
-                                    <tr class="border-t">
-                                        <td class="py-4 font-semibold text-[#2B2F38]">A203</td>
-                                        <td class="py-4 text-[#5D6679]">Alexander</td>
-                                        <td class="py-4 text-[#5D6679]">2025/04/29</td>
-                                        <td class="py-4 text-[#5D6679]">2025/04/29</td>
-                                        <td class="py-4 text-[#5D6679]">Airbnb</td>
-                                        <td class="py-4 text-[#5D6679]">Log in today</td>
-                                    </tr>
-
-                                    <!-- row 3 -->
-                                    <tr class="border-t">
-                                        <td class="py-4 font-semibold text-[#2B2F38]">A203</td>
-                                        <td class="py-4 text-[#5D6679]">Alexander</td>
-                                        <td class="py-4 text-[#5D6679]">2025/04/29</td>
-                                        <td class="py-4 text-[#5D6679]">2025/04/29</td>
-                                        <td class="py-4 text-[#5D6679]">Airbnb</td>
-                                        <td class="py-4 text-[#5D6679]">Log in today</td>
-                                    </tr>
-
-                                    <!-- row 4 -->
-                                    <tr class="border-t">
-                                        <td class="py-4 font-semibold text-[#2B2F38]">A203</td>
-                                        <td class="py-4 text-[#5D6679]">Alexander</td>
-                                        <td class="py-4 text-[#5D6679]">2025/04/29</td>
-                                        <td class="py-4 text-[#5D6679]">2025/04/29</td>
-                                        <td class="py-4 text-[#5D6679]">Airbnb</td>
-                                        <td class="py-4 text-[#5D6679]">Log in today</td>
-                                    </tr>
-
-                                    <!-- more rows -->
-                                </tbody>
-                            </table>
-                        </div>
+                        <p>Add Column</p>
                     </div>
+                </div> -->
+                
+                <!-- the table -->
+                <div class="rounded-md shadow p-5">
+                    <!-- the table -->
+                    <div class="tab-content">
+
+                        <table class="w-full text-left text-sm border-collapse">
+                            <thead class="text-[#667085]">
+                                <tr>
+                                    <th class="py-2">Name</th>
+                                    <th class="py-2">Email</th>
+                                    <th class="py-2">Company name</th>
+                                    <th class="py-2">Role</th>
+                                    <th class="py-2">Recent activity</th>
+                                </tr>
+                            </thead>
+
+                            <tbody class="table-body">
+
+                                <!-- row 1 -->
+                                <tr class="border-t hover:bg-gray-100/75">
+                                    <td class="py-4 font-semibold text-[#2B2F38]">Lindsey Stroud</td>
+                                    <td class="py-4 text-[#5D6679]">lindsey.stroud@gmail.com</td>
+                                    <td class="py-4 text-[#5D6679]">Hatchbuck</td>
+                                    <td class="py-4 text-[#5D6679]">Manager</td>
+                                    <td class="py-4 text-[#5D6679]">5 Minutes ago</td>
+                                </tr>
+
+                                <!-- row 2 -->
+                                <tr class="border-t hover:bg-gray-100/75">
+                                    <td class="py-4 font-semibold text-[#2B2F38]">A203</td>
+                                    <td class="py-4 text-[#5D6679]">Alexander</td>
+                                    <td class="py-4 text-[#5D6679]">2025/04/29</td>
+                                    <td class="py-4 text-[#5D6679]">2025/04/29</td>
+                                    <td class="py-4 text-[#5D6679]">Airbnb</td>
+                                </tr>
+
+                                <!-- row 3 -->
+                                <tr class="border-t hover:bg-gray-100/75">
+                                    <td class="py-4 font-semibold text-[#2B2F38]">A203</td>
+                                    <td class="py-4 text-[#5D6679]">Alexander</td>
+                                    <td class="py-4 text-[#5D6679]">2025/04/29</td>
+                                    <td class="py-4 text-[#5D6679]">2025/04/29</td>
+                                    <td class="py-4 text-[#5D6679]">Airbnb</td>
+                                </tr>
+
+                                <!-- more rows -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
 
 

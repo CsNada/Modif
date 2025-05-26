@@ -27,6 +27,18 @@
             /* إخفاء الشريط في فايرفوكس */
         }
 
+        /* إخفاء الأسهم في متصفح كروم وأغلب المتصفحات المبنية على WebKit */
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        /* إخفاء الأسهم في فايرفوكس */
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+
         .grid-lines span {
             transform: translateY(-50%);
         }
@@ -83,7 +95,7 @@
                     <!-- Invoices -->
                     <li
                         class="hover:bg-[#FFFFFF] transition-all duration-100 rounded text-[#FFFFFF] hover:text-[#1E2227] hover:fill-[#1E2227] mb-1 pl-1">
-                        <a href="" class="flex gap-2 items-center p-2">
+                        <a href="./Invoices.html" class="flex gap-2 items-center p-2">
                             <svg width="19" height="19" viewBox="0 0 27 36" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -95,9 +107,6 @@
                                 <path d="M10.1338 16.4889H16.8338" stroke="currentColor" stroke-width="1.5"
                                     stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
-
-
-
                             <p>Invoices</p>
                         </a>
                     </li>
@@ -127,7 +136,7 @@
                     <!-- Employees -->
                     <li
                         class="hover:bg-[#FFFFFF] transition-all duration-100 rounded text-[#FFFFFF] hover:text-[#1E2227] hover:fill-[#1E2227] mb-1 pl-1">
-                        <a href="" class="flex gap-2 items-center p-2">
+                        <a href="./Employees.html" class="flex gap-2 items-center p-2">
                             <svg width="19" height="19" viewBox="0 0 28 36" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -417,7 +426,7 @@
                                     class="bg-[#2E2E2E] rounded-md overflow-hidden transform transition-all duration-300 ease-out opacity-0 scale-95">
 
                                     <!-- back and close buttons -->
-                                    <div class="flex justify-between p-4">
+                                    <div class="flex justify-between items-center p-4">
 
                                         <!-- back button -->
                                         <div>
@@ -434,7 +443,7 @@
 
                                         <!-- close button -->
                                         <div id="close-modal" class="p-1 cursor-pointer">
-                                            <svg width="16" height="16" viewBox="0 0 18 18" fill="none"
+                                            <svg width="15" height="15" viewBox="0 0 18 18" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <path fill-rule="evenodd" clip-rule="evenodd"
                                                     d="M17.5666 1.56639C17.641 1.492 17.7 1.4037 17.7403 1.30652C17.7805 1.20934 17.8012 1.10518 17.8012 0.999985C17.8012 0.894795 17.7805 0.790635 17.7403 0.693452C17.7 0.596269 17.641 0.507966 17.5666 0.433585C17.4922 0.359204 17.4039 0.300203 17.3068 0.259948C17.2096 0.219693 17.1054 0.198975 17.0002 0.198975C16.895 0.198975 16.7909 0.219693 16.6937 0.259948C16.5965 0.300203 16.5082 0.359204 16.4338 0.433585L9.00023 7.86879L1.56663 0.433585C1.49225 0.359204 1.40395 0.300203 1.30676 0.259948C1.20958 0.219693 1.10542 0.198975 1.00023 0.198975C0.895039 0.198975 0.790879 0.219693 0.693696 0.259948C0.596513 0.300203 0.50821 0.359204 0.433829 0.433585C0.359448 0.507966 0.300447 0.596269 0.260192 0.693452C0.219938 0.790635 0.199219 0.894795 0.199219 0.999985C0.199219 1.10518 0.219938 1.20934 0.260192 1.30652C0.300447 1.4037 0.359448 1.492 0.433829 1.56639L7.86903 8.99998L0.433829 16.4336C0.283611 16.5838 0.199219 16.7875 0.199219 17C0.199219 17.2124 0.283611 17.4162 0.433829 17.5664C0.584048 17.7166 0.787788 17.801 1.00023 17.801C1.21267 17.801 1.41641 17.7166 1.56663 17.5664L9.00023 10.1312L16.4338 17.5664C16.584 17.7166 16.7878 17.801 17.0002 17.801C17.2127 17.801 17.4164 17.7166 17.5666 17.5664C17.7168 17.4162 17.8012 17.2124 17.8012 17C17.8012 16.7875 17.7168 16.5838 17.5666 16.4336L10.1314 8.99998L17.5666 1.56639Z"
@@ -517,7 +526,8 @@
                                                 <p class="text-[#B0B0B0] text-sm">Select Floors</p>
 
                                                 <!-- buttons area to select -->
-                                                <div class="grid grid-cols-6 gap-2 my-4 bg-black rounded-md p-2">
+                                                <div
+                                                    class="grid grid-cols-6 gap-2 my-4 bg-black rounded-md p-2 select-none">
 
                                                     <label class="cursor-pointer">
                                                         <input type="checkbox" name="floor" value="13"
@@ -630,53 +640,71 @@
                                             <!-- title -->
                                             <h1 class="font-semibold text-lg px-1.5">Furniture Management</h1>
 
-                                            <!-- حاوية الصفوف -->
-                                            <div id="rowsContainer" class="space-y-2 mb-4">
-                                                <!-- صف أول افتراضي -->
-                                                <div class="row flex items-center space-x-2 space-x-reverse">
+                                            <!-- rows container -->
+                                            <div id="rowsContainer"
+                                                class="space-y-2 mb-4 py-4 overflow-y-scroll h-[230px] scroll-container">
+                                                <!-- default row -->
+                                                <div class="row flex items-center gap-2">
+
+                                                    <!-- dropdown menu -->
                                                     <select
-                                                        class="flex-1 bg-gray-800 text-gray-200 px-3 py-2 rounded focus:outline-none">
+                                                        class="flex-1 bg-black text-gray-200 px-3 py-1 rounded focus:outline-none">
                                                         <option value="" disabled selected>Select Furniture</option>
                                                         <option>Chair</option>
                                                         <option>Table</option>
                                                         <option>Bed</option>
                                                         <option>Sofa</option>
                                                     </select>
-                                                    <input type="number" min="0" value="1"
-                                                        class="w-20 bg-gray-800 text-gray-200 px-3 py-2 rounded focus:outline-none text-center" />
-                                                    <!-- زر الإزالة -->
-                                                    <div
-                                                        class="remove-btn text-white bg-red-600 hover:bg-red-700 rounded-full w-8 h-8 flex items-center justify-center transition">
-                                                        &times;
-                                                </div>
+
+                                                    <!-- number input -->
+                                                    <input type="number" min="0" placeholder="1"
+                                                        class="w-20 bg-black text-gray-200 px-3 py-1 rounded focus:outline-none text-center" />
+
+                                                    <!-- delete button -->
+                                                    <svg class="remove-btn cursor-pointer bg-white hover:bg-[#f2f2f2] rounded-md w-8 h-full p-2 flex items-center justify-center transition"
+                                                        width="5" height="5" viewBox="0 0 12 12" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M2.66699 12C2.30033 12 1.98655 11.8696 1.72566 11.6087C1.46477 11.3478 1.3341 11.0338 1.33366 10.6667V2H0.666992V0.666667H4.00033V0H8.00033V0.666667H11.3337V2H10.667V10.6667C10.667 11.0333 10.5365 11.3473 10.2757 11.6087C10.0148 11.87 9.70077 12.0004 9.33366 12H2.66699ZM4.00033 9.33333H5.33366V3.33333H4.00033V9.33333ZM6.66699 9.33333H8.00033V3.33333H6.66699V9.33333Z"
+                                                            fill="black" />
+                                                    </svg>
                                                 </div>
                                             </div>
 
-                                            <!-- زر إضافة وحيد أسفل الصفوف -->
-                                            <div class="flex justify-center">
+                                            <!-- Add Furniture button-->
+                                            <div class="flex justify-center pb-3">
                                                 <div id="addRowBtn"
-                                                    class="w-10 h-10 bg-white text-black rounded-full hover:bg-gray-200 transition">
-                                                    +
-                                            </div>
+                                                    class="px-3 py-1 text-xs cursor-pointer select-none font-semibold bg-white text-black rounded-md hover:bg-gray-200 transition">
+                                                    Add Furniture +
+                                                </div>
                                             </div>
 
                                             <!-- قالب صف للاستنساخ -->
                                             <template id="row-template">
-                                                <div class="row flex items-center space-x-2 space-x-reverse">
+                                                <div class="row flex items-center gap-2">
+
+                                                    <!-- dropdown menu -->
                                                     <select
-                                                        class="flex-1 bg-gray-800 text-gray-200 px-3 py-2 rounded focus:outline-none">
+                                                        class="flex-1 bg-black text-gray-200 px-3 py-1 rounded focus:outline-none">
                                                         <option value="" disabled selected>Select Furniture</option>
                                                         <option>Chair</option>
                                                         <option>Table</option>
                                                         <option>Bed</option>
                                                         <option>Sofa</option>
                                                     </select>
-                                                    <input type="number" min="0" value="1"
-                                                        class="w-20 bg-gray-800 text-gray-200 px-3 py-2 rounded focus:outline-none text-center" />
-                                                    <div
-                                                        class="remove-btn text-white bg-red-600 hover:bg-red-700 rounded-full w-8 h-8 flex items-center justify-center transition">
-                                                        &times;
-                                                </div>
+
+                                                    <!-- number input -->
+                                                    <input type="number" min="0" placeholder="1"
+                                                        class="w-20 bg-black text-gray-200 px-3 py-1 rounded focus:outline-none text-center" />
+
+                                                    <!-- delete button -->
+                                                    <svg class="remove-btn cursor-pointer bg-white hover:bg-[#f2f2f2] rounded-md w-8 h-full p-2 flex items-center justify-center transition"
+                                                        width="5" height="5" viewBox="0 0 12 12" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M2.66699 12C2.30033 12 1.98655 11.8696 1.72566 11.6087C1.46477 11.3478 1.3341 11.0338 1.33366 10.6667V2H0.666992V0.666667H4.00033V0H8.00033V0.666667H11.3337V2H10.667V10.6667C10.667 11.0333 10.5365 11.3473 10.2757 11.6087C10.0148 11.87 9.70077 12.0004 9.33366 12H2.66699ZM4.00033 9.33333H5.33366V3.33333H4.00033V9.33333ZM6.66699 9.33333H8.00033V3.33333H6.66699V9.33333Z"
+                                                            fill="black" />
+                                                    </svg>
                                                 </div>
                                             </template>
                                         </div>
@@ -684,17 +712,103 @@
                                         <!-- modal 5 -->
                                         <div class="step hidden w-[700px]" data-step="4">
                                             <!-- title -->
-                                            <h1 class="font-semibold text-lg px-1.5">step 5</h1>
+                                            <h1 class="font-semibold text-lg px-1.5">Preview</h1>
 
-                                            <button type="submit" id="submitWizard"
-                                                class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded">
-                                                Proceed
-                                            </button>
+                                            <!-- text -->
+                                            <div class="py-5 grid grid-cols-2 gap-2">
+
+                                                <!-- left section -->
+                                                <div class="space-y-5">
+                                                    <!-- Name of Room -->
+                                                    <div>
+                                                        <p class="text-[#B0B0B0] font-semibold text-xs">Name of Room</p>
+                                                        <p>6 Bedded Double Bunker</p>
+                                                    </div>
+
+                                                    <!-- Occupancy -->
+                                                    <div>
+                                                        <p class="text-[#B0B0B0] font-semibold text-xs">Occupancy</p>
+                                                        <p>8/Room</p>
+                                                    </div>
+
+                                                    <!-- Number of Rooms -->
+                                                    <div>
+                                                        <p class="text-[#B0B0B0] font-semibold text-xs">Number of Rooms
+                                                        </p>
+                                                        <p>456</p>
+                                                    </div>
+
+                                                    <!-- Hostel -->
+                                                    <div>
+                                                        <p class="text-[#B0B0B0] font-semibold text-xs">Hostel</p>
+                                                        <p>H1</p>
+                                                    </div>
+
+                                                    <!-- Room Distribution -->
+                                                    <div>
+                                                        <p class="text-[#B0B0B0] font-semibold text-xs">Room
+                                                            Distribution</p>
+                                                        <p>Floor 1 = 114 Rooms</p>
+                                                        <p>Floor 2 = 114 Rooms</p>
+                                                        <p>Floor 3 = 114 Rooms</p>
+                                                        <p>Floor 4 = 114 Rooms</p>
+                                                    </div>
+                                                </div>
+
+                                                <!-- right section -->
+                                                <div class="space-y-5">
+
+                                                    <!-- Furniture and Quantity / Room -->
+                                                    <div class="px-10">
+                                                        <ul class="space-y-1">
+                                                            <li
+                                                                class="text-[#B0B0B0] font-semibold text-xs flex justify-between items-center">
+                                                                <p>Furniture</p>
+                                                                <p>Quantity / Room</p>
+                                                            </li>
+                                                            <li class="flex justify-between items-center">
+                                                                <p>6 Bedded Bunker</p>
+                                                                <p>10</p>
+                                                            </li>
+                                                            <li class="flex justify-between items-center">
+                                                                <p>Wardrobe</p>
+                                                                <p>2</p>
+                                                            </li>
+                                                            <li class="flex justify-between items-center">
+                                                                <p>Study Table</p>
+                                                                <p>1</p>
+                                                            </li>
+                                                            <li class="flex justify-between items-center">
+                                                                <p>Hanger</p>
+                                                                <p>2</p>
+                                                            </li>
+                                                            <li class="flex justify-between items-center">
+                                                                <p>Lamp</p>
+                                                                <p>3</p>
+                                                            </li>
+                                                            <li class="flex justify-between items-center">
+                                                                <p>Quantity / Room</p>
+                                                                <p>1</p>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            <!-- form submit button -->
+                                            <div class="flex justify-center items-center">
+                                                <button type="submit" id="submitWizard"
+                                                    class="bg-[#EBEBEB] hover:bg-[#e1e1e1] text-black px-20 py-2 rounded">
+                                                    Proceed
+                                                </button>
+                                            </div>
+
                                         </div>
                                     </div>
 
                                     <!-- Proceed buttons for go to the next modal -->
-                                    <div class="flex justify-center bg-[#2E2E2E] p-4">
+                                    <div class="flex justify-center bg-[#2E2E2E] p-4 select-none">
                                         <div id="nextBtn"
                                             class="px-4 py-2 text-black rounded-md bg-[#EBEBEB] hover:bg-[#e1e1e1] transition-all cursor-pointer">
                                             Proceed
@@ -730,7 +844,7 @@
 
     let currentStep = 0;
 
-    // دوال فتح/إغلاق المودال مع أنيميشن
+    // openmodal
     function showModal() {
         wrapper.classList.remove('hidden');
         requestAnimationFrame(() => {
@@ -740,6 +854,7 @@
         });
         renderStep();
     }
+    // close modal 
     function hideModal() {
         overlay.classList.replace('opacity-100', 'opacity-0');
         box.classList.replace('opacity-100', 'opacity-0');
@@ -747,30 +862,26 @@
         setTimeout(() => wrapper.classList.add('hidden'), 300);
     }
 
-    openBtn.addEventListener('click', showModal);
-    overlay.addEventListener('click', hideModal);
-    closeBtn.addEventListener('click', hideModal);
+    openBtn.addEventListener('click', showModal);  // open when click on open button 
+    overlay.addEventListener('click', hideModal);  // close when click on any space out of the modal 
+    closeBtn.addEventListener('click', hideModal); // close when click on x button 
 
-    // عرض الخطوة الحالية وإدارة أزرار Prev/Next
+    // Prev/Next for the modals 
     function renderStep() {
         steps.forEach(s => s.classList.add('hidden'));
         steps[currentStep].classList.remove('hidden');
         prevBtn.disabled = (currentStep === 0);
-        nextBtn.textContent = (currentStep === steps.length - 1) ? 'Proceed' : 'Proceed';
     }
 
-    // زر التالي
+    // next button 
     nextBtn.addEventListener('click', () => {
         if (currentStep < steps.length - 1) {
             currentStep++;
             renderStep();
-        } else {
-            // عند الضغط "إنهاء" يمكن إغلاق المودال أو إرسال قيمة
-            hideModal();
         }
     });
 
-    // زر السابق
+    // prev button 
     prevBtn.addEventListener('click', () => {
         if (currentStep > 0) {
             currentStep--;
@@ -778,39 +889,37 @@
         }
     });
 
-    // مثال: عند إرسال الفورم في الخطوة الأخيرة تعرض رسالة نجاح ثم تغلق بعد 2 ثواني
+    // when click on Proceed in last modal will show done modal and close after 2sec
     submitWizard?.addEventListener('click', e => {
         e.preventDefault();
         steps[currentStep].innerHTML = `
-        <div class="text-center py-6">
-          <svg xmlns="http://www.w3.org/2000/svg"
-               class="mx-auto h-16 w-16 text-green-400 mb-4"
-               fill="none" viewBox="0 0 24 24"
-               stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M5 13l4 4L19 7" />
-          </svg>
-          <h2 class="text-xl font-semibold">تم الإرسال!</h2>
-        </div>
+        <div class="flex flex-col gap-10 items-center justify-center w-full h-[400px] text-white">
+    <img src="../img/Admin/logo white.png" alt="" class="h-14">
+    <svg width="72" height="57" viewBox="0 0 112 97" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+            d="M93 50.5C93 76.1812 72.1812 97 46.5 97C20.8188 97 0 76.1812 0 50.5C0 24.8188 20.8188 4 46.5 4C72.1812 4 93 24.8188 93 50.5ZM9.3 50.5C9.3 71.045 25.955 87.7 46.5 87.7C67.045 87.7 83.7 71.045 83.7 50.5C83.7 29.955 67.045 13.3 46.5 13.3C25.955 13.3 9.3 29.955 9.3 50.5Z"
+            fill="currentColor" />
+        <path d="M26 44L47 65L108 4" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+</div>
       `;
-        // بعد ثانيتين أغلق المودال
+        // colse after 2sec
         setTimeout(hideModal, 2000);
     });
 
     function renderStep() {
-        // إخفاء كل الخطوات ثم إظهار الحالية
+        // hide the other modals and just show the current
         steps.forEach(s => s.classList.add('hidden'));
         steps[currentStep].classList.remove('hidden');
 
-        // زر السابق: يختفي في الخطوة الأولى ويظهر في البقية
+        // prev button will br hidden in first modal 
         if (currentStep === 0) {
             prevBtn.classList.add('hidden');
         } else {
             prevBtn.classList.remove('hidden');
         }
 
-        // زر التالي: يختفي في الخطوة الأخيرة ويظهر في البقية
+        // nest button will hidden in lst modal 
         if (currentStep === steps.length - 1) {
             nextBtn.classList.add('hidden');
         } else {
@@ -820,22 +929,23 @@
     }
 </script>
 
+<!-- for Furniture Management list -->
 <script>
     const container = document.getElementById('rowsContainer');
     const addBtn = document.getElementById('addRowBtn');
     const template = document.getElementById('row-template').content;
 
-    // إضافة صف جديد
+    // add new row
     addBtn.addEventListener('click', () => {
         const newRow = document.importNode(template, true);
         container.appendChild(newRow);
     });
 
-    // تفويض حذف الصفوف
+    // delete row
     container.addEventListener('click', e => {
         if (e.target.classList.contains('remove-btn')) {
             const row = e.target.closest('.row');
-            // إذا بقي صف واحد فقط لا نسمح بالحذف (اختياري)
+            // if there is one row left don't allow to delete it 
             if (container.children.length > 1) {
                 row.remove();
             }
