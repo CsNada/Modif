@@ -149,15 +149,15 @@
     <!-- the page -->
     <div>
 
-        <!-- background img -->
-        <div class="relative w-full h-[500px]">
+        <!-- the hero -->
+        <div class="relative w-full h-[450px]">
             <!-- background img-->
             <div class="absolute inset-0 bg-[url('../img/User/Home-hero.jpg')] bg-cover opacity-90 z-0"></div>
             <!-- black overlay -->
             <div class="absolute z-0 inset-0 bg-black/65"></div>
 
             <!-- the text -->
-            <div class="relative z-10 text-white flex flex-col justify-center h-[400px] px-10 md:px-36">
+            <div class="relative z-10 text-white flex flex-col justify-center h-[350px] px-10 md:px-36">
                 <h1 class="font-bold text-xl md:text-4xl pb-4">
                     Welcome to Welhost – Your Smart Property Hosting & Booking Platform
                 </h1>
@@ -172,19 +172,135 @@
                 </div>
 
                 <!-- search bar inputs  -->
-                <div class="absolute z-10 top-16 flex justify-center items-center px-5 md:px-20 w-full">
-                    <div class="bg-white w-full rounded-md shadow p-4">sdfghj</div>
+                <div class="absolute z-10 top-16 flex justify-center items-center px-2 md:px-20 w-full">
+                    <div class="bg-white rounded-md shadow p-4 w-full flex flex-col md:flex-row justify-center items-center">
+
+                        <!-- the inputs -->
+                        <div class="w-3/4 grid grid-cols-1 md:grid-cols-4 gap-y-3 md:gap-4">
+
+                            <!-- Contry -->
+                            <div class="flex flex-col gap-1">
+                                <label for="Contry" class="text-[#898989] text-xs font-semibold">Contry</label>
+                                <select name="Contry" id="Contry" class="border rounded-md outline-none">
+                                    <option value="Contry">Contry</option>
+                                    <option value="Saudi Arabia">Saudi Arabia</option>
+                                    <option value="Kuwait">Kuwait</option>
+                                    <option value="Oman">Oman</option>
+                                </select>
+                            </div>
+
+                            <!-- City -->
+                            <div class="flex flex-col gap-1">
+                                <label for="City" class="text-[#898989] text-xs font-semibold">City</label>
+                                <select name="City" id="City" class="border rounded-md outline-none">
+                                    <option value="City">City</option>
+                                    <option value="Riyadh">Riyadh</option>
+                                    <option value="Jeddah">Jeddah</option>
+                                    <option value="Taif">Taif</option>
+                                </select>
+                            </div>
+
+                            <!-- Property Type -->
+                            <div class="flex flex-col gap-1">
+                                <label for="Property-Type" class="text-[#898989] text-xs font-semibold">Property
+                                    Type</label>
+                                <select name="Property-Type" id="Property-Type" class="border rounded-md outline-none">
+                                    <option value="Property Type">Property Type</option>
+                                    <option value="Apartment">Apartment</option>
+                                    <option value="Floor">Floor</option>
+                                </select>
+                            </div>
+
+                            <!-- Prince -->
+                            <div class="flex flex-col gap-1">
+                                <label for="Prince" class="text-[#898989] text-xs font-semibold">Prince</label>
+                                <select name="Prince" id="Prince" class="border rounded-md outline-none">
+                                    <option value="Prince">Prince</option>
+                                    <option value="under 50K">under 50K</option>
+                                    <option value="100K - 500K">100K - 500K</option>
+                                    <option value="500K - 600K">500K - 600K</option>
+                                    <option value="above 1M">above 1M</option>
+                                </select>
+                            </div>
+
+                        </div>
+
+                        <!-- the buttons -->
+                        <div class="md:w-1/4 gap-4 md:gap-0 pt-4 md:pt-0 px-4 flex justify-around items-center text-xs font-semibold">
+                            <!-- Add Promo Code -->
+                            <div class="cursor-pointer flex items-center">
+                                <p>+ Add Promo Code</p>
+                            </div>
+
+                            <!-- Show Places -->
+                            <a href="./Properties-eng.html" class="flex h-fit items-center justify-center bg-[#1E2227] rounded-md py-2 px-4">
+                                <p class="text-white">Show Places</p>
+                            </a>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
         </div>
 
+        <!-- Your recent searches -->
+        <div class="bg-white mt-80 md:mt-20 md:py-16 py-10 px-5 md:px-32">
+            
+            <h1 class="text-xl font-semibold px-5 pb-7">Your recent searches</h1>
 
-        <!-- Statistics -->
-        <div
-            class="bg-white flex flex-col md:flex-row md:gap-10 gap-5 items-center justify-center md:py-16 py-10 px-5 md:px-0 relative">
-            Home page
+            <!-- cards area -->
+            <div class=" flex flex-col md:flex-row md:gap-10 gap-5 items-center justify-center">
+
+                <!-- card 1 -->
+                <div class="flex justify-center items-center gap-5">
+                    <img src="../img/User/Home-1.jpg" alt="" class="size-20 object-cover rounded-md">
+
+                    <!-- text -->
+                    <div>
+                        <h1 class="text-[#112211] font-semibold">Istanbul, Turkey</h1>
+                        <p class="text-xs text-[#112211]/75">325 places</p>
+                    </div>
+                </div>
+
+                <!-- card 2 -->
+                <div class="flex justify-center items-center gap-5">
+                    <img src="../img/User/Home-1.jpg" alt="" class="size-20 object-cover rounded-md">
+
+                    <!-- text -->
+                    <div>
+                        <h1 class="text-[#112211] font-semibold">Istanbul, Turkey</h1>
+                        <p class="text-xs text-[#112211]/75">325 places</p>
+                    </div>
+                </div>
+
+                <!-- card 3 -->
+                <div class="flex justify-center items-center gap-5">
+                    <img src="../img/User/Home-1.jpg" alt="" class="size-20 object-cover rounded-md">
+
+                    <!-- text -->
+                    <div>
+                        <h1 class="text-[#112211] font-semibold">Istanbul, Turkey</h1>
+                        <p class="text-xs text-[#112211]/75">325 places</p>
+                    </div>
+                </div>
+
+                <!-- card 4 -->
+                <div class="flex justify-center items-center gap-5">
+                    <img src="../img/User/Home-1.jpg" alt="" class="size-20 object-cover rounded-md">
+
+                    <!-- text -->
+                    <div>
+                        <h1 class="text-[#112211] font-semibold">Istanbul, Turkey</h1>
+                        <p class="text-xs text-[#112211]/75">325 places</p>
+                    </div>
+                </div>
+            </div>
         </div>
+
+
+
+        
 
         <!-- white space -->
         <div class="md:h-40 h-24 bg-white shadow-md relative"></div>
@@ -214,7 +330,7 @@
                 <div class="mb-2">
 
                     <!-- open and close button -->
-                    <button class="w-full flex items-cente justify-between px-4 transition" data-target="menu1">
+                    <button class="w-full flex items-center justify-between px-4 transition" data-target="menu1">
                         <div class="flex items-center gap-2 space-x-2 space-x-reverse">
                             <svg class="h-4 w-4 transform transition-transform duration-300" data-icon="menu1"
                                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -242,7 +358,7 @@
                 <div class="mb-2">
 
                     <!-- open and close button -->
-                    <button class="w-full flex items-cente justify-between px-4 transition" data-target="menu2">
+                    <button class="w-full flex items-center justify-between px-4 transition" data-target="menu2">
                         <div class="flex items-center gap-2 space-x-2 space-x-reverse">
                             <svg class="h-4 w-4 transform transition-transform duration-300" data-icon="menu2"
                                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -270,7 +386,7 @@
                 <div class="mb-2">
 
                     <!-- open and close button -->
-                    <button class="w-full flex items-cente justify-between px-4 transition" data-target="menu3">
+                    <button class="w-full flex items-center justify-between px-4 transition" data-target="menu3">
                         <div class="flex items-center gap-2 space-x-2 space-x-reverse">
                             <svg class="h-4 w-4 transform transition-transform duration-300" data-icon="menu3"
                                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -298,7 +414,7 @@
                 <div class="mb-2">
 
                     <!-- open and close button -->
-                    <button class="w-full flex items-cente justify-between px-4 transition" data-target="menu4">
+                    <button class="w-full flex items-center justify-between px-4 transition" data-target="menu4">
                         <div class="flex items-center gap-2 space-x-2 space-x-reverse">
                             <svg class="h-4 w-4 transform transition-transform duration-300" data-icon="menu4"
                                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
