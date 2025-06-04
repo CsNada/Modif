@@ -51,7 +51,8 @@
                 <ul>
 
                     <!-- dashboard -->
-                    <li class="hover:bg-[#FFFFFF] transition-all duration-100 rounded text-[#FFFFFF] hover:text-[#1E2227] hover:fill-[#1E2227] mb-1 pl-1.5">
+                    <li
+                        class="hover:bg-[#FFFFFF] transition-all duration-100 rounded text-[#FFFFFF] hover:text-[#1E2227] hover:fill-[#1E2227] mb-1 pl-1.5">
                         <a href="./Dashboard.html" class="flex gap-2 items-center p-2">
                             <svg width="17" height="17" viewBox="0 0 23 23" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -185,8 +186,7 @@
                     </li>
 
                     <!-- Maintenance Requests -->
-                    <li
-                        class="bg-[#FFFFFF] rounded text-[#1E2227] font-bold mb-1 pl-1.5">
+                    <li class="bg-[#FFFFFF] rounded text-[#1E2227] font-bold mb-1 pl-1.5">
                         <a href="./Maintenance Requests.html" class="flex gap-2 items-center p-2">
                             <svg width="17" height="17" viewBox="0 0 27 27" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -340,103 +340,94 @@
             <!-- page -->
             <div class="p-5 px-7">
 
-                <!-- title -->
-                <div class="text-center pt-3">
-                    <h1 class="text-2xl">Select Property and Room</h1>
-                    <p class="pt-2 text-sm px-24">To help us serve you better, please start by selecting the property and room where the issue occurred. Accurate location details ensure faster and more efficient maintenance service.</p>
-                </div>
+                <!-- Back button -->
+                <a href="./Maintenance Requests.html" class="flex items-center gap-2 hover:underline transition-all">
+                    <svg width="10" height="14" viewBox="0 0 12 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M9.41602 15.5L0.666016 8L9.41602 0.5L11.4577 2.25L4.74935 8L11.4577 13.75L9.41602 15.5Z"
+                            fill="#32646B" />
+                    </svg>
 
-                <!-- boxes area -->
-                <div class="grid grid-cols-2 gap-5 pt-10 font-semibold text-xs">
+                    <p class="pb-0.5">Maintenance Requests</p>
+                </a>
 
-                    <!-- box 1 -->
-                    <div class="p-4 bg-[#547085] rounded-md text-white">
-                        <!-- header  -->
-                        <div class="flex gap-5 items-center">
-                            <!-- icon and title -->
-                            <div class="flex gap-2 items-center">
-                                <svg width="20" height="12" viewBox="0 0 30 22" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M1.5 21.5C1.075 21.5 0.719 21.356 0.432 21.068C0.144 20.781 0 20.425 0 20V12.5C0 11.825 0.1375 11.2125 0.4125 10.6625C0.6875 10.1125 1.05 9.625 1.5 9.2V5C1.5 3.75 1.9375 2.6875 2.8125 1.8125C3.6875 0.9375 4.75 0.5 6 0.5H12C12.575 0.5 13.1125 0.6065 13.6125 0.8195C14.1125 1.0315 14.575 1.325 15 1.7C15.425 1.325 15.8875 1.0315 16.3875 0.8195C16.8875 0.6065 17.425 0.5 18 0.5H24C25.25 0.5 26.3125 0.9375 27.1875 1.8125C28.0625 2.6875 28.5 3.75 28.5 5V9.2C28.95 9.625 29.3125 10.1125 29.5875 10.6625C29.8625 11.2125 30 11.825 30 12.5V20C30 20.425 29.856 20.781 29.568 21.068C29.281 21.356 28.925 21.5 28.5 21.5C28.075 21.5 27.719 21.356 27.432 21.068C27.144 20.781 27 20.425 27 20V18.5H3V20C3 20.425 2.8565 20.781 2.5695 21.068C2.2815 21.356 1.925 21.5 1.5 21.5ZM16.5 8H25.5V5C25.5 4.575 25.356 4.2185 25.068 3.9305C24.781 3.6435 24.425 3.5 24 3.5H18C17.575 3.5 17.219 3.6435 16.932 3.9305C16.644 4.2185 16.5 4.575 16.5 5V8ZM4.5 8H13.5V5C13.5 4.575 13.3565 4.2185 13.0695 3.9305C12.7815 3.6435 12.425 3.5 12 3.5H6C5.575 3.5 5.2185 3.6435 4.9305 3.9305C4.6435 4.2185 4.5 4.575 4.5 5V8ZM3 15.5H27V12.5C27 12.075 26.856 11.7185 26.568 11.4305C26.281 11.1435 25.925 11 25.5 11H4.5C4.075 11 3.7185 11.1435 3.4305 11.4305C3.1435 11.7185 3 12.075 3 12.5V15.5Z"
-                                        fill="white" />
-                                </svg>
+                <form action="./Maintenance Requests.html" class="grid grid-cols-2 gap-5 pt-7 text-sm">
+                    <!-- Property Details -->
+                    <div class="space-y-5">
+                        <h1 class="text-xl font-semibold text-[#32646B]">Property Details</h1>
 
-                                <p>6 Bedded Bunker</p>
+                        <!-- Property / Building Name -->
+                        <div class="flex flex-col gap-2">
+                            <label for="Name" class="text-xs font-semibold">Property / Building Name</label>
+                            <input type="text" name="Name" id="Name" placeholder="Property / Building Name"
+                                class="px-2 py-1 rounded-md border w-96">
+                        </div>
+
+                        <!-- Unit / Room Number -->
+                        <div class="flex flex-col gap-2">
+                            <label for="Number" class="text-xs font-semibold">Unit / Room Number</label>
+                            <input type="text" name="Number" id="Number" placeholder="Unit / Room Number"
+                                class="px-2 py-1 rounded-md border w-96">
+                        </div>
+
+                        <div class="flex gap-4 w-96">
+                            <!-- Location / City -->
+                            <div class="flex flex-col gap-2 w-2/3">
+                                <label for="City" class="text-xs font-semibold">Location / City</label>
+                                <input type="text" name="City" id="City" placeholder="Location / City"
+                                    class="px-2 py-1 rounded-md border">
                             </div>
-
-                            <!-- Floor No. -->
-                            <div class="bg-[#1E2228] rounded-md p-1 px-2">
-                                <p>Floor No. 07</p>
-                            </div>
-
-                            <!-- H1 -->
-                            <div class="bg-[#1E2228] rounded-md p-1 px-2 flex gap-2 items-center">
-                                <!-- icon  -->
-                                <svg width="15" height="12" viewBox="0 0 20 17" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M2.49967 14.8333V3.74999C2.49962 3.57893 2.55222 3.412 2.65031 3.27186C2.74841 3.13172 2.88726 3.02516 3.04801 2.96666L11.1072 0.0366607C11.1701 0.013749 11.2377 0.00635487 11.3041 0.0151053C11.3705 0.0238558 11.4338 0.0484928 11.4887 0.0869275C11.5436 0.125362 11.5884 0.176461 11.6193 0.235892C11.6502 0.295323 11.6664 0.361334 11.6663 0.428327V4.55583L16.9297 6.30999C17.0957 6.36529 17.2401 6.47143 17.3424 6.61337C17.4447 6.75531 17.4997 6.92586 17.4997 7.10083V14.8333H19.1663V16.5H0.833008V14.8333H2.49967ZM4.16634 14.8333H9.99967V2.21249L4.16634 4.33416V14.8333ZM15.833 14.8333V7.70166L11.6663 6.31249V14.8333H15.833Z"
-                                        fill="white" />
-                                </svg>
-
-
-                                <p>H1</p>
+                            <!-- Floor -->
+                            <div class="flex flex-col gap-2 w-1/3">
+                                <label for="Floor" class="text-xs font-semibold">Floor</label>
+                                <input type="text" name="Floor" id="Floor" placeholder="Floor"
+                                    class="px-2 py-1 rounded-md border">
                             </div>
                         </div>
 
-                        <!-- rooms area -->
-                        <div class="grid grid-cols-10 lg:grid-cols-10 gap-2 pt-5 text-center">
-                            <a href="./Maintenance Requests requests.html" class="cursor-pointer bg-[#1E2228] text-[#B0B0B0] rounded-md py-2">101</a>
-                            <a href="./Maintenance Requests requests.html" class="cursor-pointer bg-[#EBEAE6] text-[#1E2228] rounded-md py-2">102</a>
-                            <a href="./Maintenance Requests requests.html" class="cursor-pointer bg-[#109910] text-[#1E2228] rounded-md py-2">103</a>
+                        <h1 class="text-xl font-semibold text-[#32646B] pt-2">Visit Scheduling (Optional):</h1>
+
+                        <!-- date -->
+                        <div class="flex flex-col gap-2">
+                            <label for="date" class="text-xs font-semibold">Date</label>
+                            <input type="date" name="date" id="date" placeholder="Date"
+                                class="px-2 py-1 rounded-md border w-96">
                         </div>
+
                     </div>
 
-                    <!-- box 2 -->
-                    <div class="p-4 bg-[#547085] rounded-md text-white">
-                        <!-- header  -->
-                        <div class="flex gap-5 items-center">
-                            <!-- icon and title -->
-                            <div class="flex gap-2 items-center">
-                                <svg width="20" height="12" viewBox="0 0 30 22" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M1.5 21.5C1.075 21.5 0.719 21.356 0.432 21.068C0.144 20.781 0 20.425 0 20V12.5C0 11.825 0.1375 11.2125 0.4125 10.6625C0.6875 10.1125 1.05 9.625 1.5 9.2V5C1.5 3.75 1.9375 2.6875 2.8125 1.8125C3.6875 0.9375 4.75 0.5 6 0.5H12C12.575 0.5 13.1125 0.6065 13.6125 0.8195C14.1125 1.0315 14.575 1.325 15 1.7C15.425 1.325 15.8875 1.0315 16.3875 0.8195C16.8875 0.6065 17.425 0.5 18 0.5H24C25.25 0.5 26.3125 0.9375 27.1875 1.8125C28.0625 2.6875 28.5 3.75 28.5 5V9.2C28.95 9.625 29.3125 10.1125 29.5875 10.6625C29.8625 11.2125 30 11.825 30 12.5V20C30 20.425 29.856 20.781 29.568 21.068C29.281 21.356 28.925 21.5 28.5 21.5C28.075 21.5 27.719 21.356 27.432 21.068C27.144 20.781 27 20.425 27 20V18.5H3V20C3 20.425 2.8565 20.781 2.5695 21.068C2.2815 21.356 1.925 21.5 1.5 21.5ZM16.5 8H25.5V5C25.5 4.575 25.356 4.2185 25.068 3.9305C24.781 3.6435 24.425 3.5 24 3.5H18C17.575 3.5 17.219 3.6435 16.932 3.9305C16.644 4.2185 16.5 4.575 16.5 5V8ZM4.5 8H13.5V5C13.5 4.575 13.3565 4.2185 13.0695 3.9305C12.7815 3.6435 12.425 3.5 12 3.5H6C5.575 3.5 5.2185 3.6435 4.9305 3.9305C4.6435 4.2185 4.5 4.575 4.5 5V8ZM3 15.5H27V12.5C27 12.075 26.856 11.7185 26.568 11.4305C26.281 11.1435 25.925 11 25.5 11H4.5C4.075 11 3.7185 11.1435 3.4305 11.4305C3.1435 11.7185 3 12.075 3 12.5V15.5Z"
-                                        fill="white" />
-                                </svg>
+                    <!-- Request Details: -->
+                    <div>
+                        <h1 class="text-xl font-semibold text-[#32646B] pb-2">Request Details:</h1>
 
-                                <p>6 Bedded Bunker</p>
-                            </div>
+                        <!-- Maintenance Type -->
+                        <select name="Maintenance Type" id="Maintenance Type" class="px-2 py-1 rounded-md border w-96">
+                            <option value="Maintenance Type">Maintenance Type</option>
+                            <option value="option 1">option 1</option>
+                            <option value="option 2">option 2</option>
+                        </select>
 
-                            <!-- Floor No. -->
-                            <div class="bg-[#1E2228] rounded-md p-1 px-2">
-                                <p>Floor No. 07</p>
-                            </div>
+                        <h1 class="text-xl font-semibold text-[#32646B] pt-5 pb-2">Cleaning Details:</h1>
 
-                            <!-- H1 -->
-                            <div class="bg-[#1E2228] rounded-md p-1 px-2 flex gap-2 items-center">
-                                <!-- icon  -->
-                                <svg width="15" height="12" viewBox="0 0 20 17" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M2.49967 14.8333V3.74999C2.49962 3.57893 2.55222 3.412 2.65031 3.27186C2.74841 3.13172 2.88726 3.02516 3.04801 2.96666L11.1072 0.0366607C11.1701 0.013749 11.2377 0.00635487 11.3041 0.0151053C11.3705 0.0238558 11.4338 0.0484928 11.4887 0.0869275C11.5436 0.125362 11.5884 0.176461 11.6193 0.235892C11.6502 0.295323 11.6664 0.361334 11.6663 0.428327V4.55583L16.9297 6.30999C17.0957 6.36529 17.2401 6.47143 17.3424 6.61337C17.4447 6.75531 17.4997 6.92586 17.4997 7.10083V14.8333H19.1663V16.5H0.833008V14.8333H2.49967ZM4.16634 14.8333H9.99967V2.21249L4.16634 4.33416V14.8333ZM15.833 14.8333V7.70166L11.6663 6.31249V14.8333H15.833Z"
-                                        fill="white" />
-                                </svg>
+                        <!-- Cleaning Details: -->
+                        <select name="Cleaning Details:" id="Cleaning Details:"
+                            class="px-2 py-1 rounded-md border w-96">
+                            <option value="Cleaning Details:">Cleaning Details:</option>
+                            <option value="option 1">option 1</option>
+                            <option value="option 2">option 2</option>
+                        </select>
 
+                        <h1 class="text-xl font-semibold text-[#32646B] pt-5 pb-2">Preferred Visit Time</h1>
 
-                                <p>H1</p>
-                            </div>
-                        </div>
+                        <!-- Preferred Visit Time -->
+                        <input type="time" name="Preferred Visit Time" id="Preferred Visit Time" class="px-2 py-1 rounded-md border w-96">
 
-                        <!-- rooms area -->
-                        <div class="grid grid-cols-10 lg:grid-cols-10 gap-2 pt-5 text-center">
-                            <a href="./Maintenance Requests requests.html" class="cursor-pointer bg-[#1E2228] text-[#B0B0B0] rounded-md py-2">101</a>
-                            <a href="./Maintenance Requests requests.html" class="cursor-pointer bg-[#EBEAE6] text-[#1E2228] rounded-md py-2">102</a>
-                            <a href="./Maintenance Requests requests.html" class="cursor-pointer bg-[#109910] text-[#1E2228] rounded-md py-2">103</a>
+                        <!-- submit button  -->
+                        <div class="pt-20">
+                            <button type="submit" class="text-white bg-[#59768C] rounded-md hover:bg-[#4f697c] transition-all px-20 py-2 font-semibold">send</button>
                         </div>
                     </div>
-                </div>
+                </form>
             </div>
 
 
