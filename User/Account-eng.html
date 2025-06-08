@@ -186,8 +186,9 @@
 
         <!-- sections -->
         <div class="px-7 md:px-32 pt-5">
+
             <!-- Account section -->
-            <div id="Account" class="tab-content">
+            <div id="Account" class="tab-content hidden">
 
                 <h1 class="font-semibold text-2xl">Account</h1>
 
@@ -240,17 +241,437 @@
 
                     <!-- save change button -->
                     <div class="pt-14 flex justify-center">
-                        <button type="submit" class="px-10 py-1.5 font-semibold text-sm rounded-md bg-[#8DD3BB] hover:bg-[#7bccb0] transition-all text-white">Save Changes</button>
+                        <button type="submit"
+                            class="px-10 py-1.5 font-semibold text-sm rounded-md bg-[#8DD3BB] hover:bg-[#7bccb0] transition-all text-white">Save
+                            Changes</button>
                     </div>
                 </form>
 
             </div>
 
             <!-- History section -->
-            <div id="History" class="tab-content hidden">History</div>
+            <div id="History" class="tab-content hidden">
+
+                <!-- title -->
+                <div class="flex justify-between pb-5">
+                    <h1 class="font-semibold text-2xl">Bookings</h1>
+                    <select name="" id="">
+                        <option value="Upcoming">Upcoming</option>
+                        <option value="option 2">option 2</option>
+                        <option value="option 3">option 3</option>
+                    </select>
+                </div>
+
+                <!-- bed icon -->
+                <div class="flex gap-2 items-center font-semibold py-1 px-3 w-1/3 border-b-2 border-[#8DD3BB]">
+                    <svg width="18" height="14" viewBox="0 0 22 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M19.25 7.81406C18.7772 7.60651 18.2664 7.49955 17.75 7.5H4.25C3.73368 7.4995 3.22288 7.60629 2.75 7.81359C2.08166 8.10587 1.51294 8.58652 1.11336 9.1968C0.713775 9.80708 0.500639 10.5205 0.5 11.25V16.5C0.5 16.6989 0.579018 16.8897 0.71967 17.0303C0.860322 17.171 1.05109 17.25 1.25 17.25C1.44891 17.25 1.63968 17.171 1.78033 17.0303C1.92098 16.8897 2 16.6989 2 16.5V16.125C2.00122 16.0259 2.04112 15.9312 2.11118 15.8612C2.18124 15.7911 2.27592 15.7512 2.375 15.75H19.625C19.7241 15.7512 19.8188 15.7911 19.8888 15.8612C19.9589 15.9312 19.9988 16.0259 20 16.125V16.5C20 16.6989 20.079 16.8897 20.2197 17.0303C20.3603 17.171 20.5511 17.25 20.75 17.25C20.9489 17.25 21.1397 17.171 21.2803 17.0303C21.421 16.8897 21.5 16.6989 21.5 16.5V11.25C21.4993 10.5206 21.2861 9.80726 20.8865 9.19707C20.4869 8.58688 19.9183 8.1063 19.25 7.81406ZM16.625 0.75H5.375C4.67881 0.75 4.01113 1.02656 3.51884 1.51884C3.02656 2.01113 2.75 2.67881 2.75 3.375V6.75C2.75002 6.77906 2.75679 6.80771 2.76979 6.8337C2.78278 6.85969 2.80163 6.8823 2.82486 6.89976C2.84809 6.91721 2.87505 6.92903 2.90363 6.93428C2.93221 6.93953 2.96162 6.93806 2.98953 6.93C3.39896 6.81025 3.82341 6.74964 4.25 6.75H4.44828C4.49456 6.75029 4.53932 6.73346 4.57393 6.70274C4.60855 6.67202 4.63058 6.62958 4.63578 6.58359C4.67669 6.21712 4.85115 5.87856 5.12586 5.63256C5.40056 5.38656 5.75625 5.25037 6.125 5.25H8.75C9.11899 5.25003 9.47503 5.38606 9.75002 5.63209C10.025 5.87812 10.1997 6.21688 10.2406 6.58359C10.2458 6.62958 10.2679 6.67202 10.3025 6.70274C10.3371 6.73346 10.3818 6.75029 10.4281 6.75H11.5747C11.621 6.75029 11.6657 6.73346 11.7003 6.70274C11.735 6.67202 11.757 6.62958 11.7622 6.58359C11.8031 6.21736 11.9773 5.87899 12.2517 5.63303C12.5261 5.38706 12.8815 5.25072 13.25 5.25H15.875C16.244 5.25003 16.6 5.38606 16.875 5.63209C17.15 5.87812 17.3247 6.21688 17.3656 6.58359C17.3708 6.62958 17.3929 6.67202 17.4275 6.70274C17.4621 6.73346 17.5068 6.75029 17.5531 6.75H17.75C18.1766 6.74979 18.6011 6.81057 19.0105 6.93047C19.0384 6.93854 19.0679 6.94 19.0965 6.93473C19.1251 6.92945 19.1521 6.91759 19.1753 6.90009C19.1986 6.88258 19.2174 6.8599 19.2304 6.83385C19.2433 6.8078 19.2501 6.7791 19.25 6.75V3.375C19.25 2.67881 18.9734 2.01113 18.4812 1.51884C17.9889 1.02656 17.3212 0.75 16.625 0.75Z"
+                            fill="#112211" />
+                    </svg>
+
+                    <h1>Stays</h1>
+                </div>
+
+                <!-- Ticket area -->
+                <div class="py-7 space-y-5 divide-y">
+                    <!-- Ticket 1 -->
+                    <div class="flex flex-col md:flex-row justify-between py-3">
+
+                        <!-- ticket info -->
+                        <div class="flex flex-col md:flex-row gap-6">
+
+                            <!-- img and dates -->
+                            <div class="flex justify-between gap-4 md:pr-3 md:border-r">
+                                <img src="../img/User/Account-1.png" alt=""
+                                    class="rounded-md object-cover border border-[#8DD3BB] size-20">
+
+                                <!-- Check-In/out -->
+                                <div class="flex items-center gap-5">
+
+                                    <!-- Check-In -->
+                                    <div>
+                                        <h1 class="text-[#112211]/75 text-sm">Check-In</h1>
+                                        <p class="text-xl font-semibold">Thur, Dec 8</p>
+                                    </div>
+
+                                    <svg width="20" height="3" viewBox="0 0 20 3" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M20 2.26H0V0.62H20V2.26Z" fill="#112211" />
+                                    </svg>
+
+                                    <!-- Check-Out -->
+                                    <div>
+                                        <h1 class="text-[#112211]/75 text-sm">Check-Out</h1>
+                                        <p class="text-xl font-semibold">Fri, Dec 9</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- times and room nomber -->
+                            <div class="grid grid-cols-2 gap-2 gap-x-4">
+
+                                <!-- Check-In time -->
+                                <div class="flex gap-2 h-fit">
+                                    <!-- icon -->
+                                    <div class="p-2 rounded-md bg-[#EBF6F2] h-fit">
+                                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M9 0.75C4.44386 0.75 0.75 4.44386 0.75 9C0.75 13.5561 4.44386 17.25 9 17.25C13.5561 17.25 17.25 13.5561 17.25 9C17.25 4.44386 13.5561 0.75 9 0.75ZM12.8077 10.2692H9C8.83169 10.2692 8.67027 10.2024 8.55126 10.0834C8.43225 9.96434 8.36538 9.80293 8.36538 9.63461V3.92308C8.36538 3.75477 8.43225 3.59335 8.55126 3.47434C8.67027 3.35532 8.83169 3.28846 9 3.28846C9.16831 3.28846 9.32973 3.35532 9.44874 3.47434C9.56775 3.59335 9.63461 3.75477 9.63461 3.92308V9H12.8077C12.976 9 13.1374 9.06686 13.2564 9.18587C13.3754 9.30489 13.4423 9.4663 13.4423 9.63461C13.4423 9.80293 13.3754 9.96434 13.2564 10.0834C13.1374 10.2024 12.976 10.2692 12.8077 10.2692Z"
+                                                fill="#8DD3BB" />
+                                        </svg>
+
+                                    </div>
+
+                                    <div>
+                                        <p class="text-[#112211]/60 text-xs">Check-In time</p>
+                                        <p class="font-semibold">12:00pm</p>
+                                    </div>
+                                </div>
+
+                                <!-- Room no. -->
+                                <div class="flex gap-2 h-fit">
+                                    <!-- icon -->
+                                    <div class="p-2 rounded-md bg-[#EBF6F2] h-fit">
+                                        <svg width="17" height="18" viewBox="0 0 17 19" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M13.5222 0.75C13.8302 0.75 14.1255 0.872331 14.3433 1.09008C14.561 1.30783 14.6833 1.60317 14.6833 1.91111V17.0056H16.425C16.579 17.0056 16.7266 17.0667 16.8355 17.1756C16.9444 17.2845 17.0056 17.4321 17.0056 17.5861C17.0056 17.7401 16.9444 17.8878 16.8355 17.9966C16.7266 18.1055 16.579 18.1667 16.425 18.1667H1.33056C1.17658 18.1667 1.02892 18.1055 0.920041 17.9966C0.811165 17.8878 0.75 17.7401 0.75 17.5861C0.75 17.4321 0.811165 17.2845 0.920041 17.1756C1.02892 17.0667 1.17658 17.0056 1.33056 17.0056H3.07222V1.91111C3.07222 1.60317 3.19455 1.30783 3.4123 1.09008C3.63005 0.872331 3.92539 0.75 4.23333 0.75H13.5222ZM11.2 11.2C11.5079 11.2 11.8033 11.0777 12.021 10.8599C12.2388 10.6422 12.3611 10.3468 12.3611 10.0389C12.3611 9.73094 12.2388 9.43561 12.021 9.21786C11.8033 9.00011 11.5079 8.87778 11.2 8.87778C10.8921 8.87778 10.5967 9.00011 10.379 9.21786C10.1612 9.43561 10.0389 9.73094 10.0389 10.0389C10.0389 10.3468 10.1612 10.6422 10.379 10.8599C10.5967 11.0777 10.8921 11.2 11.2 11.2Z"
+                                                fill="#8DD3BB" />
+                                        </svg>
+
+
+                                    </div>
+
+                                    <div>
+                                        <p class="text-[#112211]/60 text-xs">Room no.</p>
+                                        <p class="font-semibold">On arrival</p>
+                                    </div>
+                                </div>
+
+                                <!-- Check-In out -->
+                                <div class="flex gap-2 h-fit">
+                                    <!-- icon -->
+                                    <div class="p-2 rounded-md bg-[#EBF6F2] h-fit">
+                                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M9 0.75C4.44386 0.75 0.75 4.44386 0.75 9C0.75 13.5561 4.44386 17.25 9 17.25C13.5561 17.25 17.25 13.5561 17.25 9C17.25 4.44386 13.5561 0.75 9 0.75ZM12.8077 10.2692H9C8.83169 10.2692 8.67027 10.2024 8.55126 10.0834C8.43225 9.96434 8.36538 9.80293 8.36538 9.63461V3.92308C8.36538 3.75477 8.43225 3.59335 8.55126 3.47434C8.67027 3.35532 8.83169 3.28846 9 3.28846C9.16831 3.28846 9.32973 3.35532 9.44874 3.47434C9.56775 3.59335 9.63461 3.75477 9.63461 3.92308V9H12.8077C12.976 9 13.1374 9.06686 13.2564 9.18587C13.3754 9.30489 13.4423 9.4663 13.4423 9.63461C13.4423 9.80293 13.3754 9.96434 13.2564 10.0834C13.1374 10.2024 12.976 10.2692 12.8077 10.2692Z"
+                                                fill="#8DD3BB" />
+                                        </svg>
+
+                                    </div>
+
+                                    <div>
+                                        <p class="text-[#112211]/60 text-xs">Check-In out</p>
+                                        <p class="font-semibold">11:30am</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- buttons  -->
+                        <div class="flex justify-center items-center gap-3 pt-9 md:pt-0">
+                            <button
+                                class="cursor-pointer rounded-md bg-[#8DD3BB] hover:bg-[#7bccb0] transition-all h-8 px-5 text-sm">Download
+                                Ticket</button>
+
+                            <!-- arrow button -->
+                            <button
+                                class="cursor-pointer rounded-md border border-[#8DD3BB] hover:bg-[#7bccb0]/10 transition-all h-8 px-3 ">
+                                <svg width="9" height="14" viewBox="0 0 7 12" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 1.5L5.5 6L1 10.5" stroke="#4C4850" stroke-width="1.5"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Ticket 2 -->
+                    <div class="flex flex-col md:flex-row justify-between py-3">
+
+                        <!-- ticket info -->
+                        <div class="flex flex-col md:flex-row gap-6">
+
+                            <!-- img and dates -->
+                            <div class="flex justify-between gap-4 md:pr-3 md:border-r">
+                                <img src="../img/User/Account-1.png" alt=""
+                                    class="rounded-md object-cover border border-[#8DD3BB] size-20">
+
+                                <!-- Check-In/out -->
+                                <div class="flex items-center gap-5">
+
+                                    <!-- Check-In -->
+                                    <div>
+                                        <h1 class="text-[#112211]/75 text-sm">Check-In</h1>
+                                        <p class="text-xl font-semibold">Thur, Dec 8</p>
+                                    </div>
+
+                                    <svg width="20" height="3" viewBox="0 0 20 3" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M20 2.26H0V0.62H20V2.26Z" fill="#112211" />
+                                    </svg>
+
+                                    <!-- Check-Out -->
+                                    <div>
+                                        <h1 class="text-[#112211]/75 text-sm">Check-Out</h1>
+                                        <p class="text-xl font-semibold">Fri, Dec 9</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- times and room nomber -->
+                            <div class="grid grid-cols-2 gap-2 gap-x-4">
+
+                                <!-- Check-In time -->
+                                <div class="flex gap-2 h-fit">
+                                    <!-- icon -->
+                                    <div class="p-2 rounded-md bg-[#EBF6F2] h-fit">
+                                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M9 0.75C4.44386 0.75 0.75 4.44386 0.75 9C0.75 13.5561 4.44386 17.25 9 17.25C13.5561 17.25 17.25 13.5561 17.25 9C17.25 4.44386 13.5561 0.75 9 0.75ZM12.8077 10.2692H9C8.83169 10.2692 8.67027 10.2024 8.55126 10.0834C8.43225 9.96434 8.36538 9.80293 8.36538 9.63461V3.92308C8.36538 3.75477 8.43225 3.59335 8.55126 3.47434C8.67027 3.35532 8.83169 3.28846 9 3.28846C9.16831 3.28846 9.32973 3.35532 9.44874 3.47434C9.56775 3.59335 9.63461 3.75477 9.63461 3.92308V9H12.8077C12.976 9 13.1374 9.06686 13.2564 9.18587C13.3754 9.30489 13.4423 9.4663 13.4423 9.63461C13.4423 9.80293 13.3754 9.96434 13.2564 10.0834C13.1374 10.2024 12.976 10.2692 12.8077 10.2692Z"
+                                                fill="#8DD3BB" />
+                                        </svg>
+
+                                    </div>
+
+                                    <div>
+                                        <p class="text-[#112211]/60 text-xs">Check-In time</p>
+                                        <p class="font-semibold">12:00pm</p>
+                                    </div>
+                                </div>
+
+                                <!-- Room no. -->
+                                <div class="flex gap-2 h-fit">
+                                    <!-- icon -->
+                                    <div class="p-2 rounded-md bg-[#EBF6F2] h-fit">
+                                        <svg width="17" height="18" viewBox="0 0 17 19" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M13.5222 0.75C13.8302 0.75 14.1255 0.872331 14.3433 1.09008C14.561 1.30783 14.6833 1.60317 14.6833 1.91111V17.0056H16.425C16.579 17.0056 16.7266 17.0667 16.8355 17.1756C16.9444 17.2845 17.0056 17.4321 17.0056 17.5861C17.0056 17.7401 16.9444 17.8878 16.8355 17.9966C16.7266 18.1055 16.579 18.1667 16.425 18.1667H1.33056C1.17658 18.1667 1.02892 18.1055 0.920041 17.9966C0.811165 17.8878 0.75 17.7401 0.75 17.5861C0.75 17.4321 0.811165 17.2845 0.920041 17.1756C1.02892 17.0667 1.17658 17.0056 1.33056 17.0056H3.07222V1.91111C3.07222 1.60317 3.19455 1.30783 3.4123 1.09008C3.63005 0.872331 3.92539 0.75 4.23333 0.75H13.5222ZM11.2 11.2C11.5079 11.2 11.8033 11.0777 12.021 10.8599C12.2388 10.6422 12.3611 10.3468 12.3611 10.0389C12.3611 9.73094 12.2388 9.43561 12.021 9.21786C11.8033 9.00011 11.5079 8.87778 11.2 8.87778C10.8921 8.87778 10.5967 9.00011 10.379 9.21786C10.1612 9.43561 10.0389 9.73094 10.0389 10.0389C10.0389 10.3468 10.1612 10.6422 10.379 10.8599C10.5967 11.0777 10.8921 11.2 11.2 11.2Z"
+                                                fill="#8DD3BB" />
+                                        </svg>
+
+
+                                    </div>
+
+                                    <div>
+                                        <p class="text-[#112211]/60 text-xs">Room no.</p>
+                                        <p class="font-semibold">On arrival</p>
+                                    </div>
+                                </div>
+
+                                <!-- Check-In out -->
+                                <div class="flex gap-2 h-fit">
+                                    <!-- icon -->
+                                    <div class="p-2 rounded-md bg-[#EBF6F2] h-fit">
+                                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M9 0.75C4.44386 0.75 0.75 4.44386 0.75 9C0.75 13.5561 4.44386 17.25 9 17.25C13.5561 17.25 17.25 13.5561 17.25 9C17.25 4.44386 13.5561 0.75 9 0.75ZM12.8077 10.2692H9C8.83169 10.2692 8.67027 10.2024 8.55126 10.0834C8.43225 9.96434 8.36538 9.80293 8.36538 9.63461V3.92308C8.36538 3.75477 8.43225 3.59335 8.55126 3.47434C8.67027 3.35532 8.83169 3.28846 9 3.28846C9.16831 3.28846 9.32973 3.35532 9.44874 3.47434C9.56775 3.59335 9.63461 3.75477 9.63461 3.92308V9H12.8077C12.976 9 13.1374 9.06686 13.2564 9.18587C13.3754 9.30489 13.4423 9.4663 13.4423 9.63461C13.4423 9.80293 13.3754 9.96434 13.2564 10.0834C13.1374 10.2024 12.976 10.2692 12.8077 10.2692Z"
+                                                fill="#8DD3BB" />
+                                        </svg>
+
+                                    </div>
+
+                                    <div>
+                                        <p class="text-[#112211]/60 text-xs">Check-In out</p>
+                                        <p class="font-semibold">11:30am</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- buttons  -->
+                        <div class="flex justify-center items-center gap-3 pt-9 md:pt-0">
+                            <button
+                                class="cursor-pointer rounded-md bg-[#8DD3BB] hover:bg-[#7bccb0] transition-all h-8 px-5 text-sm">Download
+                                Ticket</button>
+
+                            <!-- arrow button -->
+                            <button
+                                class="cursor-pointer rounded-md border border-[#8DD3BB] hover:bg-[#7bccb0]/10 transition-all h-8 px-3 ">
+                                <svg width="9" height="14" viewBox="0 0 7 12" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 1.5L5.5 6L1 10.5" stroke="#4C4850" stroke-width="1.5"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
 
             <!-- Payment methods section -->
-            <div id="Payment" class="tab-content hidden">Payment</div>
+            <div id="Payment" class="tab-content">
+                <h1 class="font-semibold text-2xl pb-7">Payment methods</h1>
+
+                <!-- cards area -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                    <!-- card 1 -->
+                    <div class="bg-[#8DD3BB] rounded-md p-4 flex flex-col justify-between h-[160px]">
+                        <!-- header -->
+                        <div class="flex justify-between">
+                            <!-- text -->
+                            <div class="text-2xl font-semibold relative">
+                                <p class="absolute w-32">**** **** ****</p>
+                                <p class="pt-4">4321</p>
+                            </div>
+
+                            <!-- icon -->
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M21 2.25H3C2.17157 2.25 1.5 2.92157 1.5 3.75V4.5C1.5 5.32843 2.17157 6 3 6H21C21.8284 6 22.5 5.32843 22.5 4.5V3.75C22.5 2.92157 21.8284 2.25 21 2.25Z"
+                                    fill="black" />
+                                <path
+                                    d="M3.49031 7.50001C3.43761 7.49972 3.38544 7.51055 3.33721 7.53178C3.28898 7.55301 3.24576 7.58416 3.21038 7.62322C3.17499 7.66227 3.14824 7.70834 3.13186 7.75843C3.11548 7.80852 3.10984 7.8615 3.11531 7.91391L4.34859 19.7527C4.34833 19.7561 4.34833 19.7595 4.34859 19.763C4.41303 20.3105 4.67628 20.8154 5.08837 21.1817C5.50046 21.548 6.0327 21.7502 6.58406 21.75H17.4164C17.9676 21.75 18.4996 21.5477 18.9115 21.1814C19.3234 20.8151 19.5865 20.3104 19.6509 19.763V19.7531L20.8823 7.91391C20.8878 7.8615 20.8822 7.80852 20.8658 7.75843C20.8494 7.70834 20.8226 7.66227 20.7873 7.62322C20.7519 7.58416 20.7087 7.55301 20.6604 7.53178C20.6122 7.51055 20.56 7.49972 20.5073 7.50001H3.49031ZM15.1556 15.9698C15.2269 16.0391 15.2837 16.1219 15.3228 16.2133C15.3618 16.3048 15.3823 16.403 15.383 16.5024C15.3837 16.6019 15.3646 16.7004 15.3269 16.7924C15.2891 16.8844 15.2335 16.9679 15.1632 17.0382C15.0929 17.1085 15.0093 17.1641 14.9173 17.2018C14.8253 17.2395 14.7267 17.2585 14.6273 17.2577C14.5279 17.257 14.4296 17.2365 14.3382 17.1974C14.2468 17.1583 14.1641 17.1015 14.0948 17.0302L12.0005 14.9358L9.90562 17.0302C9.76432 17.1675 9.57467 17.2436 9.37766 17.2422C9.18065 17.2408 8.9921 17.162 8.85276 17.0227C8.71342 16.8834 8.63448 16.6949 8.633 16.4979C8.63151 16.3009 8.70761 16.1112 8.84484 15.9698L10.9397 13.875L8.84484 11.7802C8.70761 11.6388 8.63151 11.4491 8.633 11.2521C8.63448 11.0551 8.71342 10.8666 8.85276 10.7273C8.9921 10.588 9.18065 10.5092 9.37766 10.5078C9.57467 10.5064 9.76432 10.5826 9.90562 10.7198L12.0005 12.8142L14.0948 10.7198C14.2361 10.5826 14.4258 10.5064 14.6228 10.5078C14.8198 10.5092 15.0084 10.588 15.1477 10.7273C15.287 10.8666 15.366 11.0551 15.3675 11.2521C15.3689 11.4491 15.2928 11.6388 15.1556 11.7802L13.0608 13.875L15.1556 15.9698Z"
+                                    fill="black" />
+                            </svg>
+
+                        </div>
+
+                        <!-- bottom -->
+                        <div class="flex justify-between items-end">
+                            <!-- Valid Thru -->
+                            <div>
+                                <p class="text-sm">Valid Thru</p>
+                                <p class="text-lg font-semibold">02/27</p>
+                            </div>
+
+                            <!-- visa icon -->
+                            <svg width="42" height="23" viewBox="0 0 52 33" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M2.29751 -0.00683594C1.15398 -0.00683594 0.226562 0.920326 0.226562 2.06411V30.436C0.226562 31.5798 1.15445 32.507 2.29751 32.507H49.9292C51.0727 32.507 52.0001 31.5798 52.0001 30.436V2.06411C52.0001 0.920377 51.0723 -0.00683594 49.9292 -0.00683594H2.29751ZM31.1483 9.6829C32.4084 9.6829 33.4182 9.96124 34.0622 10.2201L33.6221 12.9883L33.3309 12.8411C32.731 12.5823 31.9605 12.3332 30.8975 12.3508C29.6252 12.3508 29.037 12.9184 29.037 13.4495C29.0296 14.0478 29.7243 14.4424 30.8603 15.0334C32.7354 15.9451 33.602 17.0506 33.5898 18.5038C33.5646 21.1555 31.3468 22.869 27.9303 22.869C26.4727 22.853 25.0685 22.5444 24.3094 22.1878L24.7656 19.3273L25.1847 19.5312C26.2521 20.0082 26.9433 20.2011 28.2441 20.2011C29.1783 20.2011 30.1809 19.8099 30.1889 18.9536C30.195 18.3945 29.7698 17.9958 28.5046 17.3697C27.2718 16.7585 25.6374 15.7348 25.6555 13.8992C25.6748 11.4161 27.9368 9.6829 31.1483 9.6829ZM4.80526 10.089H10.0522C10.7588 10.1157 11.3292 10.3432 11.5261 11.1099L12.6571 16.9474C12.6572 16.9479 12.6569 16.9501 12.6571 16.9506L12.9968 18.6996L16.1825 10.089H19.6287L14.5063 22.6927L11.0634 22.6959L8.32266 12.5256C9.95342 13.3895 11.3418 14.3891 12.1458 15.7647C11.9385 15.3294 11.6654 14.8381 11.3158 14.3539C10.9088 13.7899 10.0297 13.0619 9.6623 12.7521C8.38194 11.6728 6.64312 10.8011 4.76483 10.3398L4.80526 10.089ZM20.9991 10.1036H24.3693L22.261 22.6878H18.8909L20.9991 10.1036ZM40.034 10.1036H42.5871L45.2599 22.6878H42.1955C42.1955 22.6878 41.8915 21.2421 41.7927 20.8013C41.311 20.8013 37.9424 20.7965 37.5634 20.7965C37.4352 21.1371 36.8677 22.6878 36.8677 22.6878H33.4005L38.3044 11.1488C38.6516 10.3288 39.2434 10.1036 40.034 10.1036ZM40.2848 13.4883C40.1189 13.9563 39.8302 14.7122 39.8495 14.6791C39.8495 14.6791 38.8121 17.4458 38.5407 18.1641L41.2668 18.1624C41.0136 16.9625 40.7601 15.7625 40.5064 14.5627L40.2848 13.4884V13.4883Z"
+                                    fill="#112211" />
+                            </svg>
+
+                        </div>
+                    </div>
+
+                    <!-- Add a new card button -->
+                    <div id="open-modal"
+                        class="cursor-pointer border-2 border-dashed border-[#8DD3BB] hover:bg-[#8DD3BB]/10 transition-all rounded-md p-4 flex flex-col items-center justify-center h-[160px]">
+                        <!-- icon -->
+                        <svg width="54" height="55" viewBox="0 0 64 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M56 32.5C56 19.25 45.25 8.5 32 8.5C18.75 8.5 8 19.25 8 32.5C8 45.75 18.75 56.5 32 56.5C45.25 56.5 56 45.75 56 32.5Z"
+                                stroke="#8DD3BB" stroke-width="2" stroke-miterlimit="10" />
+                            <path d="M32 22.5V42.5M42 32.5H22" stroke="#8DD3BB" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        <p class="text-[#112211]/75 text-sm">Add a new card</p>
+                    </div>
+                </div>
+
+                <!-- ِAdd new card modal -->
+                <div id="modal-wrapper" class="fixed inset-0 z-50 hidden">
+                    <!-- overlay -->
+                    <div id="modal-overlay"
+                        class="absolute inset-0 bg-black bg-opacity-50 opacity-0 transition-opacity duration-300">
+                    </div>
+
+                    <!-- modal box-->
+                    <div class="flex items-center justify-center min-h-screen w-full md:w-[450px] px-5 md:px-0">
+                        <div id="modal-box"
+                            class="bg-white rounded-md flex flex-col items-center justify-center transform transition-all duration-300 ease-out opacity-0 scale-75">
+
+                            <!-- the modal form -->
+                            <div id="modal-content" class="w-full">
+
+                                <form class="p-7 w-full">
+
+                                    <!-- header -->
+                                    <div class="flex justify-between items-center pb-6 w-full">
+                                        <h1 class="text-xl font-semibold">Add a new Card</h1>
+                                        <div id="close-modal" class="cursor-pointer">
+                                            <svg width="15" height="15" viewBox="0 0 15 15" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M14.7299 1.57214C14.8155 1.48672 14.8833 1.38531 14.9296 1.27367C14.976 1.16203 14.9998 1.04237 14.9999 0.921502C15 0.800637 14.9763 0.680941 14.9301 0.569248C14.8839 0.457555 14.8162 0.356052 14.7308 0.270536C14.6453 0.185019 14.5439 0.117163 14.4323 0.0708412C14.3206 0.0245197 14.201 0.000640007 14.0801 0.00056572C13.9593 0.000491433 13.8396 0.024224 13.7279 0.0704082C13.6162 0.116593 13.5147 0.184324 13.4291 0.269736L7.87875 5.82014L2.32995 0.269736C2.15724 0.0970267 1.923 -1.81979e-09 1.67875 0C1.4345 1.81978e-09 1.20026 0.0970267 1.02755 0.269736C0.854839 0.442445 0.757813 0.676688 0.757812 0.920936C0.757812 1.16518 0.854839 1.39943 1.02755 1.57214L6.57795 7.12094L1.02755 12.6697C0.942031 12.7553 0.874196 12.8568 0.827914 12.9685C0.781633 13.0802 0.757812 13.2 0.757812 13.3209C0.757812 13.4419 0.781633 13.5616 0.827914 13.6734C0.874196 13.7851 0.942031 13.8866 1.02755 13.9721C1.20026 14.1448 1.4345 14.2419 1.67875 14.2419C1.79969 14.2419 1.91944 14.2181 2.03118 14.1718C2.14291 14.1255 2.24443 14.0577 2.32995 13.9721L7.87875 8.42174L13.4291 13.9721C13.6019 14.1446 13.836 14.2415 14.0801 14.2413C14.3242 14.2412 14.5583 14.144 14.7308 13.9713C14.9032 13.7986 15.0001 13.5645 14.9999 13.3204C14.9998 13.0763 14.9027 12.8422 14.7299 12.6697L9.17955 7.12094L14.7299 1.57214Z"
+                                                    fill="black" />
+                                            </svg>
+                                        </div>
+                                    </div>
+
+                                    <!-- inputs -->
+                                    <div class="space-y-3">
+
+                                        <!-- Card Number -->
+                                        <div class="flex flex-col gap-1">
+                                            <label for="Card Number" class="text-xs font-semibold">Card Number</label>
+                                            <input type="text" name="Card Number" id="Card Number"
+                                                placeholder="Card Number"
+                                                class="rounded-md py-1 px-2 outline-none border border-[#79747E]">
+                                        </div>
+
+                                        <!-- Exp. Date & CVC -->
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                            <!-- Exp. Date -->
+                                            <div class="flex flex-col gap-1">
+                                                <label for="Exp. Date" class="text-xs font-semibold">Exp. Date</label>
+                                                <input type="text" name="Exp. Date" id="Exp. Date"
+                                                    placeholder="Exp. Date" autocomplate="off"
+                                                    oninput="formatExpiry(this)" maxlength="5"
+                                                    class="rounded-md py-1 px-2 outline-none border border-[#79747E]">
+                                            </div>
+
+                                            <!-- CVC -->
+                                            <div class="flex flex-col gap-1">
+                                                <label for="CVC" class="text-xs font-semibold">CVC</label>
+                                                <input type="text" name="CVC" id="CVC" placeholder="CVC"
+                                                    class="rounded-md py-1 px-2 outline-none border border-[#79747E]">
+                                            </div>
+                                        </div>
+
+                                        <!-- Name on Card -->
+                                        <div class="flex flex-col gap-1">
+                                            <label for="Name" class="text-xs font-semibold">Name on Card</label>
+                                            <input type="text" name="Name" id="Name" placeholder="Name on Card" class="rounded-md py-1 px-2 outline-none border border-[#79747E]">
+                                        </div>
+
+                                        <!-- Country or Region -->
+                                        <div class="flex flex-col gap-1">
+                                            <label for="Name" class="text-xs font-semibold">Country or Region</label>
+                                            <select name="Country" id="Country" class="rounded-md py-1 px-2 outline-none border border-[#79747E]">
+                                                <option value="1">option 1</option>
+                                                <option value="2">option 2</option>
+                                                <option value="3">option 3</option>
+                                            </select>
+                                        </div>
+
+                                        <!-- save checkbox -->
+                                        <div class="flex items-center gap-2">
+                                            <input type="checkbox" name="save" id="save" class="size-4">
+                                            <label for="save" class="text-sm">Securely save my information for 1-click checkout</label>
+                                        </div>
+                                    </div>
+
+                                    <!-- button -->
+                                    <div class="pt-5 text-center">
+                                        <button type="submit"
+                                            class="text-sm font-semibold bg-[#8DD3BB] hover:bg-[#7bccb0] transition-all rounded-md p-2 w-full">
+                                            Add Card
+                                        </button>
+
+                                        <p class="text-[10px] pt-2">By confirming your subscription, you allow The Outdoor Inn Crowd Limited to charge your card for this payment and future payments in accordance with their terms. You can always cancel your subscription.</p>
+                                    </div>
+                                </form>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
 
@@ -494,5 +915,55 @@
             button.classList.remove('border-b-2', 'border-[#8DD3BB]', 'font-bold');
         });
         document.querySelector(`[data-tab='${tabName}']`).classList.add('border-b-2', 'border-[#8DD3BB]', 'font-bold');
+    }
+</script>
+
+<!-- for open and close the modal -->
+<script>
+    const openBtn = document.getElementById('open-modal');
+    const closeBtn = document.getElementById('close-modal');
+    const wrapper = document.getElementById('modal-wrapper');
+    const overlay = document.getElementById('modal-overlay');
+    const box = document.getElementById('modal-box');
+
+    function showModal() {
+        // show the modal
+        wrapper.classList.remove('hidden');
+        // initial state
+        overlay.classList.replace('opacity-100', 'opacity-0');
+        box.classList.replace('opacity-100', 'opacity-0');
+        box.classList.replace('scale-100', 'scale-75');
+
+        requestAnimationFrame(() => {
+            // open animation 
+            overlay.classList.replace('opacity-0', 'opacity-100');
+            box.classList.replace('opacity-0', 'opacity-100');
+            box.classList.replace('scale-75', 'scale-100');
+        });
+    }
+
+    function hideModal() {
+        // colse animation 
+        overlay.classList.replace('opacity-100', 'opacity-0');
+        box.classList.replace('opacity-100', 'opacity-0');
+        box.classList.replace('scale-100', 'scale-75');
+        // hidden the modal
+        setTimeout(() => wrapper.classList.add('hidden'), 300);
+    }
+
+    openBtn.addEventListener('click', showModal);
+    closeBtn.addEventListener('click', hideModal);
+    overlay.addEventListener('click', hideModal);
+</script>
+
+<!-- for date input -->
+<script>
+    function formatExpiry(input) {
+        let value = input.value.replace(/[^\d]/g, '');
+        if (value.length > 2) {
+            input.value = value.slice(0, 2) + '/' + value.slice(2, 4);
+        } else {
+            input.value = value;
+        }
     }
 </script>
