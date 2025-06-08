@@ -47,7 +47,8 @@
         <nav class="hidden md:flex gap-8 items-center px-3">
             <a href="./Home-eng.html" class="hover:border-b-2 transition-all border-white">Home</a>
             <a href="./Properties-eng.html" class="font-bold border-b-2 border-white">Properties</a>
-            <a href="./Packages & Offers-eng.html" class="hover:border-b-2 transition-all border-white">Packages & Offers</a>
+            <a href="./Packages & Offers-eng.html" class="hover:border-b-2 transition-all border-white">Packages &
+                Offers</a>
             <a href="./About Us-eng.html" class="hover:border-b-2 transition-all border-white">About Us</a>
         </nav>
 
@@ -71,8 +72,7 @@
 
             <!-- profile button -->
             <div>
-                <a href="./Account-eng.html"
-                    class="bg-[#D9D9D96B] p-1 px-1.5 flex gap-2 items-center rounded-full">
+                <a href="./Account-eng.html" class="bg-[#D9D9D96B] p-1 px-1.5 flex gap-2 items-center rounded-full">
 
                     <svg width="30" height="30" viewBox="0 0 60 61" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect y="0.5" width="60" height="60" rx="30" fill="#F1F1F1" />
@@ -128,8 +128,7 @@
 
             <!-- profile button -->
             <div class="pt-14 w-full flex justify-center items-center">
-                <a href="./Account-eng.html"
-                    class="bg-[#D9D9D96B] p-1 px-1.5 flex gap-2 items-center rounded-full">
+                <a href="./Account-eng.html" class="bg-[#D9D9D96B] p-1 px-1.5 flex gap-2 items-center rounded-full">
 
                     <svg width="30" height="30" viewBox="0 0 60 61" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect y="0.5" width="60" height="60" rx="30" fill="#F1F1F1" />
@@ -148,11 +147,197 @@
     </div>
 
     <!-- the page -->
-    <div>
+    <div class="md:px-10 p-5">
 
-        <!-- Statistics -->
-        <div class="bg-white flex flex-col md:flex-row md:gap-10 gap-5 items-center justify-center md:py-16 py-10 px-5 md:px-0 relative">
-            Properties page
+        <!-- search inputs -->
+        <form class="flex flex-col md:flex-row justify-between items-center gap-3 md:gap-5 md:py-5 md:pb-10">
+            <!-- inputs -->
+            <div class="grid grid-cols-1 grid-cols-4 w-full md:gap-5">
+
+                <!-- Destination input -->
+                <div class="relative border border-[#79747E] rounded-md p-1 px-2">
+                    <label for="destination"
+                        class="absolute -top-2 left-3 bg-white px-1 text-xs font-semibold text-[#1C1B1F] cursor-text">
+                        Enter Destination
+                    </label>
+
+                    <input id="destination" type="text" placeholder="Istanbul, Turkey"
+                        class="w-full bg-transparent focus:outline-none text-sm" />
+                </div>
+
+                <!-- Check In input -->
+                <div class="relative border border-[#79747E] rounded-md p-1 px-2">
+                    <label for="Check In"
+                        class="absolute -top-2 left-3 bg-white px-1 text-xs font-semibold text-[#1C1B1F] cursor-text">
+                        Check In
+                    </label>
+
+                    <input id="Check In" type="date" class="w-full bg-transparent focus:outline-none text-sm" />
+                </div>
+
+                <!-- Check out input -->
+                <div class="relative border border-[#79747E] rounded-md p-1 px-2">
+                    <label for="Check Out"
+                        class="absolute -top-2 left-3 bg-white px-1 text-xs font-semibold text-[#1C1B1F] cursor-text">
+                        Check Out
+                    </label>
+
+                    <input id="Check Out" type="date" class="w-full bg-transparent focus:outline-none text-sm" />
+                </div>
+
+                <!-- Rooms & Guests dropdown list -->
+                <div class="relative border border-[#79747E] rounded-md p-1 px-2">
+                    <label for="Rooms"
+                        class="absolute -top-2 left-3 bg-white px-1 text-xs font-semibold text-[#1C1B1F] cursor-text">
+                        Rooms & Guests
+                    </label>
+                    <select name="Rooms" id="Rooms" class="w-full bg-transparent focus:outline-none text-sm">
+                        <option value="1">1 room, 2 guests</option>
+                        <option value="2">2 room, 3 guests</option>
+                        <option value="2">3 room, 6 guests</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- submit button -->
+            <div>
+                <button type="submit">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M8.44043 0.273438C12.9432 0.27367 16.6064 3.93758 16.6064 8.44043L16.6006 8.76953C16.5356 10.4158 15.9711 12.0066 14.9785 13.3281L14.9658 13.3447L14.9805 13.3584L19.3896 17.7676V17.7686C19.5607 17.9599 19.6625 18.202 19.6797 18.4561L19.6816 18.5654C19.6734 18.8588 19.5532 19.1382 19.3457 19.3457C19.1382 19.5532 18.8588 19.6734 18.5654 19.6816L18.4561 19.6797C18.2384 19.665 18.0293 19.5882 17.8535 19.459L17.7686 19.3896L13.3584 14.9805L13.3447 14.9658L13.3281 14.9785C11.9187 16.0371 10.2031 16.6083 8.44043 16.6064L8.02051 16.5957C3.71182 16.3766 0.273663 12.8025 0.273438 8.44043C0.273438 3.93744 3.93744 0.273438 8.44043 0.273438ZM9.58594 2.67969C8.51768 2.4672 7.41286 2.55621 6.39453 2.93457L6.19238 3.01367C5.11923 3.45819 4.20202 4.21097 3.55664 5.17676C2.91126 6.14264 2.56641 7.27877 2.56641 8.44043L2.57422 8.73145C2.64299 10.0856 3.17781 11.3748 4.08789 12.3799L4.28906 12.5908C5.32122 13.623 6.6975 14.2319 8.14844 14.3057L8.44043 14.3135C9.5294 14.3134 10.5957 14.011 11.5205 13.4414L11.7031 13.3232C12.6086 12.7182 13.3268 11.8742 13.7793 10.8867L13.8662 10.6875C14.283 9.68126 14.4117 8.58035 14.2393 7.50781L14.2002 7.29395C13.9735 6.15471 13.4141 5.10846 12.5928 4.28711C11.8228 3.51716 10.8554 2.97682 9.79883 2.72559L9.58594 2.67969Z"
+                            fill="#1E2227" stroke="#1E2227" stroke-width="0.046875" />
+                    </svg>
+
+                </button>
+            </div>
+        </form>
+
+        <!-- the Shop -->
+        <div class="flex flex-col md:flex-row gap-8">
+            <!-- filter button (hidden in laptop) -->
+            <button id="toggleButton" class="bg-[#C190BD] rounded-md w-full px-3 flex justify-center p-1 md:hidden">
+                <svg width="58" height="19" viewBox="0 0 68 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M7 4.228V5.81H2.926V8.316H6.048V9.87H2.926V14H0.966V4.228H7ZM9.38383 5.32C9.03849 5.32 8.74916 5.21267 8.51583 4.998C8.29183 4.774 8.17983 4.49867 8.17983 4.172C8.17983 3.84533 8.29183 3.57467 8.51583 3.36C8.74916 3.136 9.03849 3.024 9.38383 3.024C9.72916 3.024 10.0138 3.136 10.2378 3.36C10.4712 3.57467 10.5878 3.84533 10.5878 4.172C10.5878 4.49867 10.4712 4.774 10.2378 4.998C10.0138 5.21267 9.72916 5.32 9.38383 5.32ZM10.3498 6.244V14H8.38983V6.244H10.3498ZM14.2463 3.64V14H12.2863V3.64H14.2463ZM18.4648 7.854V11.606C18.4648 11.8673 18.5255 12.0587 18.6468 12.18C18.7775 12.292 18.9921 12.348 19.2908 12.348H20.2008V14H18.9688C17.3168 14 16.4908 13.1973 16.4908 11.592V7.854H15.5668V6.244H16.4908V4.326H18.4648V6.244H20.2008V7.854H18.4648ZM28.8205 9.954C28.8205 10.234 28.8019 10.486 28.7645 10.71H23.0945C23.1412 11.27 23.3372 11.7087 23.6825 12.026C24.0279 12.3433 24.4525 12.502 24.9565 12.502C25.6845 12.502 26.2025 12.1893 26.5105 11.564H28.6245C28.4005 12.3107 27.9712 12.9267 27.3365 13.412C26.7019 13.888 25.9225 14.126 24.9985 14.126C24.2519 14.126 23.5799 13.9627 22.9825 13.636C22.3945 13.3 21.9325 12.8287 21.5965 12.222C21.2699 11.6153 21.1065 10.9153 21.1065 10.122C21.1065 9.31933 21.2699 8.61467 21.5965 8.008C21.9232 7.40133 22.3805 6.93467 22.9685 6.608C23.5565 6.28133 24.2332 6.118 24.9985 6.118C25.7359 6.118 26.3939 6.27667 26.9725 6.594C27.5605 6.91133 28.0132 7.364 28.3305 7.952C28.6572 8.53067 28.8205 9.198 28.8205 9.954ZM26.7905 9.394C26.7812 8.89 26.5992 8.48867 26.2445 8.19C25.8899 7.882 25.4559 7.728 24.9425 7.728C24.4572 7.728 24.0465 7.87733 23.7105 8.176C23.3839 8.46533 23.1832 8.87133 23.1085 9.394H26.7905ZM32.2112 7.448C32.4632 7.03733 32.7898 6.71533 33.1912 6.482C33.6018 6.24867 34.0685 6.132 34.5912 6.132V8.19H34.0732C33.4572 8.19 32.9905 8.33467 32.6732 8.624C32.3652 8.91333 32.2112 9.41733 32.2112 10.136V14H30.2512V6.244H32.2112V7.448Z"
+                        fill="white" />
+                    <path d="M64 5H55" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M59 14H50" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <circle cx="51" cy="5" r="4" stroke="white" stroke-width="1.5" />
+                    <circle cx="63" cy="14" r="4" stroke="white" stroke-width="1.5" />
+                </svg>
+            </button>
+
+            <!-- the filters bar -->
+            <form id="hiddenContent" class="md:w-64 w-full hidden md:flex flex-col bg-white p-4 rounded-lg shadow">
+
+                <!-- category section  -->
+                <div>
+                    <h2 class="text-lg font-semibold mb-4">Filters</h2>
+
+                    <div class="divide-y">
+                        <!-- Price -->
+                        <div class="pb-4">
+                            <h1 class="text-sm font-semibold">Price</h1>
+                            <div class="w-full max-w-lg mx-auto px-4">
+                                <input id="priceRange" type="range" min="50" max="1200" value="1200"
+                                    class="w-full h-1 bg-gray-300 rounded-lg appearance-none cursor-pointer" />
+                                <div class="flex justify-between items-center text-xs text-gray-700 mt-1.5">
+                                    <span id="minLabel">$50</span>
+                                    <span id="currentValue" class="font-medium">$1200</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Rating -->
+                        <div class="py-4">
+                            <h1 class="text-sm font-semibold">Rating</h1>
+                            <div class="w-full max-w-lg mx-auto px-4">
+                                <input id="priceRange" type="range" min="0" max="5" value="0"
+                                    class="w-full h-1 bg-gray-300 rounded-lg appearance-none cursor-pointer" />
+                                <div class="flex justify-between items-center text-xs text-gray-700 mt-1.5">
+                                    <p>0+</p>
+                                    <p>1+</p>
+                                    <p>2+</p>
+                                    <p>3+</p>
+                                    <p>4+</p>
+                                    <p>5+</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Freebies -->
+                        <div class="py-4">
+                            <h1 class="text-sm font-semibold">Freebies</h1>
+
+                            <!-- checkbox -->
+                            <div class="space-y-1">
+                                <!-- 1. Free breakfast -->
+                                <label class="flex items-center space-x-2 cursor-pointer">
+                                    <input type="checkbox" class="peer hidden">
+                                    <span
+                                        class="w-4 h-4 border-2 border-[#1E2227] rounded-md flex justify-center items-center peer-checked:bg-[#1E2227] peer-checked:border-[#1E2227]">
+                                        <svg width="14" height="10" viewBox="0 0 14 10" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12.3334 1.5L5.00008 8.83333L1.66675 5.5" stroke="white"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </span>
+                                    <span class="flex gap-2 items-center">
+                                        <p>Free breakfast</p>
+                                    </span>
+                                </label>
+
+                                <!-- 2. Free parking -->
+                                <label class="flex items-center space-x-2 cursor-pointer">
+                                    <input type="checkbox" class="peer hidden">
+                                    <span
+                                        class="w-5 h-5 border-2 border-[#1E2227] rounded-md flex justify-center items-center peer-checked:bg-[#1E2227] peer-checked:border-[#1E2227]">
+                                        <svg width="14" height="10" viewBox="0 0 14 10" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12.3334 1.5L5.00008 8.83333L1.66675 5.5" stroke="white"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </span>
+                                    <span class="flex gap-2 items-center">
+                                        <p>Free parking</p>
+                                    </span>
+                                </label>
+
+                                <!-- 3. Free internet -->
+                                <label class="flex items-center space-x-2 cursor-pointer">
+                                    <input type="checkbox" class="peer hidden">
+                                    <span
+                                        class="w-5 h-5 border-2 border-[#1E2227] rounded-md flex justify-center items-center peer-checked:bg-[#1E2227] peer-checked:border-[#1E2227]">
+                                        <svg width="14" height="10" viewBox="0 0 14 10" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12.3334 1.5L5.00008 8.83333L1.66675 5.5" stroke="white"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </span>
+                                    <span class="flex gap-2 items-center">
+                                        <p>Free internet</p>
+                                    </span>
+                                </label>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <!-- go button -->
+                <div class="my-4 mt-8">
+                    <button type="submit"
+                        class="flex justify-center rounded-lg p-1 w-full bg-[#C190BD] hover:bg-[#B37EAF] transition-all text-white">go</button>
+                </div>
+
+            </form>
+
+            <!-- the properties area -->
+            <div class="w-full md:w-3/4">
+                swde
+            </div>
         </div>
 
         <!-- white space -->
@@ -183,9 +368,7 @@
                 <div class="mb-2">
 
                     <!-- open and close button -->
-                    <button
-                        class="w-full flex items-cente justify-between px-4 transition"
-                        data-target="menu1">
+                    <button class="w-full flex items-cente justify-between px-4 transition" data-target="menu1">
                         <div class="flex items-center gap-2 space-x-2 space-x-reverse">
                             <svg class="h-4 w-4 transform transition-transform duration-300" data-icon="menu1"
                                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -199,9 +382,12 @@
                     <!-- the list -->
                     <div id="menu1" class="slide">
                         <ul class="mt-2 px-6 py-2 text-sm">
-                            <li class="hover:text-gray-300 cursor-pointer border-l border-white px-2 pt-1.5">Option A</li>
-                            <li class="hover:text-gray-300 cursor-pointer border-l border-white px-2 pt-1.5">Option B</li>
-                            <li class="hover:text-gray-300 cursor-pointer border-l border-white px-2 pt-1.5">Option C</li>
+                            <li class="hover:text-gray-300 cursor-pointer border-l border-white px-2 pt-1.5">Option A
+                            </li>
+                            <li class="hover:text-gray-300 cursor-pointer border-l border-white px-2 pt-1.5">Option B
+                            </li>
+                            <li class="hover:text-gray-300 cursor-pointer border-l border-white px-2 pt-1.5">Option C
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -210,9 +396,7 @@
                 <div class="mb-2">
 
                     <!-- open and close button -->
-                    <button
-                        class="w-full flex items-cente justify-between px-4 transition"
-                        data-target="menu2">
+                    <button class="w-full flex items-cente justify-between px-4 transition" data-target="menu2">
                         <div class="flex items-center gap-2 space-x-2 space-x-reverse">
                             <svg class="h-4 w-4 transform transition-transform duration-300" data-icon="menu2"
                                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -226,9 +410,12 @@
                     <!-- the list -->
                     <div id="menu2" class="slide">
                         <ul class="mt-2 px-6 py-2 text-sm">
-                            <li class="hover:text-gray-300 cursor-pointer border-l border-white px-2 pt-1.5">Option A</li>
-                            <li class="hover:text-gray-300 cursor-pointer border-l border-white px-2 pt-1.5">Option B</li>
-                            <li class="hover:text-gray-300 cursor-pointer border-l border-white px-2 pt-1.5">Option C</li>
+                            <li class="hover:text-gray-300 cursor-pointer border-l border-white px-2 pt-1.5">Option A
+                            </li>
+                            <li class="hover:text-gray-300 cursor-pointer border-l border-white px-2 pt-1.5">Option B
+                            </li>
+                            <li class="hover:text-gray-300 cursor-pointer border-l border-white px-2 pt-1.5">Option C
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -237,9 +424,7 @@
                 <div class="mb-2">
 
                     <!-- open and close button -->
-                    <button
-                        class="w-full flex items-cente justify-between px-4 transition"
-                        data-target="menu3">
+                    <button class="w-full flex items-cente justify-between px-4 transition" data-target="menu3">
                         <div class="flex items-center gap-2 space-x-2 space-x-reverse">
                             <svg class="h-4 w-4 transform transition-transform duration-300" data-icon="menu3"
                                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -253,9 +438,12 @@
                     <!-- the list -->
                     <div id="menu3" class="slide">
                         <ul class="mt-2 px-6 py-2 text-sm">
-                            <li class="hover:text-gray-300 cursor-pointer border-l border-white px-2 pt-1.5">Option A</li>
-                            <li class="hover:text-gray-300 cursor-pointer border-l border-white px-2 pt-1.5">Option B</li>
-                            <li class="hover:text-gray-300 cursor-pointer border-l border-white px-2 pt-1.5">Option C</li>
+                            <li class="hover:text-gray-300 cursor-pointer border-l border-white px-2 pt-1.5">Option A
+                            </li>
+                            <li class="hover:text-gray-300 cursor-pointer border-l border-white px-2 pt-1.5">Option B
+                            </li>
+                            <li class="hover:text-gray-300 cursor-pointer border-l border-white px-2 pt-1.5">Option C
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -264,9 +452,7 @@
                 <div class="mb-2">
 
                     <!-- open and close button -->
-                    <button
-                        class="w-full flex items-cente justify-between px-4 transition"
-                        data-target="menu4">
+                    <button class="w-full flex items-cente justify-between px-4 transition" data-target="menu4">
                         <div class="flex items-center gap-2 space-x-2 space-x-reverse">
                             <svg class="h-4 w-4 transform transition-transform duration-300" data-icon="menu4"
                                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -280,9 +466,12 @@
                     <!-- the list -->
                     <div id="menu4" class="slide">
                         <ul class="mt-2 px-6 py-2 text-sm">
-                            <li class="hover:text-gray-300 cursor-pointer border-l border-white px-2 pt-1.5">Option A</li>
-                            <li class="hover:text-gray-300 cursor-pointer border-l border-white px-2 pt-1.5">Option B</li>
-                            <li class="hover:text-gray-300 cursor-pointer border-l border-white px-2 pt-1.5">Option C</li>
+                            <li class="hover:text-gray-300 cursor-pointer border-l border-white px-2 pt-1.5">Option A
+                            </li>
+                            <li class="hover:text-gray-300 cursor-pointer border-l border-white px-2 pt-1.5">Option B
+                            </li>
+                            <li class="hover:text-gray-300 cursor-pointer border-l border-white px-2 pt-1.5">Option C
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -376,5 +565,22 @@
                 ic.classList.remove('rotate-90');
             });
         }
+    });
+</script>
+
+<!-- for filter button -->
+<script>
+    document.getElementById("toggleButton").addEventListener("click", function () {
+        document.getElementById("hiddenContent").classList.toggle("hidden");
+    });
+</script>
+
+<!-- for range input -->
+<script>
+    const range = document.getElementById('priceRange');
+    const currentValue = document.getElementById('currentValue');
+
+    range.addEventListener('input', () => {
+        currentValue.textContent = `$${range.value}`;
     });
 </script>
