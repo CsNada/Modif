@@ -1,0 +1,483 @@
+<!DOCTYPE HTML>
+<html lang="eng">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Packages & Offers</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;400;700&display=swap');
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        /* إخفاء شريط التمرير في المتصفحات الحديثة */
+        .scroll-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        .scroll-container {
+            -ms-overflow-style: none;
+            /* إخفاء الشريط في إنترنت إكسبلورر */
+            scrollbar-width: none;
+            /* إخفاء الشريط في فايرفوكس */
+        }
+
+        /* نهيّئ الحالة الابتدائية للمينوهات */
+        .slide {
+            display: none;
+            height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body dir="ltr">
+
+    <!-- the header -->
+    <div class="flex justify-between items-center p-1.5 px-7 shadow-md sticky top-0 z-50 bg-[#1E2227] text-white">
+
+        <!-- Menu Button for Mobile (hidden on laptop) -->
+        <button id="menu-toggle" class="md:hidden text-xl">&#9776;</button>
+
+        <!-- Navigation Links (Hidden on Mobile) -->
+        <nav class="hidden md:flex gap-8 items-center px-3">
+            <a href="./Home-eng.html" class="hover:border-b-2 transition-all border-white">Home</a>
+            <a href="./Properties-eng.html" class="hover:border-b-2 transition-all border-white">Properties</a>
+            <a href="./Packages & Offers-eng.html" class="font-bold border-b-2 border-white">Packages & Offers</a>
+            <a href="./About Us-eng.html" class="hover:border-b-2 transition-all border-white">About Us</a>
+        </nav>
+
+        <!-- Logo -->
+        <div>
+            <img src="../img/Admin/logo white.png" alt="" class="h-8 md:h-12">
+        </div>
+
+        <!-- Buttons Section (Hidden on Mobile) -->
+        <div class="hidden md:flex text-xs font-bold items-center gap-7 p-2 md:w-1/3 justify-end">
+
+            <!-- translate button -->
+            <a href="./Properties-ar.html" class="flex items-center gap-1 p-2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418" />
+                </svg>
+                <span>EN</span>
+            </a>
+
+            <!-- profile button -->
+            <div>
+                <a href="./Account-eng.html" class="bg-[#D9D9D96B] p-1 px-1.5 flex gap-2 items-center rounded-full">
+
+                    <svg width="30" height="30" viewBox="0 0 60 61" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect y="0.5" width="60" height="60" rx="30" fill="#F1F1F1" />
+                        <path
+                            d="M29.999 35.791C37.2301 35.791 43.333 36.9656 43.333 41.499C43.3329 46.034 37.19 47.167 29.999 47.167C22.7698 47.167 16.6661 45.9922 16.666 41.459C16.666 36.924 22.8081 35.791 29.999 35.791ZM29.999 13.834C34.8975 13.834 38.8222 17.7573 38.8223 22.6523C38.8223 27.5474 34.8975 31.4727 29.999 31.4727C25.1023 31.4725 21.1758 27.5473 21.1758 22.6523C21.1758 17.7574 25.1024 13.8342 29.999 13.834Z"
+                            fill="#4A4C4F" />
+                    </svg>
+
+                    <p class="pr-1">Account</p>
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Mobile Menu (Appears when toggled) -->
+        <div id="mobile-menu"
+            class="hidden text-md font-bold fixed inset-0 bg-[#1E2227] p-8 flex flex-col gap-5 text-lg shadow-lg md:hidden">
+
+
+            <div class="flex items-center justify-between gap-2">
+                <!-- close button -->
+                <div id="close-menu" class="flex items-center gap-2">
+                    <button class="text-xl text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                        </svg>
+
+                    </button>
+                    <p>close</p>
+                </div>
+
+                <!-- translate button -->
+                <a href="./Packages & Offers-ar.html" class="flex items-center gap-1 p-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418" />
+                    </svg>
+                    <span>EN</span>
+                </a>
+
+
+            </div>
+
+            <div class="pt-10 flex flex-col items-center gap-5">
+                <a href="./Home-eng.html">Home</a>
+                <a href="./Properties-eng.html">Properties</a>
+                <a href="./Packages & Offers-eng.html">Packages & Offers</a>
+                <a href="./About Us-eng.html">About Us</a>
+            </div>
+
+
+            <!-- profile button -->
+            <div class="pt-14 w-full flex justify-center items-center">
+                <a href="./Account-eng.html" class="bg-[#D9D9D96B] p-1 px-1.5 flex gap-2 items-center rounded-full">
+
+                    <svg width="30" height="30" viewBox="0 0 60 61" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect y="0.5" width="60" height="60" rx="30" fill="#F1F1F1" />
+                        <path
+                            d="M29.999 35.791C37.2301 35.791 43.333 36.9656 43.333 41.499C43.3329 46.034 37.19 47.167 29.999 47.167C22.7698 47.167 16.6661 45.9922 16.666 41.459C16.666 36.924 22.8081 35.791 29.999 35.791ZM29.999 13.834C34.8975 13.834 38.8222 17.7573 38.8223 22.6523C38.8223 27.5474 34.8975 31.4727 29.999 31.4727C25.1023 31.4725 21.1758 27.5473 21.1758 22.6523C21.1758 17.7574 25.1024 13.8342 29.999 13.834Z"
+                            fill="#4A4C4F" />
+                    </svg>
+
+                    <p class="pr-1">Account</p>
+                </a>
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <!-- the page -->
+    <div>
+
+        <div>
+            <div class="min-h-screen bg-white flex flex-col items-center justify-center p-6">
+                <!-- price -->
+                <div class="text-center mb-8">
+                    <h1 class="text-5xl font-bold mb-2">$210.00</h1>
+                    <button class="text-xs text-[#2280EF] bg-[#DFEDFD]/80 px-3 py-1 rounded-md hover:bg-[#DFEDFD]">
+                        View detailed order
+                    </button>
+                </div>
+
+                <form id="payment-form" class="w-2/3 space-y-6">
+
+                    <!-- Credit/Debit Card-->
+                    <div class="border rounded-xl p-5 shadow-sm">
+                        <label class="flex items-center justify-between mb-3">
+                            <div class="flex items-center gap-2">
+                                <input type="radio" name="payment" checked class="accent-blue-600 size-4" />
+                                <span class="font-semibold">Credit/Debit Card</span>
+                            </div>
+                            <div class="flex gap-2">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" class="h-3"
+                                    alt="Visa">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Mastercard-logo.png"
+                                    class="h-4" alt="MasterCard">
+                            </div>
+                        </label>
+
+                        <p class="text-[#282828] mb-4 p-1 px-2 text-xs rounded-md bg-[#F3F3F3]">Pay securely with your
+                            Bank Account using Visa or
+                            Mastercard</p>
+
+                        <!-- inputs -->
+                        <div class="space-y-4">
+                            <div>
+                                <label class="text-sm text-gray-600">Label</label>
+                                <input type="text" placeholder="XXXX XXXX XXXX XXXX"
+                                    class="w-full rounded-md border px-2 py-1 mt-1 focus:outline-none" />
+                            </div>
+                            <div>
+                                <label class="text-sm text-gray-600">Name on Card</label>
+                                <input type="text" placeholder="Name on Card"
+                                    class="w-full rounded-md border px-2 py-1 mt-1 focus:outline-none" />
+                            </div>
+                            <div class="flex gap-4">
+                                <div class="flex-1">
+                                    <label class="text-sm text-gray-600">Expire Date</label>
+                                    <input type="text" placeholder="MM/YY"
+                                        class="w-full rounded-md border px-2 py-1 mt-1 focus:outline-none" />
+                                </div>
+                                <div class="flex-1">
+                                    <label class="text-sm text-gray-600">CVV Code</label>
+                                    <input type="text" placeholder="XXX"
+                                        class="w-full rounded-md border px-2 py-1 mt-1 focus:outline-none" />
+                                </div>
+                            </div>
+                            <label class="flex items-center space-x-2">
+                                <input type="checkbox" class="accent-blue-500" />
+                                <span class="text-sm text-gray-600">Save card for future payments</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- PayPal -->
+                    <div class="border rounded-xl p-5 shadow-sm">
+                        <label class="flex items-center justify-between space-x-2 mb-3">
+                            <div class="flex items-center gap-2">
+                                <input type="radio" name="payment" class="accent-blue-600 size-4" />
+                                <span class="font-semibold">PayPal</span>
+                            </div>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg"
+                                class="h-4 ml-auto" alt="PayPal">
+                        </label>
+                        <p class="text-[#282828] mb-4 p-1 px-2 text-xs rounded-md bg-[#F3F3F3]">You will be redirected
+                            to PayPal website to complete your order securely.</p>
+                    </div>
+
+                    <!-- زر الدفع -->
+                    <button onclick="handlePayment(event)" type="submit"
+                        class="w-full bg-black text-white py-1.5 rounded-md font-semibold">
+                        Place Order
+                    </button>
+
+                </form>
+
+                <!-- laoding screen after paying -->
+                <div id="processing-screen"
+                    class="hidden fixed inset-0 bg-white flex flex-col items-center justify-center z-50">
+                    <img src="../img/Auth/Logo black.png" alt="" class="w-[150px]">
+                    <p class="text-gray-600 m-4">Please wait while we securely process your payment.</p>
+                    <div class="w-12 h-12 border-4 border-gray-300 border-t-black rounded-full animate-spin"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- white space -->
+        <div class="md:h-40 h-24 bg-white shadow-md relative"></div>
+
+        <!-- footer -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-5 p-10 bg-[#1E2227] text-white">
+
+            <!-- text  -->
+            <div class="">
+                <h1 class="text-lg font-semibold pb-3">Header</h1>
+                <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare cursus sed nunc
+                    eget dictum Sed ornare cursus sed nunc eget dictumd nunc eget dictum Sed ornare cursus sed nunc eget
+                    dictum </p>
+            </div>
+
+            <!-- logo  -->
+            <div class="flex justify-center">
+                <img src="../img/Admin/logo white.png" alt="logo" class="h-14">
+            </div>
+
+            <!-- buttons  -->
+            <div id="sidebar" class="flex flex-col gap-4 px-10">
+                <h1 class="text-lg font-semibold pb-3">Header Text</h1>
+
+
+                <!-- Section 1 -->
+                <div class="mb-2">
+
+                    <!-- open and close button -->
+                    <button class="w-full flex items-cente justify-between px-4 transition" data-target="menu1">
+                        <div class="flex items-center gap-2 space-x-2 space-x-reverse">
+                            <svg class="h-4 w-4 transform transition-transform duration-300" data-icon="menu1"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 5l7 7-7 7" />
+                            </svg>
+                            <span>Button 1</span>
+                        </div>
+                    </button>
+
+                    <!-- the list -->
+                    <div id="menu1" class="slide">
+                        <ul class="mt-2 px-6 py-2 text-sm">
+                            <li class="hover:text-gray-300 cursor-pointer border-l border-white px-2 pt-1.5">Option A
+                            </li>
+                            <li class="hover:text-gray-300 cursor-pointer border-l border-white px-2 pt-1.5">Option B
+                            </li>
+                            <li class="hover:text-gray-300 cursor-pointer border-l border-white px-2 pt-1.5">Option C
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Section 2 -->
+                <div class="mb-2">
+
+                    <!-- open and close button -->
+                    <button class="w-full flex items-cente justify-between px-4 transition" data-target="menu2">
+                        <div class="flex items-center gap-2 space-x-2 space-x-reverse">
+                            <svg class="h-4 w-4 transform transition-transform duration-300" data-icon="menu2"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 5l7 7-7 7" />
+                            </svg>
+                            <span>Button 1</span>
+                        </div>
+                    </button>
+
+                    <!-- the list -->
+                    <div id="menu2" class="slide">
+                        <ul class="mt-2 px-6 py-2 text-sm">
+                            <li class="hover:text-gray-300 cursor-pointer border-l border-white px-2 pt-1.5">Option A
+                            </li>
+                            <li class="hover:text-gray-300 cursor-pointer border-l border-white px-2 pt-1.5">Option B
+                            </li>
+                            <li class="hover:text-gray-300 cursor-pointer border-l border-white px-2 pt-1.5">Option C
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Section 3 -->
+                <div class="mb-2">
+
+                    <!-- open and close button -->
+                    <button class="w-full flex items-cente justify-between px-4 transition" data-target="menu3">
+                        <div class="flex items-center gap-2 space-x-2 space-x-reverse">
+                            <svg class="h-4 w-4 transform transition-transform duration-300" data-icon="menu3"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 5l7 7-7 7" />
+                            </svg>
+                            <span>Button 3</span>
+                        </div>
+                    </button>
+
+                    <!-- the list -->
+                    <div id="menu3" class="slide">
+                        <ul class="mt-2 px-6 py-2 text-sm">
+                            <li class="hover:text-gray-300 cursor-pointer border-l border-white px-2 pt-1.5">Option A
+                            </li>
+                            <li class="hover:text-gray-300 cursor-pointer border-l border-white px-2 pt-1.5">Option B
+                            </li>
+                            <li class="hover:text-gray-300 cursor-pointer border-l border-white px-2 pt-1.5">Option C
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Section 4 -->
+                <div class="mb-2">
+
+                    <!-- open and close button -->
+                    <button class="w-full flex items-cente justify-between px-4 transition" data-target="menu4">
+                        <div class="flex items-center gap-2 space-x-2 space-x-reverse">
+                            <svg class="h-4 w-4 transform transition-transform duration-300" data-icon="menu4"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 5l7 7-7 7" />
+                            </svg>
+                            <span>Button 4</span>
+                        </div>
+                    </button>
+
+                    <!-- the list -->
+                    <div id="menu4" class="slide">
+                        <ul class="mt-2 px-6 py-2 text-sm">
+                            <li class="hover:text-gray-300 cursor-pointer border-l border-white px-2 pt-1.5">Option A
+                            </li>
+                            <li class="hover:text-gray-300 cursor-pointer border-l border-white px-2 pt-1.5">Option B
+                            </li>
+                            <li class="hover:text-gray-300 cursor-pointer border-l border-white px-2 pt-1.5">Option C
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- end of the page -->
+        <div class="bg-[#1E2227] h-10">
+            <div class="bg-[#1E2227] border-t border-white mx-20"></div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
+
+<!-- for mobile header bar-->
+<script>
+    document.getElementById('menu-toggle').addEventListener('click', function () {
+        document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+    document.getElementById('close-menu').addEventListener('click', function () {
+        document.getElementById('mobile-menu').classList.add('hidden');
+    });
+</script>
+
+<!-- for footer menu -->
+<script>
+    const sidebar = document.getElementById('sidebar');
+
+    // slideDown slideUp
+    function slideDown(el) {
+        el.style.display = 'block';
+        const h = el.scrollHeight + 'px';
+        requestAnimationFrame(() => {
+            el.style.transition = 'height 300ms ease, opacity 300ms ease';
+            el.style.height = h;
+            el.style.opacity = 1;
+        });
+    }
+    function slideUp(el) {
+        el.style.transition = 'height 300ms ease, opacity 300ms ease';
+        el.style.height = '0';
+        el.style.opacity = 0;
+        el.addEventListener('transitionend', function _hide() {
+            el.style.display = 'none';
+            el.removeEventListener('transitionend', _hide);
+        });
+    }
+
+    // buttons events
+    sidebar.querySelectorAll('button[data-target]').forEach(btn => {
+        btn.addEventListener('click', e => {
+            const id = btn.dataset.target;
+            const menu = document.getElementById(id);
+            const icon = btn.querySelector('svg[data-icon]');
+
+            // close any list opened when open another list
+            sidebar.querySelectorAll('.slide').forEach(sec => {
+                if (sec !== menu && sec.style.display === 'block') {
+                    slideUp(sec);
+                    const otherIcon = sidebar.querySelector(`svg[data-icon="${sec.id}"]`);
+                    otherIcon?.classList.remove('rotate-90');
+                }
+            });
+
+            // arrow svg rotate change when open the list
+            if (menu.style.display === 'block') {
+                slideUp(menu);
+                icon.classList.remove('rotate-90');
+            } else {
+                slideDown(menu);
+                icon.classList.add('rotate-90');
+            }
+
+            e.stopPropagation();
+        });
+    });
+
+    // close the list when click on another space
+    document.addEventListener('click', e => {
+        if (!sidebar.contains(e.target)) {
+            sidebar.querySelectorAll('.slide').forEach(sec => {
+                if (sec.style.display === 'block') {
+                    slideUp(sec);
+                }
+            });
+            sidebar.querySelectorAll('svg[data-icon]').forEach(ic => {
+                ic.classList.remove('rotate-90');
+            });
+        }
+    });
+</script>
+
+<script>
+    function handlePayment(event) {
+        event.preventDefault(); //delay sending the form
+        document.getElementById('payment-form').classList.add('hidden');
+        document.getElementById('processing-screen').classList.remove('hidden');
+
+        setTimeout(() => {
+            window.location.href = './Dashboard.html';
+        }, 2000);
+    }
+</script>
