@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="eng">
+<html lang="eng" class="scroll-smooth">
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,14 +25,6 @@
             /* إخفاء الشريط في إنترنت إكسبلورر */
             scrollbar-width: none;
             /* إخفاء الشريط في فايرفوكس */
-        }
-
-        /* نهيّئ الحالة الابتدائية للمينوهات */
-        .slide {
-            display: none;
-            height: 0;
-            opacity: 0;
-            overflow: hidden;
         }
 
         .font-volkhov {
@@ -167,14 +159,16 @@
                 <h1 class="font-bold text-xl md:text-4xl pb-4">
                     Welcome to Welhost – Your Smart Property Hosting & Booking Platform
                 </h1>
-                <p class="text-sm md:text-lg">Enjoy a smooth and secure booking experience tailored for you.</p>
+                <p class="text-sm md:text-lg">Enjoy a seamless and secure experience designed for furnished apartment
+                    owners and small hotel operators. Everything you need to rent, manage, and grow your property — all
+                    in one place.</p>
             </div>
 
-            <!-- Where would you like to stay? -->
+            <!-- search filters -->
             <div class="relative">
                 <!-- white box  -->
                 <div class="rounded-t-md bg-white mx-10 md:mx-36 px-10 pt-5 pb-14 font-semibold">
-                    <p>Where would you like to stay?</p>
+                    <p>Find your ideal stay by selecting the country, city, property type, and price range.</p>
                 </div>
 
                 <!-- search bar inputs  -->
@@ -637,9 +631,8 @@
             <h1 class="text-lg md:text-4xl font-semibold text-[#181E4B] font-volkhov">We Provide You the Best Properties
                 Across Saudi Arabia</h1>
 
-            <p class="text-xs md:text-sm pt-5 md:mr-64">Discover a premium selection of residential and commercial
-                properties throughout the Kingdom. From modern apartments in Riyadh to beachfront villas in Jeddah — we
-                help you find the perfect place to live, invest, or grow your business.</p>
+            <p class="text-xs md:text-sm pt-5 md:mr-64"> whether you're searching in Riyadh, Jeddah, or the Eastern
+                Province.</p>
         </div>
 
         <!-- the images -->
@@ -658,12 +651,11 @@
         </div>
 
         <!-- email  -->
-        <div class="bg-[#1E2227] md:py-16 py-10 w-full text-white">
+        <div id="Contact Us" class="bg-[#1E2227] md:py-16 py-10 w-full text-white scroll-mt-24">
             <!-- title  -->
             <h1 class="text-xl md:text-5xl pb-5 text-center">Subscribe & <br>get news and top hotels</h1>
-            <p class="text-sm md:text-xl md:px-44 text-center">At the moment of subscribing you accept to be a VIP
-                member of
-                Modheef, you will receive news and valuable information</p>
+            <p class="text-sm md:text-xl md:px-44 text-center">Subscribe to receive top hotel and rental deals, and
+                become a VIP member of WelHost.</p>
 
             <!-- email input  -->
             <form action="" class="flex flex-col items-center gap-9 pt-8">
@@ -689,10 +681,10 @@
 
             <!-- text  -->
             <div class="">
-                <h1 class="text-lg font-semibold pb-3">Header</h1>
-                <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare cursus sed nunc
-                    eget dictum Sed ornare cursus sed nunc eget dictumd nunc eget dictum Sed ornare cursus sed nunc eget
-                    dictum </p>
+                <h1 class="text-lg font-semibold pb-3">About Welhost</h1>
+                <p class="text-sm">Welhost is a Saudi-based platform built to manage and operate short-term rental units
+                    and boutique hotels. We provide smart technology solutions that empower owners and operators to
+                    optimize performance and deliver outstanding hospitality experiences.</p>
             </div>
 
             <!-- logo  -->
@@ -700,120 +692,43 @@
                 <img src="../img/Admin/logo white.png" alt="logo" class="h-14">
             </div>
 
-            <!-- buttons  -->
-            <div id="sidebar" class="flex flex-col gap-4 px-10">
-                <h1 class="text-lg font-semibold pb-3">Header Text</h1>
+            <!-- right section -->
+            <div class="grid grid-cols-2 gap-5">
+                <!-- Quick Links -->
+                <div class="flex flex-col gap-4">
+                    <h1 class="text-lg font-semibold pb-3">Quick Links</h1>
 
+                    <!-- links -->
+                    <div class="space-y-3">
+                        <a href="./About Us-eng.html"
+                            class="w-fit flex items-center justify-between px-4 hover:underline transition-all">
+                            <p>About Us</p>
+                        </a>
 
-                <!-- Section 1 -->
-                <div class="mb-2">
+                        <a href="./Packages & Offers-eng.html"
+                            class="w-fit flex items-center justify-between px-4 hover:underline transition-all">
+                            <p>Packages & Offers</p>
+                        </a>
 
-                    <!-- open and close button -->
-                    <button class="w-full flex items-center justify-between px-4 transition" data-target="menu1">
-                        <div class="flex items-center gap-2 space-x-2 space-x-reverse">
-                            <svg class="h-4 w-4 transform transition-transform duration-300" data-icon="menu1"
-                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9 5l7 7-7 7" />
-                            </svg>
-                            <span>Button 1</span>
-                        </div>
-                    </button>
+                        <a href="./Properties-eng.html"
+                            class="w-fit flex items-center justify-between px-4 hover:underline transition-all">
+                            <p>Properties</p>
+                        </a>
 
-                    <!-- the list -->
-                    <div id="menu1" class="slide">
-                        <ul class="mt-2 px-6 py-2 text-sm">
-                            <li class="hover:text-gray-300 cursor-pointer border-l border-white px-2 pt-1.5">Option A
-                            </li>
-                            <li class="hover:text-gray-300 cursor-pointer border-l border-white px-2 pt-1.5">Option B
-                            </li>
-                            <li class="hover:text-gray-300 cursor-pointer border-l border-white px-2 pt-1.5">Option C
-                            </li>
-                        </ul>
+                        <a href="#Contact Us"
+                            class="w-fit flex items-center justify-between px-4 hover:underline transition-all cursor-pointer">
+                            <p>Contact Us</p>
+                        </a>
                     </div>
                 </div>
 
-                <!-- Section 2 -->
-                <div class="mb-2">
-
-                    <!-- open and close button -->
-                    <button class="w-full flex items-center justify-between px-4 transition" data-target="menu2">
-                        <div class="flex items-center gap-2 space-x-2 space-x-reverse">
-                            <svg class="h-4 w-4 transform transition-transform duration-300" data-icon="menu2"
-                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9 5l7 7-7 7" />
-                            </svg>
-                            <span>Button 1</span>
-                        </div>
-                    </button>
-
-                    <!-- the list -->
-                    <div id="menu2" class="slide">
-                        <ul class="mt-2 px-6 py-2 text-sm">
-                            <li class="hover:text-gray-300 cursor-pointer border-l border-white px-2 pt-1.5">Option A
-                            </li>
-                            <li class="hover:text-gray-300 cursor-pointer border-l border-white px-2 pt-1.5">Option B
-                            </li>
-                            <li class="hover:text-gray-300 cursor-pointer border-l border-white px-2 pt-1.5">Option C
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Section 3 -->
-                <div class="mb-2">
-
-                    <!-- open and close button -->
-                    <button class="w-full flex items-center justify-between px-4 transition" data-target="menu3">
-                        <div class="flex items-center gap-2 space-x-2 space-x-reverse">
-                            <svg class="h-4 w-4 transform transition-transform duration-300" data-icon="menu3"
-                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9 5l7 7-7 7" />
-                            </svg>
-                            <span>Button 3</span>
-                        </div>
-                    </button>
-
-                    <!-- the list -->
-                    <div id="menu3" class="slide">
-                        <ul class="mt-2 px-6 py-2 text-sm">
-                            <li class="hover:text-gray-300 cursor-pointer border-l border-white px-2 pt-1.5">Option A
-                            </li>
-                            <li class="hover:text-gray-300 cursor-pointer border-l border-white px-2 pt-1.5">Option B
-                            </li>
-                            <li class="hover:text-gray-300 cursor-pointer border-l border-white px-2 pt-1.5">Option C
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Section 4 -->
-                <div class="mb-2">
-
-                    <!-- open and close button -->
-                    <button class="w-full flex items-center justify-between px-4 transition" data-target="menu4">
-                        <div class="flex items-center gap-2 space-x-2 space-x-reverse">
-                            <svg class="h-4 w-4 transform transition-transform duration-300" data-icon="menu4"
-                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9 5l7 7-7 7" />
-                            </svg>
-                            <span>Button 4</span>
-                        </div>
-                    </button>
-
-                    <!-- the list -->
-                    <div id="menu4" class="slide">
-                        <ul class="mt-2 px-6 py-2 text-sm">
-                            <li class="hover:text-gray-300 cursor-pointer border-l border-white px-2 pt-1.5">Option A
-                            </li>
-                            <li class="hover:text-gray-300 cursor-pointer border-l border-white px-2 pt-1.5">Option B
-                            </li>
-                            <li class="hover:text-gray-300 cursor-pointer border-l border-white px-2 pt-1.5">Option C
-                            </li>
-                        </ul>
+                <!-- social media -->
+                <div class="flex flex-col gap-4">
+                    <h1 class="text-lg font-semibold pb-3">Follow Us On:</h1>
+                    
+                    <!-- icons -->
+                    <div class="space-y-3">
+                        
                     </div>
                 </div>
             </div>
@@ -918,7 +833,8 @@
                         </div>
                     </div>
 
-                    <p class="text-xs md:w-80 md:px-8 pt-2 md:pt-0">We collects your data in order to improve your experience in the
+                    <p class="text-xs md:w-80 md:px-8 pt-2 md:pt-0">We collects your data in order to improve your
+                        experience in the
                         form of cookies. </p>
                 </div>
 
@@ -946,74 +862,6 @@
     });
     document.getElementById('close-menu').addEventListener('click', function () {
         document.getElementById('mobile-menu').classList.add('hidden');
-    });
-</script>
-
-<!-- for footer menue open and close -->
-<script>
-    const sidebar = document.getElementById('sidebar');
-
-    // slideDown slideUp
-    function slideDown(el) {
-        el.style.display = 'block';
-        const h = el.scrollHeight + 'px';
-        requestAnimationFrame(() => {
-            el.style.transition = 'height 300ms ease, opacity 300ms ease';
-            el.style.height = h;
-            el.style.opacity = 1;
-        });
-    }
-    function slideUp(el) {
-        el.style.transition = 'height 300ms ease, opacity 300ms ease';
-        el.style.height = '0';
-        el.style.opacity = 0;
-        el.addEventListener('transitionend', function _hide() {
-            el.style.display = 'none';
-            el.removeEventListener('transitionend', _hide);
-        });
-    }
-
-    // buttons events
-    sidebar.querySelectorAll('button[data-target]').forEach(btn => {
-        btn.addEventListener('click', e => {
-            const id = btn.dataset.target;
-            const menu = document.getElementById(id);
-            const icon = btn.querySelector('svg[data-icon]');
-
-            // close any list opened when open another list
-            sidebar.querySelectorAll('.slide').forEach(sec => {
-                if (sec !== menu && sec.style.display === 'block') {
-                    slideUp(sec);
-                    const otherIcon = sidebar.querySelector(`svg[data-icon="${sec.id}"]`);
-                    otherIcon?.classList.remove('rotate-90');
-                }
-            });
-
-            // arrow svg rotate change when open the list
-            if (menu.style.display === 'block') {
-                slideUp(menu);
-                icon.classList.remove('rotate-90');
-            } else {
-                slideDown(menu);
-                icon.classList.add('rotate-90');
-            }
-
-            e.stopPropagation();
-        });
-    });
-
-    // close the list when click on another space
-    document.addEventListener('click', e => {
-        if (!sidebar.contains(e.target)) {
-            sidebar.querySelectorAll('.slide').forEach(sec => {
-                if (sec.style.display === 'block') {
-                    slideUp(sec);
-                }
-            });
-            sidebar.querySelectorAll('svg[data-icon]').forEach(ic => {
-                ic.classList.remove('rotate-90');
-            });
-        }
     });
 </script>
 
