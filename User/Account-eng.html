@@ -106,7 +106,7 @@
                 </div>
 
                 <!-- translate button -->
-                <a href="./About Us-ar.html" class="flex items-center gap-1 p-2">
+                <a href="./Account-ar.html" class="flex items-center gap-1 p-2">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="size-6">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -190,61 +190,202 @@
             <!-- Account section -->
             <div id="Account" class="tab-content">
 
-                <h1 class="font-semibold text-2xl">Account</h1>
-
-                <form action="">
-                    <!-- inputs -->
-                    <div class="pt-7 grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <!-- Name -->
-                        <div class="flex flex-col gap-1">
-                            <label for="Name" class="px-1 text-xs text-[#112211]/75">Name</label>
-                            <input type="text" id="Name" name="Name" value="Name"
-                                class="p-1 px-2 rounded-md border border-black/10 outline-none font-semibold">
-                        </div>
-
-                        <!-- Email -->
-                        <div class="flex flex-col gap-1">
-                            <label for="Email" class="px-1 text-xs text-[#112211]/75">Email</label>
-                            <input type="email" id="Email" name="Email" value="john.doe@gmail.com"
-                                class="p-1 px-2 rounded-md border border-black/10 outline-none font-semibold">
-                        </div>
-
-                        <!-- Password -->
-                        <div class="flex flex-col gap-1">
-                            <label for="Password" class="px-1 text-xs text-[#112211]/75">Password</label>
-                            <input type="password" id="Password" name="Password" value="Password"
-                                class="p-1 px-2 rounded-md border border-black/10 outline-none font-semibold">
-                        </div>
-
-                        <!-- Phone number -->
-                        <div class="flex flex-col gap-1">
-                            <label for="Phone number" class="px-1 text-xs text-[#112211]/75">Phone number</label>
-                            <input type="text" id="Phone number" name="Phone number" value="+1 000-000-0000"
-                                class="p-1 px-2 rounded-md border border-black/10 outline-none font-semibold">
-                        </div>
-
-                        <!-- Address -->
-                        <div class="flex flex-col gap-1">
-                            <label for="Address" class="px-1 text-xs text-[#112211]/75">Address</label>
-                            <input type="text" id="Address" name="Address"
-                                value="St 32 main downtown, Los Angeles, California, USA"
-                                class="p-1 px-2 rounded-md border border-black/10 outline-none font-semibold">
-                        </div>
-
-                        <!-- Date of birth -->
-                        <div class="flex flex-col gap-1">
-                            <label for="Date of birth" class="px-1 text-xs text-[#112211]/75">Date of birth</label>
-                            <input type="date" id="Date of birth" name="Date of birth" value="1992-07-01"
-                                class="p-1 px-2 rounded-md border border-black/10 outline-none font-semibold">
-                        </div>
+                <!-- Name -->
+                <form class="inline-edit flex flex-col md:flex-row gap-2 justify-between md:items-center p-2">
+                    <div>
+                        <p class="font-semibold text-xs">Name</p>
+                        <span class="display text-[#112211]">Mohammand</span>
+                        <!-- edit input (hidden) -->
+                        <input type="text"
+                            class="editor hidden border border-gray-300 rounded-md px-2 py-1 focus:outline-none"
+                            value="Mohhamad" />
                     </div>
 
-                    <!-- save change button -->
-                    <div class="pt-14 flex justify-center">
-                        <button type="submit"
-                            class="px-10 py-1.5 font-semibold text-sm rounded-md bg-[#8DD3BB] hover:bg-[#7bccb0] transition-all text-white">Save
-                            Changes</button>
+                    <!-- edit button -->
+                    <button type="button"
+                        class="btn-edit w-fit text-sm text-[#112211] flex items-center gap-2 px-3 py-1 rounded-md border border-[#8DD3BB] hover:bg-[#8DD3BB]/10 transition-all">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12.6777 2.75391C12.729 2.75391 12.7792 2.76882 12.8213 2.79688L12.8604 2.8291L13.1709 3.1416C13.2186 3.18986 13.2451 3.25537 13.2451 3.32324C13.245 3.37389 13.2306 3.42316 13.2031 3.46484L13.1709 3.50391L7.54004 9.14551C7.52433 9.16128 7.50636 9.17536 7.4873 9.18652L7.42676 9.21191L7.42578 9.21289L6.64941 9.47363L6.59766 9.47461C6.58054 9.47024 6.56525 9.4607 6.55273 9.44824C6.54016 9.43567 6.53074 9.41957 6.52637 9.40234C6.5222 9.38562 6.52264 9.36814 6.52734 9.35156L6.78809 8.57422V8.57324C6.79408 8.55202 6.80339 8.53156 6.81445 8.5127L6.85449 8.45996L12.4961 2.8291C12.5444 2.78102 12.6096 2.75398 12.6777 2.75391ZM14.0137 1.52344C14.0459 1.52423 14.0781 1.52795 14.1094 1.53516L14.2012 1.56641C14.2305 1.57982 14.2583 1.59632 14.2842 1.61523L14.3555 1.67969C14.5066 1.84513 14.5134 2.09227 14.3906 2.27344L14.3301 2.34668L13.9531 2.72168C13.9427 2.73218 13.9312 2.74177 13.9189 2.75L13.8799 2.77148C13.8525 2.78288 13.8227 2.78901 13.793 2.78906C13.778 2.78906 13.7627 2.78711 13.748 2.78418L13.7061 2.77148C13.6922 2.76571 13.6784 2.75837 13.666 2.75L13.6318 2.72168L13.2773 2.36816C13.2349 2.3257 13.2109 2.26802 13.2109 2.20801C13.2109 2.16293 13.2244 2.11899 13.249 2.08203L13.2773 2.04785L13.6641 1.66309C13.687 1.64024 13.7124 1.62023 13.7393 1.60254L13.8242 1.55762C13.8541 1.54566 13.8854 1.53695 13.917 1.53125L14.0137 1.52344Z"
+                                fill="black" stroke="#4C4850" stroke-width="0.046875" />
+                            <path
+                                d="M12.0731 6.05188L8.26406 9.86844C8.11684 10.016 7.9359 10.1255 7.73688 10.1875L6.9275 10.4584C6.73542 10.5127 6.53234 10.5147 6.3392 10.4644C6.14606 10.414 5.96985 10.313 5.82871 10.1719C5.68758 10.0308 5.58662 9.85456 5.53626 9.66142C5.4859 9.46828 5.48794 9.26521 5.54219 9.07312L5.81313 8.26375C5.87492 8.06478 5.98421 7.88385 6.13156 7.73656L9.94812 3.92688C9.98311 3.89193 10.0069 3.8474 10.0166 3.7989C10.0263 3.75041 10.0214 3.70014 10.0025 3.65445C9.98357 3.60875 9.95154 3.56969 9.91044 3.5422C9.86934 3.51471 9.82101 3.50002 9.77156 3.5H3.25C2.78587 3.5 2.34075 3.68437 2.01256 4.01256C1.68437 4.34075 1.5 4.78587 1.5 5.25V12.75C1.5 13.2141 1.68437 13.6592 2.01256 13.9874C2.34075 14.3156 2.78587 14.5 3.25 14.5H10.75C11.2141 14.5 11.6592 14.3156 11.9874 13.9874C12.3156 13.6592 12.5 13.2141 12.5 12.75V6.22844C12.5 6.17899 12.4853 6.13066 12.4578 6.08956C12.4303 6.04846 12.3912 6.01643 12.3456 5.99753C12.2999 5.97864 12.2496 5.97371 12.2011 5.98338C12.1526 5.99306 12.1081 6.01689 12.0731 6.05188Z"
+                                fill="black" />
+                        </svg>
+
+                        <p>Change</p>
+                    </button>
+
+                    <!-- save button (hidden) -->
+                    <button type="submit"
+                        class="btn-save w-fit hidden text-sm text-[#112211] px-3 py-1 rounded-md border border-[#8DD3BB] hover:bg-[#8DD3BB]/10 transition-all">
+                        Save Changes
+                    </button>
+                </form>
+
+                <!-- Email -->
+                <form class="inline-edit flex flex-col md:flex-row gap-2 justify-between md:items-center p-2">
+                    <div>
+                        <p class="font-semibold text-xs">Email</p>
+                        <span class="display text-[#112211]">Email@gmail.com</span>
+                        <!-- edit input (hidden) -->
+                        <input type="email"
+                            class="editor hidden border border-gray-300 rounded-md px-2 py-1 focus:outline-none"
+                            value="Email@gmail.com" />
                     </div>
+
+                    <!-- edit button -->
+                    <button type="button"
+                        class="btn-edit w-fit text-sm text-[#112211] flex items-center gap-2 px-3 py-1 rounded-md border border-[#8DD3BB] hover:bg-[#8DD3BB]/10 transition-all">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12.6777 2.75391C12.729 2.75391 12.7792 2.76882 12.8213 2.79688L12.8604 2.8291L13.1709 3.1416C13.2186 3.18986 13.2451 3.25537 13.2451 3.32324C13.245 3.37389 13.2306 3.42316 13.2031 3.46484L13.1709 3.50391L7.54004 9.14551C7.52433 9.16128 7.50636 9.17536 7.4873 9.18652L7.42676 9.21191L7.42578 9.21289L6.64941 9.47363L6.59766 9.47461C6.58054 9.47024 6.56525 9.4607 6.55273 9.44824C6.54016 9.43567 6.53074 9.41957 6.52637 9.40234C6.5222 9.38562 6.52264 9.36814 6.52734 9.35156L6.78809 8.57422V8.57324C6.79408 8.55202 6.80339 8.53156 6.81445 8.5127L6.85449 8.45996L12.4961 2.8291C12.5444 2.78102 12.6096 2.75398 12.6777 2.75391ZM14.0137 1.52344C14.0459 1.52423 14.0781 1.52795 14.1094 1.53516L14.2012 1.56641C14.2305 1.57982 14.2583 1.59632 14.2842 1.61523L14.3555 1.67969C14.5066 1.84513 14.5134 2.09227 14.3906 2.27344L14.3301 2.34668L13.9531 2.72168C13.9427 2.73218 13.9312 2.74177 13.9189 2.75L13.8799 2.77148C13.8525 2.78288 13.8227 2.78901 13.793 2.78906C13.778 2.78906 13.7627 2.78711 13.748 2.78418L13.7061 2.77148C13.6922 2.76571 13.6784 2.75837 13.666 2.75L13.6318 2.72168L13.2773 2.36816C13.2349 2.3257 13.2109 2.26802 13.2109 2.20801C13.2109 2.16293 13.2244 2.11899 13.249 2.08203L13.2773 2.04785L13.6641 1.66309C13.687 1.64024 13.7124 1.62023 13.7393 1.60254L13.8242 1.55762C13.8541 1.54566 13.8854 1.53695 13.917 1.53125L14.0137 1.52344Z"
+                                fill="black" stroke="#4C4850" stroke-width="0.046875" />
+                            <path
+                                d="M12.0731 6.05188L8.26406 9.86844C8.11684 10.016 7.9359 10.1255 7.73688 10.1875L6.9275 10.4584C6.73542 10.5127 6.53234 10.5147 6.3392 10.4644C6.14606 10.414 5.96985 10.313 5.82871 10.1719C5.68758 10.0308 5.58662 9.85456 5.53626 9.66142C5.4859 9.46828 5.48794 9.26521 5.54219 9.07312L5.81313 8.26375C5.87492 8.06478 5.98421 7.88385 6.13156 7.73656L9.94812 3.92688C9.98311 3.89193 10.0069 3.8474 10.0166 3.7989C10.0263 3.75041 10.0214 3.70014 10.0025 3.65445C9.98357 3.60875 9.95154 3.56969 9.91044 3.5422C9.86934 3.51471 9.82101 3.50002 9.77156 3.5H3.25C2.78587 3.5 2.34075 3.68437 2.01256 4.01256C1.68437 4.34075 1.5 4.78587 1.5 5.25V12.75C1.5 13.2141 1.68437 13.6592 2.01256 13.9874C2.34075 14.3156 2.78587 14.5 3.25 14.5H10.75C11.2141 14.5 11.6592 14.3156 11.9874 13.9874C12.3156 13.6592 12.5 13.2141 12.5 12.75V6.22844C12.5 6.17899 12.4853 6.13066 12.4578 6.08956C12.4303 6.04846 12.3912 6.01643 12.3456 5.99753C12.2999 5.97864 12.2496 5.97371 12.2011 5.98338C12.1526 5.99306 12.1081 6.01689 12.0731 6.05188Z"
+                                fill="black" />
+                        </svg>
+
+                        <p>Change</p>
+                    </button>
+                    
+                    <!-- save button (hidden) -->
+                    <button type="submit"
+                        class="btn-save w-fit hidden text-sm text-[#112211] px-3 py-1 rounded-md border border-[#8DD3BB] hover:bg-[#8DD3BB]/10 transition-all">
+                        Save Changes
+                    </button>
+                </form>
+
+                <!-- Password -->
+                <form class="inline-edit flex flex-col md:flex-row gap-2 justify-between md:items-center p-2">
+                    <div>
+                        <p class="font-semibold text-xs">Password</p>
+                        <span class="display text-[#112211]">*********</span>
+                        <!-- edit input (hidden) -->
+                        <input type="password"
+                            class="editor hidden border border-gray-300 rounded-md px-2 py-1 focus:outline-none"
+                            value="*********" />
+                    </div>
+
+                    <!-- edit button -->
+                    <button type="button"
+                        class="btn-edit w-fit text-sm text-[#112211] flex items-center gap-2 px-3 py-1 rounded-md border border-[#8DD3BB] hover:bg-[#8DD3BB]/10 transition-all">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12.6777 2.75391C12.729 2.75391 12.7792 2.76882 12.8213 2.79688L12.8604 2.8291L13.1709 3.1416C13.2186 3.18986 13.2451 3.25537 13.2451 3.32324C13.245 3.37389 13.2306 3.42316 13.2031 3.46484L13.1709 3.50391L7.54004 9.14551C7.52433 9.16128 7.50636 9.17536 7.4873 9.18652L7.42676 9.21191L7.42578 9.21289L6.64941 9.47363L6.59766 9.47461C6.58054 9.47024 6.56525 9.4607 6.55273 9.44824C6.54016 9.43567 6.53074 9.41957 6.52637 9.40234C6.5222 9.38562 6.52264 9.36814 6.52734 9.35156L6.78809 8.57422V8.57324C6.79408 8.55202 6.80339 8.53156 6.81445 8.5127L6.85449 8.45996L12.4961 2.8291C12.5444 2.78102 12.6096 2.75398 12.6777 2.75391ZM14.0137 1.52344C14.0459 1.52423 14.0781 1.52795 14.1094 1.53516L14.2012 1.56641C14.2305 1.57982 14.2583 1.59632 14.2842 1.61523L14.3555 1.67969C14.5066 1.84513 14.5134 2.09227 14.3906 2.27344L14.3301 2.34668L13.9531 2.72168C13.9427 2.73218 13.9312 2.74177 13.9189 2.75L13.8799 2.77148C13.8525 2.78288 13.8227 2.78901 13.793 2.78906C13.778 2.78906 13.7627 2.78711 13.748 2.78418L13.7061 2.77148C13.6922 2.76571 13.6784 2.75837 13.666 2.75L13.6318 2.72168L13.2773 2.36816C13.2349 2.3257 13.2109 2.26802 13.2109 2.20801C13.2109 2.16293 13.2244 2.11899 13.249 2.08203L13.2773 2.04785L13.6641 1.66309C13.687 1.64024 13.7124 1.62023 13.7393 1.60254L13.8242 1.55762C13.8541 1.54566 13.8854 1.53695 13.917 1.53125L14.0137 1.52344Z"
+                                fill="black" stroke="#4C4850" stroke-width="0.046875" />
+                            <path
+                                d="M12.0731 6.05188L8.26406 9.86844C8.11684 10.016 7.9359 10.1255 7.73688 10.1875L6.9275 10.4584C6.73542 10.5127 6.53234 10.5147 6.3392 10.4644C6.14606 10.414 5.96985 10.313 5.82871 10.1719C5.68758 10.0308 5.58662 9.85456 5.53626 9.66142C5.4859 9.46828 5.48794 9.26521 5.54219 9.07312L5.81313 8.26375C5.87492 8.06478 5.98421 7.88385 6.13156 7.73656L9.94812 3.92688C9.98311 3.89193 10.0069 3.8474 10.0166 3.7989C10.0263 3.75041 10.0214 3.70014 10.0025 3.65445C9.98357 3.60875 9.95154 3.56969 9.91044 3.5422C9.86934 3.51471 9.82101 3.50002 9.77156 3.5H3.25C2.78587 3.5 2.34075 3.68437 2.01256 4.01256C1.68437 4.34075 1.5 4.78587 1.5 5.25V12.75C1.5 13.2141 1.68437 13.6592 2.01256 13.9874C2.34075 14.3156 2.78587 14.5 3.25 14.5H10.75C11.2141 14.5 11.6592 14.3156 11.9874 13.9874C12.3156 13.6592 12.5 13.2141 12.5 12.75V6.22844C12.5 6.17899 12.4853 6.13066 12.4578 6.08956C12.4303 6.04846 12.3912 6.01643 12.3456 5.99753C12.2999 5.97864 12.2496 5.97371 12.2011 5.98338C12.1526 5.99306 12.1081 6.01689 12.0731 6.05188Z"
+                                fill="black" />
+                        </svg>
+
+                        <p>Change</p>
+                    </button>
+                    
+                    <!-- save button (hidden) -->
+                    <button type="submit"
+                        class="btn-save w-fit hidden text-sm text-[#112211] px-3 py-1 rounded-md border border-[#8DD3BB] hover:bg-[#8DD3BB]/10 transition-all">
+                        Save Changes
+                    </button>
+                </form>
+
+                <!-- Phone number -->
+                <form class="inline-edit flex flex-col md:flex-row gap-2 justify-between md:items-center p-2">
+                    <div>
+                        <p class="font-semibold text-xs">Phone number</p>
+                        <span class="display text-[#112211]">+1 000-000-0000</span>
+                        <!-- edit input (hidden) -->
+                        <input type="text"
+                            class="editor hidden border border-gray-300 rounded-md px-2 py-1 focus:outline-none"
+                            value="+1 000-000-0000" />
+                    </div>
+
+                    <!-- edit button -->
+                    <button type="button"
+                        class="btn-edit w-fit text-sm text-[#112211] flex items-center gap-2 px-3 py-1 rounded-md border border-[#8DD3BB] hover:bg-[#8DD3BB]/10 transition-all">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12.6777 2.75391C12.729 2.75391 12.7792 2.76882 12.8213 2.79688L12.8604 2.8291L13.1709 3.1416C13.2186 3.18986 13.2451 3.25537 13.2451 3.32324C13.245 3.37389 13.2306 3.42316 13.2031 3.46484L13.1709 3.50391L7.54004 9.14551C7.52433 9.16128 7.50636 9.17536 7.4873 9.18652L7.42676 9.21191L7.42578 9.21289L6.64941 9.47363L6.59766 9.47461C6.58054 9.47024 6.56525 9.4607 6.55273 9.44824C6.54016 9.43567 6.53074 9.41957 6.52637 9.40234C6.5222 9.38562 6.52264 9.36814 6.52734 9.35156L6.78809 8.57422V8.57324C6.79408 8.55202 6.80339 8.53156 6.81445 8.5127L6.85449 8.45996L12.4961 2.8291C12.5444 2.78102 12.6096 2.75398 12.6777 2.75391ZM14.0137 1.52344C14.0459 1.52423 14.0781 1.52795 14.1094 1.53516L14.2012 1.56641C14.2305 1.57982 14.2583 1.59632 14.2842 1.61523L14.3555 1.67969C14.5066 1.84513 14.5134 2.09227 14.3906 2.27344L14.3301 2.34668L13.9531 2.72168C13.9427 2.73218 13.9312 2.74177 13.9189 2.75L13.8799 2.77148C13.8525 2.78288 13.8227 2.78901 13.793 2.78906C13.778 2.78906 13.7627 2.78711 13.748 2.78418L13.7061 2.77148C13.6922 2.76571 13.6784 2.75837 13.666 2.75L13.6318 2.72168L13.2773 2.36816C13.2349 2.3257 13.2109 2.26802 13.2109 2.20801C13.2109 2.16293 13.2244 2.11899 13.249 2.08203L13.2773 2.04785L13.6641 1.66309C13.687 1.64024 13.7124 1.62023 13.7393 1.60254L13.8242 1.55762C13.8541 1.54566 13.8854 1.53695 13.917 1.53125L14.0137 1.52344Z"
+                                fill="black" stroke="#4C4850" stroke-width="0.046875" />
+                            <path
+                                d="M12.0731 6.05188L8.26406 9.86844C8.11684 10.016 7.9359 10.1255 7.73688 10.1875L6.9275 10.4584C6.73542 10.5127 6.53234 10.5147 6.3392 10.4644C6.14606 10.414 5.96985 10.313 5.82871 10.1719C5.68758 10.0308 5.58662 9.85456 5.53626 9.66142C5.4859 9.46828 5.48794 9.26521 5.54219 9.07312L5.81313 8.26375C5.87492 8.06478 5.98421 7.88385 6.13156 7.73656L9.94812 3.92688C9.98311 3.89193 10.0069 3.8474 10.0166 3.7989C10.0263 3.75041 10.0214 3.70014 10.0025 3.65445C9.98357 3.60875 9.95154 3.56969 9.91044 3.5422C9.86934 3.51471 9.82101 3.50002 9.77156 3.5H3.25C2.78587 3.5 2.34075 3.68437 2.01256 4.01256C1.68437 4.34075 1.5 4.78587 1.5 5.25V12.75C1.5 13.2141 1.68437 13.6592 2.01256 13.9874C2.34075 14.3156 2.78587 14.5 3.25 14.5H10.75C11.2141 14.5 11.6592 14.3156 11.9874 13.9874C12.3156 13.6592 12.5 13.2141 12.5 12.75V6.22844C12.5 6.17899 12.4853 6.13066 12.4578 6.08956C12.4303 6.04846 12.3912 6.01643 12.3456 5.99753C12.2999 5.97864 12.2496 5.97371 12.2011 5.98338C12.1526 5.99306 12.1081 6.01689 12.0731 6.05188Z"
+                                fill="black" />
+                        </svg>
+
+                        <p>Change</p>
+                    </button>
+
+                    <!-- save button (hidden) -->
+                    <button type="submit"
+                        class="btn-save w-fit hidden text-sm text-[#112211] px-3 py-1 rounded-md border border-[#8DD3BB] hover:bg-[#8DD3BB]/10 transition-all">
+                        Save Changes
+                    </button>
+                </form>
+
+                <!-- Address -->
+                <form class="inline-edit flex flex-col md:flex-row gap-2 justify-between md:items-center p-2">
+                    <div>
+                        <p class="font-semibold text-xs">Address</p>
+                        <span class="display text-[#112211]">Riyadh</span>
+                        <!-- edit input (hidden) -->
+                        <input type="text"
+                            class="editor hidden border border-gray-300 rounded-md px-2 py-1 focus:outline-none"
+                            value="Riyadh" />
+                    </div>
+
+                    <!-- edit button -->
+                    <button type="button"
+                        class="btn-edit w-fit text-sm text-[#112211] flex items-center gap-2 px-3 py-1 rounded-md border border-[#8DD3BB] hover:bg-[#8DD3BB]/10 transition-all">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12.6777 2.75391C12.729 2.75391 12.7792 2.76882 12.8213 2.79688L12.8604 2.8291L13.1709 3.1416C13.2186 3.18986 13.2451 3.25537 13.2451 3.32324C13.245 3.37389 13.2306 3.42316 13.2031 3.46484L13.1709 3.50391L7.54004 9.14551C7.52433 9.16128 7.50636 9.17536 7.4873 9.18652L7.42676 9.21191L7.42578 9.21289L6.64941 9.47363L6.59766 9.47461C6.58054 9.47024 6.56525 9.4607 6.55273 9.44824C6.54016 9.43567 6.53074 9.41957 6.52637 9.40234C6.5222 9.38562 6.52264 9.36814 6.52734 9.35156L6.78809 8.57422V8.57324C6.79408 8.55202 6.80339 8.53156 6.81445 8.5127L6.85449 8.45996L12.4961 2.8291C12.5444 2.78102 12.6096 2.75398 12.6777 2.75391ZM14.0137 1.52344C14.0459 1.52423 14.0781 1.52795 14.1094 1.53516L14.2012 1.56641C14.2305 1.57982 14.2583 1.59632 14.2842 1.61523L14.3555 1.67969C14.5066 1.84513 14.5134 2.09227 14.3906 2.27344L14.3301 2.34668L13.9531 2.72168C13.9427 2.73218 13.9312 2.74177 13.9189 2.75L13.8799 2.77148C13.8525 2.78288 13.8227 2.78901 13.793 2.78906C13.778 2.78906 13.7627 2.78711 13.748 2.78418L13.7061 2.77148C13.6922 2.76571 13.6784 2.75837 13.666 2.75L13.6318 2.72168L13.2773 2.36816C13.2349 2.3257 13.2109 2.26802 13.2109 2.20801C13.2109 2.16293 13.2244 2.11899 13.249 2.08203L13.2773 2.04785L13.6641 1.66309C13.687 1.64024 13.7124 1.62023 13.7393 1.60254L13.8242 1.55762C13.8541 1.54566 13.8854 1.53695 13.917 1.53125L14.0137 1.52344Z"
+                                fill="black" stroke="#4C4850" stroke-width="0.046875" />
+                            <path
+                                d="M12.0731 6.05188L8.26406 9.86844C8.11684 10.016 7.9359 10.1255 7.73688 10.1875L6.9275 10.4584C6.73542 10.5127 6.53234 10.5147 6.3392 10.4644C6.14606 10.414 5.96985 10.313 5.82871 10.1719C5.68758 10.0308 5.58662 9.85456 5.53626 9.66142C5.4859 9.46828 5.48794 9.26521 5.54219 9.07312L5.81313 8.26375C5.87492 8.06478 5.98421 7.88385 6.13156 7.73656L9.94812 3.92688C9.98311 3.89193 10.0069 3.8474 10.0166 3.7989C10.0263 3.75041 10.0214 3.70014 10.0025 3.65445C9.98357 3.60875 9.95154 3.56969 9.91044 3.5422C9.86934 3.51471 9.82101 3.50002 9.77156 3.5H3.25C2.78587 3.5 2.34075 3.68437 2.01256 4.01256C1.68437 4.34075 1.5 4.78587 1.5 5.25V12.75C1.5 13.2141 1.68437 13.6592 2.01256 13.9874C2.34075 14.3156 2.78587 14.5 3.25 14.5H10.75C11.2141 14.5 11.6592 14.3156 11.9874 13.9874C12.3156 13.6592 12.5 13.2141 12.5 12.75V6.22844C12.5 6.17899 12.4853 6.13066 12.4578 6.08956C12.4303 6.04846 12.3912 6.01643 12.3456 5.99753C12.2999 5.97864 12.2496 5.97371 12.2011 5.98338C12.1526 5.99306 12.1081 6.01689 12.0731 6.05188Z"
+                                fill="black" />
+                        </svg>
+
+                        <p>Change</p>
+                    </button>
+
+                    <!-- save button (hidden) -->
+                    <button type="submit"
+                        class="btn-save w-fit hidden text-sm text-[#112211] px-3 py-1 rounded-md border border-[#8DD3BB] hover:bg-[#8DD3BB]/10 transition-all">
+                        Save Changes
+                    </button>
+                </form>
+
+                <!-- Date of birth -->
+                <form class="inline-edit flex flex-col md:flex-row gap-2 justify-between md:items-center p-2">
+                    <div>
+                        <p class="font-semibold text-xs">Date of birth</p>
+                        <span class="display text-[#112211]">1992-07-01</span>
+                        <!-- edit input (hidden) -->
+                        <input type="date"
+                            class="editor hidden border border-gray-300 rounded-md px-2 py-1 focus:outline-none"
+                            value="1992-07-01" />
+                    </div>
+
+                    <!-- edit button -->
+                    <button type="button"
+                        class="btn-edit w-fit text-sm text-[#112211] flex items-center gap-2 px-3 py-1 rounded-md border border-[#8DD3BB] hover:bg-[#8DD3BB]/10 transition-all">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12.6777 2.75391C12.729 2.75391 12.7792 2.76882 12.8213 2.79688L12.8604 2.8291L13.1709 3.1416C13.2186 3.18986 13.2451 3.25537 13.2451 3.32324C13.245 3.37389 13.2306 3.42316 13.2031 3.46484L13.1709 3.50391L7.54004 9.14551C7.52433 9.16128 7.50636 9.17536 7.4873 9.18652L7.42676 9.21191L7.42578 9.21289L6.64941 9.47363L6.59766 9.47461C6.58054 9.47024 6.56525 9.4607 6.55273 9.44824C6.54016 9.43567 6.53074 9.41957 6.52637 9.40234C6.5222 9.38562 6.52264 9.36814 6.52734 9.35156L6.78809 8.57422V8.57324C6.79408 8.55202 6.80339 8.53156 6.81445 8.5127L6.85449 8.45996L12.4961 2.8291C12.5444 2.78102 12.6096 2.75398 12.6777 2.75391ZM14.0137 1.52344C14.0459 1.52423 14.0781 1.52795 14.1094 1.53516L14.2012 1.56641C14.2305 1.57982 14.2583 1.59632 14.2842 1.61523L14.3555 1.67969C14.5066 1.84513 14.5134 2.09227 14.3906 2.27344L14.3301 2.34668L13.9531 2.72168C13.9427 2.73218 13.9312 2.74177 13.9189 2.75L13.8799 2.77148C13.8525 2.78288 13.8227 2.78901 13.793 2.78906C13.778 2.78906 13.7627 2.78711 13.748 2.78418L13.7061 2.77148C13.6922 2.76571 13.6784 2.75837 13.666 2.75L13.6318 2.72168L13.2773 2.36816C13.2349 2.3257 13.2109 2.26802 13.2109 2.20801C13.2109 2.16293 13.2244 2.11899 13.249 2.08203L13.2773 2.04785L13.6641 1.66309C13.687 1.64024 13.7124 1.62023 13.7393 1.60254L13.8242 1.55762C13.8541 1.54566 13.8854 1.53695 13.917 1.53125L14.0137 1.52344Z"
+                                fill="black" stroke="#4C4850" stroke-width="0.046875" />
+                            <path
+                                d="M12.0731 6.05188L8.26406 9.86844C8.11684 10.016 7.9359 10.1255 7.73688 10.1875L6.9275 10.4584C6.73542 10.5127 6.53234 10.5147 6.3392 10.4644C6.14606 10.414 5.96985 10.313 5.82871 10.1719C5.68758 10.0308 5.58662 9.85456 5.53626 9.66142C5.4859 9.46828 5.48794 9.26521 5.54219 9.07312L5.81313 8.26375C5.87492 8.06478 5.98421 7.88385 6.13156 7.73656L9.94812 3.92688C9.98311 3.89193 10.0069 3.8474 10.0166 3.7989C10.0263 3.75041 10.0214 3.70014 10.0025 3.65445C9.98357 3.60875 9.95154 3.56969 9.91044 3.5422C9.86934 3.51471 9.82101 3.50002 9.77156 3.5H3.25C2.78587 3.5 2.34075 3.68437 2.01256 4.01256C1.68437 4.34075 1.5 4.78587 1.5 5.25V12.75C1.5 13.2141 1.68437 13.6592 2.01256 13.9874C2.34075 14.3156 2.78587 14.5 3.25 14.5H10.75C11.2141 14.5 11.6592 14.3156 11.9874 13.9874C12.3156 13.6592 12.5 13.2141 12.5 12.75V6.22844C12.5 6.17899 12.4853 6.13066 12.4578 6.08956C12.4303 6.04846 12.3912 6.01643 12.3456 5.99753C12.2999 5.97864 12.2496 5.97371 12.2011 5.98338C12.1526 5.99306 12.1081 6.01689 12.0731 6.05188Z"
+                                fill="black" />
+                        </svg>
+
+                        <p>Change</p>
+                    </button>
+
+                    <!-- save button (hidden) -->
+                    <button type="submit"
+                        class="btn-save w-fit hidden text-sm text-[#112211] px-3 py-1 rounded-md border border-[#8DD3BB] hover:bg-[#8DD3BB]/10 transition-all">
+                        Save Changes
+                    </button>
                 </form>
 
             </div>
@@ -572,7 +713,7 @@
                 </div>
 
                 <!-- ِAdd new card modal -->
-                <div id="modal-wrapper" class="fixed inset-0 z-50 hidden">
+                <div id="modal-wrapper" class="fixed inset-0 z-50 hidden flex items-center justify-center">
                     <!-- overlay -->
                     <div id="modal-overlay"
                         class="absolute inset-0 bg-black bg-opacity-50 opacity-0 transition-opacity duration-300">
@@ -634,13 +775,15 @@
                                         <!-- Name on Card -->
                                         <div class="flex flex-col gap-1">
                                             <label for="Name" class="text-xs font-semibold">Name on Card</label>
-                                            <input type="text" name="Name" id="Name" placeholder="Name on Card" class="rounded-md py-1 px-2 outline-none border border-[#79747E]">
+                                            <input type="text" name="Name" id="Name" placeholder="Name on Card"
+                                                class="rounded-md py-1 px-2 outline-none border border-[#79747E]">
                                         </div>
 
                                         <!-- Country or Region -->
                                         <div class="flex flex-col gap-1">
                                             <label for="Name" class="text-xs font-semibold">Country or Region</label>
-                                            <select name="Country" id="Country" class="rounded-md py-1 px-2 outline-none border border-[#79747E]">
+                                            <select name="Country" id="Country"
+                                                class="rounded-md py-1 px-2 outline-none border border-[#79747E]">
                                                 <option value="1">option 1</option>
                                                 <option value="2">option 2</option>
                                                 <option value="3">option 3</option>
@@ -650,7 +793,8 @@
                                         <!-- save checkbox -->
                                         <div class="flex items-center gap-2">
                                             <input type="checkbox" name="save" id="save" class="size-4">
-                                            <label for="save" class="text-sm">Securely save my information for 1-click checkout</label>
+                                            <label for="save" class="text-sm">Securely save my information for 1-click
+                                                checkout</label>
                                         </div>
                                     </div>
 
@@ -661,7 +805,10 @@
                                             Add Card
                                         </button>
 
-                                        <p class="text-[10px] pt-2">By confirming your subscription, you allow The Outdoor Inn Crowd Limited to charge your card for this payment and future payments in accordance with their terms. You can always cancel your subscription.</p>
+                                        <p class="text-[10px] pt-2">By confirming your subscription, you allow The
+                                            Outdoor Inn Crowd Limited to charge your card for this payment and future
+                                            payments in accordance with their terms. You can always cancel your
+                                            subscription.</p>
                                     </div>
                                 </form>
 
@@ -674,7 +821,6 @@
             </div>
         </div>
 
-
         <!-- white space -->
         <div class="md:h-40 h-24 bg-white shadow-md relative"></div>
 
@@ -683,10 +829,10 @@
 
             <!-- text  -->
             <div class="">
-                <h1 class="text-lg font-semibold pb-3">Header</h1>
-                <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare cursus sed nunc
-                    eget dictum Sed ornare cursus sed nunc eget dictumd nunc eget dictum Sed ornare cursus sed nunc eget
-                    dictum </p>
+                <h1 class="text-lg font-semibold pb-3">About Welhost</h1>
+                <p class="text-sm">Welhost is a Saudi-based platform built to manage and operate short-term rental units
+                    and boutique hotels. We provide smart technology solutions that empower owners and operators to
+                    optimize performance and deliver outstanding hospitality experiences.</p>
             </div>
 
             <!-- logo  -->
@@ -694,120 +840,45 @@
                 <img src="../img/Admin/logo white.png" alt="logo" class="h-14">
             </div>
 
-            <!-- buttons  -->
-            <div id="sidebar" class="flex flex-col gap-4 px-10">
-                <h1 class="text-lg font-semibold pb-3">Header Text</h1>
+            <!-- right section -->
+            <div class="grid grid-cols-2 gap-5">
+                <!-- Quick Links -->
+                <div class="flex flex-col gap-4">
+                    <h1 class="text-lg font-semibold pb-3">Quick Links</h1>
 
+                    <!-- links -->
+                    <div class="flex flex-col gap-3">
+                        <a href="./About Us-eng.html"
+                            class="w-fit flex items-center justify-between px-4 hover:underline transition-all">
+                            <p>About Us</p>
+                        </a>
 
-                <!-- Section 1 -->
-                <div class="mb-2">
+                        <a href="./Packages & Offers-eng.html"
+                            class="w-fit flex items-center justify-between px-4 hover:underline transition-all">
+                            <p>Packages & Offers</p>
+                        </a>
 
-                    <!-- open and close button -->
-                    <button class="w-full flex items-cente justify-between px-4 transition" data-target="menu1">
-                        <div class="flex items-center gap-2 space-x-2 space-x-reverse">
-                            <svg class="h-4 w-4 transform transition-transform duration-300" data-icon="menu1"
-                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9 5l7 7-7 7" />
-                            </svg>
-                            <span>Button 1</span>
-                        </div>
-                    </button>
+                        <a href="./Properties-eng.html"
+                            class="w-fit flex items-center justify-between px-4 hover:underline transition-all">
+                            <p>Properties</p>
+                        </a>
 
-                    <!-- the list -->
-                    <div id="menu1" class="slide">
-                        <ul class="mt-2 px-6 py-2 text-sm">
-                            <li class="hover:text-gray-300 cursor-pointer border-l border-white px-2 pt-1.5">Option A
-                            </li>
-                            <li class="hover:text-gray-300 cursor-pointer border-l border-white px-2 pt-1.5">Option B
-                            </li>
-                            <li class="hover:text-gray-300 cursor-pointer border-l border-white px-2 pt-1.5">Option C
-                            </li>
-                        </ul>
+                        <a href="./About Us-eng.html#Connect"
+                            class="w-fit flex items-center justify-between px-4 hover:underline transition-all cursor-pointer">
+                            <p>Contact Us</p>
+                        </a>
                     </div>
                 </div>
 
-                <!-- Section 2 -->
-                <div class="mb-2">
-
-                    <!-- open and close button -->
-                    <button class="w-full flex items-cente justify-between px-4 transition" data-target="menu2">
-                        <div class="flex items-center gap-2 space-x-2 space-x-reverse">
-                            <svg class="h-4 w-4 transform transition-transform duration-300" data-icon="menu2"
-                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9 5l7 7-7 7" />
-                            </svg>
-                            <span>Button 1</span>
-                        </div>
-                    </button>
-
-                    <!-- the list -->
-                    <div id="menu2" class="slide">
-                        <ul class="mt-2 px-6 py-2 text-sm">
-                            <li class="hover:text-gray-300 cursor-pointer border-l border-white px-2 pt-1.5">Option A
-                            </li>
-                            <li class="hover:text-gray-300 cursor-pointer border-l border-white px-2 pt-1.5">Option B
-                            </li>
-                            <li class="hover:text-gray-300 cursor-pointer border-l border-white px-2 pt-1.5">Option C
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Section 3 -->
-                <div class="mb-2">
-
-                    <!-- open and close button -->
-                    <button class="w-full flex items-cente justify-between px-4 transition" data-target="menu3">
-                        <div class="flex items-center gap-2 space-x-2 space-x-reverse">
-                            <svg class="h-4 w-4 transform transition-transform duration-300" data-icon="menu3"
-                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9 5l7 7-7 7" />
-                            </svg>
-                            <span>Button 3</span>
-                        </div>
-                    </button>
-
-                    <!-- the list -->
-                    <div id="menu3" class="slide">
-                        <ul class="mt-2 px-6 py-2 text-sm">
-                            <li class="hover:text-gray-300 cursor-pointer border-l border-white px-2 pt-1.5">Option A
-                            </li>
-                            <li class="hover:text-gray-300 cursor-pointer border-l border-white px-2 pt-1.5">Option B
-                            </li>
-                            <li class="hover:text-gray-300 cursor-pointer border-l border-white px-2 pt-1.5">Option C
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Section 4 -->
-                <div class="mb-2">
-
-                    <!-- open and close button -->
-                    <button class="w-full flex items-cente justify-between px-4 transition" data-target="menu4">
-                        <div class="flex items-center gap-2 space-x-2 space-x-reverse">
-                            <svg class="h-4 w-4 transform transition-transform duration-300" data-icon="menu4"
-                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9 5l7 7-7 7" />
-                            </svg>
-                            <span>Button 4</span>
-                        </div>
-                    </button>
-
-                    <!-- the list -->
-                    <div id="menu4" class="slide">
-                        <ul class="mt-2 px-6 py-2 text-sm">
-                            <li class="hover:text-gray-300 cursor-pointer border-l border-white px-2 pt-1.5">Option A
-                            </li>
-                            <li class="hover:text-gray-300 cursor-pointer border-l border-white px-2 pt-1.5">Option B
-                            </li>
-                            <li class="hover:text-gray-300 cursor-pointer border-l border-white px-2 pt-1.5">Option C
-                            </li>
-                        </ul>
+                <!-- social media -->
+                <div class="flex flex-col gap-4">
+                    <h1 class="text-lg font-semibold pb-3">Follow Us On:</h1>
+                    
+                    <!-- icons -->
+                    <div class="flex flex-col gap-3">
+                        <a href="" class="px-2">linked in</a>
+                        <a href="" class="px-2">whats up</a>
+                        <a href="" class="px-2">X</a>
                     </div>
                 </div>
             </div>
@@ -832,74 +903,6 @@
     });
     document.getElementById('close-menu').addEventListener('click', function () {
         document.getElementById('mobile-menu').classList.add('hidden');
-    });
-</script>
-
-<!-- for fotter menue -->
-<script>
-    const sidebar = document.getElementById('sidebar');
-
-    // slideDown slideUp
-    function slideDown(el) {
-        el.style.display = 'block';
-        const h = el.scrollHeight + 'px';
-        requestAnimationFrame(() => {
-            el.style.transition = 'height 300ms ease, opacity 300ms ease';
-            el.style.height = h;
-            el.style.opacity = 1;
-        });
-    }
-    function slideUp(el) {
-        el.style.transition = 'height 300ms ease, opacity 300ms ease';
-        el.style.height = '0';
-        el.style.opacity = 0;
-        el.addEventListener('transitionend', function _hide() {
-            el.style.display = 'none';
-            el.removeEventListener('transitionend', _hide);
-        });
-    }
-
-    // buttons events
-    sidebar.querySelectorAll('button[data-target]').forEach(btn => {
-        btn.addEventListener('click', e => {
-            const id = btn.dataset.target;
-            const menu = document.getElementById(id);
-            const icon = btn.querySelector('svg[data-icon]');
-
-            // close any list opened when open another list
-            sidebar.querySelectorAll('.slide').forEach(sec => {
-                if (sec !== menu && sec.style.display === 'block') {
-                    slideUp(sec);
-                    const otherIcon = sidebar.querySelector(`svg[data-icon="${sec.id}"]`);
-                    otherIcon?.classList.remove('rotate-90');
-                }
-            });
-
-            // arrow svg rotate change when open the list
-            if (menu.style.display === 'block') {
-                slideUp(menu);
-                icon.classList.remove('rotate-90');
-            } else {
-                slideDown(menu);
-                icon.classList.add('rotate-90');
-            }
-
-            e.stopPropagation();
-        });
-    });
-
-    // close the list when click on another space
-    document.addEventListener('click', e => {
-        if (!sidebar.contains(e.target)) {
-            sidebar.querySelectorAll('.slide').forEach(sec => {
-                if (sec.style.display === 'block') {
-                    slideUp(sec);
-                }
-            });
-            sidebar.querySelectorAll('svg[data-icon]').forEach(ic => {
-                ic.classList.remove('rotate-90');
-            });
-        }
     });
 </script>
 
@@ -966,4 +969,32 @@
             input.value = value;
         }
     }
+</script>
+
+<!-- to replace the text with input -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.inline-edit').forEach(container => {
+            const displayEl = container.querySelector('.display');
+            const inputEl = container.querySelector('.editor');
+            const btnEdit = container.querySelector('.btn-edit');
+            const btnSave = container.querySelector('.btn-save');
+
+            btnEdit.addEventListener('click', () => {
+                displayEl.classList.add('hidden');
+                inputEl.classList.remove('hidden');
+                btnEdit.classList.add('hidden');
+                btnSave.classList.remove('hidden');
+                inputEl.focus();
+            });
+
+            btnSave.addEventListener('click', () => {
+                displayEl.textContent = inputEl.value;
+                displayEl.classList.remove('hidden');
+                inputEl.classList.add('hidden');
+                btnEdit.classList.remove('hidden');
+                btnSave.classList.add('hidden');
+            });
+        });
+    });
 </script>
