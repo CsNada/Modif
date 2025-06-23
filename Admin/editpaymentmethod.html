@@ -1,0 +1,199 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>payment method</title>
+
+    <!-- for tailwindcss styles -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Nunito Sans Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Libre Franklin Font-->
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin&display=swap" rel="stylesheet">
+
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+
+            /* Font */
+            .Nunito-Sans {
+                font-family: 'Nunito Sans', sans-serif;
+            }
+
+            .Libre-Franklin {
+                font-family: 'Libre Franklin';
+            }
+        }
+    </style>
+
+</head>
+
+<!--background-->
+
+<body class="w-full flex justify-around items-center">
+
+    <img src="../img/Auth/Sign up.jpg" alt="Log in" class="h-screen hidden md:flex">
+
+    <!--the form-->
+    <div class="bg-white p-2 Nunito-Sans px-14 md:px-0 py-10 md:py-0 flex flex-col gap-4 items-center">
+
+        <form>
+            <!--titles-->
+            <div class="py-2 cursor-default">
+                <div class="flex justify-center">
+                    <img src="../img/Auth/Logo black.png" alt="logo" class="w-24 pb-5">
+                </div>
+                <p class="font-semibold text-2xl flex Libre-Franklin">Edit payment method</p>
+            </div>
+
+            <!-- Back to sign up button -->
+            <div class="py-2 ">
+                <a href="../Admin/invoices.html" class="flex gap-2 items-center w-fit hover:underline transition-all">
+                    <svg width="7" height="12" viewBox="0 0 9 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.75 14.75L1 8L7.75 1.25" stroke="#112211" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                    <p class="text-[#112211] text-xs">Back to invoices</p>
+                </a>
+
+            </div>
+
+            <!--inputs-->
+            <div class="space-y-8">
+
+                <!-- Card Number input -->
+                <div class="text-sm mt-7 space-y-1.5 relative">
+                    <input type="text" name="" id="Card-Number" value="012345678912346" autocomplate="off"
+                        class="pb-1 w-full border-b border-gray-400 focus:border-b-gray-900 outline-none transition-color peer">
+                    <label for="Card-Number" id="Card-Number-label"
+                        class="absolute left-0 -top-1 cursor-text text-gray-500 peer-focus:text-xs peer-focus:-top-6 peer-focus:text-gray-900 transition-all">Card
+                        Number</label>
+                </div>
+
+                <!-- Exp. Date and cvv number-->
+                <div class="md:flex gap-4">
+
+                    <!--Exp. Date input -->
+                    <div class="text-sm pace-y-1.5 relative w-full">
+                        <input type="text" name="" id="Date" value="03/27" autocomplate="off" oninput="formatExpiry(this)"
+                            maxlength="5"
+                            class="pb-1 w-full border-b border-gray-400 focus:border-b-gray-900 outline-none transition-color peer">
+                        <label for="Date" id="Date-label"
+                            class="absolute left-0 -top-1 cursor-text text-gray-500 peer-focus:text-xs peer-focus:-top-6 peer-focus:text-gray-900 transition-all">Exp.
+                            Date
+                        </label>
+                    </div>
+
+                    <!-- cvc -->
+                    <div class="text-sm mt-7 md:mt-0 space-y-1.5 relative w-full">
+                        <input type="text" name="" id="cvc" value="123" autocomplate="off"
+                            class="pb-1 w-full border-b border-gray-400 focus:border-b-gray-900 outline-none transition-color peer">
+                        <label for="cvc" id="cvc-lable"
+                            class="absolute left-0 -top-1 cursor-text text-gray-500 peer-focus:text-xs peer-focus:-top-6 peer-focus:text-gray-900 transition-all">CVC
+                        </label>
+                    </div>
+
+                </div>
+
+                <!-- Name on Card input -->
+                <div class="text-sm mt-7 space-y-1.5 relative">
+                    <input type="text" name="" id="name" value="Nora" autocomplate="off"
+                        class="pb-1 w-full border-b border-gray-400 focus:border-b-gray-900 outline-none transition-color peer">
+                    <label for="name" id="name-label"
+                        class="absolute left-0 -top-1 cursor-text text-gray-500 peer-focus:text-xs peer-focus:-top-6 peer-focus:text-gray-900 transition-all">Name
+                        on Card</label>
+                </div>
+
+                <!-- Country input-->
+                <div class="text-sm mt-7 space-y-1.5 relative">
+                    <input type="text" name="" id="Country" value="Riyadh" autocomplate="off"
+                        class="pb-1 w-full border-b border-gray-400 focus:border-b-gray-900 outline-none transition-color peer">
+                    <label for="Country" id="Country-label"
+                        class="absolute left-0 -top-1 cursor-text text-gray-500 peer-focus:text-xs peer-focus:-top-6 peer-focus:text-gray-900 transition-all">Country
+                        or Region</label>
+                </div>
+            </div>
+
+            <!-- Securely Policies -->
+            <div class="pt-5 flex items-center justify-between gap-2 text-xs text-gray-900">
+                <div class="flex items-center gap-1">
+                    <input type="checkbox" name="Securely" id="">
+                    <label for="Securely">Securely save my information for 1-click checkout</label>
+                </div>
+            </div>
+
+            <!--submit button-->
+            <div class="mt-5 flex justify-center">
+                <a href="./invoices.html" type="submit"
+                    class="bg-[#1E2227] cursor-pointer flex justify-center rounded-md text-white text-sm p-1 py-2 w-full hover:bg-[#131519] transition-all">Save Changes</a>
+            </div>
+
+        </form>
+
+        <p class="text-[#112211]/75 text-[10px] w-96 text-center">By confirming your subscription, you allow The Wel Host to charge your card for this payment and future payments in accordance with their terms.
+            You can always cancel your subscription.</p>
+    </div>
+
+
+
+</body>
+
+<!--for input styles-->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // store in the arry
+    const fields = [
+      { inputId: 'Card-Number', labelId: 'Card-Number-label' },
+      { inputId: 'Date',        labelId: 'Date-label',      format: formatExpiry },
+      { inputId: 'cvc',         labelId: 'cvc-lable' },
+      { inputId: 'name',        labelId: 'name-label' },
+      { inputId: 'Country',     labelId: 'Country-label' }
+    ];
+
+    fields.forEach(({ inputId, labelId, format }) => {
+      const input = document.getElementById(inputId);
+      const label = document.getElementById(labelId);
+
+      if (!input || !label) return; // if the items didn't exist
+
+      // add and remove the classes
+      const toggleLabel = () => {
+        if (input.value) {
+          input.classList.add('border-gray-900');
+          label.classList.add('text-xs', '-top-6', 'text-gray-900');
+        } else {
+          input.classList.remove('border-gray-900');
+          label.classList.remove('text-xs', '-top-6', 'text-gray-900');
+        }
+      };
+
+      // استماع لحالة الإدخال
+      input.addEventListener('input', event => {
+        // apply the date format
+        if (format) format(input);
+        // update the label
+        toggleLabel();
+      });
+
+      //  
+      toggleLabel();
+    });
+
+    // for the date format
+    function formatExpiry(input) {
+      const digits = input.value.replace(/[^\d]/g, '');
+      if (digits.length > 2) {
+        input.value = digits.slice(0, 2) + '/' + digits.slice(2, 4);
+      } else {
+        input.value = digits;
+      }
+    }
+  });
+</script>
+
+</html>

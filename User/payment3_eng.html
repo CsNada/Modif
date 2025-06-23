@@ -1,0 +1,534 @@
+<!DOCTYPE HTML>
+<html lang="eng">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Properties</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;400;700&display=swap');
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        /* إخفاء شريط التمرير في المتصفحات الحديثة */
+        .scroll-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        .scroll-container {
+            -ms-overflow-style: none;
+            /* إخفاء الشريط في إنترنت إكسبلورر */
+            scrollbar-width: none;
+            /* إخفاء الشريط في فايرفوكس */
+        }
+
+        /* نهيّئ الحالة الابتدائية للمينوهات */
+        .slide {
+            display: none;
+            height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+    </style>
+
+</head>
+
+<body dir="ltr">
+
+    <!-- the header -->
+    <div class="flex justify-between items-center p-1.5 px-7 shadow-md sticky top-0 z-50 bg-[#1E2227] text-white">
+
+        <!-- Menu Button for Mobile (hidden on laptop) -->
+        <button id="menu-toggle" class="md:hidden text-xl">&#9776;</button>
+
+        <!-- Navigation Links (Hidden on Mobile) -->
+        <nav class="hidden md:flex gap-8 items-center px-3">
+            <a href="./home_eng.html" class="hover:border-b-2 transition-all border-white">Home</a>
+            <a href="./properties_eng.html" class="font-bold border-b-2 border-white">Properties</a>
+            <a href="./packages&offers_eng.html" class="hover:border-b-2 transition-all border-white">Packages &
+                Offers</a>
+            <a href="./aboutus_eng.html" class="hover:border-b-2 transition-all border-white">About Us</a>
+        </nav>
+
+        <!-- Logo -->
+        <div>
+            <img src="../img/Admin/logo white.png" alt="" class="h-8 md:h-12">
+        </div>
+
+        <!-- Buttons Section (Hidden on Mobile) -->
+        <div class="hidden md:flex text-xs font-bold items-center gap-7 p-2 md:w-1/3 justify-end">
+
+            <!-- translate button -->
+            <a href="./payment3_ar.html" class="flex items-center gap-1 p-2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418" />
+                </svg>
+                <span>EN</span>
+            </a>
+
+            <!-- profile button -->
+            <div>
+                <a href="./account_eng.html" class="bg-[#D9D9D96B] p-1 px-1.5 flex gap-2 items-center rounded-full">
+
+                    <svg width="30" height="30" viewBox="0 0 60 61" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect y="0.5" width="60" height="60" rx="30" fill="#F1F1F1" />
+                        <path
+                            d="M29.999 35.791C37.2301 35.791 43.333 36.9656 43.333 41.499C43.3329 46.034 37.19 47.167 29.999 47.167C22.7698 47.167 16.6661 45.9922 16.666 41.459C16.666 36.924 22.8081 35.791 29.999 35.791ZM29.999 13.834C34.8975 13.834 38.8222 17.7573 38.8223 22.6523C38.8223 27.5474 34.8975 31.4727 29.999 31.4727C25.1023 31.4725 21.1758 27.5473 21.1758 22.6523C21.1758 17.7574 25.1024 13.8342 29.999 13.834Z"
+                            fill="#4A4C4F" />
+                    </svg>
+
+                    <p class="pr-1">Account</p>
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Mobile Menu (Appears when toggled) -->
+        <div id="mobile-menu"
+            class="hidden text-md font-bold fixed inset-0 bg-[#1E2227] p-8 flex flex-col gap-5 text-lg shadow-lg md:hidden">
+
+
+            <div class="flex items-center justify-between gap-2">
+                <!-- close button -->
+                <div id="close-menu" class="flex items-center gap-2">
+                    <button class="text-xl text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                        </svg>
+
+                    </button>
+                    <p>close</p>
+                </div>
+
+                <!-- translate button -->
+                <a href="./payment3_ar.html" class="flex items-center gap-1 p-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418" />
+                    </svg>
+                    <span>EN</span>
+                </a>
+
+
+            </div>
+
+            <div class="pt-10 flex flex-col items-center gap-5">
+                <a href="./home_eng.html">Home</a>
+                <a href="./properties_eng.html">Properties</a>
+                <a href="./packages&offers_eng.html">Packages & Offers</a>
+                <a href="./aboutus_eng.html">About Us</a>
+            </div>
+
+
+            <!-- profile button -->
+            <div class="pt-14 w-full flex justify-center items-center">
+                <a href="./account_eng.html" class="bg-[#D9D9D96B] p-1 px-1.5 flex gap-2 items-center rounded-full">
+
+                    <svg width="30" height="30" viewBox="0 0 60 61" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect y="0.5" width="60" height="60" rx="30" fill="#F1F1F1" />
+                        <path
+                            d="M29.999 35.791C37.2301 35.791 43.333 36.9656 43.333 41.499C43.3329 46.034 37.19 47.167 29.999 47.167C22.7698 47.167 16.6661 45.9922 16.666 41.459C16.666 36.924 22.8081 35.791 29.999 35.791ZM29.999 13.834C34.8975 13.834 38.8222 17.7573 38.8223 22.6523C38.8223 27.5474 34.8975 31.4727 29.999 31.4727C25.1023 31.4725 21.1758 27.5473 21.1758 22.6523C21.1758 17.7574 25.1024 13.8342 29.999 13.834Z"
+                            fill="#4A4C4F" />
+                    </svg>
+
+                    <p class="pr-1">Account</p>
+                </a>
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <!-- the page -->
+    <div>
+
+        <!-- the steps -->
+        <div class="flex justify-center items-center py-10 relative space-x-7">
+            <!-- 1 -->
+            <div class="bg-[#1ABC9C] z-10 rounded-full p-3">
+                <svg width="18" height="18" viewBox="0 0 30 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M2.63009 7.52689L7.82301 16.2308C8.46854 17.3128 9.94161 17.5356 10.8782 16.6929L27.1847 2.02199"
+                        stroke="white" stroke-width="4" stroke-linecap="round" />
+                </svg>
+
+            </div>
+
+            <!-- 2 -->
+            <div class="bg-[#1ABC9C] z-10 rounded-full p-3">
+                <svg width="18" height="18" viewBox="0 0 30 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M2.63009 7.52689L7.82301 16.2308C8.46854 17.3128 9.94161 17.5356 10.8782 16.6929L27.1847 2.02199"
+                        stroke="white" stroke-width="4" stroke-linecap="round" />
+                </svg>
+
+            </div>
+
+            <!-- 3 -->
+            <p class="text-[#898989] z-10 bg-[#E5E5E5] rounded-full text-sm p-2 px-4">3</p>
+
+            <div class="absolute top-[60px] right-2/5 z-0 p-1 border-t-2 border-[#E5E5E5] w-32"></div>
+        </div>
+
+        <!-- title -->
+        <div class="text-center">
+            <h1 class="text-[#152C5B] font-bold text-3xl">Payment</h1>
+            <p class="text-[#B0B0B0] pt-2">Kindly follow the instructions below</p>
+        </div>
+
+        <!-- green box -->
+        <div class="flex justify-center px-5 py-14">
+            <div class="md:w-1/2 w-full bg-[#1BB66E1A] rounded-md p-4 shadow">
+                <!-- title -->
+                <div class="flex justify-between">
+                    <!-- title -->
+                    <!-- the radio button -->
+                    <label class="inline-flex items-center cursor-pointer font-semibold">
+                        <!-- the hidden radio button -->
+                        <input type="radio" name="choice" id="add" checked class="form-radio sr-only peer" />
+
+                        <!-- the green check icon -->
+                        <div
+                            class="w-6 h-6 rounded-full border bg-gray-200 border-gray-200 peer-checked:bg-green-500 peer-checked:border-green-500 flex items-center justify-center transition-colors duration-20">
+                            <svg width="14" height="11" viewBox="0 0 14 11" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.8002 2L5.20026 8.59998L2.2002 5.6" stroke="white" stroke-width="3"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <span class="mx-2 text-gray-700 select-none">Add New Card</span>
+                    </label>
+
+                    <!-- icons -->
+                    <div class="flex items-center gap-2">
+                        <svg width="38" height="22" viewBox="0 0 48 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="14" cy="14" r="14" fill="#CF1928" />
+                            <circle cx="30" cy="14" r="14" fill="#FFD400" fill-opacity="0.7" />
+                        </svg>
+
+                        <svg width="44" height="15" viewBox="0 0 40 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M15.177 0.500084L9.94239 9.54583H6.51852L3.95062 2.31401C3.78601 1.86053 3.65432 1.71732 3.19342 1.52638C2.17914 1.17247 1.10566 0.915731 0 0.762626L0.0658436 0.500084H5.56379C6.30694 0.502516 6.93632 0.897959 7.04527 1.43091L8.39506 6.65788L11.7531 0.500084H15.177ZM28.5761 6.58628C28.5761 4.19953 24.0329 4.05633 24.0658 3.00616C24.0658 2.67202 24.4938 2.33787 25.4486 2.24241C26.5439 2.16826 27.6467 2.30837 28.642 2.64815L29.2016 0.738758C28.235 0.469671 27.2083 0.332122 26.1728 0.333012C22.9794 0.333012 20.7407 1.57412 20.7078 3.31644C20.6749 4.62915 22.321 5.34517 23.5391 5.77478C24.7572 6.2044 25.2181 6.51467 25.2181 6.89655C25.2181 7.49324 24.1975 7.77965 23.2757 7.77965C22.1173 7.80286 20.9708 7.60535 19.9506 7.20683L19.358 9.18782C20.498 9.51955 21.7183 9.68187 22.9465 9.66517C26.3374 9.68904 28.5432 8.4718 28.5761 6.58628ZM37.0041 9.54583H40L37.3992 0.500084H34.6337C34.0268 0.494813 33.4777 0.760205 33.251 1.16837L28.3786 9.54583H31.7695L32.428 8.18539H36.5761L37.0041 9.54583ZM33.3827 6.3476L35.0947 2.95843L36.0823 6.3476H33.3827ZM19.786 0.500084L17.1193 9.54583H13.893L16.5597 0.500084H19.786Z"
+                                fill="#1A1F71" />
+                        </svg>
+
+
+                    </div>
+                </div>
+
+                <!-- inputs -->
+                <div id="area" class="space-y-3 overflow-hidden transition-all duration-700 ease-in-out max-h-[900px] opacity-100">
+
+                    <!-- card number -->
+                    <div class="pt-5 flex flex-col md:flex-row gap-2 md:items-center items-start md:justify-between">
+                        <label for="number">
+                            <p class="font-semibold">Card number</p>
+                            <p class="text-[#5E5E5E] text-sm">Enter the 16-digit card number on the card</p>
+                        </label>
+                        <input type="text" name="number" id="number" class="h-fit rounded-md w-full md:w-72 py-1 px-2">
+                    </div>
+
+                    <!-- Card owner -->
+                    <div class="flex flex-col md:flex-row gap-2 md:items-center items-start md:justify-between">
+                        <label for="owner">
+                            <p class="font-semibold">Card owner</p>
+                            <p class="text-[#5E5E5E] text-sm">Enter the name on the card</p>
+                        </label>
+                        <input type="text" name="owner" id="owner" class="h-fit rounded-md w-full md:w-72 py-1 px-2">
+                    </div>
+
+                    <div class="flex flex-col md:flex-row justify-between gap-4">
+                        <!-- Expiry date -->
+                        <div class="flex flex-col md:flex-row gap-3 md:items-center items-start md:justify-between">
+                            <label for="date">
+                                <p class="font-semibold">Expiry date</p>
+                                <p class="text-[#5E5E5E] text-sm">Enter the expration date of the card</p>
+                            </label>
+                            <input type="text" name="date" id="date" autocomplate="off" oninput="formatExpiry(this)"
+                                maxlength="5" class="h-fit rounded-md w-full md:w-36 py-1 px-2 text-center">
+                        </div>
+
+                        <!-- CVV2 -->
+                        <div class="flex flex-col md:flex-row gap-3 md:items-center items-start md:justify-between">
+                            <label for="CVV2">
+                                <p class="font-semibold">CVV2</p>
+                                <p class="text-[#5E5E5E] text-sm">Security code</p>
+                            </label>
+                            <input type="text" name="CVV2" id="CVV2"
+                                class="h-fit rounded-md w-full md:w-20 py-1 px-2 text-center">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Registered cards -->
+        <div class="flex justify-center px-5 pb-14">
+            <div class="md:w-1/2 w-full border border-[#CFCFCF] rounded-md">
+                <!-- title -->
+                <div class="flex gap-2 items-center font-semibold border-b border-[#CFCFCF] py-3 mx-3">
+                    <svg width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M4 9.25C3.58579 9.25 3.25 9.58579 3.25 10C3.25 10.4142 3.58579 10.75 4 10.75V9.25ZM7.5 10.75C7.91421 10.75 8.25 10.4142 8.25 10C8.25 9.58579 7.91421 9.25 7.5 9.25V10.75ZM3 1.75H17V0.25H3V1.75ZM18.25 3V11H19.75V3H18.25ZM17 12.25H3V13.75H17V12.25ZM1.75 11V3H0.25V11H1.75ZM3 12.25C2.30964 12.25 1.75 11.6904 1.75 11H0.25C0.25 12.5188 1.48122 13.75 3 13.75V12.25ZM18.25 11C18.25 11.6904 17.6904 12.25 17 12.25V13.75C18.5188 13.75 19.75 12.5188 19.75 11H18.25ZM17 1.75C17.6904 1.75 18.25 2.30964 18.25 3H19.75C19.75 1.48122 18.5188 0.25 17 0.25V1.75ZM3 0.25C1.48122 0.25 0.25 1.48122 0.25 3H1.75C1.75 2.30964 2.30964 1.75 3 1.75V0.25ZM1 5.75H19V4.25H1V5.75ZM4 10.75H7.5V9.25H4V10.75Z"
+                            fill="black" />
+                    </svg>
+
+                    <h1>Registered cards</h1>
+                </div>
+
+                <!-- cards area -->
+                <div class="p-3 px-5 divide-y divide-[#CFCFCF]">
+                    <!-- card 1 -->
+                    <div class="py-3 px-2 flex flex-col md:flex-row gap-5">
+
+                        <!-- icons and select button -->
+                        <div class="flex flex-row md:flex-col gap-3 items-center">
+                            <!-- the radio button -->
+                            <label class="inline-flex items-center cursor-pointer font-semibold">
+                                <!-- the hidden radio button -->
+                                <input type="radio" name="choice" id="remove" class="form-radio sr-only peer" />
+
+                                <!-- the green check icon -->
+                                <div
+                                    class="w-6 h-6 rounded-full border bg-gray-200 border-gray-200 peer-checked:bg-green-500 peer-checked:border-green-500 flex items-center justify-center transition-colors duration-20">
+                                    <svg width="14" height="11" viewBox="0 0 14 11" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M11.8002 2L5.20026 8.59998L2.2002 5.6" stroke="white" stroke-width="3"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                            </label>
+
+                            <svg width="20" height="14" viewBox="0 0 20 14" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M4 9.25C3.58579 9.25 3.25 9.58579 3.25 10C3.25 10.4142 3.58579 10.75 4 10.75V9.25ZM7.5 10.75C7.91421 10.75 8.25 10.4142 8.25 10C8.25 9.58579 7.91421 9.25 7.5 9.25V10.75ZM3 1.75H17V0.25H3V1.75ZM18.25 3V11H19.75V3H18.25ZM17 12.25H3V13.75H17V12.25ZM1.75 11V3H0.25V11H1.75ZM3 12.25C2.30964 12.25 1.75 11.6904 1.75 11H0.25C0.25 12.5188 1.48122 13.75 3 13.75V12.25ZM18.25 11C18.25 11.6904 17.6904 12.25 17 12.25V13.75C18.5188 13.75 19.75 12.5188 19.75 11H18.25ZM17 1.75C17.6904 1.75 18.25 2.30964 18.25 3H19.75C19.75 1.48122 18.5188 0.25 17 0.25V1.75ZM3 0.25C1.48122 0.25 0.25 1.48122 0.25 3H1.75C1.75 2.30964 2.30964 1.75 3 1.75V0.25ZM1 5.75H19V4.25H1V5.75ZM4 10.75H7.5V9.25H4V10.75Z"
+                                    fill="black" />
+                            </svg>
+
+                        </div>
+
+                        <!-- card info -->
+                        <div class="grid grid-cols-2 md:grid-cols-4 text-center gap-3 w-full">
+
+                            <!-- Bank -->
+                            <div class="space-y-1">
+                                <p class="text-[#5E5E5E]">Bank</p>
+                                <p class="font-semibold">Alrajhi</p>
+                            </div>
+
+                            <!-- Last four digits -->
+                            <div class="space-y-1">
+                                <p class="text-[#5E5E5E]">Last four digits</p>
+                                <p class="font-semibold">1234</p>
+                            </div>
+
+                            <!-- Card owner -->
+                            <div class="space-y-1">
+                                <p class="text-[#5E5E5E]">Card owner</p>
+                                <p class="font-semibold">Mohammed</p>
+                            </div>
+
+                            <!-- Expiry date -->
+                            <div class="space-y-1">
+                                <p class="text-[#5E5E5E]">Expiry date</p>
+                                <p class="font-semibold">03/27</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- card 2 -->
+                    <div class="py-3 px-2 flex flex-col md:flex-row gap-5">
+
+                        <!-- icons and select button -->
+                        <div class="flex flex-row md:flex-col gap-3 items-center">
+                            <!-- the radio button -->
+                            <label class="inline-flex items-center cursor-pointer font-semibold">
+                                <!-- the hidden radio button -->
+                                <input type="radio" name="choice" id="remove" class="form-radio sr-only peer" />
+
+                                <!-- the green check icon -->
+                                <div
+                                    class="w-6 h-6 rounded-full border bg-gray-200 border-gray-200 peer-checked:bg-green-500 peer-checked:border-green-500 flex items-center justify-center transition-colors duration-20">
+                                    <svg width="14" height="11" viewBox="0 0 14 11" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M11.8002 2L5.20026 8.59998L2.2002 5.6" stroke="white" stroke-width="3"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                            </label>
+
+                            <svg width="20" height="14" viewBox="0 0 20 14" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M4 9.25C3.58579 9.25 3.25 9.58579 3.25 10C3.25 10.4142 3.58579 10.75 4 10.75V9.25ZM7.5 10.75C7.91421 10.75 8.25 10.4142 8.25 10C8.25 9.58579 7.91421 9.25 7.5 9.25V10.75ZM3 1.75H17V0.25H3V1.75ZM18.25 3V11H19.75V3H18.25ZM17 12.25H3V13.75H17V12.25ZM1.75 11V3H0.25V11H1.75ZM3 12.25C2.30964 12.25 1.75 11.6904 1.75 11H0.25C0.25 12.5188 1.48122 13.75 3 13.75V12.25ZM18.25 11C18.25 11.6904 17.6904 12.25 17 12.25V13.75C18.5188 13.75 19.75 12.5188 19.75 11H18.25ZM17 1.75C17.6904 1.75 18.25 2.30964 18.25 3H19.75C19.75 1.48122 18.5188 0.25 17 0.25V1.75ZM3 0.25C1.48122 0.25 0.25 1.48122 0.25 3H1.75C1.75 2.30964 2.30964 1.75 3 1.75V0.25ZM1 5.75H19V4.25H1V5.75ZM4 10.75H7.5V9.25H4V10.75Z"
+                                    fill="black" />
+                            </svg>
+
+                        </div>
+
+                        <!-- card info -->
+                        <div class="grid grid-cols-2 md:grid-cols-4 text-center gap-3 w-full">
+
+                            <!-- Bank -->
+                            <div class="space-y-1">
+                                <p class="text-[#5E5E5E]">Bank</p>
+                                <p class="font-semibold">Alrajhi</p>
+                            </div>
+
+                            <!-- Last four digits -->
+                            <div class="space-y-1">
+                                <p class="text-[#5E5E5E]">Last four digits</p>
+                                <p class="font-semibold">1234</p>
+                            </div>
+
+                            <!-- Card owner -->
+                            <div class="space-y-1">
+                                <p class="text-[#5E5E5E]">Card owner</p>
+                                <p class="font-semibold">Mohammed</p>
+                            </div>
+
+                            <!-- Expiry date -->
+                            <div class="space-y-1">
+                                <p class="text-[#5E5E5E]">Expiry date</p>
+                                <p class="font-semibold">03/27</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- buttons -->
+        <div class="flex flex-col gap-3 items-center pt-10">
+            <a href="./payment4_eng.html"
+                class="cursor-pointer text-white text-sm font-semibold text-center bg-[#1E2227] rounded-md py-1.5 w-52">Pay
+                Now</a>
+            <button
+                class="cursor-pointer text-[#B3B3B3] hover:text-gray-600 text-sm font-semibold text-center bg-[#F5F6F8] hover:bg-gray-200 transition-all rounded-md py-1.5 w-52">Cancel</button>
+        </div>
+
+        <!-- white space -->
+        <div class="md:h-72 h-24 bg-white shadow-md relative"></div>
+
+        <!-- footer -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-5 p-10 bg-[#1E2227] text-white">
+
+            <!-- text  -->
+            <div class="">
+                <h1 class="text-lg font-semibold pb-3">About Welhost</h1>
+                <p class="text-sm">Welhost is a Saudi-based platform built to manage and operate short-term rental units
+                    and boutique hotels. We provide smart technology solutions that empower owners and operators to
+                    optimize performance and deliver outstanding hospitality experiences.</p>
+            </div>
+
+            <!-- logo  -->
+            <div class="flex justify-center">
+                <img src="../img/Admin/logo white.png" alt="logo" class="h-14">
+            </div>
+
+            <!-- right section -->
+            <div class="grid grid-cols-2 gap-5">
+                <!-- Quick Links -->
+                <div class="flex flex-col gap-4">
+                    <h1 class="text-lg font-semibold pb-3">Quick Links</h1>
+
+                    <!-- links -->
+                    <div class="flex flex-col gap-3">
+                        <a href="./aboutus_eng.html"
+                            class="w-fit flex items-center justify-between px-4 hover:underline transition-all">
+                            <p>About Us</p>
+                        </a>
+
+                        <a href="./packages&offers_eng.html"
+                            class="w-fit flex items-center justify-between px-4 hover:underline transition-all">
+                            <p>Packages & Offers</p>
+                        </a>
+
+                        <a href="./properties_eng.html"
+                            class="w-fit flex items-center justify-between px-4 hover:underline transition-all">
+                            <p>Properties</p>
+                        </a>
+
+                        <a href="./aboutus_eng.html#Connect"
+                            class="w-fit flex items-center justify-between px-4 hover:underline transition-all cursor-pointer">
+                            <p>Contact Us</p>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- social media -->
+                <div class="flex flex-col gap-4">
+                    <h1 class="text-lg font-semibold pb-3">Follow Us On:</h1>
+
+                    <!-- icons -->
+                    <div class="flex flex-col gap-3">
+                        <a href="" class="px-2">linked in</a>
+                        <a href="" class="px-2">whats up</a>
+                        <a href="" class="px-2">X</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- end of the page -->
+        <div class="bg-[#1E2227] h-10">
+            <div class="bg-[#1E2227] border-t border-white mx-20"></div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<!-- for mobile header bar-->
+<script>
+    document.getElementById('menu-toggle').addEventListener('click', function () {
+        document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+    document.getElementById('close-menu').addEventListener('click', function () {
+        document.getElementById('mobile-menu').classList.add('hidden');
+    });
+</script>
+
+<!-- for radio button -->
+<script>
+    tailwind.config = {
+        theme: {},
+        variants: {
+            extend: {
+                opacity: ['peer-checked'],
+                backgroundColor: ['peer-checked'],
+                borderColor: ['peer-checked']
+            }
+        }
+    }
+
+    const addRadio = document.getElementById('add');
+    const radios = document.querySelectorAll('input[name="choice"]');
+    const area = document.getElementById('area');
+
+    radios.forEach(r => {
+        r.addEventListener('change', () => {
+            if (addRadio.checked) {
+                // show
+                area.classList.remove('max-h-0', 'opacity-0');
+                area.classList.add('max-h-[900px]', 'opacity-100');
+            } else {
+                // hide
+                area.classList.remove('max-h-[900px]', 'opacity-100');
+                area.classList.add('max-h-0', 'opacity-0');
+            }
+        });
+    });
+</script>

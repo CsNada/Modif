@@ -3,10 +3,9 @@
 
 <head>
 
-    <title>Settings</title>
+    <title>Calendar</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;400;700&display=swap');
@@ -129,8 +128,7 @@
                     </li>
 
                     <!-- Calendar -->
-                    <li
-                        class="hover:bg-[#FFFFFF] transition-all duration-100 rounded text-[#FFFFFF] hover:text-[#1E2227] hover:fill-[#1E2227] mb-1 pl-1">
+                    <li class="bg-[#FFFFFF] rounded text-[#1E2227] font-bold mb-1 pl-1">
                         <a href="./calendar.html" class="flex gap-2 items-center p-2">
                             <svg width="19" height="19" viewBox="0 0 27 36" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -178,6 +176,7 @@
                             <p>Maintenance Requests</p>
                         </a>
                     </li>
+
                     <!-- channel manger -->
                     <li
                         class="hover:bg-[#FFFFFF] transition-all duration-100 rounded text-[#FFFFFF] hover:text-[#1E2227] hover:fill-[#1E2227] mb-1 pl-1">
@@ -490,357 +489,181 @@
             </div>
 
             <!-- page -->
-            <div class="p-5 px-20 pt-10 space-y-6">
+            <div class="p-5 px-7">
 
-                <!-- hedaer -->
-                <div class="flex justify-between">
-                    <h1 class="text-lg font-semibold">Account Settings</h1>
-                    <!-- log out  -->
+                <!-- header  -->
+                <div class="flex justify-between items-center pb-8">
+                    <!-- Total Hostels -->
+                    <a href="./calendar.html"
+                        class="bg-[#141414] rounded-md px-3 pr-4 py-2 text-white text-xs flex gap-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-4">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                        </svg>
 
-                    <!-- buttons -->
-                    <div class="flex gap-8 items-center">
-                        <!-- User Management -->
-                        <a href="./usermanagement.html" class="flex justify-center items-center gap-1.5 w-fit">
-                            <svg width="24" height="23" viewBox="0 0 25 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <ellipse cx="12.5007" cy="8" rx="4.16667" ry="4" fill="#32646B" />
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M12.4995 13C8.67685 13 5.54125 15.4205 5.23274 18.5005C5.20522 18.7752 5.43168 19 5.70783 19H19.2912C19.5673 19 19.7938 18.7752 19.7662 18.5005C19.4577 15.4205 16.3221 13 12.4995 13Z"
-                                    fill="#32646B" />
-                            </svg>
+                        <p>Go Back</p>
+                    </a>
 
-                            <p class="text-xs font-semibold text-gray-900">User Management</p>
-                        </a>
-                        <button class="px-7 py-2 text-white text-xs font-semibold bg-[#1E2227] rounded-md">Log
-                            out</button>
+                    <!-- buttons  -->
+                    <div class="space-x-5 text-white text-xs font-semibold">
+                        <a href="./calendarcode.html" class="bg-[#4A4C4F] rounded-md px-5 py-2 hover:bg-[#414245] transition-all">Create a
+                            code</a>
+                        <a href="./calendarcalender.html"
+                            class="bg-[#4A4C4F] rounded-md px-5 py-2 hover:bg-[#414245] transition-all">Calendar</a>
                     </div>
                 </div>
 
-                <!-- switch section bar -->
-                <div class="flex gap-10 border-b mb-4 text-xs">
-                    <button class="tab-button px-8 py-2 border-b-2 border-[#8DD3BB] font-bold" data-tab="Profile"
-                        onclick="openTab('Profile')">Profile</button>
-                    <button class="tab-button px-8 py-2" data-tab="Subscriptions" onclick="openTab('Subscriptions')">
-                        Subscriptions</button>
-                    <button class="tab-button px-8 py-2" data-tab="Channel" onclick="openTab('Channel')">
-                        Channel Manager</button>
-                </div>
+                <!-- calender area  -->
+                <div>
 
-                <!-- profile section -->
-                <div id="Profile" class="tab-content pb-10">
                     <!-- header -->
-                    <div class="flex justify-between w-full">
-                        <!-- user porfile -->
-                        <div class="flex items-center gap-3 pt-4">
-                            <img src="../img/Admin/profile.jpg" alt="" class="size-16 rounded-full object-cover border">
+                    <div class="flex justify-between items-center p-4">
 
-                            <!-- namd  -->
-                            <div>
-                                <p class="font-semibold">Alexa Rawles</p>
-                                <p class="text-sm text-black/50">alexarawles@gmail.com</p>
-                            </div>
+                        <!-- buttons to move between weeks and months-->
+                        <div id="nav-buttons" class="flex items-center space-x-1">
+
+                            <!-- navigation on weekly view -->
+                            <button id="prev-week"
+                                class="hidden bg-[#eaeaec] h-7 text-[#18181B] px-3 py-1 rounded-l-md hover:bg-[#e0e0e3] focus:outline-none">
+                                <svg width="6" height="10" viewBox="0 0 6 10" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M5.70679 0.293031C5.89426 0.480558 5.99957 0.734866 5.99957 1.00003C5.99957 1.26519 5.89426 1.5195 5.70679 1.70703L2.41379 5.00003L5.70679 8.29303C5.88894 8.48163 5.98974 8.73423 5.98746 8.99643C5.98518 9.25863 5.88001 9.50944 5.6946 9.69485C5.5092 9.88026 5.25838 9.98543 4.99619 9.9877C4.73399 9.98998 4.48139 9.88919 4.29279 9.70703L0.292787 5.70703C0.105316 5.5195 0 5.26519 0 5.00003C0 4.73487 0.105316 4.48056 0.292787 4.29303L4.29279 0.293031C4.48031 0.10556 4.73462 0.000244141 4.99979 0.000244141C5.26495 0.000244141 5.51926 0.10556 5.70679 0.293031Z"
+                                        fill="#18181B" />
+                                </svg>
+                            </button>
+                            <button id="today-week"
+                                class="hidden text-sm bg-[#eaeaec] text-[#18181B] px-3 py-1 hover:bg-[#e0e0e3] focus:outline-none">Today</button>
+                            <button id="next-week"
+                                class="hidden bg-[#eaeaec] h-7 text-[#18181B] px-3 py-1 rounded-r-md hover:bg-[#e0e0e3] focus:outline-none">
+                                <svg width="6" height="10" viewBox="0 0 6 10" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M0.292787 9.70692C0.105316 9.51939 0 9.26508 0 8.99992C0 8.73475 0.105316 8.48045 0.292787 8.29292L3.58579 4.99992L0.292787 1.70692C0.110629 1.51832 0.00983372 1.26571 0.0121121 1.00352C0.0143906 0.741321 0.11956 0.490509 0.304968 0.305101C0.490376 0.119692 0.741189 0.0145233 1.00339 0.0122448C1.26558 0.00996641 1.51818 0.110761 1.70679 0.292919L5.70679 4.29292C5.89426 4.48045 5.99957 4.73475 5.99957 4.99992C5.99957 5.26508 5.89426 5.51939 5.70679 5.70692L1.70679 9.70692C1.51926 9.89439 1.26495 9.99971 0.999786 9.99971C0.734622 9.99971 0.480314 9.89439 0.292787 9.70692Z"
+                                        fill="#18181B" />
+                                </svg>
+                            </button>
+
+                            <!--  navigation on monthly viwe -->
+                            <button id="prev-month"
+                                class="hidden bg-[#eaeaec] h-7 text-[#18181B] px-3 py-1 rounded-l-md hover:bg-[#e0e0e3] focus:outline-none">
+                                <svg width="6" height="10" viewBox="0 0 6 10" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M5.70679 0.293031C5.89426 0.480558 5.99957 0.734866 5.99957 1.00003C5.99957 1.26519 5.89426 1.5195 5.70679 1.70703L2.41379 5.00003L5.70679 8.29303C5.88894 8.48163 5.98974 8.73423 5.98746 8.99643C5.98518 9.25863 5.88001 9.50944 5.6946 9.69485C5.5092 9.88026 5.25838 9.98543 4.99619 9.9877C4.73399 9.98998 4.48139 9.88919 4.29279 9.70703L0.292787 5.70703C0.105316 5.5195 0 5.26519 0 5.00003C0 4.73487 0.105316 4.48056 0.292787 4.29303L4.29279 0.293031C4.48031 0.10556 4.73462 0.000244141 4.99979 0.000244141C5.26495 0.000244141 5.51926 0.10556 5.70679 0.293031Z"
+                                        fill="#18181B" />
+                                </svg>
+                            </button>
+                            <button id="today-month"
+                                class="hidden text-sm bg-[#eaeaec] text-[#18181B] px-3 py-1 hover:bg-[#e0e0e3] focus:outline-none">Today</button>
+                            <button id="next-month"
+                                class="hidden bg-[#eaeaec] h-7 text-[#18181B] px-3 py-1 rounded-r-md hover:bg-[#e0e0e3] focus:outline-none">
+                                <svg width="6" height="10" viewBox="0 0 6 10" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M0.292787 9.70692C0.105316 9.51939 0 9.26508 0 8.99992C0 8.73475 0.105316 8.48045 0.292787 8.29292L3.58579 4.99992L0.292787 1.70692C0.110629 1.51832 0.00983372 1.26571 0.0121121 1.00352C0.0143906 0.741321 0.11956 0.490509 0.304968 0.305101C0.490376 0.119692 0.741189 0.0145233 1.00339 0.0122448C1.26558 0.00996641 1.51818 0.110761 1.70679 0.292919L5.70679 4.29292C5.89426 4.48045 5.99957 4.73475 5.99957 4.99992C5.99957 5.26508 5.89426 5.51939 5.70679 5.70692L1.70679 9.70692C1.51926 9.89439 1.26495 9.99971 0.999786 9.99971C0.734622 9.99971 0.480314 9.89439 0.292787 9.70692Z"
+                                        fill="#18181B" />
+                                </svg>
+                            </button>
                         </div>
 
-                        <!-- Notifications -->
-                        <div class="flex flex-col gap-1 justify-center w-[260px] pr-5 pt-5">
-                            <label for="Notifications" class="text-xs font-semibold">Notifications</label>
+                        <!-- switch buttons week/month-->
+                        <div class="flex items-center space-x-3 text-sm">
+                            <button id="view-week"
+                                class="px-3 py-1 rounded-lg bg-[#32646B] hover:bg-[#32646B] hover:text-white text-white transition-all focus:outline-none">Week</button>
+                            <button id="view-month"
+                                class="px-3 py-1 rounded-lg hover:bg-[#32646B] hover:text-white transition-all focus:outline-none">Month</button>
+                        </div>
+                    </div>
 
-                            <label class="flex items-center justify-between space-x-4 cursor-pointer">
-                                <span class="text-gray-500 text-sm">Allow system notifications</span>
+                    <!-- state colors bar -->
+                    <div class="flex flex-wrap items-center gap-4 p-4 text-xs font-semibold">
+                        <div class="bg-[#FEF4E6] rounded-md px-4 py-1 text-[#F9A63A]">Due in</div>
+                        <div class="bg-[#E8F1FD] rounded-md px-4 py-1 text-[#448DF2]">Checked out</div>
+                        <div class="bg-[#FEECEB] rounded-md px-4 py-1 text-[#F36960]">Due out</div>
+                        <div class="bg-[#E7F8F0] rounded-md px-4 py-1 text-[#41C588]">Checked in</div>
+                    </div>
 
-                                <!-- Toggle -->
-                                <div class="relative">
-                                    <input type="checkbox" class="sr-only peer" />
-                                    <div
-                                        class="w-10 h-5 bg-gray-300 rounded-full peer-checked:bg-lime-500 transition-colors">
-                                    </div>
-                                    <div
-                                        class="absolute top-0.5 left-0.5 w-4 h-4 bg-white rounded-full transition-all peer-checked:translate-x-5">
-                                    </div>
+                    <!-- calender area -->
+                    <div id="calendar-views" class="px-5">
+
+                        <!-- weekly-->
+                        <div id="weekly-view" class="hidden">
+
+                            <!-- week start/end date as a title (generated by js) -->
+                            <h2 id="week-title" class="px-4 pt-2 pb-4 text-center text-sm font-semibold"></h2>
+
+                            <!-- the table -->
+                            <div class="relative">
+                                <!-- the days -->
+                                <div id="days-header" class="grid grid-cols-7 border-b border-gray-300">
+                                    <!-- (generated by js) -->
                                 </div>
-                            </label>
+                                <!-- the white area under the days -->
+                                <div id="days-grid" class="grid grid-cols-7">
+                                    <!-- (generated by js) -->
+                                </div>
 
-                        </div>
-                    </div>
-
-                    <!-- user info -->
-                    <div id="name-container" class="py-5">
-
-                        <!-- DISPLAY MODE -->
-                        <div id="display-mode" class="grid grid-cols-2 gap-5">
-                            <!-- Full Name -->
-                            <div class="flex flex-col gap-1">
-                                <label for="name" class="text-xs font-semibold">Full Name</label>
-                                <input disabled name="name" type="text" placeholder="Full Name" value="Mohammed"
-                                    class="field-text bg-gray-100 rounded-md p-1 px-2">
-                            </div>
-
-                            <!-- Nick Name -->
-                            <div class="flex flex-col gap-1">
-                                <label for="Nick" class="text-xs font-semibold">Nick Name</label>
-                                <input disabled name="Nick" type="text" placeholder="Nick Name" value="Mohammed"
-                                    class="bg-gray-100 rounded-md p-1 px-2">
-                            </div>
-
-                            <!-- Gender -->
-                            <div class="flex flex-col gap-1">
-                                <label for="Gender" class="text-xs font-semibold">Gender</label>
-                                <select disabled name="Gender" id="Gender" class="bg-gray-100 rounded-md p-1 px-2">
-                                    <option value="" hidden>Gender</option>
-                                    <option value="Male">Male</option>
-                                    <option value="Female">Female</option>
-                                </select>
-                            </div>
-
-                            <!-- Country -->
-                            <div class="flex flex-col gap-1">
-                                <label for="Country" class="text-xs font-semibold">Country</label>
-                                <input disabled name="Country" type="text" placeholder="Country" value="Riyadh"
-                                    class="bg-gray-100 rounded-md p-1 px-2">
-                            </div>
-
-                            <!-- Language -->
-                            <div class="flex flex-col gap-1">
-                                <label for="Language" class="text-xs font-semibold">Language</label>
-                                <input disabled name="Language" type="text" placeholder="Language" value="Arabic"
-                                    class="bg-gray-100 rounded-md p-1 px-2">
-                            </div>
-
-                            <!-- Email -->
-                            <div class="flex flex-col gap-1">
-                                <label for="Email" class="text-xs font-semibold">Email</label>
-                                <input disabled name="Email" type="email" placeholder="Email" value="Email@gmail.com"
-                                    class="bg-gray-100 rounded-md p-1 px-2">
-                            </div>
-
-                            <!-- Available -->
-                            <div class="flex flex-col gap-1">
-                                <label for="Available" class="text-xs font-semibold">Available</label>
-                                <select disabled name="Available" id="Available"
-                                    class="bg-gray-100 rounded-md p-1 px-2">
-                                    <option value="" hidden>Available</option>
-                                    <option value="Available">Available</option>
-                                    <option value="Not Available">Not Available</option>
-                                    <option value="Busy">Busy</option>
-                                </select>
-                            </div>
-
-                            <!-- save button -->
-                            <div class="flex items-end justify-end">
-                                <button id="edit-btn" type="submit"
-                                    class="px-7 py-2 text-white text-xs font-semibold bg-[#1E2227] rounded-md w-fit h-fit">Edit</button>
+                                <!-- the area for the events (generated by js) -->
+                                <div id="events-container"
+                                    class="absolute top-0 left-0 w-full h-full pointer-events-none"></div>
                             </div>
                         </div>
 
-                        <!-- EDIT MODE -->
-                        <form id="edit-mode" class="hidden grid grid-cols-2 gap-5">
-                            <!-- Full Name -->
-                            <div class="flex flex-col gap-1">
-                                <label for="name" class="text-xs font-semibold">Full Name</label>
-                                <input name="name" type="text" placeholder="Full Name" value="Mohammed"
-                                    class="field-input bg-gray-100 rounded-md p-1 px-2 border border-gray-700">
+                        <!-- monthly -->
+                        <div id="monthly-view" class="hidden">
+
+                            <!-- month start/end date as a title (generated by js) -->
+                            <h2 id="month-title" class="px-4 pt-2 pb-4 text-center text-sm font-semibold"></h2>
+
+                            <!-- the days -->
+                            <div class="grid grid-cols-7 border-l text-sm">
+
+                                <div class="border-b border-r p-2 text-center font-medium">Sun</div>
+                                <div class="border-b border-r p-2 text-center font-medium">Mon</div>
+                                <div class="border-b border-r p-2 text-center font-medium">Tue</div>
+                                <div class="border-b border-r p-2 text-center font-medium">Wed</div>
+                                <div class="border-b border-r p-2 text-center font-medium">Thu</div>
+                                <div class="border-b border-r p-2 text-center font-medium">Thu</div>
+                                <div class="border-b border-r p-2 text-center font-medium">Sat</div>
                             </div>
 
-                            <!-- Nick Name -->
-                            <div class="flex flex-col gap-1">
-                                <label for="Nick" class="text-xs font-semibold">Nick Name</label>
-                                <input name="Nick" type="text" placeholder="Nick Name" value="Mohammed"
-                                    class="bg-gray-100 rounded-md p-1 px-2 border border-gray-700">
+                            <!-- the white cells area -->
+                            <div id="month-grid" class="grid grid-cols-7 border-t border-l">
+                                <!-- (generated by js) -->
                             </div>
-
-                            <!-- Gender -->
-                            <div class="flex flex-col gap-1">
-                                <label for="Gender" class="text-xs font-semibold">Gender</label>
-                                <select name="Gender" id="Gender"
-                                    class="bg-gray-100 rounded-md p-1 px-2 border border-gray-700">
-                                    <option value="" hidden>Gender</option>
-                                    <option value="Male">Male</option>
-                                    <option value="Female">Female</option>
-                                </select>
-                            </div>
-
-                            <!-- Country -->
-                            <div class="flex flex-col gap-1">
-                                <label for="Country" class="text-xs font-semibold">Country</label>
-                                <input name="Country" type="text" placeholder="Country" value="Riyadh"
-                                    class="bg-gray-100 rounded-md p-1 px-2 border border-gray-700">
-                            </div>
-
-                            <!-- Language -->
-                            <div class="flex flex-col gap-1">
-                                <label for="Language" class="text-xs font-semibold">Language</label>
-                                <input name="Language" type="text" placeholder="Language" value="Arabic"
-                                    class="bg-gray-100 rounded-md p-1 px-2 border border-gray-700">
-                            </div>
-
-                            <!-- Email -->
-                            <div class="flex flex-col gap-1">
-                                <label for="Email" class="text-xs font-semibold">Email</label>
-                                <input name="Email" type="email" placeholder="Email" value="Email@gmail.com"
-                                    class="bg-gray-100 rounded-md p-1 px-2 border border-gray-700">
-                            </div>
-
-                            <!-- Available -->
-                            <div class="flex flex-col gap-1">
-                                <label for="Available" class="text-xs font-semibold">Available</label>
-                                <select name="Available" id="Available"
-                                    class="bg-gray-100 rounded-md p-1 px-2 border border-gray-700">
-                                    <option value="" hidden>Available</option>
-                                    <option value="Available">Available</option>
-                                    <option value="Not Available">Not Available</option>
-                                    <option value="Busy">Busy</option>
-                                </select>
-                            </div>
-
-                            <!-- save buttons -->
-                            <div class="flex justify-end items-end gap-10">
-                                <button id="cancel-btn" type="submit"
-                                    class="px-7 py-2 text-white text-xs font-semibold bg-[#1E2227] rounded-md w-fit h-fit">Cancel</button>
-
-                                <button id="save-btn" type="submit"
-                                    class="px-7 py-2 text-white text-xs font-semibold bg-[#1E2227] rounded-md w-fit h-fit">Save
-                                    Changes</button>
-                            </div>
-                        </form>
-
-                    </div>
-
-                </div>
-
-                <!-- Subscriptions section -->
-                <div id="Subscriptions" class="hidden tab-content">
-                    <!-- plan -->
-                    <div class="p-5 border border-[#EDEDED] rounded-md mb-10">
-                        <h1 class="text-[#1F1F1F] text-lg">Plan: Professional</h1>
-                        <p class="text-sm text-[#8A8A8A]">Take your property management to the next level with premium
-                            tools and features</p>
-
-                        <!-- price and button -->
-                        <div class="flex justify-between pt-5">
-                            <p class="text-[#146199] text-lg">30SAR/ month</p>
-                            <a href="./packages&offers.html"
-                                class="px-4 py-1 text-sm border border-[#EDEDED] rounded-md cursor-pointer hover:bg-gray-100/80 transition-all">Upgrade
-                                Plan</a>
-                        </div>
-
-                    </div>
-
-                    <!-- payment -->
-                    <div>
-                        <!-- the table -->
-                        <div class="">
-
-                            <table class="w-full text-left text-sm border-collapse">
-                                <thead class="text-[#667085]">
-                                    <tr>
-                                        <th class="py-2">Invoice</th>
-                                        <th class="py-2">Billing Date</th>
-                                        <th class="py-2">Status</th>
-                                        <th class="py-2">Amount</th>
-                                        <th class="py-2">Plan</th>
-                                        <th class="py-2"> </th>
-                                    </tr>
-                                </thead>
-
-                                <tbody class="table-body">
-
-                                    <!-- row 1 -->
-                                    <tr class="border-t search-item">
-                                        <td class="py-4 font-semibold">Invoice #1023</td>
-                                        <td class="py-4">May 15, 2022</td>
-                                        <td class="py-4">
-                                            <div
-                                                class="flex items-center justify-center w-fit px-2 py-0.5 gap-1 text-xs text-[#1E9609] bg-[#A5FF9647] rounded-full">
-                                                <svg width="8" height="8" viewBox="0 0 8 8" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <circle cx="4" cy="4" r="4" fill="#1E9609" />
-                                                </svg>
-                                                <p>Paid</p>
-                                            </div>
-                                        </td>
-                                        <td class="py-4">$9.99</td>
-                                        <td class="py-4">Basic</td>
-                                        <td class="py-4">
-                                            <button
-                                                class="border border-[#EDEDED] rounded-md p-2 hover:bg-gray-100/90 transition-all">
-                                                <svg width="18" height="18" viewBox="0 0 20 20" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M19 13V17C19 17.5304 18.7893 18.0391 18.4142 18.4142C18.0391 18.7893 17.5304 19 17 19H3C2.46957 19 1.96086 18.7893 1.58579 18.4142C1.21071 18.0391 1 17.5304 1 17V13M5 8L10 13M10 13L15 8M10 13V1"
-                                                        stroke="#8C8C8C" stroke-width="2" stroke-linecap="round"
-                                                        stroke-linejoin="round" />
-                                                </svg>
-
-                                            </button>
-                                        </td>
-                                    </tr>
-
-                                    <!-- row 2 -->
-                                    <tr class="border-t search-item">
-                                        <td class="py-4 font-semibold">Invoice #1023</td>
-                                        <td class="py-4">May 15, 2022</td>
-                                        <td class="py-4">
-                                            <div
-                                                class="flex items-center justify-center w-fit px-2 py-0.5 gap-1 text-xs text-[#A70909] bg-[#A709090D] rounded-full">
-                                                <svg width="8" height="8" viewBox="0 0 8 8" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <circle cx="4" cy="4" r="4" fill="#A70909" />
-                                                </svg>
-
-                                                <p>Cancelled</p>
-                                            </div>
-                                        </td>
-                                        <td class="py-4">$9.99</td>
-                                        <td class="py-4">Basic</td>
-                                        <td class="py-4">
-                                            <button
-                                                class="border border-[#EDEDED] rounded-md p-2 hover:bg-gray-100/90 transition-all">
-                                                <svg width="18" height="18" viewBox="0 0 20 20" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M19 13V17C19 17.5304 18.7893 18.0391 18.4142 18.4142C18.0391 18.7893 17.5304 19 17 19H3C2.46957 19 1.96086 18.7893 1.58579 18.4142C1.21071 18.0391 1 17.5304 1 17V13M5 8L10 13M10 13L15 8M10 13V1"
-                                                        stroke="#8C8C8C" stroke-width="2" stroke-linecap="round"
-                                                        stroke-linejoin="round" />
-                                                </svg>
-
-                                            </button>
-                                        </td>
-                                    </tr>
-
-                                    <!-- more rows -->
-                                </tbody>
-                            </table>
                         </div>
                     </div>
                 </div>
 
-                <!-- Channel manager section -->
-                <div id="Channel" class="hidden tab-content">
-                    Channel Manager Section
-                </div>
             </div>
-
-
         </div>
 
     </div>
+
 </body>
 
 </html>
 
-<!-- for tabs switch buttons -->
+<!-- for search input -->
 <script>
-    function openTab(tabName) {
-        document.querySelectorAll('.tab-content').forEach(tab => {
-            tab.classList.add('hidden');
-        });
-        document.getElementById(tabName).classList.remove('hidden');
+    document.addEventListener('DOMContentLoaded', () => {
+        const input = document.getElementById('searchInput');
+        const items = Array.from(document.querySelectorAll('.search-item'));
 
-        document.querySelectorAll('.tab-button').forEach(button => {
-            button.classList.remove('border-b-2', 'border-[#8DD3BB]', 'font-bold');
+        input.addEventListener('input', () => {
+            const term = input.value.trim().toLowerCase();
+
+            items.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                if (text.includes(term)) {
+                    item.classList.remove('hidden');
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
         });
-        document.querySelector(`[data-tab='${tabName}']`).classList.add('border-b-2', 'border-[#8DD3BB]', 'font-bold');
-    }
+    });
 </script>
 
 <!-- for notification modal open/close -->
@@ -873,54 +696,257 @@
     });
 </script>
 
-<!-- for switch between the diplay mode and the edit mode -->
+<!-- for the calender -->
 <script>
-    const displayMode = document.getElementById('display-mode');
-    const editMode = document.getElementById('edit-mode');
-    const editBtn = document.getElementById('edit-btn');
-    const saveBtn = document.getElementById('save-btn');
-    const cancelBtn = document.getElementById('cancel-btn');
+    // events data (title, start, end, color)
+    const events = [
+        { title: 'Manson', start: '2025-06-1', end: '2025-06-8', color: '#E7F8F0bb' },
+        { title: 'Lewis', start: '2025-06-06', end: '2025-06-12', color: '#FEF4E6bb' },
+        { title: 'Tate', start: '2025-06-11', end: '2025-06-19', color: '#FEECEBbb' },
+        { title: 'Mark', start: '2025-06-17', end: '2025-06-23', color: '#E8F1FDbb' },
+        // more events 
+    ];
 
-    // all the inputs fields
-    const fieldsText = document.querySelectorAll('.field-text');
-    const fieldsInput = document.querySelectorAll('.field-input');
+    // global variables
+    let currentDate = new Date();
+    let weekStart = null;
+    let monthDate = new Date();
 
-    // edit button
-    editBtn.addEventListener('click', () => {
-        displayMode.classList.add('hidden');
-        editMode.classList.remove('hidden');
-    });
+    /* ---------- weekly functions ---------- */
 
-    // save button
-    saveBtn.addEventListener('click', () => {
-        editMode.classList.add('hidden');
-        displayMode.classList.remove('hidden');
-    });
+    // to make the start of the week be sun
+    function getStartOfWeek(date) {
+        const d = new Date(date);
+        const day = d.getDay(); // sun = 0, mon = 1, ...
+        const diff = (day === 0 ? -6 : 0 - day); 
+        d.setDate(d.getDate() + diff);
+        d.setHours(0, 0, 0, 0);
+        return d;
+    }
 
-    // cancel button
-    cancelBtn.addEventListener('click', () => {
-        editMode.classList.add('hidden');
-        displayMode.classList.remove('hidden');
-    });
-</script>
+    // set the week start/end dates as a title 
+    function renderWeekTitle(start) {
+        const endDate = new Date(start);
+        endDate.setDate(start.getDate() + 6);
+        const options = { day: 'numeric', month: 'long', year: 'numeric' };
+        const fmt = new Intl.DateTimeFormat('en-US', options);
+        document.getElementById('week-title').textContent = `${fmt.format(start)} - ${fmt.format(endDate)}`;
+    }
 
-<!-- for search input -->
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const input = document.getElementById('searchInput');
-        const items = Array.from(document.querySelectorAll('.search-item'));
+    // print the days name with the dates in the header 
+    function renderDaysHeader(start) {
+        const header = document.getElementById('days-header');
+        header.innerHTML = '';
+        for (let i = 0; i < 7; i++) {
+            const dayDate = new Date(start);
+            dayDate.setDate(start.getDate() + i);
+            const dayName = new Intl.DateTimeFormat('en-US', { weekday: 'short' }).format(dayDate);
+            const dayNumber = dayDate.getDate();
+            const cell = document.createElement('div');
+            cell.className = 'p-2 h-16 border-l border-gray-300 flex flex-col items-center justify-center';
+            cell.innerHTML = `<div class=\"text-sm font-medium\">${dayName}</div><div class=\"text-lg font-semibold\">${dayNumber}</div>`;
+            header.appendChild(cell);
+        }
+    }
 
-        input.addEventListener('input', () => {
-            const term = input.value.trim().toLowerCase();
+    // to generate the white cells under the days
+    function renderDaysGrid() {
+        const grid = document.getElementById('days-grid');
+        grid.innerHTML = '';
+        for (let i = 0; i < 7; i++) {
+            const cell = document.createElement('div');
+            cell.className = 'min-h-40 border-l border-t border-gray-300';
+            grid.appendChild(cell);
+        }
+    }
 
-            items.forEach(item => {
-                const text = item.textContent.toLowerCase();
-                if (text.includes(term)) {
-                    item.classList.remove('hidden');
-                } else {
-                    item.classList.add('hidden');
+    // put the events in the calender
+    function renderEvents(start) {
+        const container = document.getElementById('events-container');
+        container.innerHTML = '';
+        const gridRect = document.getElementById('days-grid').getBoundingClientRect();
+        const columnWidth = gridRect.width / 7;
+        const rowHeights = [];
+        events.forEach(ev => {
+            const evStart = new Date(ev.start);
+            const evEnd = new Date(ev.end);
+            evStart.setHours(0, 0, 0, 0);
+            evEnd.setHours(0, 0, 0, 0);
+            const weekEnd = new Date(start);
+            weekEnd.setDate(start.getDate() + 6);
+            if (evEnd < start || evStart > weekEnd) return;
+            const eventStartInWeek = evStart < start ? new Date(start) : evStart;
+            const eventEndInWeek = evEnd > weekEnd ? new Date(weekEnd) : evEnd;
+
+            const offsetDays = Math.round((eventStartInWeek - start) / (1000 * 60 * 60 * 24));
+            const durationDays = Math.round((eventEndInWeek - eventStartInWeek) / (1000 * 60 * 60 * 24)) + 1;
+
+            const evEl = document.createElement('div');
+            evEl.className = 'absolute text-black text-sm font-medium rounded-lg overflow-hidden px-2 p-1 mt-1';
+            evEl.style.left = offsetDays * columnWidth + 'px';
+            evEl.style.width = durationDays * columnWidth - 8 + 'px';
+
+            let rowIndex = 0;
+            while (true) {
+                if (!rowHeights[rowIndex]) rowHeights[rowIndex] = [];
+                const overlap = rowHeights[rowIndex].some(span => {
+                    return !(offsetDays + durationDays - 1 < span.start || offsetDays > span.end);
+                });
+                if (!overlap) {
+                    rowHeights[rowIndex].push({ start: offsetDays, end: offsetDays + durationDays - 1 });
+                    break;
+                }
+                rowIndex++;
+            }
+            const topPos = rowIndex * 36;
+            evEl.style.top = topPos + 64 + 'px';
+            evEl.style.height = '28px';
+            evEl.style.backgroundColor = ev.color;
+            evEl.textContent = ev.title;
+            container.appendChild(evEl);
+        });
+    }
+
+    // calling all the weekly functions
+    function renderWeeklyCalendar() {
+        weekStart = getStartOfWeek(currentDate);
+        renderWeekTitle(weekStart);
+        renderDaysHeader(weekStart);
+        renderDaysGrid();
+        setTimeout(() => renderEvents(weekStart), 50);
+    }
+
+    
+    /* ---------- monthly functions ---------- */
+
+    // set the monthes name with the year as a title 
+    function renderMonthTitle(date) {
+        const year = date.getFullYear();
+        const month = date.getMonth();
+        const monthNamesAr = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+        document.getElementById('month-title').textContent = `${monthNamesAr[month]} ${year}`;
+    }
+
+    // generate the white cells and put the events in the calender
+    function renderMonthGrid(date) {
+        const year = date.getFullYear();
+        const month = date.getMonth();
+        const firstDay = new Date(year, month, 1);
+        const startingDay = firstDay.getDay();
+        const daysInMonth = new Date(year, month + 1, 0).getDate();
+        const grid = document.getElementById('month-grid');
+        grid.innerHTML = '';
+        for (let i = 0; i < startingDay; i++) {
+            const emptyCell = document.createElement('div');
+            emptyCell.className = 'h-24 border-b border-r';
+            grid.appendChild(emptyCell);
+        }
+        for (let day = 1; day <= daysInMonth; day++) {
+            const cellDate = new Date(year, month, day);
+            const cellEl = document.createElement('div');
+            cellEl.className = 'min-h-24 border-b border-r p-1 relative pt-5';
+            const dateNum = document.createElement('div');
+            dateNum.className = 'absolute top-1 start-1 text-sm font-semibold';
+            dateNum.textContent = day;
+            cellEl.appendChild(dateNum);
+            const today = new Date();
+            if (day === today.getDate() && month === today.getMonth() && year === today.getFullYear()) {
+                cellEl.classList.add('ring', 'ring-gray-300', 'rounded-sm');
+            }
+            events.forEach(ev => {
+                const evStart = new Date(ev.start);
+                const evEnd = new Date(ev.end);
+                evStart.setHours(0, 0, 0, 0);
+                evEnd.setHours(0, 0, 0, 0);
+                if (cellDate >= evStart && cellDate <= evEnd) {
+                    const eventEl = document.createElement('div');
+                    eventEl.className = 'text-xs p-0.5 mt-1.5 rounded overflow-hidden whitespace-nowrap overflow-ellipsis';
+                    eventEl.textContent = ev.title;
+                    eventEl.style.backgroundColor = ev.color;
+                    cellEl.appendChild(eventEl);
                 }
             });
-        });
+            grid.appendChild(cellEl);
+        }
+        const totalCells = startingDay + daysInMonth;
+        const remainder = (7 - (totalCells % 7)) % 7;
+        for (let i = 0; i < remainder; i++) {
+            const emptyCell = document.createElement('div');
+            emptyCell.className = 'h-24 border-b border-r';
+            grid.appendChild(emptyCell);
+        }
+    }
+
+    // calling all the monthly functions
+    function renderMonthlyCalendar() {
+        renderMonthTitle(monthDate);
+        renderMonthGrid(monthDate);
+    }
+
+
+    /* ---------- switch changes (weekly/monthly) ---------- */
+    const weeklyViewEl = document.getElementById('weekly-view');
+    const monthlyViewEl = document.getElementById('monthly-view');
+    const prevWeekBtn = document.getElementById('prev-week');
+    const nextWeekBtn = document.getElementById('next-week');
+    const todayWeekBtn = document.getElementById('today-week');
+    const prevMonthBtn = document.getElementById('prev-month');
+    const nextMonthBtn = document.getElementById('next-month');
+    const todayMonthBtn = document.getElementById('today-month');
+
+    // hide and show the arrow buttons in week view
+    function showWeekly() {
+        
+        prevWeekBtn.classList.remove('hidden');
+        nextWeekBtn.classList.remove('hidden');
+        todayWeekBtn.classList.remove('hidden');
+        prevMonthBtn.classList.add('hidden');
+        nextMonthBtn.classList.add('hidden');
+        todayMonthBtn.classList.add('hidden');
+        weeklyViewEl.classList.remove('hidden');
+        monthlyViewEl.classList.add('hidden');
+        renderWeeklyCalendar();
+    }
+
+    // hide and show the arrow buttons in month view
+    function showMonthly() {
+        prevMonthBtn.classList.remove('hidden');
+        nextMonthBtn.classList.remove('hidden');
+        todayMonthBtn.classList.remove('hidden');
+        prevWeekBtn.classList.add('hidden');
+        nextWeekBtn.classList.add('hidden');
+        todayWeekBtn.classList.add('hidden');
+        monthlyViewEl.classList.remove('hidden');
+        weeklyViewEl.classList.add('hidden');
+        renderMonthlyCalendar();
+    }
+
+    // connect the weekly navigation buttons
+    prevWeekBtn.addEventListener('click', () => { currentDate.setDate(currentDate.getDate() - 7); renderWeeklyCalendar(); });
+    nextWeekBtn.addEventListener('click', () => { currentDate.setDate(currentDate.getDate() + 7); renderWeeklyCalendar(); });
+    todayWeekBtn.addEventListener('click', () => { currentDate = new Date(); renderWeeklyCalendar(); });
+
+    // connect the monthly navigation buttons
+    prevMonthBtn.addEventListener('click', () => { monthDate.setMonth(monthDate.getMonth() - 1); renderMonthlyCalendar(); });
+    nextMonthBtn.addEventListener('click', () => { monthDate.setMonth(monthDate.getMonth() + 1); renderMonthlyCalendar(); });
+    todayMonthBtn.addEventListener('click', () => { monthDate = new Date(); renderMonthlyCalendar(); });
+
+    // change the buttons (Week/Monthe) style when clicking to change the view
+    // week view
+    document.getElementById('view-week').addEventListener('click', () => {
+        document.getElementById('view-week').classList.add('bg-[#32646B]', 'text-white');
+        document.getElementById('view-month').classList.remove('bg-[#32646B]', 'text-white');
+        showWeekly();
+    });
+    //month view
+    document.getElementById('view-month').addEventListener('click', () => {
+        document.getElementById('view-month').classList.add('bg-[#32646B]', 'text-white');
+        document.getElementById('view-week').classList.remove('bg-[#32646B]', 'text-white');
+        showMonthly();
+    });
+
+    // set the weekly calender as the default when refresh the page
+    window.addEventListener('load', () => {
+        showWeekly();
     });
 </script>

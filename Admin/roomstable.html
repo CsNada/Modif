@@ -3,7 +3,7 @@
 
 <head>
 
-    <title>Settings</title>
+    <title>Rooms</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -51,8 +51,7 @@
                 <ul>
 
                     <!-- dashboard -->
-                    <li
-                        class="hover:bg-[#FFFFFF] transition-all duration-100 rounded text-[#FFFFFF] hover:text-[#1E2227] hover:fill-[#1E2227] mb-1 pl-1.5">
+                    <li class="bg-[#FFFFFF] rounded text-[#1E2227] font-bold mb-1 pl-1.5">
                         <a href="./dashboard.html" class="flex gap-2 items-center p-2">
                             <svg width="17" height="17" viewBox="0 0 23 23" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -178,6 +177,7 @@
                             <p>Maintenance Requests</p>
                         </a>
                     </li>
+
                     <!-- channel manger -->
                     <li
                         class="hover:bg-[#FFFFFF] transition-all duration-100 rounded text-[#FFFFFF] hover:text-[#1E2227] hover:fill-[#1E2227] mb-1 pl-1">
@@ -192,7 +192,6 @@
                             <p>channel manger</p>
                         </a>
                     </li>
-
                 </ul>
             </nav>
 
@@ -490,255 +489,22 @@
             </div>
 
             <!-- page -->
-            <div class="p-5 px-20 pt-10 space-y-6">
+            <div class="p-5 px-7">
 
-                <!-- hedaer -->
-                <div class="flex justify-between">
-                    <h1 class="text-lg font-semibold">Account Settings</h1>
-                    <!-- log out  -->
-
-                    <!-- buttons -->
-                    <div class="flex gap-8 items-center">
-                        <!-- User Management -->
-                        <a href="./usermanagement.html" class="flex justify-center items-center gap-1.5 w-fit">
-                            <svg width="24" height="23" viewBox="0 0 25 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <ellipse cx="12.5007" cy="8" rx="4.16667" ry="4" fill="#32646B" />
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M12.4995 13C8.67685 13 5.54125 15.4205 5.23274 18.5005C5.20522 18.7752 5.43168 19 5.70783 19H19.2912C19.5673 19 19.7938 18.7752 19.7662 18.5005C19.4577 15.4205 16.3221 13 12.4995 13Z"
-                                    fill="#32646B" />
-                            </svg>
-
-                            <p class="text-xs font-semibold text-gray-900">User Management</p>
-                        </a>
-                        <button class="px-7 py-2 text-white text-xs font-semibold bg-[#1E2227] rounded-md">Log
-                            out</button>
-                    </div>
-                </div>
-
-                <!-- switch section bar -->
-                <div class="flex gap-10 border-b mb-4 text-xs">
-                    <button class="tab-button px-8 py-2 border-b-2 border-[#8DD3BB] font-bold" data-tab="Profile"
-                        onclick="openTab('Profile')">Profile</button>
-                    <button class="tab-button px-8 py-2" data-tab="Subscriptions" onclick="openTab('Subscriptions')">
-                        Subscriptions</button>
-                    <button class="tab-button px-8 py-2" data-tab="Channel" onclick="openTab('Channel')">
-                        Channel Manager</button>
-                </div>
-
-                <!-- profile section -->
-                <div id="Profile" class="tab-content pb-10">
-                    <!-- header -->
-                    <div class="flex justify-between w-full">
-                        <!-- user porfile -->
-                        <div class="flex items-center gap-3 pt-4">
-                            <img src="../img/Admin/profile.jpg" alt="" class="size-16 rounded-full object-cover border">
-
-                            <!-- namd  -->
-                            <div>
-                                <p class="font-semibold">Alexa Rawles</p>
-                                <p class="text-sm text-black/50">alexarawles@gmail.com</p>
-                            </div>
-                        </div>
-
-                        <!-- Notifications -->
-                        <div class="flex flex-col gap-1 justify-center w-[260px] pr-5 pt-5">
-                            <label for="Notifications" class="text-xs font-semibold">Notifications</label>
-
-                            <label class="flex items-center justify-between space-x-4 cursor-pointer">
-                                <span class="text-gray-500 text-sm">Allow system notifications</span>
-
-                                <!-- Toggle -->
-                                <div class="relative">
-                                    <input type="checkbox" class="sr-only peer" />
-                                    <div
-                                        class="w-10 h-5 bg-gray-300 rounded-full peer-checked:bg-lime-500 transition-colors">
-                                    </div>
-                                    <div
-                                        class="absolute top-0.5 left-0.5 w-4 h-4 bg-white rounded-full transition-all peer-checked:translate-x-5">
-                                    </div>
-                                </div>
-                            </label>
-
-                        </div>
-                    </div>
-
-                    <!-- user info -->
-                    <div id="name-container" class="py-5">
-
-                        <!-- DISPLAY MODE -->
-                        <div id="display-mode" class="grid grid-cols-2 gap-5">
-                            <!-- Full Name -->
-                            <div class="flex flex-col gap-1">
-                                <label for="name" class="text-xs font-semibold">Full Name</label>
-                                <input disabled name="name" type="text" placeholder="Full Name" value="Mohammed"
-                                    class="field-text bg-gray-100 rounded-md p-1 px-2">
-                            </div>
-
-                            <!-- Nick Name -->
-                            <div class="flex flex-col gap-1">
-                                <label for="Nick" class="text-xs font-semibold">Nick Name</label>
-                                <input disabled name="Nick" type="text" placeholder="Nick Name" value="Mohammed"
-                                    class="bg-gray-100 rounded-md p-1 px-2">
-                            </div>
-
-                            <!-- Gender -->
-                            <div class="flex flex-col gap-1">
-                                <label for="Gender" class="text-xs font-semibold">Gender</label>
-                                <select disabled name="Gender" id="Gender" class="bg-gray-100 rounded-md p-1 px-2">
-                                    <option value="" hidden>Gender</option>
-                                    <option value="Male">Male</option>
-                                    <option value="Female">Female</option>
-                                </select>
-                            </div>
-
-                            <!-- Country -->
-                            <div class="flex flex-col gap-1">
-                                <label for="Country" class="text-xs font-semibold">Country</label>
-                                <input disabled name="Country" type="text" placeholder="Country" value="Riyadh"
-                                    class="bg-gray-100 rounded-md p-1 px-2">
-                            </div>
-
-                            <!-- Language -->
-                            <div class="flex flex-col gap-1">
-                                <label for="Language" class="text-xs font-semibold">Language</label>
-                                <input disabled name="Language" type="text" placeholder="Language" value="Arabic"
-                                    class="bg-gray-100 rounded-md p-1 px-2">
-                            </div>
-
-                            <!-- Email -->
-                            <div class="flex flex-col gap-1">
-                                <label for="Email" class="text-xs font-semibold">Email</label>
-                                <input disabled name="Email" type="email" placeholder="Email" value="Email@gmail.com"
-                                    class="bg-gray-100 rounded-md p-1 px-2">
-                            </div>
-
-                            <!-- Available -->
-                            <div class="flex flex-col gap-1">
-                                <label for="Available" class="text-xs font-semibold">Available</label>
-                                <select disabled name="Available" id="Available"
-                                    class="bg-gray-100 rounded-md p-1 px-2">
-                                    <option value="" hidden>Available</option>
-                                    <option value="Available">Available</option>
-                                    <option value="Not Available">Not Available</option>
-                                    <option value="Busy">Busy</option>
-                                </select>
-                            </div>
-
-                            <!-- save button -->
-                            <div class="flex items-end justify-end">
-                                <button id="edit-btn" type="submit"
-                                    class="px-7 py-2 text-white text-xs font-semibold bg-[#1E2227] rounded-md w-fit h-fit">Edit</button>
-                            </div>
-                        </div>
-
-                        <!-- EDIT MODE -->
-                        <form id="edit-mode" class="hidden grid grid-cols-2 gap-5">
-                            <!-- Full Name -->
-                            <div class="flex flex-col gap-1">
-                                <label for="name" class="text-xs font-semibold">Full Name</label>
-                                <input name="name" type="text" placeholder="Full Name" value="Mohammed"
-                                    class="field-input bg-gray-100 rounded-md p-1 px-2 border border-gray-700">
-                            </div>
-
-                            <!-- Nick Name -->
-                            <div class="flex flex-col gap-1">
-                                <label for="Nick" class="text-xs font-semibold">Nick Name</label>
-                                <input name="Nick" type="text" placeholder="Nick Name" value="Mohammed"
-                                    class="bg-gray-100 rounded-md p-1 px-2 border border-gray-700">
-                            </div>
-
-                            <!-- Gender -->
-                            <div class="flex flex-col gap-1">
-                                <label for="Gender" class="text-xs font-semibold">Gender</label>
-                                <select name="Gender" id="Gender"
-                                    class="bg-gray-100 rounded-md p-1 px-2 border border-gray-700">
-                                    <option value="" hidden>Gender</option>
-                                    <option value="Male">Male</option>
-                                    <option value="Female">Female</option>
-                                </select>
-                            </div>
-
-                            <!-- Country -->
-                            <div class="flex flex-col gap-1">
-                                <label for="Country" class="text-xs font-semibold">Country</label>
-                                <input name="Country" type="text" placeholder="Country" value="Riyadh"
-                                    class="bg-gray-100 rounded-md p-1 px-2 border border-gray-700">
-                            </div>
-
-                            <!-- Language -->
-                            <div class="flex flex-col gap-1">
-                                <label for="Language" class="text-xs font-semibold">Language</label>
-                                <input name="Language" type="text" placeholder="Language" value="Arabic"
-                                    class="bg-gray-100 rounded-md p-1 px-2 border border-gray-700">
-                            </div>
-
-                            <!-- Email -->
-                            <div class="flex flex-col gap-1">
-                                <label for="Email" class="text-xs font-semibold">Email</label>
-                                <input name="Email" type="email" placeholder="Email" value="Email@gmail.com"
-                                    class="bg-gray-100 rounded-md p-1 px-2 border border-gray-700">
-                            </div>
-
-                            <!-- Available -->
-                            <div class="flex flex-col gap-1">
-                                <label for="Available" class="text-xs font-semibold">Available</label>
-                                <select name="Available" id="Available"
-                                    class="bg-gray-100 rounded-md p-1 px-2 border border-gray-700">
-                                    <option value="" hidden>Available</option>
-                                    <option value="Available">Available</option>
-                                    <option value="Not Available">Not Available</option>
-                                    <option value="Busy">Busy</option>
-                                </select>
-                            </div>
-
-                            <!-- save buttons -->
-                            <div class="flex justify-end items-end gap-10">
-                                <button id="cancel-btn" type="submit"
-                                    class="px-7 py-2 text-white text-xs font-semibold bg-[#1E2227] rounded-md w-fit h-fit">Cancel</button>
-
-                                <button id="save-btn" type="submit"
-                                    class="px-7 py-2 text-white text-xs font-semibold bg-[#1E2227] rounded-md w-fit h-fit">Save
-                                    Changes</button>
-                            </div>
-                        </form>
-
-                    </div>
-
-                </div>
-
-                <!-- Subscriptions section -->
-                <div id="Subscriptions" class="hidden tab-content">
-                    <!-- plan -->
-                    <div class="p-5 border border-[#EDEDED] rounded-md mb-10">
-                        <h1 class="text-[#1F1F1F] text-lg">Plan: Professional</h1>
-                        <p class="text-sm text-[#8A8A8A]">Take your property management to the next level with premium
-                            tools and features</p>
-
-                        <!-- price and button -->
-                        <div class="flex justify-between pt-5">
-                            <p class="text-[#146199] text-lg">30SAR/ month</p>
-                            <a href="./packages&offers.html"
-                                class="px-4 py-1 text-sm border border-[#EDEDED] rounded-md cursor-pointer hover:bg-gray-100/80 transition-all">Upgrade
-                                Plan</a>
-                        </div>
-
-                    </div>
-
-                    <!-- payment -->
-                    <div>
+                <!-- the table -->
+                    <div class="rounded-md shadow p-5">
                         <!-- the table -->
-                        <div class="">
+                        <div class="tab-content">
 
                             <table class="w-full text-left text-sm border-collapse">
                                 <thead class="text-[#667085]">
                                     <tr>
-                                        <th class="py-2">Invoice</th>
-                                        <th class="py-2">Billing Date</th>
+                                        <th class="py-2">Room Number</th>
+                                        <th class="py-2">Name</th>
+                                        <th class="py-2">Entry date</th>
+                                        <th class="py-2">Exit date</th>
+                                        <th class="py-2">Booking source</th>
                                         <th class="py-2">Status</th>
-                                        <th class="py-2">Amount</th>
-                                        <th class="py-2">Plan</th>
-                                        <th class="py-2"> </th>
                                     </tr>
                                 </thead>
 
@@ -746,65 +512,42 @@
 
                                     <!-- row 1 -->
                                     <tr class="border-t search-item">
-                                        <td class="py-4 font-semibold">Invoice #1023</td>
-                                        <td class="py-4">May 15, 2022</td>
-                                        <td class="py-4">
-                                            <div
-                                                class="flex items-center justify-center w-fit px-2 py-0.5 gap-1 text-xs text-[#1E9609] bg-[#A5FF9647] rounded-full">
-                                                <svg width="8" height="8" viewBox="0 0 8 8" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <circle cx="4" cy="4" r="4" fill="#1E9609" />
-                                                </svg>
-                                                <p>Paid</p>
-                                            </div>
-                                        </td>
-                                        <td class="py-4">$9.99</td>
-                                        <td class="py-4">Basic</td>
-                                        <td class="py-4">
-                                            <button
-                                                class="border border-[#EDEDED] rounded-md p-2 hover:bg-gray-100/90 transition-all">
-                                                <svg width="18" height="18" viewBox="0 0 20 20" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M19 13V17C19 17.5304 18.7893 18.0391 18.4142 18.4142C18.0391 18.7893 17.5304 19 17 19H3C2.46957 19 1.96086 18.7893 1.58579 18.4142C1.21071 18.0391 1 17.5304 1 17V13M5 8L10 13M10 13L15 8M10 13V1"
-                                                        stroke="#8C8C8C" stroke-width="2" stroke-linecap="round"
-                                                        stroke-linejoin="round" />
-                                                </svg>
-
-                                            </button>
-                                        </td>
+                                        <td class="py-4 font-semibold text-[#2B2F38]">A2033</td>
+                                        <td class="py-4 text-[#5D6679]">Alexander</td>
+                                        <td class="py-4 text-[#5D6679]">2025/04/29</td>
+                                        <td class="py-4 text-[#5D6679]">2025/04/29</td>
+                                        <td class="py-4 text-[#5D6679]">Airbnb</td>
+                                        <td class="py-4 text-[#5D6679]">Log in today</td>
                                     </tr>
 
                                     <!-- row 2 -->
                                     <tr class="border-t search-item">
-                                        <td class="py-4 font-semibold">Invoice #1023</td>
-                                        <td class="py-4">May 15, 2022</td>
-                                        <td class="py-4">
-                                            <div
-                                                class="flex items-center justify-center w-fit px-2 py-0.5 gap-1 text-xs text-[#A70909] bg-[#A709090D] rounded-full">
-                                                <svg width="8" height="8" viewBox="0 0 8 8" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <circle cx="4" cy="4" r="4" fill="#A70909" />
-                                                </svg>
+                                        <td class="py-4 font-semibold text-[#2B2F38]">A203</td>
+                                        <td class="py-4 text-[#5D6679]">Alexander</td>
+                                        <td class="py-4 text-[#5D6679]">2025/04/29</td>
+                                        <td class="py-4 text-[#5D6679]">2025/04/29</td>
+                                        <td class="py-4 text-[#5D6679]">Airbnb</td>
+                                        <td class="py-4 text-[#5D6679]">Log in today</td>
+                                    </tr>
 
-                                                <p>Cancelled</p>
-                                            </div>
-                                        </td>
-                                        <td class="py-4">$9.99</td>
-                                        <td class="py-4">Basic</td>
-                                        <td class="py-4">
-                                            <button
-                                                class="border border-[#EDEDED] rounded-md p-2 hover:bg-gray-100/90 transition-all">
-                                                <svg width="18" height="18" viewBox="0 0 20 20" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M19 13V17C19 17.5304 18.7893 18.0391 18.4142 18.4142C18.0391 18.7893 17.5304 19 17 19H3C2.46957 19 1.96086 18.7893 1.58579 18.4142C1.21071 18.0391 1 17.5304 1 17V13M5 8L10 13M10 13L15 8M10 13V1"
-                                                        stroke="#8C8C8C" stroke-width="2" stroke-linecap="round"
-                                                        stroke-linejoin="round" />
-                                                </svg>
+                                    <!-- row 3 -->
+                                    <tr class="border-t search-item">
+                                        <td class="py-4 font-semibold text-[#2B2F38]">A205</td>
+                                        <td class="py-4 text-[#5D6679]">Alexander</td>
+                                        <td class="py-4 text-[#5D6679]">2025/04/29</td>
+                                        <td class="py-4 text-[#5D6679]">2025/04/29</td>
+                                        <td class="py-4 text-[#5D6679]">Airbnb</td>
+                                        <td class="py-4 text-[#5D6679]">Log in today</td>
+                                    </tr>
 
-                                            </button>
-                                        </td>
+                                    <!-- row 4 -->
+                                    <tr class="border-t search-item">
+                                        <td class="py-4 font-semibold text-[#2B2F38]">A203</td>
+                                        <td class="py-4 text-[#5D6679]">Alexander</td>
+                                        <td class="py-4 text-[#5D6679]">2025/04/29</td>
+                                        <td class="py-4 text-[#5D6679]">2025/04/29</td>
+                                        <td class="py-4 text-[#5D6679]">Airbnb</td>
+                                        <td class="py-4 text-[#5D6679]">Log in today</td>
                                     </tr>
 
                                     <!-- more rows -->
@@ -812,35 +555,43 @@
                             </table>
                         </div>
                     </div>
-                </div>
-
-                <!-- Channel manager section -->
-                <div id="Channel" class="hidden tab-content">
-                    Channel Manager Section
-                </div>
             </div>
 
 
         </div>
 
     </div>
+
+
+
+
+
+
+
+
 </body>
 
 </html>
 
-<!-- for tabs switch buttons -->
+<!-- for search input -->
 <script>
-    function openTab(tabName) {
-        document.querySelectorAll('.tab-content').forEach(tab => {
-            tab.classList.add('hidden');
-        });
-        document.getElementById(tabName).classList.remove('hidden');
+    document.addEventListener('DOMContentLoaded', () => {
+        const input = document.getElementById('searchInput');
+        const items = Array.from(document.querySelectorAll('.search-item'));
 
-        document.querySelectorAll('.tab-button').forEach(button => {
-            button.classList.remove('border-b-2', 'border-[#8DD3BB]', 'font-bold');
+        input.addEventListener('input', () => {
+            const term = input.value.trim().toLowerCase();
+
+            items.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                if (text.includes(term)) {
+                    item.classList.remove('hidden');
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
         });
-        document.querySelector(`[data-tab='${tabName}']`).classList.add('border-b-2', 'border-[#8DD3BB]', 'font-bold');
-    }
+    });
 </script>
 
 <!-- for notification modal open/close -->
@@ -869,58 +620,6 @@
 
         popover.addEventListener('click', e => {
             e.stopPropagation();
-        });
-    });
-</script>
-
-<!-- for switch between the diplay mode and the edit mode -->
-<script>
-    const displayMode = document.getElementById('display-mode');
-    const editMode = document.getElementById('edit-mode');
-    const editBtn = document.getElementById('edit-btn');
-    const saveBtn = document.getElementById('save-btn');
-    const cancelBtn = document.getElementById('cancel-btn');
-
-    // all the inputs fields
-    const fieldsText = document.querySelectorAll('.field-text');
-    const fieldsInput = document.querySelectorAll('.field-input');
-
-    // edit button
-    editBtn.addEventListener('click', () => {
-        displayMode.classList.add('hidden');
-        editMode.classList.remove('hidden');
-    });
-
-    // save button
-    saveBtn.addEventListener('click', () => {
-        editMode.classList.add('hidden');
-        displayMode.classList.remove('hidden');
-    });
-
-    // cancel button
-    cancelBtn.addEventListener('click', () => {
-        editMode.classList.add('hidden');
-        displayMode.classList.remove('hidden');
-    });
-</script>
-
-<!-- for search input -->
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const input = document.getElementById('searchInput');
-        const items = Array.from(document.querySelectorAll('.search-item'));
-
-        input.addEventListener('input', () => {
-            const term = input.value.trim().toLowerCase();
-
-            items.forEach(item => {
-                const text = item.textContent.toLowerCase();
-                if (text.includes(term)) {
-                    item.classList.remove('hidden');
-                } else {
-                    item.classList.add('hidden');
-                }
-            });
         });
     });
 </script>
