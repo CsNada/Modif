@@ -3,7 +3,7 @@
 
 <head>
 
-    <title>Calendar</title>
+    <title>Channel Manager</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -129,7 +129,8 @@
                     </li>
 
                     <!-- Calendar -->
-                    <li class="bg-[#FFFFFF] rounded text-[#1E2227] font-bold mb-1 pl-1">
+                    <li
+                        class="hover:bg-[#FFFFFF] transition-all duration-100 rounded text-[#FFFFFF] hover:text-[#1E2227] hover:fill-[#1E2227] mb-1 pl-1">
                         <a href="./calendar.html" class="flex gap-2 items-center p-2">
                             <svg width="19" height="19" viewBox="0 0 27 36" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -177,10 +178,8 @@
                             <p>Maintenance Requests</p>
                         </a>
                     </li>
-
                     <!-- channel manger -->
-                    <li
-                        class="hover:bg-[#FFFFFF] transition-all duration-100 rounded text-[#FFFFFF] hover:text-[#1E2227] hover:fill-[#1E2227] mb-1 pl-1">
+                    <li class="bg-[#FFFFFF] rounded text-[#1E2227] font-bold mb-1 pl-1">
                         <a href="./channelmanager.html" class="flex gap-2 items-center p-2">
                             <svg width="21" height="18" viewBox="0 0 23 20" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -302,8 +301,7 @@
                         </form>
 
                         <!-- notification icon -->
-                        <div id="notification"
-                            class="cursor-pointe flex justify-center items-center cursor-pointer pt-1r">
+                        <div id="notification" class="flex justify-center items-center cursor-pointer pt-1r">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -490,66 +488,68 @@
             </div>
 
             <!-- page -->
-            <div class="p-5 px-7">
+            <div class="p-5 px-10 pt-10 space-y-6">
 
-                <!-- header  -->
-                <div class="flex justify-between items-center pb-8">
-                    <!-- Total Hostels -->
-                    <a href="./calendar.html"
-                        class="bg-[#141414] rounded-md px-3 pr-4 py-2 text-white text-xs flex gap-1">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="size-4">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
-                        </svg>
+                <!-- hedaer -->
+                <div class="flex justify-between">
 
-                        <p>Go Back</p>
-                    </a>
+                    <!-- button -->
+                    <div id="open-modal" class="bg-[#273B4A] rounded-md px-5 py-1.5 text-white text-sm cursor-pointer">
+                        Edit Availability
+                        and Prices for a Period</div>
+                    <!-- filter bar -->
+                    <form class="flex justify-end items-center gap-10">
 
-                    <!-- buttons  -->
-                    <div class="space-x-5 text-white text-xs font-semibold">
-                        <a href="./calendarcode.html"
-                            class="bg-[#4A4C4F] rounded-md px-5 py-2 hover:bg-[#414245] transition-all">Create a
-                            code</a>
-                        <a href="./calendarcalender.html"
-                            class="bg-[#4A4C4F] rounded-md px-5 py-2 hover:bg-[#414245] transition-all">Calendar</a>
-                    </div>
+                        <!-- Room Types -->
+                        <div class="flex gap-2 items-center">
+                            <p class="text-[#B0B0B0] text-sm font-semibold">Room Types</p>
+                            <select name="Room-Types" id="Room-Types"
+                                class="bg-[#4A4C4F] rounded-md p-1.5 px-3 outline-none font-semibold text-white text-xs">
+                                <option value="All">All</option>
+                                <option value="">option 1</option>
+                                <option value="">option 2</option>
+                            </select>
+                        </div>
+
+                        <!-- Hostels -->
+                        <div class="flex gap-2 items-center">
+                            <p class="text-[#B0B0B0] text-sm font-semibold">Hostels</p>
+                            <select name="Hostels" id="Hostels"
+                                class="bg-[#4A4C4F] rounded-md p-1.5 px-3 outline-none font-semibold text-white text-xs">
+                                <option value="All">All</option>
+                                <option value="">option 1</option>
+                                <option value="">option 2</option>
+                            </select>
+                        </div>
+
+                        <!-- Floors -->
+                        <div class="flex gap-2 items-center">
+                            <p class="text-[#B0B0B0] text-sm font-semibold">Floors</p>
+                            <select name="Floors" id="Floors"
+                                class="bg-[#4A4C4F] rounded-md p-1.5 px-3 outline-none font-semibold text-white text-xs">
+                                <option value="All">All</option>
+                                <option value="">option 1</option>
+                                <option value="">option 2</option>
+                            </select>
+                        </div>
+                    </form>
                 </div>
 
-                <!-- Tabs buttons to switch the sections -->
-                <div class="relative flex justify-start w-full">
-
-                    <!-- Check in / Check out buttons  -->
-                    <div class="relative flex gap-5 items-center px-2 text-xs font-medium py-2">
-                        <!-- the sections name -->
-                        <button onclick="selectTab(0)"
-                            class="relative z-10 text-[#0F50AA] px-5 py-2 rounded-full border border-[#1570EF] bg-[#E8F1FD]"
-                            id="tab-0">Check in</button>
-                        <button onclick="selectTab(1)"
-                            class="relative z-10 text-[#5D6679] px-5 py-2 rounded-full border bg-white" id="tab-1">
-                            Check out</button>
-                    </div>
-
-                </div>
-
-                <!-- table area based on the tab switch -->
-                <div class="py-5">
-
-                    <!-- Check in -->
-                    <div id="content-0" class="tab-content block">
+                <!-- table 1 -->
+                <div>
+                    <div class="rounded-md shadow p-3 px-5">
                         <!-- the table -->
-                        <div class="rounded-md shadow p-5">
+                        <div class="tab-content">
 
-                            <!-- the table (Check in) -->
-                            <table class="text-left text-sm border-collapse w-full">
+                            <table class="w-full text-left text-sm border-collapse">
                                 <thead class="text-[#667085]">
                                     <tr>
-                                        <th class="py-2">Room code</th>
-                                        <th class="py-2">Name</th>
-                                        <th class="py-2">Room Number</th>
-                                        <th class="py-2">Total amount</th>
-                                        <th class="py-2">Amount paid</th>
-                                        <th class="py-2">Booking source</th>
-                                        <th class="py-2">Status</th>
+                                        <th class="py-2">Unit</th>
+                                        <th class="py-2">Channel</th>
+                                        <th class="py-2">Apr-30</th>
+                                        <th class="py-2">May-01</th>
+                                        <th class="py-2">May-02 </th>
+                                        <th class="py-2 text-center">Sync</th>
                                         <th class="py-2"> </th>
                                     </tr>
                                 </thead>
@@ -558,291 +558,381 @@
 
                                     <!-- row 1 -->
                                     <tr class="border-t search-item">
-                                        <td class="py-4 font-semibold text-[#2B2F38]">#5644</td>
-                                        <td class="py-4 text-[#5D6679]">Alexander</td>
-                                        <td class="py-4 text-[#5D6679]">A647</td>
-                                        <td class="py-4 text-[#5D6679]">$ 467</td>
-                                        <td class="py-4 text-[#5D6679]">$ 200</td>
-                                        <td class="py-4 text-[#5D6679]">Airbnb</td>
-                                        <td>
-                                            <div
-                                                class="bg-[#E8F1FD] rounded-full w-fit text-[10px] font-bold py-0.5 px-3 text-[#448DF2]">
-                                                Clean</div>
-                                        </td>
-                                        <td class="flex gap-1 py-3">
-                                            <!-- delete -->
-                                            <button class="flex justify-center items-center w-full">
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                    stroke-width="1.5" stroke="currentColor"
-                                                    class="size-5 text-red-600">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
+                                        <td class="py-2 font-semibold text-[#2B2F38]">#5644</td>
+                                        <td class="py-2 text-[#5D6679]">Airbnbb</td>
+                                        <td class="py-2 text-[#5D6679]">200/1</td>
+                                        <td class="py-2 text-[#5D6679]">200/1</td>
+                                        <td class="py-2 text-[#5D6679]">200/1</td>
+                                        <td class="py-2 text-[#5D6679] text-center">
+                                            <button>
+                                                <svg width="16" height="21" viewBox="0 0 19 24" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M9.5 3.27273V0L4.75 4.36364L9.5 8.72727V5.45455C13.4306 5.45455 16.625 8.38909 16.625 12C16.625 13.1018 16.3281 14.1491 15.7937 15.0545L17.5275 16.6473C18.4897 15.2584 19.0005 13.6462 19 12C19 7.17818 14.7487 3.27273 9.5 3.27273ZM9.5 18.5455C5.56938 18.5455 2.375 15.6109 2.375 12C2.375 10.8982 2.67188 9.85091 3.20625 8.94545L1.4725 7.35273C0.510331 8.74155 -0.000498293 10.3538 3.64733e-07 12C3.64733e-07 16.8218 4.25125 20.7273 9.5 20.7273V24L14.25 19.6364L9.5 15.2727V18.5455Z"
+                                                        fill="#273B4A" fill-opacity="0.68" />
                                                 </svg>
                                             </button>
 
-                                            <!-- edit -->
-                                            <button class="open-modal flex justify-center items-center w-full">
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                    stroke-width="1.5" stroke="currentColor" class="size-5">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
+                                        </td>
+                                        <td class="py-2 text-[#5D6679] text-center">
+                                            <button>
+                                                <svg width="4" height="15" viewBox="0 0 4 15" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                        d="M0.5 1.5C0.5 1.10218 0.658035 0.720644 0.93934 0.43934C1.22064 0.158035 1.60218 0 2 0C2.39782 0 2.77936 0.158035 3.06066 0.43934C3.34196 0.720644 3.5 1.10218 3.5 1.5C3.5 1.89782 3.34196 2.27936 3.06066 2.56066C2.77936 2.84196 2.39782 3 2 3C1.60218 3 1.22064 2.84196 0.93934 2.56066C0.658035 2.27936 0.5 1.89782 0.5 1.5ZM0.5 7.5C0.5 7.10218 0.658035 6.72064 0.93934 6.43934C1.22064 6.15804 1.60218 6 2 6C2.39782 6 2.77936 6.15804 3.06066 6.43934C3.34196 6.72064 3.5 7.10218 3.5 7.5C3.5 7.89782 3.34196 8.27936 3.06066 8.56066C2.77936 8.84196 2.39782 9 2 9C1.60218 9 1.22064 8.84196 0.93934 8.56066C0.658035 8.27936 0.5 7.89782 0.5 7.5ZM0.5 13.5C0.5 13.1022 0.658035 12.7206 0.93934 12.4393C1.22064 12.158 1.60218 12 2 12C2.39782 12 2.77936 12.158 3.06066 12.4393C3.34196 12.7206 3.5 13.1022 3.5 13.5C3.5 13.8978 3.34196 14.2794 3.06066 14.5607C2.77936 14.842 2.39782 15 2 15C1.60218 15 1.22064 14.842 0.93934 14.5607C0.658035 14.2794 0.5 13.8978 0.5 13.5Z"
+                                                        fill="#5D6679" />
                                                 </svg>
 
                                             </button>
                                         </td>
+
                                     </tr>
 
                                     <!-- row 2 -->
                                     <tr class="border-t search-item">
-                                        <td class="py-4 font-semibold text-[#2B2F38]">#5644</td>
-                                        <td class="py-4 text-[#5D6679]">Alexander</td>
-                                        <td class="py-4 text-[#5D6679]">A647</td>
-                                        <td class="py-4 text-[#5D6679]">$ 467</td>
-                                        <td class="py-4 text-[#5D6679]">$ 200</td>
-                                        <td class="py-4 text-[#5D6679]">Airbnb</td>
-                                        <td>
-                                            <div
-                                                class="bg-[#FEECEB] rounded-full w-fit text-[10px] font-bold py-0.5 px-3 text-[#F36960]">
-                                                Dirty</div>
-                                        </td>
-                                        <td class="flex gap-1 py-3">
-                                            <!-- delete -->
-                                            <button class="flex justify-center items-center w-full">
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                    stroke-width="1.5" stroke="currentColor"
-                                                    class="size-5 text-red-600">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
+                                        <td class="py-2 font-semibold text-[#2B2F38]">#5644</td>
+                                        <td class="py-2 text-[#5D6679]">Airbnb</td>
+                                        <td class="py-2 text-[#5D6679]">200/1</td>
+                                        <td class="py-2 text-[#5D6679]">200/1</td>
+                                        <td class="py-2 text-[#5D6679]">200/1</td>
+                                        <td class="py-2 text-[#5D6679] text-center">
+                                            <button>
+                                                <svg width="16" height="21" viewBox="0 0 19 24" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M9.5 3.27273V0L4.75 4.36364L9.5 8.72727V5.45455C13.4306 5.45455 16.625 8.38909 16.625 12C16.625 13.1018 16.3281 14.1491 15.7937 15.0545L17.5275 16.6473C18.4897 15.2584 19.0005 13.6462 19 12C19 7.17818 14.7487 3.27273 9.5 3.27273ZM9.5 18.5455C5.56938 18.5455 2.375 15.6109 2.375 12C2.375 10.8982 2.67188 9.85091 3.20625 8.94545L1.4725 7.35273C0.510331 8.74155 -0.000498293 10.3538 3.64733e-07 12C3.64733e-07 16.8218 4.25125 20.7273 9.5 20.7273V24L14.25 19.6364L9.5 15.2727V18.5455Z"
+                                                        fill="#273B4A" fill-opacity="0.68" />
                                                 </svg>
                                             </button>
 
-                                            <!-- edit -->
-                                            <button class="open-modal flex justify-center items-center w-full">
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                    stroke-width="1.5" stroke="currentColor" class="size-5">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
+                                        </td>
+                                        <td class="py-2 text-[#5D6679] text-center">
+                                            <button>
+                                                <svg width="4" height="15" viewBox="0 0 4 15" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                        d="M0.5 1.5C0.5 1.10218 0.658035 0.720644 0.93934 0.43934C1.22064 0.158035 1.60218 0 2 0C2.39782 0 2.77936 0.158035 3.06066 0.43934C3.34196 0.720644 3.5 1.10218 3.5 1.5C3.5 1.89782 3.34196 2.27936 3.06066 2.56066C2.77936 2.84196 2.39782 3 2 3C1.60218 3 1.22064 2.84196 0.93934 2.56066C0.658035 2.27936 0.5 1.89782 0.5 1.5ZM0.5 7.5C0.5 7.10218 0.658035 6.72064 0.93934 6.43934C1.22064 6.15804 1.60218 6 2 6C2.39782 6 2.77936 6.15804 3.06066 6.43934C3.34196 6.72064 3.5 7.10218 3.5 7.5C3.5 7.89782 3.34196 8.27936 3.06066 8.56066C2.77936 8.84196 2.39782 9 2 9C1.60218 9 1.22064 8.84196 0.93934 8.56066C0.658035 8.27936 0.5 7.89782 0.5 7.5ZM0.5 13.5C0.5 13.1022 0.658035 12.7206 0.93934 12.4393C1.22064 12.158 1.60218 12 2 12C2.39782 12 2.77936 12.158 3.06066 12.4393C3.34196 12.7206 3.5 13.1022 3.5 13.5C3.5 13.8978 3.34196 14.2794 3.06066 14.5607C2.77936 14.842 2.39782 15 2 15C1.60218 15 1.22064 14.842 0.93934 14.5607C0.658035 14.2794 0.5 13.8978 0.5 13.5Z"
+                                                        fill="#5D6679" />
                                                 </svg>
 
                                             </button>
                                         </td>
+
                                     </tr>
 
                                     <!-- row 3 -->
                                     <tr class="border-t search-item">
-                                        <td class="py-4 font-semibold text-[#2B2F38]">#5644</td>
-                                        <td class="py-4 text-[#5D6679]">Alexander</td>
-                                        <td class="py-4 text-[#5D6679]">A647</td>
-                                        <td class="py-4 text-[#5D6679]">$ 467</td>
-                                        <td class="py-4 text-[#5D6679]">$ 200</td>
-                                        <td class="py-4 text-[#5D6679]">Airbnb</td>
-                                        <td>
-                                            <div
-                                                class="bg-[#E7F8F0] rounded-full w-fit text-[10px] font-bold py-0.5 px-3 text-[#41C588]">
-                                                Inspected</div>
-                                        </td>
-                                        <td class="flex gap-1 py-3">
-                                            <!-- delete -->
-                                            <button class="flex justify-center items-center w-full">
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                    stroke-width="1.5" stroke="currentColor"
-                                                    class="size-5 text-red-600">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
+                                        <td class="py-2 font-semibold text-[#2B2F38]">#5644</td>
+                                        <td class="py-2 text-[#5D6679]">Airbnb</td>
+                                        <td class="py-2 text-[#5D6679]">200/1</td>
+                                        <td class="py-2 text-[#5D6679]">200/1</td>
+                                        <td class="py-2 text-[#5D6679]">200/1</td>
+                                        <td class="py-2 text-[#5D6679] text-center">
+                                            <button>
+                                                <svg width="16" height="21" viewBox="0 0 19 24" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M9.5 3.27273V0L4.75 4.36364L9.5 8.72727V5.45455C13.4306 5.45455 16.625 8.38909 16.625 12C16.625 13.1018 16.3281 14.1491 15.7937 15.0545L17.5275 16.6473C18.4897 15.2584 19.0005 13.6462 19 12C19 7.17818 14.7487 3.27273 9.5 3.27273ZM9.5 18.5455C5.56938 18.5455 2.375 15.6109 2.375 12C2.375 10.8982 2.67188 9.85091 3.20625 8.94545L1.4725 7.35273C0.510331 8.74155 -0.000498293 10.3538 3.64733e-07 12C3.64733e-07 16.8218 4.25125 20.7273 9.5 20.7273V24L14.25 19.6364L9.5 15.2727V18.5455Z"
+                                                        fill="#273B4A" fill-opacity="0.68" />
                                                 </svg>
                                             </button>
 
-                                            <!-- edit -->
-                                            <button class="open-modal flex justify-center items-center w-full">
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                    stroke-width="1.5" stroke="currentColor" class="size-5">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
+                                        </td>
+                                        <td class="py-2 text-[#5D6679] text-center">
+                                            <button>
+                                                <svg width="4" height="15" viewBox="0 0 4 15" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                        d="M0.5 1.5C0.5 1.10218 0.658035 0.720644 0.93934 0.43934C1.22064 0.158035 1.60218 0 2 0C2.39782 0 2.77936 0.158035 3.06066 0.43934C3.34196 0.720644 3.5 1.10218 3.5 1.5C3.5 1.89782 3.34196 2.27936 3.06066 2.56066C2.77936 2.84196 2.39782 3 2 3C1.60218 3 1.22064 2.84196 0.93934 2.56066C0.658035 2.27936 0.5 1.89782 0.5 1.5ZM0.5 7.5C0.5 7.10218 0.658035 6.72064 0.93934 6.43934C1.22064 6.15804 1.60218 6 2 6C2.39782 6 2.77936 6.15804 3.06066 6.43934C3.34196 6.72064 3.5 7.10218 3.5 7.5C3.5 7.89782 3.34196 8.27936 3.06066 8.56066C2.77936 8.84196 2.39782 9 2 9C1.60218 9 1.22064 8.84196 0.93934 8.56066C0.658035 8.27936 0.5 7.89782 0.5 7.5ZM0.5 13.5C0.5 13.1022 0.658035 12.7206 0.93934 12.4393C1.22064 12.158 1.60218 12 2 12C2.39782 12 2.77936 12.158 3.06066 12.4393C3.34196 12.7206 3.5 13.1022 3.5 13.5C3.5 13.8978 3.34196 14.2794 3.06066 14.5607C2.77936 14.842 2.39782 15 2 15C1.60218 15 1.22064 14.842 0.93934 14.5607C0.658035 14.2794 0.5 13.8978 0.5 13.5Z"
+                                                        fill="#5D6679" />
                                                 </svg>
 
                                             </button>
                                         </td>
-                                    </tr>
 
-                                    <!-- row 4 -->
-                                    <tr class="border-t search-item">
-                                        <td class="py-4 font-semibold text-[#2B2F38]">#5644</td>
-                                        <td class="py-4 text-[#5D6679]">Alexander</td>
-                                        <td class="py-4 text-[#5D6679]">A647</td>
-                                        <td class="py-4 text-[#5D6679]">$ 467</td>
-                                        <td class="py-4 text-[#5D6679]">$ 200</td>
-                                        <td class="py-4 text-[#5D6679]">Airbnb</td>
-                                        <td>
-                                            <div
-                                                class="bg-[#FEF4E6] rounded-full w-fit text-[10px] font-bold py-0.5 px-3 text-[#F9A63A]">
-                                                Pick up</div>
-                                        </td>
-                                        <td class="flex gap-1 py-3">
-                                            <!-- delete -->
-                                            <button class="flex justify-center items-center w-full">
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                    stroke-width="1.5" stroke="currentColor"
-                                                    class="size-5 text-red-600">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
-                                                </svg>
-                                            </button>
-
-                                            <!-- edit -->
-                                            <button class="open-modal flex justify-center items-center w-full">
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                    stroke-width="1.5" stroke="currentColor" class="size-5">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
-                                                </svg>
-
-                                            </button>
-                                        </td>
                                     </tr>
 
                                     <!-- more rows -->
                                 </tbody>
                             </table>
                         </div>
+                        <!-- end the table -->
                     </div>
 
-                    <!-- Check out -->
-                    <div id="content-1" class="tab-content hidden">
-                        table Check out
-                    </div>
+                    <!-- the arrow buttons -->
+                    <div class="px-20 py-5 flex justify-between">
 
+                        <!-- Previous -->
+                        <div
+                            class="text-[#667085] text-xs font-semibold rounded-md border border-[#858D9D] py-1.5 px-3 flex gap-2 cursor-pointer hover:bg-gray-100 transition-all">
+                            <svg class="rotate-180" width="9" height="14" viewBox="0 0 9 14" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.375 0.75L7.625 7L1.375 13.25" stroke="#5D6679" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <p>Previous</p>
+                        </div>
+
+                        <!-- numbers -->
+                        <div class="text-sm font-semibold text-[#858D9D] flex gap-3 overflow-x-scroll scroll-container">
+                            <div
+                                class="text-[#1366D9] cursor-pointer rounded-md size-7 flex justify-center items-center bg-gray-100 shadow-sm">
+                                1</div>
+                            <div
+                                class="cursor-pointer rounded-md size-7 flex justify-center items-center hover:bg-gray-100 transition-all">
+                                2</div>
+                            <div
+                                class="cursor-pointer rounded-md size-7 flex justify-center items-center hover:bg-gray-100 transition-all">
+                                3</div>
+                            <div
+                                class="cursor-pointer rounded-md size-7 flex justify-center items-center hover:bg-gray-100 transition-all">
+                                4</div>
+                            <div
+                                class="cursor-pointer rounded-md size-7 flex justify-center items-center hover:bg-gray-100 transition-all">
+                                5</div>
+                            <div
+                                class="cursor-pointer rounded-md size-7 flex justify-center items-center hover:bg-gray-100 transition-all">
+                                6</div>
+                            <div
+                                class="cursor-pointer rounded-md size-7 flex justify-center items-center hover:bg-gray-100 transition-all">
+                                7</div>
+                        </div>
+
+                        <!-- Previous -->
+                        <div
+                            class="text-[#667085] text-xs font-semibold rounded-md border border-[#858D9D] py-1.5 px-3 flex gap-2 cursor-pointer hover:bg-gray-100 transition-all">
+                            <p>Next</p>
+                            <svg width="9" height="14" viewBox="0 0 9 14" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.375 0.75L7.625 7L1.375 13.25" stroke="#5D6679" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                    </div>
                 </div>
 
+
             </div>
+
         </div>
 
     </div>
+</body>
 
-    <!-- edit modal -->
-    <div id="modal-wrapper" class="fixed inset-0 z-50 hidden">
-        <!-- overlay -->
-        <div id="modal-overlay"
-            class="absolute inset-0 bg-black bg-opacity-50 opacity-0 transition-opacity duration-300">
-        </div>
+<!-- new booking modal -->
+<div id="modal-wrapper" class="fixed inset-0 z-50 hidden">
+    <!-- overlay -->
+    <div id="modal-overlay" class="absolute inset-0 bg-black bg-opacity-50 opacity-0 transition-opacity duration-300">
+    </div>
 
-        <!-- modal box-->
-        <div class="flex items-center justify-center min-h-screen">
-            <div id="modal-box"
-                class="w-[450px] bg-[#F6F6F6] rounded-md transform transition-all duration-300 ease-out opacity-0 scale-75">
+    <!-- modal box-->
+    <div class="flex items-center justify-center min-h-screen">
+        <div id="modal-box"
+            class="w-[600px] bg-[#F6F6F6] rounded-md transform transition-all duration-300 ease-out opacity-0 scale-75">
 
-                <div id="modal-content" class="w-full">
+            <div id="modal-content" class="w-full">
 
-                    <div class="p-7 flex flex-col justify-center items-center w-full">
+                <div class="p-7 flex flex-col justify-center items-center w-full">
+                    <!-- the header -->
+                    <div class="flex justify-end w-full">
+                        <!-- X button -->
+                        <div id="close-modal" class="cursor-pointer h-fit">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                            </svg>
 
-                        <!-- the header -->
-                        <div class="flex justify-between w-full pb-3">
-                            <h1 class="text-lg font-semibold">Edit</h1>
+                        </div>
+                    </div>
 
-                            <!-- X button -->
-                            <div id="close-modal" class="cursor-pointer h-fit">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor" class="size-5">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-                                </svg>
+                    <!-- the inputs -->
+                    <form class="w-full space-y-4">
 
+                        <!-- start and end -->
+                        <div class="flex justify-between gap-4 w-full">
+                            <!-- START -->
+                            <div class="flex flex-col gap-1 w-full">
+                                <label for="START" class="text-[#0D062D] text-xs font-semibold">START</label>
+                                <input type="date" name="START" id="START"
+                                    class="border border-[#787486] rounded-md py-1 px-2 outline-none w-full">
+                            </div>
+
+                            <!-- END -->
+                            <div class="flex flex-col gap-1 w-full">
+                                <label for="END" class="text-[#0D062D] text-xs font-semibold">END</label>
+                                <input type="date" name="END" id="END"
+                                    class="border border-[#787486] rounded-md py-1 px-2 outline-none w-full">
                             </div>
                         </div>
 
-                        <form class="flex gap-3 flex-col items-center w-full px-5">
+                        <!-- TYPES -->
+                        <div class="flex flex-col gap-1 text-sm w-full">
+                            <label for="TYPES" class="text-[#0D062D] text-xs font-semibold">TYPES</label>
+                            <select name="TYPES" id="TYPES"
+                                class="border border-[#787486] rounded-md py-1 px-2 outline-none w-full">
+                                <option value="" hidden selected>select the type</option>
+                                <option value="1">Airbnb</option>
+                                <option value="1">Airbnb</option>
+                                <option value="1">Airbnb</option>
+                            </select>
+                        </div>
 
-                            <!-- Room -->
-                            <div class="w-full">
-                                <label for="Room" class="text-xs font-semibold pb-2">Room Number</label>
-                                <select name="Room" id="Room" class="w-full rounded-md border px-2 py-1 text-sm">
-                                    <option value="" hidden>Select Room Number</option>
-                                    <option value="1" selected>Room 101</option>
-                                    <option value="2">Room 102</option>
-                                    <option value="3">Room 103</option>
-                                </select>
+                        <!-- APPLY  -->
+                        <div>
+                            <p class="text-[#0D062D] text-xs font-semibold pb-2">APPLY</p>
+
+                            <!-- the checkbox -->
+                            <div class="flex justify-between gap-2 text-[10px] font-semibold">
+                                <!-- SUNDAY -->
+                                <div>
+                                    <!-- the input -->
+                                    <input type="checkbox" id="SUNDAY" class="peer sr-only" />
+                                    <!-- the button -->
+                                    <label for="SUNDAY"
+                                        class="block w-fit p-2 rounded border border-[#273B4A8F] text-[#273B4A8F] cursor-pointer select-none transition-colors duration-200 peer-checked:text-blue-600 peer-checked:border-blue-600 peer-checked:ring-2  peer-checked:font-bold">
+                                        SUNDAY
+                                    </label>
+                                </div>
+
+                                <!-- MONDAY -->
+                                <div>
+                                    <!-- the input -->
+                                    <input type="checkbox" id="MONDAY" class="peer sr-only" />
+                                    <!-- the button -->
+                                    <label for="MONDAY"
+                                        class="block w-fit p-2 rounded border border-[#273B4A8F] text-[#273B4A8F] cursor-pointer select-none transition-colors duration-200 peer-checked:text-blue-600 peer-checked:border-blue-600 peer-checked:ring-2  peer-checked:font-bold">
+                                        MONDAY
+                                    </label>
+                                </div>
+
+                                <!-- TUSEDAY -->
+                                <div>
+                                    <!-- the input -->
+                                    <input type="checkbox" id="TUSEDAY" class="peer sr-only" />
+                                    <!-- the button -->
+                                    <label for="TUSEDAY"
+                                        class="block w-fit p-2 rounded border border-[#273B4A8F] text-[#273B4A8F] cursor-pointer select-none transition-colors duration-200 peer-checked:text-blue-600 peer-checked:border-blue-600 peer-checked:ring-2  peer-checked:font-bold">
+                                        TUSEDAY
+                                    </label>
+                                </div>
+
+                                <!-- WENSDAY -->
+                                <div>
+                                    <!-- the input -->
+                                    <input type="checkbox" id="WENSDAY" class="peer sr-only" />
+                                    <!-- the button -->
+                                    <label for="WENSDAY"
+                                        class="block w-fit p-2 rounded border border-[#273B4A8F] text-[#273B4A8F] cursor-pointer select-none transition-colors duration-200 peer-checked:text-blue-600 peer-checked:border-blue-600 peer-checked:ring-2  peer-checked:font-bold">
+                                        WENSDAY
+                                    </label>
+                                </div>
+
+                                <!-- TARSDAY -->
+                                <div>
+                                    <!-- the input -->
+                                    <input type="checkbox" id="TARSDAY" class="peer sr-only" />
+                                    <!-- the button -->
+                                    <label for="TARSDAY"
+                                        class="block w-fit p-2 rounded border border-[#273B4A8F] text-[#273B4A8F] cursor-pointer select-none transition-colors duration-200 peer-checked:text-blue-600 peer-checked:border-blue-600 peer-checked:ring-2  peer-checked:font-bold">
+                                        TARSDAY
+                                    </label>
+                                </div>
+
+                                <!-- FRIYDAY -->
+                                <div>
+                                    <!-- the input -->
+                                    <input type="checkbox" id="FRIYDAY" class="peer sr-only" />
+                                    <!-- the button -->
+                                    <label for="FRIYDAY"
+                                        class="block w-fit p-2 rounded border border-[#273B4A8F] text-[#273B4A8F] cursor-pointer select-none transition-colors duration-200 peer-checked:text-blue-600 peer-checked:border-blue-600 peer-checked:ring-2  peer-checked:font-bold">
+                                        FRIYDAY
+                                    </label>
+                                </div>
+
+                                <!-- SATRNDAY -->
+                                <div>
+                                    <!-- the input -->
+                                    <input type="checkbox" id="SATRNDAY" class="peer sr-only" />
+                                    <!-- the button -->
+                                    <label for="SATRNDAY"
+                                        class="block w-fit p-2 rounded border border-[#273B4A8F] text-[#273B4A8F] cursor-pointer select-none transition-colors duration-200 peer-checked:text-blue-600 peer-checked:border-blue-600 peer-checked:ring-2  peer-checked:font-bold">
+                                        SATRNDAY
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Select a channel, price and Availability -->
+                        <div class="flex gap-4">
+
+                            <!-- Select a channel -->
+                            <div class="flex flex-col text-sm space-y-2 w-1/3">
+                                <p class="text-[#0D062D] text-xs font-semibold">Select a channel</p>
+
+                                <!-- BOOKING.COM -->
+                                <div class="flex gap-2 items-center">
+                                    <input type="checkbox" name="BOOKING" id="BOOKING" class="size-4">
+                                    <label for="BOOKING">BOOKING.COM</label>
+                                </div>
+
+                                <!-- option 2 -->
+                                <div class="flex gap-2 items-center">
+                                    <input type="checkbox" name="option 2" id="option 2" class="size-4">
+                                    <label for="option 2">option 2</label>
+                                </div>
+
+                                <!-- option 3 -->
+                                <div class="flex gap-2 items-center">
+                                    <input type="checkbox" name="option 3" id="option 3" class="size-4">
+                                    <label for="option 3">option 3</label>
+                                </div>
+
+                                <!-- more options here -->
                             </div>
 
-                            <!-- Name -->
-                            <div class="w-full">
-                                <label for="Name" class="text-xs font-semibold pb-2">Name</label>
-                                <input type="text" name="Name" id="Name" placeholder="Name" value="Mohammad"
-                                    class="w-full rounded-md border px-2 py-1 text-sm">
+                            <!-- price and Availability -->
+                            <div class="w-2/3">
+                                <!-- price -->
+                                <div>
+                                    <label for="PRICE" class="text-[#0D062D] text-xs font-semibold">PRICE</label>
+                                    <input type="text" name="PRICE" id="PRICE"
+                                        class="border border-[#787486] rounded-md py-1 px-2 outline-none w-full">
+                                </div>
+
+                                <!-- Availability -->
+                                <div>
+                                    <label for="Availability" class="text-[#0D062D] text-xs font-semibold">Availability</label>
+                                    <select name="Availability" id="Availability" class="border border-[#787486] rounded-md py-1 px-2 outline-none w-full">\
+                                        <option value="" hidden selected> select the Availability</option>
+                                        <option value="Available">Available</option>
+                                        <option value="Unvailable">Unavailable</option>
+                                    </select>      
+                                </div>
                             </div>
 
-                            <!-- Total amount -->
-                            <div class="w-full">
-                                <label for="amount" class="text-xs font-semibold pb-2">Total amount</label>
-                                <input type="text" name="amount" id="amount" placeholder="Total amount" value="1300$"
-                                    class="w-full rounded-md border px-2 py-1 text-sm">
-                            </div>
+                        </div>
 
-                            <!-- Amount paid -->
-                            <div class="w-full">
-                                <label for="paid" class="text-xs font-semibold pb-2">Amount paid</label>
-                                <input type="text" name="paid" id="paid" placeholder="Amount paid" value="900$"
-                                    class="w-full rounded-md border px-2 py-1 text-sm">
-                            </div>
+                        <!-- buttons -->
+                        <div class="w-full flex justify-end gap-4 text-sm font-semibold">
+                            <!-- cancel -->
+                            <div id="close-modal2" class="bg-[#273B4A4A] rounded-md px-6 py-1 border border-[#0000004F] cursor-pointer">cancel</div>
 
-                            <!-- Booking source -->
-                            <div class="w-full">
-                                <label for="source" class="text-xs font-semibold pb-2">Booking source</label>
-                                <select name="source" id="source" class="w-full rounded-md border px-2 py-1 text-sm">
-                                    <option value="" hidden>Booking source</option>
-                                    <option value="1" selected>Airbnb</option>
-                                    <option value="2">ِBooking</option>
-                                    <option value="3">Almosafer</option>
-                                </select>
+                            <!-- update -->
+                            <div>
+                                <button type="submit" class="bg-[#273B4A] text-[#FFFFFF] rounded-md px-6 py-1 cursor-pointer">update</button>
                             </div>
-
-                            <!-- Status -->
-                            <div class="w-full">
-                                <label for="Status" class="text-xs font-semibold pb-2">Status</label>
-                                <select name="source" id="Status" class="w-full rounded-md border px-2 py-1 text-sm">
-                                    <option value="" hidden>Status</option>
-                                    <option value="1" selected>Clean</option>
-                                    <option value="2">Dirty</option>
-                                    <option value="3">Inspected</option>
-                                    <option value="4">Pick up</option>
-                                </select>
-                            </div>
-
-                            <!-- submit button -->
-                            <button id="addHostel" type="submit"
-                                class="bg-[#4A4C4F] mt-5 text-white hover:bg-[#3e3f42] transition-all rounded-md p-2 w-36 text-xs font-semibold text-center">
-                                Save
-                            </button>
-                        </form>
-                    </div>
+                        </div>
+                    </form>
 
                 </div>
 
             </div>
+
         </div>
     </div>
-
-</body>
+</div>
 
 </html>
-
-<!-- for search input -->
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const input = document.getElementById('searchInput');
-        const items = Array.from(document.querySelectorAll('.search-item'));
-
-        input.addEventListener('input', () => {
-            const term = input.value.trim().toLowerCase();
-
-            items.forEach(item => {
-                const text = item.textContent.toLowerCase();
-                if (text.includes(term)) {
-                    item.classList.remove('hidden');
-                } else {
-                    item.classList.add('hidden');
-                }
-            });
-        });
-    });
-</script>
 
 <!-- for notification modal open/close -->
 <script>
@@ -874,66 +964,63 @@
     });
 </script>
 
-<!-- for switch between the sections -->
+<!-- for search input -->
 <script>
-    function selectTab(index) {
-        const buttons = document.querySelectorAll('button[id^="tab-"]');
-        const contents = document.querySelectorAll('.tab-content');
-        const indicator = document.getElementById('tabIndicator');
-        const selected = buttons[index];
+    document.addEventListener('DOMContentLoaded', () => {
+        const input = document.getElementById('searchInput');
+        const items = Array.from(document.querySelectorAll('.search-item'));
 
-        // change the selected tab 
-        buttons.forEach(btn => {
-            btn.classList.remove('text-[#0F50AA]', 'border-[#1570EF]', 'bg-[#E8F1FD]');
-            btn.classList.add('text-[#5D6679]', 'bg-white');
+        input.addEventListener('input', () => {
+            const term = input.value.trim().toLowerCase();
+
+            items.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                if (text.includes(term)) {
+                    item.classList.remove('hidden');
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
         });
-        // reset the others tab 
-        selected.classList.remove('text-[#5D6679]', 'bg-white');
-        selected.classList.add('text-[#0F50AA]', 'border-[#1570EF]', 'bg-[#E8F1FD]');
-
-        // ]
-        contents.forEach(div => div.classList.add('hidden'));
-        document.getElementById('content-' + index).classList.remove('hidden');
-    }
-
-    window.addEventListener('DOMContentLoaded', () => {
-        selectTab(0); // select the first tab by default 
     });
 </script>
 
-<!-- for edit modal open/close -->
+<!-- for the modal open/close -->
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const openBtns  = document.querySelectorAll('.open-modal');
-    const closeBtn  = document.getElementById('close-modal');
-    const wrapper   = document.getElementById('modal-wrapper');
-    const overlay   = document.getElementById('modal-overlay');
-    const box       = document.getElementById('modal-box');
+    const openBtn = document.getElementById('open-modal');
+    const closeBtn = document.getElementById('close-modal');
+    const closeBtn2 = document.getElementById('close-modal2');
+    const wrapper = document.getElementById('modal-wrapper');
+    const overlay = document.getElementById('modal-overlay');
+    const box = document.getElementById('modal-box');
 
     function showModal() {
-      wrapper.classList.remove('hidden');
-      overlay.classList.replace('opacity-100','opacity-0');
-      box    .classList.replace('opacity-100','opacity-0');
-      box    .classList.replace('scale-100','scale-75');
+        // show the modal
+        wrapper.classList.remove('hidden');
+        // initial state
+        overlay.classList.replace('opacity-100', 'opacity-0');
+        box.classList.replace('opacity-100', 'opacity-0');
+        box.classList.replace('scale-100', 'scale-75');
 
-      requestAnimationFrame(() => {
-        overlay.classList.replace('opacity-0','opacity-100');
-        box    .classList.replace('opacity-0','opacity-100');
-        box    .classList.replace('scale-75','scale-100');
-      });
+        requestAnimationFrame(() => {
+            // open animation 
+            overlay.classList.replace('opacity-0', 'opacity-100');
+            box.classList.replace('opacity-0', 'opacity-100');
+            box.classList.replace('scale-75', 'scale-100');
+        });
     }
 
     function hideModal() {
-      overlay.classList.replace('opacity-100','opacity-0');
-      box    .classList.replace('opacity-100','opacity-0');
-      box    .classList.replace('scale-100','scale-75');
-      setTimeout(() => wrapper.classList.add('hidden'), 300);
+        // colse animation 
+        overlay.classList.replace('opacity-100', 'opacity-0');
+        box.classList.replace('opacity-100', 'opacity-0');
+        box.classList.replace('scale-100', 'scale-75');
+        // hidden the modal
+        setTimeout(() => wrapper.classList.add('hidden'), 300);
     }
 
-    // add listener to all the buttons
-    openBtns.forEach(btn => btn.addEventListener('click', showModal));
-    // the other buttons
+    openBtn.addEventListener('click', showModal);
     closeBtn.addEventListener('click', hideModal);
-    overlay .addEventListener('click', hideModal);
-  });
+    closeBtn2.addEventListener('click', hideModal);
+    overlay.addEventListener('click', hideModal);
 </script>
