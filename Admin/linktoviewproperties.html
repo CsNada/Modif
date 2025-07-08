@@ -1,0 +1,293 @@
+<!DOCTYPE HTML>
+<html lang="ar">
+
+<head>
+    <title>properties</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="bg-[#F6F6F6]/50 font-sans">
+
+    <!-- header -->
+    <div class="flex justify-between bg-[#1E2227] py-3 px-5">
+        <img src="../img/Admin/logo white.png" alt="logo" class="w-28">
+
+        <!-- name and phone number -->
+        <div class="flex gap-10 font-semibold text-white text-sm items-center">
+            <p>+ 1 (800) 657 8976</p>
+            <p>Mohammad</p>
+        </div>
+    </div>
+
+    <!-- the page -->
+    <div class="p-8 grid grid-cols-2 gap-10">
+        <!-- left side -->
+        <div>
+            <!-- search bar -->
+            <div class="flex justify-between items-center relative">
+                <input type="search" placeholder="Search" id="searchInput"
+                    class="border border-[#B0B0B0] rounded px-4 py-1 pr-8 text-sm w-96 outline-none" />
+                <button type="submit" class="absolute left-[355px]">
+                    <svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M10.3891 10.8891L16 16.5M6.5 12.5C9.53757 12.5 12 10.0376 12 7C12 3.96243 9.53757 1.5 6.5 1.5C3.46243 1.5 1 3.96243 1 7C1 10.0376 3.46243 12.5 6.5 12.5Z"
+                            stroke="#454545" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- properties area -->
+            <div class="h-[400px] pt-5 overflow-y-scroll space-y-5">
+
+                <!-- 1 -->
+                <div class="search-item p-3 rounded-md border w-full flex gap-5 bg-white">
+                    <img src="../img/User/Properties-1.jpg" alt="" class="rounded-md w-1/3 object-center object-cover">
+
+                    <!-- info -->
+                    <div class="flex flex-col justify-between">
+                        <!-- text -->
+                        <div class="space-y-3">
+                            <h1 class="font-semibold text-[#3E4958]">Fully Furnished Smart Studio Apartment</h1>
+
+                            <!-- rate and city -->
+                            <div class="flex gap-1 items-center text-[#3E4958] text-xs font-semibold">
+                                <svg width="15" height="14" viewBox="0 0 15 14" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M6.24888 1.02586C6.8358 0.0818902 8.20967 0.0818912 8.79659 1.02586L10.0561 3.05162C10.2626 3.38374 10.5907 3.62209 10.9703 3.71585L13.2862 4.28773C14.3653 4.55422 14.7899 5.86085 14.0734 6.71074L12.5361 8.5346C12.284 8.83363 12.1587 9.21928 12.1868 9.60936L12.3586 11.9886C12.4386 13.0972 11.3271 13.9048 10.2974 13.4861L8.08777 12.5875C7.72548 12.4402 7.31999 12.4402 6.95771 12.5875L4.74803 13.4861C3.71835 13.9048 2.60686 13.0972 2.68689 11.9886L2.85863 9.60936C2.88678 9.21928 2.76148 8.83363 2.50942 8.5346L0.972025 6.71074C0.255622 5.86085 0.680173 4.55422 1.75931 4.28773L4.07513 3.71585C4.45481 3.62209 4.78287 3.38374 4.98937 3.05162L6.24888 1.02586Z"
+                                        fill="#F6C002" />
+                                </svg>
+                                <p>4.8</p>
+                                <p class="px-4">Riyadh</p>
+                            </div>
+
+                            <p class="text-xs font-semibold texr-[#3E4958]">2 guests | 1 bedroom | 2 bathroom</p>
+                        </div>
+
+                        <!-- type -->
+                        <div class="flex gap-2 items-center">
+                            <svg width="28" height="29" viewBox="0 0 28 29" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="14" cy="14.0225" r="14" fill="#3E4958" fill-opacity="0.59" />
+                                <path
+                                    d="M23 20.7327C23 20.9979 22.8946 21.2523 22.7071 21.4398C22.5196 21.6273 22.2652 21.7327 22 21.7327H6C5.73478 21.7327 5.48043 21.6273 5.29289 21.4398C5.10536 21.2523 5 20.9979 5 20.7327V10.2227C4.99989 10.0703 5.03462 9.91991 5.10152 9.78299C5.16841 9.64608 5.26572 9.52626 5.386 9.43269L13.386 3.21069C13.5615 3.07414 13.7776 3 14 3C14.2224 3 14.4385 3.07414 14.614 3.21069L22.614 9.43269C22.7343 9.52626 22.8316 9.64608 22.8985 9.78299C22.9654 9.91991 23.0001 10.0703 23 10.2227V20.7327ZM21 19.7327V10.7107L14 5.26669L7 10.7107V19.7327H21ZM9 15.7327H19V17.7327H9V15.7327Z"
+                                    fill="white" />
+                            </svg>
+
+                            <p class="text-[#3E4958] font-semibold text-sm">Entire Studio Apartment</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2 -->
+                <div class="search-item p-3 rounded-md border w-full flex gap-5 bg-white">
+                    <img src="../img/User/Properties-1.jpg" alt="" class="rounded-md w-1/3 object-center object-cover">
+
+                    <!-- info -->
+                    <div class="flex flex-col justify-between">
+                        <!-- text -->
+                        <div class="space-y-3">
+                            <h1 class="font-semibold text-[#3E4958]">Furnished Apartment</h1>
+
+                            <!-- rate and city -->
+                            <div class="flex gap-1 items-center text-[#3E4958] text-xs font-semibold">
+                                <svg width="15" height="14" viewBox="0 0 15 14" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M6.24888 1.02586C6.8358 0.0818902 8.20967 0.0818912 8.79659 1.02586L10.0561 3.05162C10.2626 3.38374 10.5907 3.62209 10.9703 3.71585L13.2862 4.28773C14.3653 4.55422 14.7899 5.86085 14.0734 6.71074L12.5361 8.5346C12.284 8.83363 12.1587 9.21928 12.1868 9.60936L12.3586 11.9886C12.4386 13.0972 11.3271 13.9048 10.2974 13.4861L8.08777 12.5875C7.72548 12.4402 7.31999 12.4402 6.95771 12.5875L4.74803 13.4861C3.71835 13.9048 2.60686 13.0972 2.68689 11.9886L2.85863 9.60936C2.88678 9.21928 2.76148 8.83363 2.50942 8.5346L0.972025 6.71074C0.255622 5.86085 0.680173 4.55422 1.75931 4.28773L4.07513 3.71585C4.45481 3.62209 4.78287 3.38374 4.98937 3.05162L6.24888 1.02586Z"
+                                        fill="#F6C002" />
+                                </svg>
+                                <p>4.8</p>
+                                <p class="px-4">Riyadh</p>
+                            </div>
+
+                            <p class="text-xs font-semibold texr-[#3E4958]">2 guests | 1 bedroom | 2 bathroom</p>
+                        </div>
+
+                        <!-- type -->
+                        <div class="flex gap-2 items-center">
+                            <svg width="28" height="29" viewBox="0 0 28 29" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="14" cy="14.0225" r="14" fill="#3E4958" fill-opacity="0.59" />
+                                <g clip-path="url(#clip0_510_5954)">
+                                    <path
+                                        d="M24 23H4V21H5V6C5 5.73478 5.10536 5.48043 5.29289 5.29289C5.48043 5.10536 5.73478 5 6 5H20C20.2652 5 20.5196 5.10536 20.7071 5.29289C20.8946 5.48043 21 5.73478 21 6V11H23V21H24V23ZM19 21H21V13H15V21H17V15H19V21ZM19 11V7H7V21H13V11H19ZM9 13H11V15H9V13ZM9 17H11V19H9V17ZM9 9H11V11H9V9Z"
+                                        fill="white" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_510_5954">
+                                        <rect width="24" height="24" fill="white" transform="translate(2 2)" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+
+
+                            <p class="text-[#3E4958] font-semibold text-sm">Entire home</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3 -->
+                <div class="search-item p-3 rounded-md border w-full flex gap-5 bg-white">
+                    <img src="../img/User/Properties-1.jpg" alt="" class="rounded-md w-1/3 object-center object-cover">
+
+                    <!-- info -->
+                    <div class="flex flex-col justify-between">
+                        <!-- text -->
+                        <div class="space-y-3">
+                            <h1 class="font-semibold text-[#3E4958]">Furnished Apartment</h1>
+
+                            <!-- rate and city -->
+                            <div class="flex gap-1 items-center text-[#3E4958] text-xs font-semibold">
+                                <svg width="15" height="14" viewBox="0 0 15 14" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M6.24888 1.02586C6.8358 0.0818902 8.20967 0.0818912 8.79659 1.02586L10.0561 3.05162C10.2626 3.38374 10.5907 3.62209 10.9703 3.71585L13.2862 4.28773C14.3653 4.55422 14.7899 5.86085 14.0734 6.71074L12.5361 8.5346C12.284 8.83363 12.1587 9.21928 12.1868 9.60936L12.3586 11.9886C12.4386 13.0972 11.3271 13.9048 10.2974 13.4861L8.08777 12.5875C7.72548 12.4402 7.31999 12.4402 6.95771 12.5875L4.74803 13.4861C3.71835 13.9048 2.60686 13.0972 2.68689 11.9886L2.85863 9.60936C2.88678 9.21928 2.76148 8.83363 2.50942 8.5346L0.972025 6.71074C0.255622 5.86085 0.680173 4.55422 1.75931 4.28773L4.07513 3.71585C4.45481 3.62209 4.78287 3.38374 4.98937 3.05162L6.24888 1.02586Z"
+                                        fill="#F6C002" />
+                                </svg>
+                                <p>4.8</p>
+                                <p class="px-4">Riyadh</p>
+                            </div>
+
+                            <p class="text-xs font-semibold texr-[#3E4958]">2 guests | 1 bedroom | 2 bathroom</p>
+                        </div>
+
+                        <!-- type -->
+                        <div class="flex gap-2 items-center">
+                            <svg width="28" height="29" viewBox="0 0 28 29" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="14" cy="14.0225" r="14" fill="#3E4958" fill-opacity="0.59" />
+                                <g clip-path="url(#clip0_510_5954)">
+                                    <path
+                                        d="M24 23H4V21H5V6C5 5.73478 5.10536 5.48043 5.29289 5.29289C5.48043 5.10536 5.73478 5 6 5H20C20.2652 5 20.5196 5.10536 20.7071 5.29289C20.8946 5.48043 21 5.73478 21 6V11H23V21H24V23ZM19 21H21V13H15V21H17V15H19V21ZM19 11V7H7V21H13V11H19ZM9 13H11V15H9V13ZM9 17H11V19H9V17ZM9 9H11V11H9V9Z"
+                                        fill="white" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_510_5954">
+                                        <rect width="24" height="24" fill="white" transform="translate(2 2)" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+
+
+                            <p class="text-[#3E4958] font-semibold text-sm">Entire home</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- right side -->
+        <div>
+            <!-- google map -->
+            <div class="w-full h-full">
+                <!-- the map area -->
+                <div id="map" class="w-full h-full rounded-md shadow"></div>
+
+                <!-- To display coordinates and send them to the database -->
+                <div class="pt-4 flex space-x-4">
+                    <!-- Latitude -->
+                    <input type="hidden" id="lat" type="text" readonly class="w-full p-2 border rounded" />
+
+                    <!-- longitude -->
+                    <input type="hidden" id="lng" type="text" readonly class="w-full p-2 border rounded" />
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+
+</body>
+
+<!-- for search input -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const input = document.getElementById('searchInput');
+        const items = Array.from(document.querySelectorAll('.search-item'));
+
+        input.addEventListener('input', () => {
+            const term = input.value.trim().toLowerCase();
+
+            items.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                if (text.includes(term)) {
+                    item.classList.remove('hidden');
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+        });
+    });
+</script>
+
+<!-- API Key for google map -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDD8yKD2-D9slyb_KnaflPeX9LTr7uSik&callback=initMap" async
+    defer></script>
+
+<!-- for the map -->
+<script>
+    let map, marker;
+    let map2, marker2; // in the PDF
+
+    function initMap() {
+        const defaultCenter = { lat: 24.7136, lng: 46.6753 }; // the default coordinates for the first map
+
+        // the base map (that user can click on)
+        map = new google.maps.Map(document.getElementById("map"), {
+            center: defaultCenter,
+            zoom: 12,
+        });
+
+        const Marker2 = { lat: 24.7136, lng: 46.6753 }; // the saved coordinates for the second map to show it the PDF
+        // the second map that in PDF to show the saved location
+        map2 = new google.maps.Map(document.getElementById("map2"), {
+            center: Marker2,
+            zoom: 14,
+            disableDefaultUI: true,  // hide the control elements 
+        });
+        //   add the the marker to the second map
+        marker2 = new google.maps.Marker({
+            position: Marker2,
+            map: map2
+        });
+
+        // when the user change the marker for the first map
+        map.addListener("click", (e) => {
+            placeMarker(e.latLng);
+            updateInputs(e.latLng);
+            // update the location in the second map too
+            updateMap2(e.latLng);
+        });
+    }
+
+    function placeMarker(location) {
+        if (marker) {
+            marker.setPosition(location);
+        } else {
+            marker = new google.maps.Marker({
+                position: location,
+                map: map
+            });
+        }
+    }
+
+    // send the value to the hidden inputs
+    function updateInputs(latLng) {
+        document.getElementById("lat").value = latLng.lat().toFixed(6);
+        document.getElementById("lng").value = latLng.lng().toFixed(6);
+    }
+
+    // update the mark position for the second map
+    function updateMap2(latLng) {
+        map2.setCenter(latLng);
+        marker2.setPosition(latLng);
+    }
+</script>
+
+</html>

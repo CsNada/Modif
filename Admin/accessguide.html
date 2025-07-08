@@ -3,7 +3,7 @@
 
 <head>
 
-    <title>User Management</title>
+    <title>Access Guide</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -28,6 +28,16 @@
 
         .grid-lines span {
             transform: translateY(-50%);
+        }
+
+        input[type="date"] {
+            background-color: #000;
+            color: #fff;
+        }
+
+        input[type="date"]::-webkit-calendar-picker-indicator {
+            filter: invert(1);
+            cursor: pointer;
         }
     </style>
 </head>
@@ -487,235 +497,64 @@
                     </a>
                 </div>
             </div>
-            <!-- end header -->
 
             <!-- page -->
-            <div class="p-5 px-10 space-y-6">
-                <!-- title and add new role button -->
-                <div class="flex justify-between items-center">
-                    <h1 class="py-7 font-semibold text-lg">User Management</h1>
-                    <div id="open-modal"
-                        class="cursor-pointer px-6 py-2 bg-[#4A4C4F] text-white text-xs font-semibold rounded-md">Role Management</div>
+            <div class="p-5 px-7 pb-10">
+
+                <!-- the title -->
+                <div class="space-y-2 w-fit text-nowrap pb-7">
+                    <h1 class="text-[#000000] text-2xl font-semibold">Properties</h1>
+                    <p class="text-[#85878D] text-sm">Select the property to edit the access guide.</p>
                 </div>
 
-                <!-- start table area -->
-                <div class="rounded-md shadow p-5">
-                    <!-- start the table -->
-                    <div class="tab-content">
-                        <table class="w-full text-left text-sm border-collapse">
-                            <thead class="text-[#667085]">
-                                <tr>
-                                    <th class="pb-1">Name</th>
-                                    <th class="pb-1">Email</th>
-                                    <th class="pb-1">Company name</th>
-                                    <th class="pb-1">Role</th>
-                                    <th class="pb-1">Recent activity</th>
-                                    <th class="pb-1">State</th>
-                                    <th class="pb-1">Delete</th>
-                                </tr>
-                            </thead>
+                <!-- boxes area -->
+                <div class="grid grid-cols-3 xl:grid-cols-4 gap-5">
 
-                            <tbody class="table-body">
-                                <!-- start row 1 -->
-                                <tr class="search-item border-t hover:bg-gray-100/75">
-                                    <td class="py-4 font-semibold text-[#2B2F38]">Lindsey</td>
-                                    <td class="py-4 text-[#5D6679]">lindsey.stroud@gmail.com</td>
-                                    <td class="py-4 text-[#5D6679]">Hatchbuck</td>
-                                    <td class="py-4 text-[#5D6679]">
-                                        <select name="Role" id="Role"
-                                            class="rounded-md outline-none py-0.5 px-1 border">
-                                            <option value="" disabled selected hidden></option>
-                                            <option value="Manager">Manager</option>
-                                            <option value="CEO">CEO</option>
-                                            <option value="IT">IT</option>
-                                        </select>
-                                    </td>
-                                    <td class="py-4 text-[#5D6679]">5 Minutes ago</td>
-                                    <td>
-                                        <p
-                                            class="text-[#008767] bg-[#16C09861] rounded-md py-0.5 px-2 text-[10px] text-center font-semibold w-fit h-fit">
-                                            Active</p>
-                                    </td>
-                                    <td>
-                                        <button class="flex justify-center items-center w-full">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                stroke-width="1.5" stroke="currentColor" class="size-5 text-red-600">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
-                                            </svg>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <!-- end row 1 -->
+                    <!-- box 1 -->
+                    <div class="search-item shadow rounded-md p-3">
 
-                                <!-- start row 2 -->
-                                <tr class="search-item border-t hover:bg-gray-100/75">
-                                    <td class="py-4 font-semibold text-[#2B2F38]">Lindsey Stroud</td>
-                                    <td class="py-4 text-[#5D6679]">lindsey.stroud@gmail.com</td>
-                                    <td class="py-4 text-[#5D6679]">Hatchbuck</td>
-                                    <td class="py-4 text-[#5D6679]">
-                                        <select name="Role" id="Role"
-                                            class="rounded-md outline-none py-0.5 px-1 border">
-                                            <option value="" disabled selected hidden></option>
-                                            <option value="Manager">Manager</option>
-                                            <option value="CEO">CEO</option>
-                                            <option value="IT">IT</option>
-                                        </select>
-                                    </td>
-                                    <td class="py-4 text-[#5D6679]">5 Minutes ago</td>
-                                    <td>
-                                        <p
-                                            class="text-[#DF0404] bg-[#FFC5C5] rounded-md py-0.5 px-2 text-[10px] text-center font-semibold w-fit h-fit">
-                                            Inactive</p>
-                                    </td>
-                                    <td>
-                                        <button class="flex justify-center items-center w-full">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                stroke-width="1.5" stroke="currentColor" class="size-5 text-red-600">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
-                                            </svg>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <!-- end row 2 -->
+                        <img src="" alt="" class="w-full h-28 rounded-md object-cover object-center bg-[#C4C4C4]">
 
-                                <!-- more rows here -->
-                            </tbody>
-                        </table>
+                        <!-- name and delete icon -->
+                        <div class="flex justify-between gap-2 pt-2">
+
+                            <!-- names -->
+                            <div>
+                                <h1 class="text-[#211C37] font-bold text-sm py-1 pt-2 text-sm">Hotel Name test - Riyadh
+                                    Branch</h1>
+                                <p class="text-[#1C1D1D] text-[9px]">60 Rooms</p>
+                            </div>
+
+                            <!-- delete icon -->
+                            <button class="cursor-pointer">
+                                <svg width="16" height="16" viewBox="0 0 12 12" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M2.66699 12C2.30033 12 1.98655 11.8696 1.72566 11.6087C1.46477 11.3478 1.3341 11.0338 1.33366 10.6667V2H0.666992V0.666667H4.00033V0H8.00033V0.666667H11.3337V2H10.667V10.6667C10.667 11.0333 10.5365 11.3473 10.2757 11.6087C10.0148 11.87 9.70077 12.0004 9.33366 12H2.66699ZM4.00033 9.33333H5.33366V3.33333H4.00033V9.33333ZM6.66699 9.33333H8.00033V3.33333H6.66699V9.33333Z"
+                                        fill="black" />
+                                </svg>
+
+                            </button>
+                        </div>
+
+                        <!-- buttons -->
+                        <div class="flex gap-3 text-white text-xs font-semibold pt-4">
+                            <a href="./viewrooms.html"
+                                class="bg-[#1E1F27] hover:bg-[#131419] transition-all rounded-md p-1.5 px-4">View
+                                Rooms</a>
+                            <a href="./accessguide2.html"
+                                class="bg-[#5C798E] hover:bg-[#526c7f] transition-all rounded-md p-1.5 px-4">Access Guide</a>
+                        </div>
                     </div>
-                    <!-- end the table -->
                 </div>
-                <!-- end table area -->
+
             </div>
-            <!-- end page -->
 
         </div>
 
     </div>
+
 </body>
-
-<!-- Add new Role modal -->
-<div id="modal-wrapper" class="fixed inset-0 z-50 hidden">
-    <!-- overlay -->
-    <div id="modal-overlay" class="absolute inset-0 bg-black bg-opacity-50 opacity-0 transition-opacity duration-300">
-    </div>
-
-    <!-- modal box-->
-    <div class="flex items-center justify-center min-h-screen">
-        <div id="modal-box"
-            class="w-[550px] bg-[#F6F6F6] rounded-md transform transition-all duration-300 ease-out opacity-0 scale-75">
-
-            <div id="modal-content" class="w-full">
-
-                <div class="p-7 flex flex-col justify-center items-center w-full">
-
-                    <!-- header -->
-                    <div class="flex justify-between w-full">
-                        <h1 class="text-lg font-semibold pb-6">Role Management</h1>
-                        <div id="close-modal" class="cursor-pointer h-fit">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                stroke="currentColor" class="size-5">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-                            </svg>
-
-                        </div>
-                    </div>
-
-                    <!-- Add New Role -->
-                    <div class="flex justify-center px-7 py-3 w-full">
-                        <div class="w-full border bg-gray-50 rounded-md p-4">
-                            <!-- title -->
-                            <div class="flex justify-between">
-                                <!-- the radio button -->
-                                <label class="inline-flex items-center cursor-pointer font-semibold">
-                                    <!-- the hidden radio button -->
-                                    <input type="radio" name="choice" id="add" checked class="sr-only peer" />
-
-                                    <!-- the green check icon -->
-                                    <div
-                                        class="w-6 h-6 rounded-full border bg-gray-200 border-gray-200 peer-checked:bg-green-500 peer-checked:border-green-500 flex items-center justify-center transition-colors duration-20">
-                                        <svg width="14" height="11" viewBox="0 0 14 11" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M11.8002 2L5.20026 8.59998L2.2002 5.6" stroke="white"
-                                                stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg>
-                                    </div>
-                                    <span class="mx-2 text-gray-700 select-none">Add New Role</span>
-                                </label>
-                            </div>
-
-                            <!-- Add new role section area -->
-                            <div id="area" class="space-y-3 w-full transition-all duration-500 ease-in-out max-h-[900px] opacity-100">
-                                <form class="w-full flex flex-col justify-center">
-                                    <!-- Role -->
-                                    <div class="pt-5 px-5 flex flex-col gap-2">
-                                        <label for="Role" class="font-semibold">Role</label>
-                                        <input type="text" name="Role" id="Role" class="h-fit rounded-md w-full py-1 px-2 outline-none border">
-                                    </div>
-                                    
-                                    <button type="submit" class="w-full flex justify-center mt-4">
-                                        <p class="text-sm font-semibold rounded-md py-1 px-8 bg-[#0A724D] text-white w-fit">Add</p>
-                                    </button>
-                                </form>
-                                
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Remove Role -->
-                    <div class="flex justify-center px-7 py-3 w-full">
-                        <div class="w-full border bg-gray-50 rounded-md p-4">
-                            <!-- title -->
-                            <div class="flex justify-between">
-                                <!-- the radio button -->
-                                <label class="inline-flex items-center cursor-pointer font-semibold">
-                                    <!-- the hidden radio button -->
-                                    <input type="radio" name="choice" id="remove" class="sr-only peer" />
-
-                                    <!-- the green check icon -->
-                                    <div
-                                        class="w-6 h-6 rounded-full border bg-gray-200 border-gray-200 peer-checked:bg-green-500 peer-checked:border-green-500 flex items-center justify-center transition-colors duration-20">
-                                        <svg width="14" height="11" viewBox="0 0 14 11" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M11.8002 2L5.20026 8.59998L2.2002 5.6" stroke="white"
-                                                stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg>
-                                    </div>
-                                    <span class="mx-2 text-gray-700 select-none">Remove Role</span>
-                                </label>
-                            </div>
-
-                            <!-- Remove role section area -->
-                            <div id="area2" class="space-y-3 w-full transition-all duration-500 ease-in-out max-h-[900px] opacity-100">
-                                <form class="w-full flex flex-col justify-center">
-                                    <!-- card number -->
-                                    <div class="pt-5 px-5 flex flex-col gap-2">
-                                        <label for="remove" class="font-semibold">Role</label>
-                                        <select name="remove" id="remove" class="rounded-md w-full py-1 px-2 outline-none border">
-                                            <option value="" hidden selected>Select Role to delete</option>
-                                            <option value="1">Manager</option>
-                                            <option value="2">IT</option>
-                                        </select>
-                                    </div>
-                                    
-                                    <button type="submit" class="w-full flex justify-center mt-4">
-                                        <p class="text-sm font-semibold rounded-md py-1 px-8 bg-[#8B1313] text-white w-fit">Delete</p>
-                                    </button>
-                                </form>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </div>
-</div>
-
-</html>
 
 <!-- for search input -->
 <script>
@@ -768,71 +607,4 @@
     });
 </script>
 
-<!-- for Add new Role modal open/close -->
-<script>
-    const openBtn = document.getElementById('open-modal');
-    const closeBtn = document.getElementById('close-modal');
-    const wrapper = document.getElementById('modal-wrapper');
-    const overlay = document.getElementById('modal-overlay');
-    const box = document.getElementById('modal-box');
-
-    function showModal() {
-        // show the modal
-        wrapper.classList.remove('hidden');
-        // initial state
-        overlay.classList.replace('opacity-100', 'opacity-0');
-        box.classList.replace('opacity-100', 'opacity-0');
-        box.classList.replace('scale-100', 'scale-75');
-
-        requestAnimationFrame(() => {
-            // open animation 
-            overlay.classList.replace('opacity-0', 'opacity-100');
-            box.classList.replace('opacity-0', 'opacity-100');
-            box.classList.replace('scale-75', 'scale-100');
-        });
-    }
-
-    function hideModal() {
-        // colse animation 
-        overlay.classList.replace('opacity-100', 'opacity-0');
-        box.classList.replace('opacity-100', 'opacity-0');
-        box.classList.replace('scale-100', 'scale-75');
-        // hidden the modal
-        setTimeout(() => wrapper.classList.add('hidden'), 300);
-    }
-
-    openBtn.addEventListener('click', showModal);
-    closeBtn.addEventListener('click', hideModal);
-    overlay.addEventListener('click', hideModal);
-</script>
-
-<!-- for radio button -->
-<script>
-    const addRadio = document.getElementById('add');
-    const addRadio2 = document.getElementById('remove');
-    const area1 = document.getElementById('area');
-    const area2 = document.getElementById('area2');
-
-    // update the areas
-    function updateAreas() {
-        if (addRadio.checked) {
-            // shaw the first and hide the second
-            area2.classList.replace('max-h-[900px]', 'max-h-0');
-            area2.classList.replace('opacity-100', 'opacity-0');
-            area1.classList.replace('max-h-0', 'max-h-[900px]');
-            area1.classList.replace('opacity-0', 'opacity-100');
-        }
-        else if (addRadio2.checked) {
-            // show the second and show the first
-            area1.classList.replace('max-h-[900px]', 'max-h-0');
-            area1.classList.replace('opacity-100', 'opacity-0');
-            area2.classList.replace('max-h-0', 'max-h-[900px]');
-            area2.classList.replace('opacity-0', 'opacity-100');
-        }
-    }
-
-    addRadio.addEventListener('change', updateAreas);
-    addRadio2.addEventListener('change', updateAreas);
-
-    document.addEventListener('DOMContentLoaded', updateAreas);
-</script>
+</html>
