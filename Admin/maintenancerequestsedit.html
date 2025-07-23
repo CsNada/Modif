@@ -508,14 +508,14 @@
                         <!-- Property / Building Name -->
                         <div class="flex flex-col gap-2">
                             <label for="Name" class="text-xs font-semibold">Property / Building Name</label>
-                            <input type="text" name="Name" id="Name" placeholder="Property / Building Name"
+                            <input value="Property name" type="text" name="Name" id="Name" placeholder="Property / Building Name"
                                 class="px-2 py-1 rounded-md border w-96">
                         </div>
 
                         <!-- Unit / Room Number -->
                         <div class="flex flex-col gap-2">
                             <label for="Number" class="text-xs font-semibold">Unit / Room Number</label>
-                            <input type="text" name="Number" id="Number" placeholder="Unit / Room Number"
+                            <input value="101" type="text" name="Number" id="Number" placeholder="Unit / Room Number"
                                 class="px-2 py-1 rounded-md border w-96">
                         </div>
 
@@ -523,13 +523,13 @@
                             <!-- Location / City -->
                             <div class="flex flex-col gap-2 w-2/3">
                                 <label for="City" class="text-xs font-semibold">Location / City</label>
-                                <input type="text" name="City" id="City" placeholder="Location / City"
+                                <input value="Riyadh" type="text" name="City" id="City" placeholder="Location / City"
                                     class="px-2 py-1 rounded-md border">
                             </div>
                             <!-- Floor -->
                             <div class="flex flex-col gap-2 w-1/3">
                                 <label for="Floor" class="text-xs font-semibold">Floor</label>
-                                <input type="text" name="Floor" id="Floor" placeholder="Floor"
+                                <input value="2" type="text" name="Floor" id="Floor" placeholder="Floor"
                                     class="px-2 py-1 rounded-md border">
                             </div>
                         </div>
@@ -539,7 +539,7 @@
                         <!-- date -->
                         <div class="flex flex-col gap-2">
                             <label for="date" class="text-xs font-semibold">Date</label>
-                            <input type="date" name="date" id="date" placeholder="Date"
+                            <input value="2026-05-17" type="date" name="date" id="date" placeholder="Date"
                                 class="px-2 py-1 rounded-md border w-96">
                         </div>
 
@@ -547,24 +547,26 @@
 
                     <!-- Request Details: -->
                     <div>
+                        <!-- Request Details -->
                         <h1 class="text-xl font-semibold text-[#32646B] pb-2">Request Details:</h1>
-
-                        <!-- Maintenance Type -->
-                        <textarea name="" id="" class="px-2 py-1 rounded-md border w-96"></textarea>
-
-                        <h1 class="text-xl font-semibold text-[#32646B] pt-5 pb-2">Cleaning Details:</h1>
+                        <textarea name="" id="" class="px-2 py-1 rounded-md border w-96">Request Details here</textarea>
 
                         <!-- Cleaning Details: -->
-                        <textarea name="" id="" class="px-2 py-1 rounded-md border w-96"></textarea>
-
-                        <h1 class="text-xl font-semibold text-[#32646B] pt-5 pb-2">Preferred Visit Time</h1>
+                        <h1 class="text-xl font-semibold text-[#32646B] pt-5 pb-2">Cleaning Details:</h1>
+                        <textarea name="" id="" class="px-2 py-1 rounded-md border w-96">Cleaning Details here</textarea>
 
                         <!-- Preferred Visit Time -->
-                        <input type="time" name="Preferred Visit Time" id="Preferred Visit Time" class="px-2 py-1 rounded-md border w-96">
+                        <h1 class="text-xl font-semibold text-[#32646B] pt-5 pb-2">Preferred Visit Time</h1>
+                        <input value="14:30" type="time" name="Preferred Visit Time" id="Preferred Visit Time" class="px-2 py-1 rounded-md border w-96">
 
-                        <!-- submit button  -->
-                        <div class="pt-20">
-                            <button type="submit" class="text-white bg-[#59768C] rounded-md hover:bg-[#4f697c] transition-all px-20 py-2 font-semibold">send</button>
+                        <!-- Cost -->
+                        <h1 class="text-xl font-semibold text-[#32646B] pt-5 pb-2">Costing</h1>
+                        <input type="number" name="Cost" id="Cost" placeholder="How much did that cost?" class="px-2 py-1 rounded-md border w-96">
+
+                        <!-- Save Changes and confirmation button -->
+                        <div class="pt-20 flex gap-5">
+                            <button type="submit" class="text-white bg-[#59768C] rounded-md hover:bg-[#4f697c] transition-all px-10 py-2 font-semibold">Save Changes</button>
+                            <button type="submit" class="text-white bg-[#009100] rounded-md hover:bg-[#007800] transition-all px-10 py-2 font-semibold">Confirmation</button>
                         </div>
                     </div>
                 </form>
