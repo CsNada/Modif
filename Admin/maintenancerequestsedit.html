@@ -199,6 +199,20 @@
 
                 <!-- the buttons -->
                 <ul>
+                    <!-- Reports -->
+                    <li class="pl-1 border-l border-[#EBEBEB]">
+                        <a href="./reports.html" class="flex gap-2 items-center p-1.5">
+                            <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                fill="white">
+                                <path
+                                    d="M5.625 1.5c-1.036 0-1.875.84-1.875 1.875v17.25c0 1.035.84 1.875 1.875 1.875h12.75c1.035 0 1.875-.84 1.875-1.875V12.75A3.75 3.75 0 0 0 16.5 9h-1.875a1.875 1.875 0 0 1-1.875-1.875V5.25A3.75 3.75 0 0 0 9 1.5H5.625Z" />
+                                <path
+                                    d="M12.971 1.816A5.23 5.23 0 0 1 14.25 5.25v1.875c0 .207.168.375.375.375H16.5a5.23 5.23 0 0 1 3.434 1.279 9.768 9.768 0 0 0-6.963-6.963Z" />
+                            </svg>
+                            <p>Reports</p>
+                        </a>
+                    </li>
+                    
                     <!-- User Management -->
                     <li class="pl-1 border-l border-[#EBEBEB]">
                         <a href="./usermanagement.html" class="flex gap-2 items-center p-1.5">
@@ -508,8 +522,8 @@
                         <!-- Property / Building Name -->
                         <div class="flex flex-col gap-2">
                             <label for="Name" class="text-xs font-semibold">Property / Building Name</label>
-                            <input value="Property name" type="text" name="Name" id="Name" placeholder="Property / Building Name"
-                                class="px-2 py-1 rounded-md border w-96">
+                            <input value="Property name" type="text" name="Name" id="Name"
+                                placeholder="Property / Building Name" class="px-2 py-1 rounded-md border w-96">
                         </div>
 
                         <!-- Unit / Room Number -->
@@ -548,25 +562,55 @@
                     <!-- Request Details: -->
                     <div>
                         <!-- Request Details -->
-                        <h1 class="text-xl font-semibold text-[#32646B] pb-2">Request Details:</h1>
-                        <textarea name="" id="" class="px-2 py-1 rounded-md border w-96">Request Details here</textarea>
+                        <h1 class="text-xl font-semibold text-[#32646B] pb-1">Request Details:</h1>
+
+                        <p class="text-xs font-semibold pb-3">Maintenance Request:</p>
+                        <!-- check list area -->
+                        <div>
+                            <!-- 1 -->
+                            <div class="flex items-center space-x-2 py-0.5 border-l-2 pl-2 border-[#59768C]">
+                                <input id="1" type="checkbox" class="checkbox-item size-4">
+                                <label for="1">Maintenance Request 1</label>
+                            </div>
+
+                            <!-- 2 -->
+                            <div class="flex items-center space-x-2 py-0.5 border-l-2 pl-2 border-[#59768C]">
+                                <input id="2" type="checkbox" class="checkbox-item size-4">
+                                <label for="2">Maintenance Request 2</label>
+                            </div>
+
+                        </div>
 
                         <!-- Cleaning Details: -->
-                        <h1 class="text-xl font-semibold text-[#32646B] pt-5 pb-2">Cleaning Details:</h1>
-                        <textarea name="" id="" class="px-2 py-1 rounded-md border w-96">Cleaning Details here</textarea>
+                        <h1 class="text-xl font-semibold text-[#32646B] pt-5 pb-1">Cleaning Details:</h1>
+
+                        <p class="text-xs font-semibold pb-3">Cleaning Request:</p>
+                        <!-- check list area -->
+                        <div class="space-y-1">
+                            <!-- 1 -->
+                            <div class="flex items-center space-x-2 py-0.5 border-l-2 pl-2 border-[#59768C]">
+                                <input id="11" type="checkbox" class="checkbox-item size-4">
+                                <label for="11">Cleaning Request 1</label>
+                            </div>
+                        </div>
 
                         <!-- Preferred Visit Time -->
                         <h1 class="text-xl font-semibold text-[#32646B] pt-5 pb-2">Preferred Visit Time</h1>
-                        <input value="14:30" type="time" name="Preferred Visit Time" id="Preferred Visit Time" class="px-2 py-1 rounded-md border w-96">
+                        <input value="14:30" type="time" name="Preferred Visit Time" id="Preferred Visit Time"
+                            class="px-2 py-1 rounded-md border w-96">
 
                         <!-- Cost -->
                         <h1 class="text-xl font-semibold text-[#32646B] pt-5 pb-2">Costing</h1>
-                        <input type="number" name="Cost" id="Cost" placeholder="How much did that cost?" class="px-2 py-1 rounded-md border w-96">
+                        <input type="number" name="Cost" id="Cost" placeholder="How much did that cost?"
+                            class="px-2 py-1 rounded-md border w-96">
 
                         <!-- Save Changes and confirmation button -->
-                        <div class="pt-20 flex gap-5">
-                            <button type="submit" class="text-white bg-[#59768C] rounded-md hover:bg-[#4f697c] transition-all px-10 py-2 font-semibold">Save Changes</button>
-                            <button type="submit" class="text-white bg-[#009100] rounded-md hover:bg-[#007800] transition-all px-10 py-2 font-semibold">Confirmation</button>
+                        <div class="pt-10 flex gap-5">
+                            <button type="submit"
+                                class="text-white bg-[#59768C] rounded-md hover:bg-[#4f697c] transition-all px-10 py-2 font-semibold">Save
+                                Changes</button>
+                            <button type="submit" disabled id="submitBtn"
+                                class="text-white bg-[#009100] rounded-md hover:bg-[#007800] transition-all px-10 py-2 font-semibold disabled:opacity-50 disabled:cursor-not-allowed">Confirmation</button>
                         </div>
                     </div>
                 </form>
@@ -630,4 +674,26 @@
             e.stopPropagation();
         });
     });
+</script>
+
+<!-- for the check list -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+  const checkboxes = document.querySelectorAll('.checkbox-item');
+  const btn = document.getElementById('submitBtn');
+
+  function updateButtonState() {
+    // كل الصناديق يجب أن تكون مُفعّلة
+    const allChecked = Array.from(checkboxes).every(chk => chk.checked);
+    btn.disabled = !allChecked;
+  }
+
+  // راقب كل صندوق عند تغيّره
+  checkboxes.forEach(chk => {
+    chk.addEventListener('change', updateButtonState);
+  });
+
+  // تأكد من الحالة عند التحميل (اختياري)
+  updateButtonState();
+});
 </script>

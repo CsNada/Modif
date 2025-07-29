@@ -3,10 +3,9 @@
 
 <head>
 
-    <title>Calendar</title>
+    <title>Reports</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;400;700&display=swap');
@@ -31,6 +30,7 @@
             transform: translateY(-50%);
         }
     </style>
+
 </head>
 
 <body class="bg-[#F6F6F6]/50 font-sans">
@@ -129,7 +129,8 @@
                     </li>
 
                     <!-- Calendar -->
-                    <li class="bg-[#FFFFFF] rounded text-[#1E2227] font-bold mb-1 pl-1">
+                    <li
+                        class="hover:bg-[#FFFFFF] transition-all duration-100 rounded text-[#FFFFFF] hover:text-[#1E2227] hover:fill-[#1E2227] mb-1 pl-1">
                         <a href="./calendar.html" class="flex gap-2 items-center p-2">
                             <svg width="19" height="19" viewBox="0 0 27 36" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -192,7 +193,6 @@
                             <p>channel manger</p>
                         </a>
                     </li>
-
                 </ul>
             </nav>
 
@@ -215,7 +215,7 @@
                             <p>Reports</p>
                         </a>
                     </li>
-                    
+
                     <!-- User Management -->
                     <li class="pl-1 border-l border-[#EBEBEB]">
                         <a href="./usermanagement.html" class="flex gap-2 items-center p-1.5">
@@ -502,337 +502,188 @@
                     </a>
                 </div>
             </div>
+            <!-- end header -->
 
             <!-- page -->
-            <div class="p-5 px-7">
+            <div class="p-5 px-10">
 
-                <!-- header  -->
-                <div class="flex justify-between items-center pb-8">
-                    <!-- Total Hostels -->
-                    <a href="./calendar.html"
-                        class="bg-[#141414] rounded-md px-3 pr-4 py-2 text-white text-xs flex gap-1">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="size-4">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
-                        </svg>
+                <h1 class="py-7 font-semibold text-xl">Reports</h1>
 
-                        <p>Go Back</p>
-                    </a>
-
-                    <!-- buttons  -->
-                    <div class="space-x-5 text-white text-xs font-semibold">
-                        <a href="./calendarcode.html"
-                            class="bg-[#4A4C4F] rounded-md px-5 py-2 hover:bg-[#414245] transition-all">Create a
-                            code</a>
-                        <a href="./calendarcalender.html"
-                            class="bg-[#4A4C4F] rounded-md px-5 py-2 hover:bg-[#414245] transition-all">Calendar</a>
-                    </div>
-                </div>
-
-                <!-- Tabs buttons to switch the sections -->
-                <div class="relative flex justify-start w-full">
-
-                    <!-- Check in / Check out buttons  -->
-                    <div class="relative flex gap-5 items-center px-2 text-xs font-medium py-2">
-                        <!-- the sections name -->
-                        <button onclick="selectTab(0)"
-                            class="relative z-10 text-[#0F50AA] px-5 py-2 rounded-full border border-[#1570EF] bg-[#E8F1FD]"
-                            id="tab-0">Check in</button>
-                        <button onclick="selectTab(1)"
-                            class="relative z-10 text-[#5D6679] px-5 py-2 rounded-full border bg-white" id="tab-1">
-                            Check out</button>
+                <!-- section 1 (Administration) -->
+                <div class="pb-10">
+                    <div class="flex justify-between text-lg">
+                        <h1 class="font-semibold pb-3">Administration</h1>
+                        <h1 class="font-semibold pb-3">الإدارة</h1>
                     </div>
 
-                </div>
+                    <!-- reports area -->
+                    <div class="border-x-2 text-sm">
+                        <!-- 1 -->
+                        <div class="flex justify-between py-1 px-3 hover:bg-gray-100/50 transition-all search-item">
+                            <a href="" class="hover:underline">Monthly Transactions</a>
+                            <a href="" class="hover:underline">الحركة الشهرية</a>
+                        </div>
 
-                <!-- table area based on the tab switch -->
-                <div class="py-5">
-
-                    <!-- Check in -->
-                    <div id="content-0" class="tab-content block">
-                        <!-- the table -->
-                        <div class="rounded-md shadow p-5">
-
-                            <!-- the table (Check in) -->
-                            <table class="text-left text-sm border-collapse w-full">
-                                <thead class="text-[#667085]">
-                                    <tr>
-                                        <th class="py-2">Room code</th>
-                                        <th class="py-2">Name</th>
-                                        <th class="py-2">Room Number</th>
-                                        <th class="py-2">Total amount</th>
-                                        <th class="py-2">Amount paid</th>
-                                        <th class="py-2">Booking source</th>
-                                        <th class="py-2">Status</th>
-                                        <th class="py-2"> </th>
-                                    </tr>
-                                </thead>
-
-                                <tbody class="table-body">
-
-                                    <!-- row 1 -->
-                                    <tr class="border-t search-item">
-                                        <td class="py-4 font-semibold text-[#2B2F38]">#5644</td>
-                                        <td class="py-4 text-[#5D6679]">Alexander</td>
-                                        <td class="py-4 text-[#5D6679]">A647</td>
-                                        <td class="py-4 text-[#5D6679]">$ 467</td>
-                                        <td class="py-4 text-[#5D6679]">$ 200</td>
-                                        <td class="py-4 text-[#5D6679]">Airbnb</td>
-                                        <td>
-                                            <div
-                                                class="bg-[#E8F1FD] rounded-full w-fit text-[10px] font-bold py-0.5 px-3 text-[#448DF2]">
-                                                Clean</div>
-                                        </td>
-                                        <td class="flex gap-1 py-3">
-                                            <!-- delete -->
-                                            <button class="flex justify-center items-center w-full">
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                    stroke-width="1.5" stroke="currentColor"
-                                                    class="size-5 text-red-600">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
-                                                </svg>
-                                            </button>
-
-                                            <!-- edit -->
-                                            <button class="open-modal flex justify-center items-center w-full">
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                    stroke-width="1.5" stroke="currentColor" class="size-5">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
-                                                </svg>
-
-                                            </button>
-                                        </td>
-                                    </tr>
-
-                                    <!-- row 2 -->
-                                    <tr class="border-t search-item">
-                                        <td class="py-4 font-semibold text-[#2B2F38]">#5644</td>
-                                        <td class="py-4 text-[#5D6679]">Alexander</td>
-                                        <td class="py-4 text-[#5D6679]">A647</td>
-                                        <td class="py-4 text-[#5D6679]">$ 467</td>
-                                        <td class="py-4 text-[#5D6679]">$ 200</td>
-                                        <td class="py-4 text-[#5D6679]">Airbnb</td>
-                                        <td>
-                                            <div
-                                                class="bg-[#FEECEB] rounded-full w-fit text-[10px] font-bold py-0.5 px-3 text-[#F36960]">
-                                                Dirty</div>
-                                        </td>
-                                        <td class="flex gap-1 py-3">
-                                            <!-- delete -->
-                                            <button class="flex justify-center items-center w-full">
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                    stroke-width="1.5" stroke="currentColor"
-                                                    class="size-5 text-red-600">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
-                                                </svg>
-                                            </button>
-
-                                            <!-- edit -->
-                                            <button class="open-modal flex justify-center items-center w-full">
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                    stroke-width="1.5" stroke="currentColor" class="size-5">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
-                                                </svg>
-
-                                            </button>
-                                        </td>
-                                    </tr>
-
-                                    <!-- row 3 -->
-                                    <tr class="border-t search-item">
-                                        <td class="py-4 font-semibold text-[#2B2F38]">#5644</td>
-                                        <td class="py-4 text-[#5D6679]">Alexander</td>
-                                        <td class="py-4 text-[#5D6679]">A647</td>
-                                        <td class="py-4 text-[#5D6679]">$ 467</td>
-                                        <td class="py-4 text-[#5D6679]">$ 200</td>
-                                        <td class="py-4 text-[#5D6679]">Airbnb</td>
-                                        <td>
-                                            <div
-                                                class="bg-[#E7F8F0] rounded-full w-fit text-[10px] font-bold py-0.5 px-3 text-[#41C588]">
-                                                Inspected</div>
-                                        </td>
-                                        <td class="flex gap-1 py-3">
-                                            <!-- delete -->
-                                            <button class="flex justify-center items-center w-full">
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                    stroke-width="1.5" stroke="currentColor"
-                                                    class="size-5 text-red-600">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
-                                                </svg>
-                                            </button>
-
-                                            <!-- edit -->
-                                            <button class="open-modal flex justify-center items-center w-full">
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                    stroke-width="1.5" stroke="currentColor" class="size-5">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
-                                                </svg>
-
-                                            </button>
-                                        </td>
-                                    </tr>
-
-                                    <!-- row 4 -->
-                                    <tr class="border-t search-item">
-                                        <td class="py-4 font-semibold text-[#2B2F38]">#5644</td>
-                                        <td class="py-4 text-[#5D6679]">Alexander</td>
-                                        <td class="py-4 text-[#5D6679]">A647</td>
-                                        <td class="py-4 text-[#5D6679]">$ 467</td>
-                                        <td class="py-4 text-[#5D6679]">$ 200</td>
-                                        <td class="py-4 text-[#5D6679]">Airbnb</td>
-                                        <td>
-                                            <div
-                                                class="bg-[#FEF4E6] rounded-full w-fit text-[10px] font-bold py-0.5 px-3 text-[#F9A63A]">
-                                                Pick up</div>
-                                        </td>
-                                        <td class="flex gap-1 py-3">
-                                            <!-- delete -->
-                                            <button class="flex justify-center items-center w-full">
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                    stroke-width="1.5" stroke="currentColor"
-                                                    class="size-5 text-red-600">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
-                                                </svg>
-                                            </button>
-
-                                            <!-- edit -->
-                                            <button class="open-modal flex justify-center items-center w-full">
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                    stroke-width="1.5" stroke="currentColor" class="size-5">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
-                                                </svg>
-
-                                            </button>
-                                        </td>
-                                    </tr>
-
-                                    <!-- more rows -->
-                                </tbody>
-                            </table>
+                        <!-- 2 -->
+                        <div class="flex justify-between py-1 px-3 hover:bg-gray-100/50 transition-all search-item">
+                            <a href="" class="hover:underline">Daily Transactions</a>
+                            <a href="" class="hover:underline">الحركة اليومية</a>
                         </div>
                     </div>
 
-                    <!-- Check out -->
-                    <div id="content-1" class="tab-content hidden">
-                        table Check out
+                </div>
+                <!-- end section 1 (Administration) -->
+
+                <!-- section 2 (Activities) -->
+                <div class="pb-10">
+                    <div class="flex justify-between text-lg">
+                        <h1 class="font-semibold pb-3">Activities</h1>
+                        <h1 class="font-semibold pb-3">الأنشطة</h1>
+                    </div>
+
+                    <!-- reports area -->
+                    <div class="border-x-2 text-sm">
+                        <!-- 1 -->
+                        <div class="flex justify-between py-1 px-3 hover:bg-gray-100/50 transition-all search-item">
+                            <a href="" class="hover:underline">Transactions by Activity</a>
+                            <a href="" class="hover:underline">حركة الأنشطة</a>
+                        </div>
                     </div>
 
                 </div>
+                <!-- end section 2 (Activities) -->
 
-            </div>
-        </div>
+                <!-- section 3 (Revenue) -->
+                <div class="pb-10">
+                    <div class="flex justify-between text-lg">
+                        <h1 class="font-semibold pb-3">Revenue</h1>
+                        <h1 class="font-semibold pb-3">الإيرادات</h1>
+                    </div>
 
-    </div>
+                    <!-- reports area -->
+                    <div class="border-x-2 text-sm">
+                        <!-- 1 -->
+                        <div class="flex justify-between py-1 px-3 hover:bg-gray-100/50 transition-all search-item">
+                            <a href="" class="hover:underline">Revenue by Service</a>
+                            <a href="" class="hover:underline">الإيرادات حسب الخدمة</a>
+                        </div>
+                    </div>
 
-    <!-- edit modal -->
-    <div id="modal-wrapper" class="fixed inset-0 z-50 hidden">
-        <!-- overlay -->
-        <div id="modal-overlay"
-            class="absolute inset-0 bg-black bg-opacity-50 opacity-0 transition-opacity duration-300">
-        </div>
+                </div>
+                <!-- end section 3 (Revenue) -->
 
-        <!-- modal box-->
-        <div class="flex items-center justify-center min-h-screen">
-            <div id="modal-box"
-                class="w-[450px] bg-[#F6F6F6] rounded-md transform transition-all duration-300 ease-out opacity-0 scale-75">
+                <!-- section 4 (Finance) -->
+                <div class="pb-10">
+                    <div class="flex justify-between text-lg">
+                        <h1 class="font-semibold pb-3">Finance</h1>
+                        <h1 class="font-semibold pb-3">المالية</h1>
+                    </div>
+                    
 
-                <div id="modal-content" class="w-full">
-
-                    <div class="p-7 flex flex-col justify-center items-center w-full">
-
-                        <!-- the header -->
-                        <div class="flex justify-between w-full pb-3">
-                            <h1 class="text-lg font-semibold">Edit</h1>
-
-                            <!-- X button -->
-                            <div id="close-modal" class="cursor-pointer h-fit">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor" class="size-5">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-                                </svg>
-
-                            </div>
+                    <!-- reports area -->
+                    <div class="border-x-2 text-sm">
+                        <!-- 1 -->
+                        <div class="flex justify-between py-1 px-3 hover:bg-gray-100/50 transition-all search-item">
+                            <a href="./reports/receiptsByPaymentMethod.html" class="hover:underline">Receipts by Payment Method</a>
+                            <a href="./reports/receiptsByPaymentMethod.html" class="hover:underline">التحصيل حسب طريقة الدفع</a>
                         </div>
 
-                        <form class="flex gap-3 flex-col items-center w-full px-5">
+                        <!-- 2 -->
+                        <div class="flex justify-between py-1 px-3 hover:bg-gray-100/50 transition-all search-item">
+                            <a href="" class="hover:underline">Receipts by Item Category</a>
+                            <a href="" class="hover:underline">التحصيل حسب نوع البند</a>
+                        </div>
 
-                            <!-- Room -->
-                            <div class="w-full">
-                                <label for="Room" class="text-xs font-semibold pb-2">Room Number</label>
-                                <select name="Room" id="Room" class="w-full rounded-md border px-2 py-1 text-sm">
-                                    <option value="" hidden>Select Room Number</option>
-                                    <option value="1" selected>Room 101</option>
-                                    <option value="2">Room 102</option>
-                                    <option value="3">Room 103</option>
-                                </select>
-                            </div>
+                        <!-- 3 -->
+                        <div class="flex justify-between py-1 px-3 hover:bg-gray-100/50 transition-all search-item">
+                            <a href="" class="hover:underline">Receipts by Employee</a>
+                            <a href="" class="hover:underline">التحصيل حسب الموظف</a>
+                        </div>
 
-                            <!-- Name -->
-                            <div class="w-full">
-                                <label for="Name" class="text-xs font-semibold pb-2">Name</label>
-                                <input type="text" name="Name" id="Name" placeholder="Name" value="Mohammad"
-                                    class="w-full rounded-md border px-2 py-1 text-sm">
-                            </div>
+                        <!-- 4 -->
+                        <div class="flex justify-between py-1 px-3 hover:bg-gray-100/50 transition-all search-item">
+                            <a href="" class="hover:underline">Expenses by Payment Method</a>
+                            <a href="" class="hover:underline">المصروفات حسب طريقة الدفع</a>
+                        </div>
 
-                            <!-- Total amount -->
-                            <div class="w-full">
-                                <label for="amount" class="text-xs font-semibold pb-2">Total amount</label>
-                                <input type="text" name="amount" id="amount" placeholder="Total amount" value="1300$"
-                                    class="w-full rounded-md border px-2 py-1 text-sm">
-                            </div>
+                        <!-- 5 -->
+                        <div class="flex justify-between py-1 px-3 hover:bg-gray-100/50 transition-all search-item">
+                            <a href="" class="hover:underline">Expenses by Payment Card</a>
+                            <a href="" class="hover:underline">المصروفات حسب بطاقة الدفع</a>
+                        </div>
 
-                            <!-- Amount paid -->
-                            <div class="w-full">
-                                <label for="paid" class="text-xs font-semibold pb-2">Amount paid</label>
-                                <input type="text" name="paid" id="paid" placeholder="Amount paid" value="900$"
-                                    class="w-full rounded-md border px-2 py-1 text-sm">
-                            </div>
+                        <!-- 6 -->
+                        <div class="flex justify-between py-1 px-3 hover:bg-gray-100/50 transition-all search-item">
+                            <a href="" class="hover:underline">Expenses by Item Category</a>
+                            <a href="" class="hover:underline">المصروفات حسب نوع البند</a>
+                        </div>
 
-                            <!-- Booking source -->
-                            <div class="w-full">
-                                <label for="source" class="text-xs font-semibold pb-2">Booking source</label>
-                                <select name="source" id="source" class="w-full rounded-md border px-2 py-1 text-sm">
-                                    <option value="" hidden>Booking source</option>
-                                    <option value="1" selected>Airbnb</option>
-                                    <option value="2">ِBooking</option>
-                                    <option value="3">Almosafer</option>
-                                </select>
-                            </div>
+                        <!-- 7 -->
+                        <div class="flex justify-between py-1 px-3 hover:bg-gray-100/50 transition-all search-item">
+                            <a href="" class="hover:underline">Expenses by Employee</a>
+                            <a href="" class="hover:underline">المصروفات حسب الموظف</a>
+                        </div>
 
-                            <!-- Status -->
-                            <div class="w-full">
-                                <label for="Status" class="text-xs font-semibold pb-2">Status</label>
-                                <select name="source" id="Status" class="w-full rounded-md border px-2 py-1 text-sm">
-                                    <option value="" hidden>Status</option>
-                                    <option value="1" selected>Clean</option>
-                                    <option value="2">Dirty</option>
-                                    <option value="3">Inspected</option>
-                                    <option value="4">Pick up</option>
-                                </select>
-                            </div>
-
-                            <!-- submit button -->
-                            <button id="addHostel" type="submit"
-                                class="bg-[#4A4C4F] mt-5 text-white hover:bg-[#3e3f42] transition-all rounded-md p-2 w-36 text-xs font-semibold text-center">
-                                Save
-                            </button>
-                        </form>
+                        <!-- 8 -->
+                        <div class="flex justify-between py-1 px-3 hover:bg-gray-100/50 transition-all search-item">
+                            <a href="" class="hover:underline">Bills of Exchange by Employee</a>
+                            <a href="" class="hover:underline">الكمبيالات حسب الموظف</a>
+                        </div>
                     </div>
 
                 </div>
+                <!-- end section 4 (Finance) -->
+
+                <!-- section 5 (Operations) -->
+                <div class="pb-10">
+                    <div class="flex justify-between text-lg">
+                        <h1 class="font-semibold pb-3">Operations</h1>
+                        <h1 class="font-semibold pb-3">التشغيل</h1>
+                    </div>
+
+                    <!-- reports area -->
+                    <div class="border-x-2 text-sm">
+                        <!-- 1 -->
+                        <div class="flex justify-between py-1 px-3 hover:bg-gray-100/50 transition-all search-item">
+                            <a href="" class="hover:underline">Occupancy by Type & Unit</a>
+                            <a href="" class="hover:underline">الأشغال حسب النوع والوحدة</a>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- end section 5 (Operations) -->
+
+                <!-- section 6 (Taxes & Levies)  -->
+                <div class="pb-10">
+                    <div class="flex justify-between text-lg">
+                        <h1 class="font-semibold pb-3">Taxes & Levies</h1>
+                        <h1 class="font-semibold pb-3">الضرائب والرسوم</h1>
+                    </div>
+
+                    <!-- reports area -->
+                    <div class="border-x-2 text-sm">
+                        <!-- 1 -->
+                        <div class="flex justify-between py-1 px-3 hover:bg-gray-100/50 transition-all search-item">
+                            <a href="" class="hover:underline">Accommodation Facility Charges</a>
+                            <a href="" class="hover:underline">رسوم مرافق الإيواء</a>
+                        </div>
+
+                        <!-- 2 -->
+                        <div class="flex justify-between py-1 px-3 hover:bg-gray-100/50 transition-all search-item">
+                            <a href="" class="hover:underline">Value‑Added Tax (VAT)</a>
+                            <a href="" class="hover:underline">ضريبة القيمة المضافة</a>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- end section 6 (Taxes & Levies) -->
 
             </div>
-        </div>
-    </div>
+            <!-- end page -->
 
+        </div>
+
+    </div>
 </body>
 
 </html>
@@ -886,68 +737,4 @@
             e.stopPropagation();
         });
     });
-</script>
-
-<!-- for switch between the sections -->
-<script>
-    function selectTab(index) {
-        const buttons = document.querySelectorAll('button[id^="tab-"]');
-        const contents = document.querySelectorAll('.tab-content');
-        const indicator = document.getElementById('tabIndicator');
-        const selected = buttons[index];
-
-        // change the selected tab 
-        buttons.forEach(btn => {
-            btn.classList.remove('text-[#0F50AA]', 'border-[#1570EF]', 'bg-[#E8F1FD]');
-            btn.classList.add('text-[#5D6679]', 'bg-white');
-        });
-        // reset the others tab 
-        selected.classList.remove('text-[#5D6679]', 'bg-white');
-        selected.classList.add('text-[#0F50AA]', 'border-[#1570EF]', 'bg-[#E8F1FD]');
-
-        // ]
-        contents.forEach(div => div.classList.add('hidden'));
-        document.getElementById('content-' + index).classList.remove('hidden');
-    }
-
-    window.addEventListener('DOMContentLoaded', () => {
-        selectTab(0); // select the first tab by default 
-    });
-</script>
-
-<!-- for edit modal open/close -->
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const openBtns  = document.querySelectorAll('.open-modal');
-    const closeBtn  = document.getElementById('close-modal');
-    const wrapper   = document.getElementById('modal-wrapper');
-    const overlay   = document.getElementById('modal-overlay');
-    const box       = document.getElementById('modal-box');
-
-    function showModal() {
-      wrapper.classList.remove('hidden');
-      overlay.classList.replace('opacity-100','opacity-0');
-      box    .classList.replace('opacity-100','opacity-0');
-      box    .classList.replace('scale-100','scale-75');
-
-      requestAnimationFrame(() => {
-        overlay.classList.replace('opacity-0','opacity-100');
-        box    .classList.replace('opacity-0','opacity-100');
-        box    .classList.replace('scale-75','scale-100');
-      });
-    }
-
-    function hideModal() {
-      overlay.classList.replace('opacity-100','opacity-0');
-      box    .classList.replace('opacity-100','opacity-0');
-      box    .classList.replace('scale-100','scale-75');
-      setTimeout(() => wrapper.classList.add('hidden'), 300);
-    }
-
-    // add listener to all the buttons
-    openBtns.forEach(btn => btn.addEventListener('click', showModal));
-    // the other buttons
-    closeBtn.addEventListener('click', hideModal);
-    overlay .addEventListener('click', hideModal);
-  });
 </script>

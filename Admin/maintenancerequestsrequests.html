@@ -199,6 +199,20 @@
 
                 <!-- the buttons -->
                 <ul>
+                    <!-- Reports -->
+                    <li class="pl-1 border-l border-[#EBEBEB]">
+                        <a href="./reports.html" class="flex gap-2 items-center p-1.5">
+                            <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                fill="white">
+                                <path
+                                    d="M5.625 1.5c-1.036 0-1.875.84-1.875 1.875v17.25c0 1.035.84 1.875 1.875 1.875h12.75c1.035 0 1.875-.84 1.875-1.875V12.75A3.75 3.75 0 0 0 16.5 9h-1.875a1.875 1.875 0 0 1-1.875-1.875V5.25A3.75 3.75 0 0 0 9 1.5H5.625Z" />
+                                <path
+                                    d="M12.971 1.816A5.23 5.23 0 0 1 14.25 5.25v1.875c0 .207.168.375.375.375H16.5a5.23 5.23 0 0 1 3.434 1.279 9.768 9.768 0 0 0-6.963-6.963Z" />
+                            </svg>
+                            <p>Reports</p>
+                        </a>
+                    </li>
+                    
                     <!-- User Management -->
                     <li class="pl-1 border-l border-[#EBEBEB]">
                         <a href="./usermanagement.html" class="flex gap-2 items-center p-1.5">
@@ -549,22 +563,80 @@
                     <div>
                         <h1 class="text-xl font-semibold text-[#32646B] pb-2">Request Details:</h1>
 
-                        <!-- Maintenance Type -->
-                        <textarea name="" id="" class="px-2 py-1 rounded-md border w-96"></textarea>
+                        <!-- Maintenance Request list -->
+                        <div>
+                            <!-- inputs area -->
+                            <div id="rowsContainer">
+
+                            </div>
+
+                            <!-- add button -->
+                            <div id="addRowBtn"
+                                class="px-3 py-1 w-fit text-xs cursor-pointer font-semibold text-black rounded-md bg-gray-200 hover:bg-gray-300 transition">
+                                Add Maintenance Request
+                            </div>
+
+                            <template id="row-template">
+                                <div class="row flex gap-2 py-2">
+                                    <input type="text" name="" id=""
+                                        class="outline-none border rounded-md text-sm px-1 w-96">
+                                    <!-- delete button -->
+                                    <svg class="remove-btn cursor-pointer rounded-md w-8 h-full p-2 flex items-center justify-center"
+                                        width="4" height="4" viewBox="0 0 12 12" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M2.66699 12C2.30033 12 1.98655 11.8696 1.72566 11.6087C1.46477 11.3478 1.3341 11.0338 1.33366 10.6667V2H0.666992V0.666667H4.00033V0H8.00033V0.666667H11.3337V2H10.667V10.6667C10.667 11.0333 10.5365 11.3473 10.2757 11.6087C10.0148 11.87 9.70077 12.0004 9.33366 12H2.66699ZM4.00033 9.33333H5.33366V3.33333H4.00033V9.33333ZM6.66699 9.33333H8.00033V3.33333H6.66699V9.33333Z"
+                                            fill="black" />
+                                    </svg>
+                                </div>
+
+                            </template>
+
+                        </div>
 
                         <h1 class="text-xl font-semibold text-[#32646B] pt-5 pb-2">Cleaning Details:</h1>
 
-                        <!-- Cleaning Details: -->
-                        <textarea name="" id="" class="px-2 py-1 rounded-md border w-96"></textarea>
+                        <!-- Cleaning Request list -->
+                        <div>
+                            <!-- inputs area -->
+                            <div id="rowsContainer2">
+
+                            </div>
+
+                            <!-- add button -->
+                            <div id="addRowBtn2"
+                                class="px-3 py-1 w-fit text-xs cursor-pointer font-semibold text-black rounded-md bg-gray-200 hover:bg-gray-300 transition">
+                                Add Cleaning Request
+                            </div>
+
+                            <template id="row-template2">
+                                <div class="row2 flex gap-2 py-2">
+                                    <input type="text" name="" id=""
+                                        class="outline-none border rounded-md text-sm px-1 w-96">
+                                    <!-- delete button -->
+                                    <svg class="remove-btn2 cursor-pointer rounded-md w-8 h-full p-2 flex items-center justify-center"
+                                        width="4" height="4" viewBox="0 0 12 12" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M2.66699 12C2.30033 12 1.98655 11.8696 1.72566 11.6087C1.46477 11.3478 1.3341 11.0338 1.33366 10.6667V2H0.666992V0.666667H4.00033V0H8.00033V0.666667H11.3337V2H10.667V10.6667C10.667 11.0333 10.5365 11.3473 10.2757 11.6087C10.0148 11.87 9.70077 12.0004 9.33366 12H2.66699ZM4.00033 9.33333H5.33366V3.33333H4.00033V9.33333ZM6.66699 9.33333H8.00033V3.33333H6.66699V9.33333Z"
+                                            fill="black" />
+                                    </svg>
+                                </div>
+
+                            </template>
+
+                        </div>
 
                         <h1 class="text-xl font-semibold text-[#32646B] pt-5 pb-2">Preferred Visit Time</h1>
 
                         <!-- Preferred Visit Time -->
-                        <input type="time" name="Preferred Visit Time" id="Preferred Visit Time" class="px-2 py-1 rounded-md border w-96">
+                        <input type="time" name="Preferred Visit Time" id="Preferred Visit Time"
+                            class="px-2 py-1 rounded-md border w-96">
 
                         <!-- submit button  -->
                         <div class="pt-20">
-                            <button type="submit" class="text-white bg-[#59768C] rounded-md hover:bg-[#4f697c] transition-all px-20 py-2 font-semibold">send</button>
+                            <button type="submit"
+                                class="text-white bg-[#59768C] rounded-md hover:bg-[#4f697c] transition-all px-20 py-2 font-semibold">send</button>
                         </div>
                     </div>
                 </form>
@@ -627,5 +699,46 @@
         popover.addEventListener('click', e => {
             e.stopPropagation();
         });
+    });
+</script>
+
+<script>
+    const container = document.getElementById('rowsContainer');
+    const addBtn = document.getElementById('addRowBtn');
+    const template = document.getElementById('row-template').content;
+
+    // add new row
+    addBtn.addEventListener('click', () => {
+        const newRow = document.importNode(template, true);
+        container.appendChild(newRow);
+    });
+
+    // delete row
+    container.addEventListener('click', e => {
+        if (e.target.classList.contains('remove-btn')) {
+            const row = e.target.closest('.row');
+            row.remove();
+
+        }
+    });
+
+
+    const container2 = document.getElementById('rowsContainer2');
+    const addBtn2 = document.getElementById('addRowBtn2');
+    const template2 = document.getElementById('row-template2').content;
+
+    // add new row
+    addBtn2.addEventListener('click', () => {
+        const newRow = document.importNode(template2, true);
+        container2.appendChild(newRow);
+    });
+
+    // delete row
+    container2.addEventListener('click', e => {
+        if (e.target.classList.contains('remove-btn2')) {
+            const row = e.target.closest('.row2');
+            row.remove();
+
+        }
     });
 </script>
