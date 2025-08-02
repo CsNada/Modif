@@ -97,10 +97,10 @@
                         </a>
                     </li>
 
-                    <!-- Employees -->
+                    <!-- guests -->
                     <li
                         class="hover:bg-[#FFFFFF] transition-all duration-100 rounded text-[#FFFFFF] hover:text-[#1E2227] hover:fill-[#1E2227] mb-1 pl-1">
-                        <a href="./employees.html" class="flex gap-2 items-center p-2">
+                        <a href="./guests.html" class="flex gap-2 items-center p-2">
                             <svg width="19" height="19" viewBox="0 0 28 36" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -121,7 +121,7 @@
                                     stroke-linejoin="round" />
                             </svg>
 
-                            <p>Employees</p>
+                            <p>Guests</p>
                         </a>
                     </li>
 
@@ -508,17 +508,17 @@
                 <div class="flex justify-between items-center text-xs py-2 pb-7">
 
                     <!-- new booking button -->
-                    <div id="open-modal"
-                        class="bg-[#5B7A8F] hover:bg-[#516d7f] transition-all rounded-md cursor-pointer">
-                        <p class="text-[#FFFFFF] p-1.5 px-4">New Booking</p>
+                    <div
+                        class="bg-[#5B7A8F] hover:bg-[#516d7f] transition-all rounded-md cursor-pointer p-1.5 px-4">
+                        <a href="booking.html" class="text-[#FFFFFF]">Booking System</a>
                     </div>
 
                     <p class="text-[#5D6679] font-semibold">Friday, November 18,2022</p>
 
                     <!-- View All Properties button -->
-                    <a href="./properties.html"
+                    <a href="./smartlock.html"
                         class="bg-[#4A4C4F] hover:bg-[#3e3f42] transition-all rounded-md cursor-pointer">
-                        <p class="text-[#FFFFFF] p-1.5 px-4">View All Properties</p>
+                        <p class="text-[#FFFFFF] p-1.5 px-4">Smart lock system</p>
                     </a>
 
                 </div>
@@ -1134,94 +1134,6 @@
 
 </body>
 
-<!-- new booking modal -->
-<div id="modal-wrapper" class="fixed inset-0 z-50 hidden">
-    <!-- overlay -->
-    <div id="modal-overlay" class="absolute inset-0 bg-black bg-opacity-50 opacity-0 transition-opacity duration-300">
-    </div>
-
-    <!-- modal box-->
-    <div class="flex items-center justify-center min-h-screen">
-        <div id="modal-box"
-            class="w-[450px] bg-[#F6F6F6] rounded-md transform transition-all duration-300 ease-out opacity-0 scale-75">
-
-            <div id="modal-content" class="w-full">
-
-                <div class="p-7 flex flex-col justify-center items-center w-full">
-
-                    <!-- the header -->
-                    <div class="flex justify-between w-full">
-                        <h1 class="text-lg font-semibold pb-6">New Booking</h1>
-
-                        <!-- X button -->
-                        <div id="close-modal" class="cursor-pointer h-fit">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                stroke="currentColor" class="size-5">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-                            </svg>
-
-                        </div>
-                    </div>
-
-                    <form class="flex gap-3 flex-col items-center w-full px-5">
-
-                        <!-- Name -->
-                        <div class="w-full">
-                            <label for="Name" class="text-xs font-semibold pb-2">Name</label>
-                            <input type="text" name="Name" id="Name" placeholder="Name"
-                                class="w-full rounded-md border px-2 py-1 text-sm">
-                        </div>
-
-                        <!-- National id -->
-                        <div class="w-full">
-                            <label for="id" class="text-xs font-semibold pb-2">National id</label>
-                            <input type="text" name="id" id="id" placeholder="National id"
-                                class="w-full rounded-md border px-2 py-1 text-sm">
-                        </div>
-
-                        <!-- Phone Number -->
-                        <div class="w-full">
-                            <label for="Number" class="text-xs font-semibold pb-2">Phone Number</label>
-                            <input type="text" name="Number" id="Number" placeholder="Phone Number"
-                                class="w-full rounded-md border px-2 py-1 text-sm">
-                        </div>
-
-                        <!-- Hotel name -->
-                        <div class="w-full">
-                            <label for="Hotel" class="text-xs font-semibold pb-2">Hotel Name</label>
-                            <select name="Hotel" id="Hotel" class="w-full rounded-md border px-2 py-1 text-sm">
-                                <option value="" hidden selected>Select Hotel Name</option>
-                                <option value="1">Hotel 1</option>
-                                <option value="2">Hotel 2</option>
-                                <option value="3">Hotel 3</option>
-                            </select>
-                        </div>
-
-                        <!-- Room Number -->
-                        <div class="w-full">
-                            <label for="Room" class="text-xs font-semibold pb-2">Room Number</label>
-                            <select name="Room" id="Room" class="w-full rounded-md border px-2 py-1 text-sm">
-                                <option value="" hidden selected>Select Room Number</option>
-                                <option value="1">Room 101</option>
-                                <option value="2">Room 102</option>
-                                <option value="3">Room 103</option>
-                            </select>
-                        </div>
-
-                        <!-- submit button -->
-                        <button id="addHostel" type="submit"
-                            class="bg-[#4A4C4F] mt-5 text-white hover:bg-[#3e3f42] transition-all rounded-md p-2 w-36 text-xs font-semibold text-center">
-                            Add Role
-                        </button>
-                    </form>
-                </div>
-
-            </div>
-
-        </div>
-    </div>
-</div>
-
 </html>
 
 <!-- for search input -->
@@ -1347,42 +1259,4 @@
     const totalLength = 126;
     const path = document.querySelector('#progress-path');
     path.setAttribute('stroke-dashoffset', totalLength * (1 - percent / 100));
-</script>
-
-<!-- for new booking modal open/close -->
-<script>
-    const openBtn = document.getElementById('open-modal');
-    const closeBtn = document.getElementById('close-modal');
-    const wrapper = document.getElementById('modal-wrapper');
-    const overlay = document.getElementById('modal-overlay');
-    const box = document.getElementById('modal-box');
-
-    function showModal() {
-        // show the modal
-        wrapper.classList.remove('hidden');
-        // initial state
-        overlay.classList.replace('opacity-100', 'opacity-0');
-        box.classList.replace('opacity-100', 'opacity-0');
-        box.classList.replace('scale-100', 'scale-75');
-
-        requestAnimationFrame(() => {
-            // open animation 
-            overlay.classList.replace('opacity-0', 'opacity-100');
-            box.classList.replace('opacity-0', 'opacity-100');
-            box.classList.replace('scale-75', 'scale-100');
-        });
-    }
-
-    function hideModal() {
-        // colse animation 
-        overlay.classList.replace('opacity-100', 'opacity-0');
-        box.classList.replace('opacity-100', 'opacity-0');
-        box.classList.replace('scale-100', 'scale-75');
-        // hidden the modal
-        setTimeout(() => wrapper.classList.add('hidden'), 300);
-    }
-
-    openBtn.addEventListener('click', showModal);
-    closeBtn.addEventListener('click', hideModal);
-    overlay.addEventListener('click', hideModal);
 </script>

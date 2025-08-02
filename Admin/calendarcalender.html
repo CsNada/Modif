@@ -7,6 +7,14 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
+    <!-- FullCalendar CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet" />
+
+
+    <!-- FullCalendar JS (global) -->
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;400;700&display=swap');
 
@@ -99,10 +107,10 @@
                         </a>
                     </li>
 
-                    <!-- Employees -->
+                    <!-- guests -->
                     <li
                         class="hover:bg-[#FFFFFF] transition-all duration-100 rounded text-[#FFFFFF] hover:text-[#1E2227] hover:fill-[#1E2227] mb-1 pl-1">
-                        <a href="./employees.html" class="flex gap-2 items-center p-2">
+                        <a href="./guests.html" class="flex gap-2 items-center p-2">
                             <svg width="19" height="19" viewBox="0 0 28 36" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -123,7 +131,7 @@
                                     stroke-linejoin="round" />
                             </svg>
 
-                            <p>Employees</p>
+                            <p>Guests</p>
                         </a>
                     </li>
 
@@ -519,7 +527,8 @@
 
                     <!-- buttons  -->
                     <div class="space-x-5 text-white text-xs font-semibold">
-                        <a href="./calendarcode.html" class="bg-[#4A4C4F] rounded-md px-5 py-2 hover:bg-[#414245] transition-all">Create a
+                        <a href="./calendarcode.html"
+                            class="bg-[#4A4C4F] rounded-md px-5 py-2 hover:bg-[#414245] transition-all">Create a
                             code</a>
                         <a href="./calendarcalender.html"
                             class="bg-[#4A4C4F] rounded-md px-5 py-2 hover:bg-[#414245] transition-all">Calendar</a>
@@ -527,128 +536,7 @@
                 </div>
 
                 <!-- calender area  -->
-                <div>
-
-                    <!-- header -->
-                    <div class="flex justify-between items-center p-4">
-
-                        <!-- buttons to move between weeks and months-->
-                        <div id="nav-buttons" class="flex items-center space-x-1">
-
-                            <!-- navigation on weekly view -->
-                            <button id="prev-week"
-                                class="hidden bg-[#eaeaec] h-7 text-[#18181B] px-3 py-1 rounded-l-md hover:bg-[#e0e0e3] focus:outline-none">
-                                <svg width="6" height="10" viewBox="0 0 6 10" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M5.70679 0.293031C5.89426 0.480558 5.99957 0.734866 5.99957 1.00003C5.99957 1.26519 5.89426 1.5195 5.70679 1.70703L2.41379 5.00003L5.70679 8.29303C5.88894 8.48163 5.98974 8.73423 5.98746 8.99643C5.98518 9.25863 5.88001 9.50944 5.6946 9.69485C5.5092 9.88026 5.25838 9.98543 4.99619 9.9877C4.73399 9.98998 4.48139 9.88919 4.29279 9.70703L0.292787 5.70703C0.105316 5.5195 0 5.26519 0 5.00003C0 4.73487 0.105316 4.48056 0.292787 4.29303L4.29279 0.293031C4.48031 0.10556 4.73462 0.000244141 4.99979 0.000244141C5.26495 0.000244141 5.51926 0.10556 5.70679 0.293031Z"
-                                        fill="#18181B" />
-                                </svg>
-                            </button>
-                            <button id="today-week"
-                                class="hidden text-sm bg-[#eaeaec] text-[#18181B] px-3 py-1 hover:bg-[#e0e0e3] focus:outline-none">Today</button>
-                            <button id="next-week"
-                                class="hidden bg-[#eaeaec] h-7 text-[#18181B] px-3 py-1 rounded-r-md hover:bg-[#e0e0e3] focus:outline-none">
-                                <svg width="6" height="10" viewBox="0 0 6 10" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M0.292787 9.70692C0.105316 9.51939 0 9.26508 0 8.99992C0 8.73475 0.105316 8.48045 0.292787 8.29292L3.58579 4.99992L0.292787 1.70692C0.110629 1.51832 0.00983372 1.26571 0.0121121 1.00352C0.0143906 0.741321 0.11956 0.490509 0.304968 0.305101C0.490376 0.119692 0.741189 0.0145233 1.00339 0.0122448C1.26558 0.00996641 1.51818 0.110761 1.70679 0.292919L5.70679 4.29292C5.89426 4.48045 5.99957 4.73475 5.99957 4.99992C5.99957 5.26508 5.89426 5.51939 5.70679 5.70692L1.70679 9.70692C1.51926 9.89439 1.26495 9.99971 0.999786 9.99971C0.734622 9.99971 0.480314 9.89439 0.292787 9.70692Z"
-                                        fill="#18181B" />
-                                </svg>
-                            </button>
-
-                            <!--  navigation on monthly viwe -->
-                            <button id="prev-month"
-                                class="hidden bg-[#eaeaec] h-7 text-[#18181B] px-3 py-1 rounded-l-md hover:bg-[#e0e0e3] focus:outline-none">
-                                <svg width="6" height="10" viewBox="0 0 6 10" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M5.70679 0.293031C5.89426 0.480558 5.99957 0.734866 5.99957 1.00003C5.99957 1.26519 5.89426 1.5195 5.70679 1.70703L2.41379 5.00003L5.70679 8.29303C5.88894 8.48163 5.98974 8.73423 5.98746 8.99643C5.98518 9.25863 5.88001 9.50944 5.6946 9.69485C5.5092 9.88026 5.25838 9.98543 4.99619 9.9877C4.73399 9.98998 4.48139 9.88919 4.29279 9.70703L0.292787 5.70703C0.105316 5.5195 0 5.26519 0 5.00003C0 4.73487 0.105316 4.48056 0.292787 4.29303L4.29279 0.293031C4.48031 0.10556 4.73462 0.000244141 4.99979 0.000244141C5.26495 0.000244141 5.51926 0.10556 5.70679 0.293031Z"
-                                        fill="#18181B" />
-                                </svg>
-                            </button>
-                            <button id="today-month"
-                                class="hidden text-sm bg-[#eaeaec] text-[#18181B] px-3 py-1 hover:bg-[#e0e0e3] focus:outline-none">Today</button>
-                            <button id="next-month"
-                                class="hidden bg-[#eaeaec] h-7 text-[#18181B] px-3 py-1 rounded-r-md hover:bg-[#e0e0e3] focus:outline-none">
-                                <svg width="6" height="10" viewBox="0 0 6 10" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M0.292787 9.70692C0.105316 9.51939 0 9.26508 0 8.99992C0 8.73475 0.105316 8.48045 0.292787 8.29292L3.58579 4.99992L0.292787 1.70692C0.110629 1.51832 0.00983372 1.26571 0.0121121 1.00352C0.0143906 0.741321 0.11956 0.490509 0.304968 0.305101C0.490376 0.119692 0.741189 0.0145233 1.00339 0.0122448C1.26558 0.00996641 1.51818 0.110761 1.70679 0.292919L5.70679 4.29292C5.89426 4.48045 5.99957 4.73475 5.99957 4.99992C5.99957 5.26508 5.89426 5.51939 5.70679 5.70692L1.70679 9.70692C1.51926 9.89439 1.26495 9.99971 0.999786 9.99971C0.734622 9.99971 0.480314 9.89439 0.292787 9.70692Z"
-                                        fill="#18181B" />
-                                </svg>
-                            </button>
-                        </div>
-
-                        <!-- switch buttons week/month-->
-                        <div class="flex items-center space-x-3 text-sm">
-                            <button id="view-week"
-                                class="px-3 py-1 rounded-lg bg-[#32646B] hover:bg-[#32646B] hover:text-white text-white transition-all focus:outline-none">Week</button>
-                            <button id="view-month"
-                                class="px-3 py-1 rounded-lg hover:bg-[#32646B] hover:text-white transition-all focus:outline-none">Month</button>
-                        </div>
-                    </div>
-
-                    <!-- state colors bar -->
-                    <div class="flex flex-wrap items-center gap-4 p-4 text-xs font-semibold">
-                        <div class="bg-[#FEF4E6] rounded-md px-4 py-1 text-[#F9A63A]">Due in</div>
-                        <div class="bg-[#E8F1FD] rounded-md px-4 py-1 text-[#448DF2]">Checked out</div>
-                        <div class="bg-[#FEECEB] rounded-md px-4 py-1 text-[#F36960]">Due out</div>
-                        <div class="bg-[#E7F8F0] rounded-md px-4 py-1 text-[#41C588]">Checked in</div>
-                    </div>
-
-                    <!-- calender area -->
-                    <div id="calendar-views" class="px-5">
-
-                        <!-- weekly-->
-                        <div id="weekly-view" class="hidden">
-
-                            <!-- week start/end date as a title (generated by js) -->
-                            <h2 id="week-title" class="px-4 pt-2 pb-4 text-center text-sm font-semibold"></h2>
-
-                            <!-- the table -->
-                            <div class="relative">
-                                <!-- the days -->
-                                <div id="days-header" class="grid grid-cols-7 border-b border-gray-300">
-                                    <!-- (generated by js) -->
-                                </div>
-                                <!-- the white area under the days -->
-                                <div id="days-grid" class="grid grid-cols-7">
-                                    <!-- (generated by js) -->
-                                </div>
-
-                                <!-- the area for the events (generated by js) -->
-                                <div id="events-container"
-                                    class="absolute top-0 left-0 w-full h-full pointer-events-none"></div>
-                            </div>
-                        </div>
-
-                        <!-- monthly -->
-                        <div id="monthly-view" class="hidden">
-
-                            <!-- month start/end date as a title (generated by js) -->
-                            <h2 id="month-title" class="px-4 pt-2 pb-4 text-center text-sm font-semibold"></h2>
-
-                            <!-- the days -->
-                            <div class="grid grid-cols-7 border-l text-sm">
-
-                                <div class="border-b border-r p-2 text-center font-medium">Sun</div>
-                                <div class="border-b border-r p-2 text-center font-medium">Mon</div>
-                                <div class="border-b border-r p-2 text-center font-medium">Tue</div>
-                                <div class="border-b border-r p-2 text-center font-medium">Wed</div>
-                                <div class="border-b border-r p-2 text-center font-medium">Thu</div>
-                                <div class="border-b border-r p-2 text-center font-medium">Thu</div>
-                                <div class="border-b border-r p-2 text-center font-medium">Sat</div>
-                            </div>
-
-                            <!-- the white cells area -->
-                            <div id="month-grid" class="grid grid-cols-7 border-t border-l">
-                                <!-- (generated by js) -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+                <div id="calendar" class="bg-white p-4 rounded-md shadow"></div>
             </div>
         </div>
 
@@ -711,255 +599,33 @@
 
 <!-- for the calender -->
 <script>
-    // events data (title, start, end, color)
-    const events = [
-        { title: 'Manson', start: '2025-06-1', end: '2025-06-8', color: '#E7F8F0bb' },
-        { title: 'Lewis', start: '2025-06-06', end: '2025-06-12', color: '#FEF4E6bb' },
-        { title: 'Tate', start: '2025-06-11', end: '2025-06-19', color: '#FEECEBbb' },
-        { title: 'Mark', start: '2025-06-17', end: '2025-06-23', color: '#E8F1FDbb' },
-        // more events 
-    ];
+    document.addEventListener('DOMContentLoaded', function () {
+        const Draggable = FullCalendar.Draggable;
 
-    // global variables
-    let currentDate = new Date();
-    let weekStart = null;
-    let monthDate = new Date();
-
-    /* ---------- weekly functions ---------- */
-
-    // to make the start of the week be sun
-    function getStartOfWeek(date) {
-        const d = new Date(date);
-        const day = d.getDay(); // sun = 0, mon = 1, ...
-        const diff = (day === 0 ? -6 : 0 - day); 
-        d.setDate(d.getDate() + diff);
-        d.setHours(0, 0, 0, 0);
-        return d;
-    }
-
-    // set the week start/end dates as a title 
-    function renderWeekTitle(start) {
-        const endDate = new Date(start);
-        endDate.setDate(start.getDate() + 6);
-        const options = { day: 'numeric', month: 'long', year: 'numeric' };
-        const fmt = new Intl.DateTimeFormat('en-US', options);
-        document.getElementById('week-title').textContent = `${fmt.format(start)} - ${fmt.format(endDate)}`;
-    }
-
-    // print the days name with the dates in the header 
-    function renderDaysHeader(start) {
-        const header = document.getElementById('days-header');
-        header.innerHTML = '';
-        for (let i = 0; i < 7; i++) {
-            const dayDate = new Date(start);
-            dayDate.setDate(start.getDate() + i);
-            const dayName = new Intl.DateTimeFormat('en-US', { weekday: 'short' }).format(dayDate);
-            const dayNumber = dayDate.getDate();
-            const cell = document.createElement('div');
-            cell.className = 'p-2 h-16 border-l border-gray-300 flex flex-col items-center justify-center';
-            cell.innerHTML = `<div class=\"text-sm font-medium\">${dayName}</div><div class=\"text-lg font-semibold\">${dayNumber}</div>`;
-            header.appendChild(cell);
-        }
-    }
-
-    // to generate the white cells under the days
-    function renderDaysGrid() {
-        const grid = document.getElementById('days-grid');
-        grid.innerHTML = '';
-        for (let i = 0; i < 7; i++) {
-            const cell = document.createElement('div');
-            cell.className = 'min-h-40 border-l border-t border-gray-300';
-            grid.appendChild(cell);
-        }
-    }
-
-    // put the events in the calender
-    function renderEvents(start) {
-        const container = document.getElementById('events-container');
-        container.innerHTML = '';
-        const gridRect = document.getElementById('days-grid').getBoundingClientRect();
-        const columnWidth = gridRect.width / 7;
-        const rowHeights = [];
-        events.forEach(ev => {
-            const evStart = new Date(ev.start);
-            const evEnd = new Date(ev.end);
-            evStart.setHours(0, 0, 0, 0);
-            evEnd.setHours(0, 0, 0, 0);
-            const weekEnd = new Date(start);
-            weekEnd.setDate(start.getDate() + 6);
-            if (evEnd < start || evStart > weekEnd) return;
-            const eventStartInWeek = evStart < start ? new Date(start) : evStart;
-            const eventEndInWeek = evEnd > weekEnd ? new Date(weekEnd) : evEnd;
-
-            const offsetDays = Math.round((eventStartInWeek - start) / (1000 * 60 * 60 * 24));
-            const durationDays = Math.round((eventEndInWeek - eventStartInWeek) / (1000 * 60 * 60 * 24)) + 1;
-
-            const evEl = document.createElement('div');
-            evEl.className = 'absolute text-black text-sm font-medium rounded-lg overflow-hidden px-2 p-1 mt-1';
-            evEl.style.left = offsetDays * columnWidth + 'px';
-            evEl.style.width = durationDays * columnWidth - 8 + 'px';
-
-            let rowIndex = 0;
-            while (true) {
-                if (!rowHeights[rowIndex]) rowHeights[rowIndex] = [];
-                const overlap = rowHeights[rowIndex].some(span => {
-                    return !(offsetDays + durationDays - 1 < span.start || offsetDays > span.end);
-                });
-                if (!overlap) {
-                    rowHeights[rowIndex].push({ start: offsetDays, end: offsetDays + durationDays - 1 });
-                    break;
+        // ✅ إعداد التقويم
+        const calendarEl = document.getElementById('calendar');
+        const calendar = new FullCalendar.Calendar(calendarEl, {
+            initialView: 'dayGridMonth',
+            editable: true,
+            droppable: true,
+            selectable: true,
+            headerToolbar: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'dayGridMonth,timeGridWeek,timeGridDay'
+            },
+            events: [
+                {
+                    title: 'حدث مسبق',
+                    start: '2025-08-01'
                 }
-                rowIndex++;
+            ],
+            drop: function (info) {
+                // يمكن تنفيذ إجراء إضافي هنا بعد الإسقاط
+                console.log('تم إسقاط حدث في:', info.dateStr);
             }
-            const topPos = rowIndex * 36;
-            evEl.style.top = topPos + 64 + 'px';
-            evEl.style.height = '28px';
-            evEl.style.backgroundColor = ev.color;
-            evEl.textContent = ev.title;
-            container.appendChild(evEl);
         });
-    }
 
-    // calling all the weekly functions
-    function renderWeeklyCalendar() {
-        weekStart = getStartOfWeek(currentDate);
-        renderWeekTitle(weekStart);
-        renderDaysHeader(weekStart);
-        renderDaysGrid();
-        setTimeout(() => renderEvents(weekStart), 50);
-    }
-
-    
-    /* ---------- monthly functions ---------- */
-
-    // set the monthes name with the year as a title 
-    function renderMonthTitle(date) {
-        const year = date.getFullYear();
-        const month = date.getMonth();
-        const monthNamesAr = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-        document.getElementById('month-title').textContent = `${monthNamesAr[month]} ${year}`;
-    }
-
-    // generate the white cells and put the events in the calender
-    function renderMonthGrid(date) {
-        const year = date.getFullYear();
-        const month = date.getMonth();
-        const firstDay = new Date(year, month, 1);
-        const startingDay = firstDay.getDay();
-        const daysInMonth = new Date(year, month + 1, 0).getDate();
-        const grid = document.getElementById('month-grid');
-        grid.innerHTML = '';
-        for (let i = 0; i < startingDay; i++) {
-            const emptyCell = document.createElement('div');
-            emptyCell.className = 'h-24 border-b border-r';
-            grid.appendChild(emptyCell);
-        }
-        for (let day = 1; day <= daysInMonth; day++) {
-            const cellDate = new Date(year, month, day);
-            const cellEl = document.createElement('div');
-            cellEl.className = 'min-h-24 border-b border-r p-1 relative pt-5';
-            const dateNum = document.createElement('div');
-            dateNum.className = 'absolute top-1 start-1 text-sm font-semibold';
-            dateNum.textContent = day;
-            cellEl.appendChild(dateNum);
-            const today = new Date();
-            if (day === today.getDate() && month === today.getMonth() && year === today.getFullYear()) {
-                cellEl.classList.add('ring', 'ring-gray-300', 'rounded-sm');
-            }
-            events.forEach(ev => {
-                const evStart = new Date(ev.start);
-                const evEnd = new Date(ev.end);
-                evStart.setHours(0, 0, 0, 0);
-                evEnd.setHours(0, 0, 0, 0);
-                if (cellDate >= evStart && cellDate <= evEnd) {
-                    const eventEl = document.createElement('div');
-                    eventEl.className = 'text-xs p-0.5 mt-1.5 rounded overflow-hidden whitespace-nowrap overflow-ellipsis';
-                    eventEl.textContent = ev.title;
-                    eventEl.style.backgroundColor = ev.color;
-                    cellEl.appendChild(eventEl);
-                }
-            });
-            grid.appendChild(cellEl);
-        }
-        const totalCells = startingDay + daysInMonth;
-        const remainder = (7 - (totalCells % 7)) % 7;
-        for (let i = 0; i < remainder; i++) {
-            const emptyCell = document.createElement('div');
-            emptyCell.className = 'h-24 border-b border-r';
-            grid.appendChild(emptyCell);
-        }
-    }
-
-    // calling all the monthly functions
-    function renderMonthlyCalendar() {
-        renderMonthTitle(monthDate);
-        renderMonthGrid(monthDate);
-    }
-
-
-    /* ---------- switch changes (weekly/monthly) ---------- */
-    const weeklyViewEl = document.getElementById('weekly-view');
-    const monthlyViewEl = document.getElementById('monthly-view');
-    const prevWeekBtn = document.getElementById('prev-week');
-    const nextWeekBtn = document.getElementById('next-week');
-    const todayWeekBtn = document.getElementById('today-week');
-    const prevMonthBtn = document.getElementById('prev-month');
-    const nextMonthBtn = document.getElementById('next-month');
-    const todayMonthBtn = document.getElementById('today-month');
-
-    // hide and show the arrow buttons in week view
-    function showWeekly() {
-        
-        prevWeekBtn.classList.remove('hidden');
-        nextWeekBtn.classList.remove('hidden');
-        todayWeekBtn.classList.remove('hidden');
-        prevMonthBtn.classList.add('hidden');
-        nextMonthBtn.classList.add('hidden');
-        todayMonthBtn.classList.add('hidden');
-        weeklyViewEl.classList.remove('hidden');
-        monthlyViewEl.classList.add('hidden');
-        renderWeeklyCalendar();
-    }
-
-    // hide and show the arrow buttons in month view
-    function showMonthly() {
-        prevMonthBtn.classList.remove('hidden');
-        nextMonthBtn.classList.remove('hidden');
-        todayMonthBtn.classList.remove('hidden');
-        prevWeekBtn.classList.add('hidden');
-        nextWeekBtn.classList.add('hidden');
-        todayWeekBtn.classList.add('hidden');
-        monthlyViewEl.classList.remove('hidden');
-        weeklyViewEl.classList.add('hidden');
-        renderMonthlyCalendar();
-    }
-
-    // connect the weekly navigation buttons
-    prevWeekBtn.addEventListener('click', () => { currentDate.setDate(currentDate.getDate() - 7); renderWeeklyCalendar(); });
-    nextWeekBtn.addEventListener('click', () => { currentDate.setDate(currentDate.getDate() + 7); renderWeeklyCalendar(); });
-    todayWeekBtn.addEventListener('click', () => { currentDate = new Date(); renderWeeklyCalendar(); });
-
-    // connect the monthly navigation buttons
-    prevMonthBtn.addEventListener('click', () => { monthDate.setMonth(monthDate.getMonth() - 1); renderMonthlyCalendar(); });
-    nextMonthBtn.addEventListener('click', () => { monthDate.setMonth(monthDate.getMonth() + 1); renderMonthlyCalendar(); });
-    todayMonthBtn.addEventListener('click', () => { monthDate = new Date(); renderMonthlyCalendar(); });
-
-    // change the buttons (Week/Monthe) style when clicking to change the view
-    // week view
-    document.getElementById('view-week').addEventListener('click', () => {
-        document.getElementById('view-week').classList.add('bg-[#32646B]', 'text-white');
-        document.getElementById('view-month').classList.remove('bg-[#32646B]', 'text-white');
-        showWeekly();
-    });
-    //month view
-    document.getElementById('view-month').addEventListener('click', () => {
-        document.getElementById('view-month').classList.add('bg-[#32646B]', 'text-white');
-        document.getElementById('view-week').classList.remove('bg-[#32646B]', 'text-white');
-        showMonthly();
-    });
-
-    // set the weekly calender as the default when refresh the page
-    window.addEventListener('load', () => {
-        showWeekly();
+        calendar.render();
     });
 </script>

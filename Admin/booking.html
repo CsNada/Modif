@@ -3,7 +3,7 @@
 
 <head>
 
-    <title>Calendar</title>
+    <title>Booking</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -58,7 +58,7 @@
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M12.7413 7.64476V0H22.9343V7.64476H12.7413ZM0 12.7413V0H10.193V12.7413H0ZM12.7413 22.9343V10.193H22.9343V22.9343H12.7413ZM0 22.9343V15.2895H10.193V22.9343H0ZM2.54825 10.193H7.64476V2.54825H2.54825V10.193ZM15.2895 20.386H20.386V12.7413H15.2895V20.386ZM15.2895 5.09651H20.386V2.54825H15.2895V5.09651ZM2.54825 20.386H7.64476V17.8378H2.54825V20.386Z"
-                                    fill="currentColor" />
+                                    fill="CurrentColor" />
                             </svg>
 
                             <p>Dashboard</p>
@@ -75,8 +75,6 @@
                                     d="M7.32008 28.2923C6.60356 28.2923 5.99038 27.9605 5.48056 27.2967C4.97074 26.633 4.7154 25.8342 4.71453 24.9002V12.7731L2.10897 15.3597C1.80499 15.6424 1.4793 15.7628 1.13189 15.7209C0.784482 15.6791 0.502214 15.4597 0.285084 15.0629C0.0679543 14.666 -0.0188976 14.242 0.0245284 13.7908C0.0679543 13.3396 0.241658 12.9722 0.545639 12.6883L12.2381 1.02774C12.4769 0.801594 12.7323 0.631985 13.0041 0.518913C13.2759 0.40584 13.5526 0.349304 13.834 0.349304C14.1154 0.349304 14.3924 0.40584 14.6651 0.518913C14.9379 0.631985 15.1928 0.801594 15.4299 1.02774L19.0451 4.63193V3.69908C19.0451 2.99237 19.2353 2.39196 19.6157 1.89783C19.9961 1.40371 20.4573 1.15608 20.9992 1.15495C21.5412 1.15381 22.0028 1.40144 22.3841 1.89783C22.7654 2.39422 22.9552 2.99464 22.9534 3.69908V8.53293L27.1223 12.6883C27.4046 12.971 27.5731 13.3385 27.6278 13.7908C27.6825 14.2431 27.6009 14.6671 27.3829 15.0629C27.1649 15.4586 26.8826 15.678 26.5361 15.7209C26.1895 15.7639 25.8638 15.6435 25.559 15.3597L22.9534 12.7731V24.9002C22.9534 25.833 22.6985 26.6319 22.1887 27.2967C21.6789 27.9616 21.0653 28.2935 20.3479 28.2923H17.7423C17.0258 28.2923 16.4126 27.9605 15.9028 27.2967C15.393 26.633 15.1376 25.8342 15.1367 24.9002V18.1158H12.5312V24.9002C12.5312 25.833 12.2763 26.6319 11.7665 27.2967C11.2566 27.9616 10.643 28.2935 9.92564 28.2923H7.32008ZM7.32008 24.9002H9.92564V18.1158C9.92564 17.183 10.181 16.3847 10.6917 15.7209C11.2024 15.0572 11.8155 14.7248 12.5312 14.7236H15.1367C15.8533 14.7236 16.4669 15.0561 16.9776 15.7209C17.4883 16.3858 17.7432 17.1841 17.7423 18.1158V24.9002H20.3479V10.1866L13.834 3.74148L7.32008 10.1866V24.9002ZM11.2284 11.3739H16.4395C16.4395 10.4693 16.179 9.72697 15.6579 9.14691C15.1367 8.56685 14.5288 8.27738 13.834 8.27851C13.1392 8.27964 12.5312 8.56968 12.0101 9.14861C11.489 9.72754 11.2284 10.4693 11.2284 11.3739Z"
                                     fill="currentColor" />
                             </svg>
-
-
                             <p>Properties</p>
                         </a>
                     </li>
@@ -129,7 +127,8 @@
                     </li>
 
                     <!-- Calendar -->
-                    <li class="bg-[#FFFFFF] rounded text-[#1E2227] font-bold mb-1 pl-1">
+                    <li
+                        class="hover:bg-[#FFFFFF] transition-all duration-100 rounded text-[#FFFFFF] hover:text-[#1E2227] hover:fill-[#1E2227] mb-1 pl-1">
                         <a href="./calendar.html" class="flex gap-2 items-center p-2">
                             <svg width="19" height="19" viewBox="0 0 27 36" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -192,6 +191,7 @@
                             <p>channel manger</p>
                         </a>
                     </li>
+
                 </ul>
             </nav>
 
@@ -214,6 +214,7 @@
                             <p>Reports</p>
                         </a>
                     </li>
+
                     <!-- User Management -->
                     <li class="pl-1 border-l border-[#EBEBEB]">
                         <a href="./usermanagement.html" class="flex gap-2 items-center p-1.5">
@@ -502,162 +503,388 @@
             </div>
 
             <!-- page -->
-            <div class="p-5 px-7">
-                <!-- header  -->
-                <div class="flex justify-between items-center">
-                    <!-- Total Hostels -->
-                    <div class="bg-[#141414] rounded-md px-5 py-2 text-white text-xs">
-                        <p>Total Hostels 4</p>
+            <div class="p-3 px-5">
+
+                <!-- the buttons on the header -->
+                <div class="flex justify-between items-center text-xs py-2">
+
+
+                    <a href="./dashboard.html"
+                        class="bg-[#5B7A8F] hover:bg-[#516d7f] transition-all rounded-md cursor-pointer">
+                        <p class="text-[#FFFFFF] p-1.5 px-4">Back</p>
+                    </a>
+
+                    <p class="text-[#5D6679] font-semibold">Friday, November 18,2022</p>
+
+                    <!-- new booking button -->
+                    <div id="open-modal"
+                        class="bg-[#4A4C4F] hover:bg-[#3e3f42] transition-all rounded-md cursor-pointer">
+                        <p class="text-[#FFFFFF] p-1.5 px-4">New Booking</p>
                     </div>
 
-                    <!-- buttons  -->
-                    <div class="space-x-5 text-white text-xs font-semibold">
-                        <a href="./calendarcode.html" class="bg-[#4A4C4F] rounded-md px-5 py-2 hover:bg-[#414245] transition-all">Create a
-                            code</a>
-                        <a href="./calendarcalender.html"
-                            class="bg-[#4A4C4F] rounded-md px-5 py-2 hover:bg-[#414245] transition-all">Calendar</a>
-                    </div>
                 </div>
+
+                <!-- the 4 boxes -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-5 py-3 font-semibold">
+
+                    <!-- Booking -->
+                    <div class="rounded-md shadow bg-white p-2 px-6 text-center flex justify-between items-center">
+                        <p class="whitespace-nowrap text-[#4A4C4F]">Booking:</p>
+                        <p class="w-full text-center font-semibold text-xl">5</p>
+                    </div>
+                    
+                    <!-- Check In -->
+                    <div class="rounded-md shadow bg-white p-2 px-6 text-center flex justify-between items-center">
+                        <p class="whitespace-nowrap text-[#4A4C4F]">Check In:</p>
+                        <p class="w-full text-center font-semibold text-xl">26</p>
+                    </div>
+
+                    <!-- Check Out -->
+                    <div class="rounded-md shadow bg-white p-2 px-6 text-center flex justify-between items-center">
+                        <p class="whitespace-nowrap text-[#4A4C4F]">Check Out:</p>
+                        <p class="w-full text-center font-semibold text-xl">15</p>
+                    </div>
+
+                    <!-- Cancelled -->
+                    <div class="rounded-md shadow bg-white p-2 px-6 text-center flex justify-between items-center">
+                        <p class="whitespace-nowrap text-[#4A4C4F]">Cancelled:</p>
+                        <p class="w-full text-center font-semibold text-xl">7</p>
+                    </div>
+
+                </div>
+                <!-- end the 4 boxes -->
 
                 <!-- filter bar -->
-                <form class="flex justify-end items-center gap-10 pt-5">
+                <div id="filters" class="bg-white p-3 rounded-md shadow flex justify-between gap-2 mb-3">
 
-                    <!-- Room Types -->
-                    <div class="flex gap-2 items-center">
-                        <p class="text-[#B0B0B0] text-sm font-semibold">Room Types</p>
-                        <select name="Room-Types" id="Room-Types"
-                            class="bg-[#4A4C4F] rounded-md p-1.5 px-3 outline-none font-semibold text-white text-xs">
-                            <option value="All">All</option>
-                            <option value="">option 1</option>
-                            <option value="">option 2</option>
+                    <!-- From -->
+                    <div class="w-full">
+                        <label class="block text-sm font-medium text-gray-700">From</label>
+                        <input id="fromDate" type="date"
+                            class="mt-1 px-1 block w-full border border-gray-300 rounded-md text-sm" />
+                    </div>
+
+                    <!-- To -->
+                    <div class="w-full">
+                        <label class="block text-sm font-medium text-gray-700">To</label>
+                        <input id="toDate" type="date"
+                            class="mt-1 px-1 block w-full border border-gray-300 rounded-md text-sm" />
+                    </div>
+
+                    <!-- Property -->
+                    <div class="w-full">
+                        <label class="block text-sm font-medium text-gray-700">Property</label>
+                        <select id="Property"
+                            class="mt-1 px-1 py-0.5 text-sm block w-full border border-gray-300 rounded-md">
+                            <option value="all" selected>All Properties</option>
+                            <option value="Property 1">Property 1</option>
+                            <option value="Property 2">Property 2</option>
+                            <option value="Property 3">Property 3</option>
                         </select>
                     </div>
 
-                    <!-- Hostels -->
-                    <div class="flex gap-2 items-center">
-                        <p class="text-[#B0B0B0] text-sm font-semibold">Hostels</p>
-                        <select name="Hostels" id="Hostels"
-                            class="bg-[#4A4C4F] rounded-md p-1.5 px-3 outline-none font-semibold text-white text-xs">
-                            <option value="All">All</option>
-                            <option value="">option 1</option>
-                            <option value="">option 2</option>
+                    <!-- Status -->
+                    <div class="w-full">
+                        <label class="block text-sm font-medium text-gray-700">Status</label>
+                        <select id="Status"
+                            class="mt-1 px-1 py-0.5 text-sm block w-full border border-gray-300 rounded-md">
+                            <option value="all" selected>All Statuses</option>
+                            <option value="booking">Booking</option>
+                            <option value="checkIn">Check In</option>
+                            <option value="checkOut">Check Out</option>
+                            <option value="cancelled">Cancelled</option>
+                            
                         </select>
                     </div>
 
-                    <!-- Floors -->
-                    <div class="flex gap-2 items-center">
-                        <p class="text-[#B0B0B0] text-sm font-semibold">Floors</p>
-                        <select name="Floors" id="Floors"
-                            class="bg-[#4A4C4F] rounded-md p-1.5 px-3 outline-none font-semibold text-white text-xs">
-                            <option value="All">All</option>
-                            <option value="">option 1</option>
-                            <option value="">option 2</option>
-                        </select>
-                    </div>
-                </form>
-
-                <!-- boxes area -->
-                <div class="grid grid-cols-2 gap-5 pt-10 font-semibold text-xs">
-
-                    <!-- box 1 -->
-                    <div class="p-4 bg-[#202020] rounded-md text-white search-item">
-                        <!-- header  -->
-                        <div class="flex gap-5 items-center">
-                            <!-- icon and title -->
-                            <div class="flex gap-2 items-center">
-                                <svg width="20" height="12" viewBox="0 0 30 22" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M1.5 21.5C1.075 21.5 0.719 21.356 0.432 21.068C0.144 20.781 0 20.425 0 20V12.5C0 11.825 0.1375 11.2125 0.4125 10.6625C0.6875 10.1125 1.05 9.625 1.5 9.2V5C1.5 3.75 1.9375 2.6875 2.8125 1.8125C3.6875 0.9375 4.75 0.5 6 0.5H12C12.575 0.5 13.1125 0.6065 13.6125 0.8195C14.1125 1.0315 14.575 1.325 15 1.7C15.425 1.325 15.8875 1.0315 16.3875 0.8195C16.8875 0.6065 17.425 0.5 18 0.5H24C25.25 0.5 26.3125 0.9375 27.1875 1.8125C28.0625 2.6875 28.5 3.75 28.5 5V9.2C28.95 9.625 29.3125 10.1125 29.5875 10.6625C29.8625 11.2125 30 11.825 30 12.5V20C30 20.425 29.856 20.781 29.568 21.068C29.281 21.356 28.925 21.5 28.5 21.5C28.075 21.5 27.719 21.356 27.432 21.068C27.144 20.781 27 20.425 27 20V18.5H3V20C3 20.425 2.8565 20.781 2.5695 21.068C2.2815 21.356 1.925 21.5 1.5 21.5ZM16.5 8H25.5V5C25.5 4.575 25.356 4.2185 25.068 3.9305C24.781 3.6435 24.425 3.5 24 3.5H18C17.575 3.5 17.219 3.6435 16.932 3.9305C16.644 4.2185 16.5 4.575 16.5 5V8ZM4.5 8H13.5V5C13.5 4.575 13.3565 4.2185 13.0695 3.9305C12.7815 3.6435 12.425 3.5 12 3.5H6C5.575 3.5 5.2185 3.6435 4.9305 3.9305C4.6435 4.2185 4.5 4.575 4.5 5V8ZM3 15.5H27V12.5C27 12.075 26.856 11.7185 26.568 11.4305C26.281 11.1435 25.925 11 25.5 11H4.5C4.075 11 3.7185 11.1435 3.4305 11.4305C3.1435 11.7185 3 12.075 3 12.5V15.5Z"
-                                        fill="white" />
-                                </svg>
-
-                                <p>6 Bedded Bunker - test</p>
-                            </div>
-
-                            <!-- Floor No. -->
-                            <div class="bg-black rounded-md p-1 px-2">
-                                <p>Floor No. 07</p>
-                            </div>
-
-                            <!-- H1 -->
-                            <div class="bg-black rounded-md p-1 px-2 flex gap-2 items-center">
-                                <!-- icon  -->
-                                <svg width="15" height="12" viewBox="0 0 20 17" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M2.49967 14.8333V3.74999C2.49962 3.57893 2.55222 3.412 2.65031 3.27186C2.74841 3.13172 2.88726 3.02516 3.04801 2.96666L11.1072 0.0366607C11.1701 0.013749 11.2377 0.00635487 11.3041 0.0151053C11.3705 0.0238558 11.4338 0.0484928 11.4887 0.0869275C11.5436 0.125362 11.5884 0.176461 11.6193 0.235892C11.6502 0.295323 11.6664 0.361334 11.6663 0.428327V4.55583L16.9297 6.30999C17.0957 6.36529 17.2401 6.47143 17.3424 6.61337C17.4447 6.75531 17.4997 6.92586 17.4997 7.10083V14.8333H19.1663V16.5H0.833008V14.8333H2.49967ZM4.16634 14.8333H9.99967V2.21249L4.16634 4.33416V14.8333ZM15.833 14.8333V7.70166L11.6663 6.31249V14.8333H15.833Z"
-                                        fill="white" />
-                                </svg>
-
-
-                                <p>H1</p>
-                            </div>
-                        </div>
-
-                        <!-- rooms area -->
-                        <div class="grid grid-cols-10 lg:grid-cols-10 gap-2 pt-5 text-center">
-                            <a href="./calendardetails.html" class="cursor-pointer bg-black rounded-md py-2">101</a>
-                            <a href="./calendardetails.html" class="cursor-pointer bg-[#FF0000] rounded-md py-2">102</a>
-                            <a href="./calendardetails.html" class="cursor-pointer bg-[#FF6B00] rounded-md py-2">103</a>
-                        </div>
-                    </div>
-
-                    <!-- box 2 -->
-                    <div class="p-4 bg-[#202020] rounded-md text-white search-item">
-                        <!-- header  -->
-                        <div class="flex gap-5 items-center">
-                            <!-- icon and title -->
-                            <div class="flex gap-2 items-center">
-                                <svg width="20" height="12" viewBox="0 0 30 22" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M1.5 21.5C1.075 21.5 0.719 21.356 0.432 21.068C0.144 20.781 0 20.425 0 20V12.5C0 11.825 0.1375 11.2125 0.4125 10.6625C0.6875 10.1125 1.05 9.625 1.5 9.2V5C1.5 3.75 1.9375 2.6875 2.8125 1.8125C3.6875 0.9375 4.75 0.5 6 0.5H12C12.575 0.5 13.1125 0.6065 13.6125 0.8195C14.1125 1.0315 14.575 1.325 15 1.7C15.425 1.325 15.8875 1.0315 16.3875 0.8195C16.8875 0.6065 17.425 0.5 18 0.5H24C25.25 0.5 26.3125 0.9375 27.1875 1.8125C28.0625 2.6875 28.5 3.75 28.5 5V9.2C28.95 9.625 29.3125 10.1125 29.5875 10.6625C29.8625 11.2125 30 11.825 30 12.5V20C30 20.425 29.856 20.781 29.568 21.068C29.281 21.356 28.925 21.5 28.5 21.5C28.075 21.5 27.719 21.356 27.432 21.068C27.144 20.781 27 20.425 27 20V18.5H3V20C3 20.425 2.8565 20.781 2.5695 21.068C2.2815 21.356 1.925 21.5 1.5 21.5ZM16.5 8H25.5V5C25.5 4.575 25.356 4.2185 25.068 3.9305C24.781 3.6435 24.425 3.5 24 3.5H18C17.575 3.5 17.219 3.6435 16.932 3.9305C16.644 4.2185 16.5 4.575 16.5 5V8ZM4.5 8H13.5V5C13.5 4.575 13.3565 4.2185 13.0695 3.9305C12.7815 3.6435 12.425 3.5 12 3.5H6C5.575 3.5 5.2185 3.6435 4.9305 3.9305C4.6435 4.2185 4.5 4.575 4.5 5V8ZM3 15.5H27V12.5C27 12.075 26.856 11.7185 26.568 11.4305C26.281 11.1435 25.925 11 25.5 11H4.5C4.075 11 3.7185 11.1435 3.4305 11.4305C3.1435 11.7185 3 12.075 3 12.5V15.5Z"
-                                        fill="white" />
-                                </svg>
-
-                                <p>6 Bedded Bunker</p>
-                            </div>
-
-                            <!-- Floor No. -->
-                            <div class="bg-black rounded-md p-1 px-2">
-                                <p>Floor No. 07</p>
-                            </div>
-
-                            <!-- H1 -->
-                            <div class="bg-black rounded-md p-1 px-2 flex gap-2 items-center">
-                                <!-- icon  -->
-                                <svg width="15" height="12" viewBox="0 0 20 17" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M2.49967 14.8333V3.74999C2.49962 3.57893 2.55222 3.412 2.65031 3.27186C2.74841 3.13172 2.88726 3.02516 3.04801 2.96666L11.1072 0.0366607C11.1701 0.013749 11.2377 0.00635487 11.3041 0.0151053C11.3705 0.0238558 11.4338 0.0484928 11.4887 0.0869275C11.5436 0.125362 11.5884 0.176461 11.6193 0.235892C11.6502 0.295323 11.6664 0.361334 11.6663 0.428327V4.55583L16.9297 6.30999C17.0957 6.36529 17.2401 6.47143 17.3424 6.61337C17.4447 6.75531 17.4997 6.92586 17.4997 7.10083V14.8333H19.1663V16.5H0.833008V14.8333H2.49967ZM4.16634 14.8333H9.99967V2.21249L4.16634 4.33416V14.8333ZM15.833 14.8333V7.70166L11.6663 6.31249V14.8333H15.833Z"
-                                        fill="white" />
-                                </svg>
-
-
-                                <p>H1</p>
-                            </div>
-                        </div>
-
-                        <!-- rooms area -->
-                        <div class="grid grid-cols-10 gap-2 pt-5 text-center">
-                            <a href="./calendardetails.html" class="cursor-pointer bg-black rounded-md py-2">101</a>
-                            <a href="./calendardetails.html" class="cursor-pointer bg-[#FF0000] rounded-md py-2">102</a>
-                            <a href="./calendardetails.html" class="cursor-pointer bg-[#FF6B00] rounded-md py-2">103</a>
-                        </div>
+                    <!-- show button -->
+                    <div class="self-end">
+                        <button id="btnShow"
+                            class="px-4 py-1 bg-[#5B7A8F] hover:bg-[#516d7f] text-white text-sm rounded-md transition w-28">Filter</button>
                     </div>
                 </div>
-            </div>
+                <!-- end filter bar -->
 
+                <!-- the table -->
+                <div class="tab-content bg-white rounded-md shadow p-3 w-full text-sm">
+
+                    <table class="w-full text-left border-collapse">
+                        <thead class="text-[#667085]">
+                            <tr>
+                                <th class="py-2">ID</th>
+                                <th class="py-2">Property</th>
+                                <th class="py-2">Room</th>
+                                <th class="py-2">Name</th>
+                                <th class="py-2">Entry date</th>
+                                <th class="py-2">Exit date</th>
+                                <th class="py-2">Days</th>
+                                <th class="py-2">Total</th>
+                                <th class="py-2">Source</th>
+                                <th class="py-2">Status</th>
+                                <th class="py-2 text-center">Check In</th>
+                                <th class="py-2 text-center">Check Out</th>
+                                <th class="py-2"> </th>
+                            </tr>
+                        </thead>
+
+                        <tbody class="table-body">
+
+                            <!-- row 1 -->
+                            <tr data-booking-id="111" data-status="booking" class="border-t search-item text-[#5D6679]">
+                                <td class="py-4 font-semibold text-[#2B2F38]">12345</td>
+                                <td class="py-4 font-semibold">Property 1</td>
+                                <td class="py-4 font-semibold">A201</td>
+                                <td class="py-4">Alexander</td>
+                                <td class="py-4">2025/07/20</td>
+                                <td class="py-4">2025/07/25</td>
+                                <td class="py-4">1</td>
+                                <td class="py-4">250$</td>
+                                <td class="py-4">Airbnb</td>
+                                <td class="status-cell py-4">Booking</td>
+                                <td class="py-4 text-center">
+
+                                    <!-- if custmor didn't check in the button will be in -->
+                                    <button
+                                        class="checkin-btn p-1 px-2 text-xs font-semibold bg-[#71ad69] rounded-md text-white">Check
+                                        In</button>
+
+                                    <!-- if custmor did check in the date of his check in will be in -->
+                                    <p class="checkin-date hidden text-xs font-semibold"></p>
+
+                                </td>
+                                <td class="py-4 text-center">
+                                    <!-- if custmor didn't check Out the button will be in and will ba enabeld when he's did check in -->
+                                    <button disabled
+                                        class="checkout-btn p-1 px-2 text-xs font-semibold bg-[#e7403b] rounded-md text-white disabled:bg-[#e7403b]/50 disabled:cursor-not-allowed">Check
+                                        Out</button>
+
+                                    <!-- if custmor did check Out the date of his check out will be in -->
+                                    <p class="checkout-date hidden text-xs font-semibold"></p>
+
+                                </td>
+                                <td class="cancel-btn py-4 text-right">
+                                    <!-- cancele button -->
+                                    <button class="text-xs font-semibold hover:underline text-red-600">
+                                        cancel
+                                    </button>
+                                </td>
+                            </tr>
+
+                            <!-- row 1 -->
+                            <tr data-booking-id="112" data-status="booking"
+                                class="border-t search-item text-[#5D6679]">
+                                <td class="py-4 font-semibold text-[#2B2F38]">67890</td>
+                                <td class="py-4 font-semibold">Property 2</td>
+                                <td class="py-4 font-semibold">A220</td>
+                                <td class="py-4">Alexander</td>
+                                <td class="py-4">2025/07/23</td>
+                                <td class="py-4">2025/07/28</td>
+                                <td class="py-4">2</td>
+                                <td class="py-4">500$</td>
+                                <td class="py-4">Airbnb</td>
+                                <td class="status-cell py-4">Booking</td>
+                                <td class="py-4 text-center">
+
+                                    <!-- if custmor didn't check in the button will be in -->
+                                    <button
+                                        class="checkin-btn p-1 px-2 text-xs font-semibold bg-[#71ad69] rounded-md text-white">Check
+                                        In</button>
+
+                                    <!-- if custmor did check in the date of his check in will be in -->
+                                    <p class="checkin-date hidden text-xs font-semibold"></p>
+
+                                </td>
+                                <td class="py-4 text-center">
+                                    <!-- if custmor didn't check Out the button will be in and will ba enabeld when he's did check in -->
+                                    <button disabled
+                                        class="checkout-btn p-1 px-2 text-xs font-semibold bg-[#e7403b] rounded-md text-white disabled:bg-[#e7403b]/50 disabled:cursor-not-allowed">Check
+                                        Out</button>
+
+                                    <!-- if custmor did check Out the date of his check out will be in -->
+                                    <p class="checkout-date hidden text-xs font-semibold"></p>
+
+                                </td>
+                                <td class="cancel-btn py-4 text-right">
+                                    <!-- cancele button -->
+                                    <button class="text-xs font-semibold hover:underline text-red-600">
+                                        cancel
+                                    </button>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+
+                </div>
+                <!-- end the table -->
+
+            </div>
 
         </div>
 
     </div>
 
+    <!-- for the filter button -->
+    <script>
+
+        // for date format
+        function parseDate(str) {
+            // replace and - with /
+            const parts = str.replace(/-/g, '/').split('/');
+            const y = parseInt(parts[0], 10);
+            const m = parseInt(parts[1], 10) - 1;
+            const d = parseInt(parts[2], 10);
+            return new Date(y, m, d);
+        }
+
+        document.getElementById('btnShow').addEventListener('click', () => {
+            const fromInput = document.getElementById('fromDate').value; // "YYYY-MM-DD"
+            const toInput = document.getElementById('toDate').value;   // "YYYY-MM-DD"
+            const propInput = document.getElementById('Property').value;
+            const statusInput = document.getElementById('Status').value;
+
+            const fromDate = fromInput ? parseDate(fromInput) : null;
+            const toDate = toInput ? parseDate(toInput) : null;
+
+            document.querySelectorAll('.table-body tr').forEach(row => {
+                const cells = row.querySelectorAll('td');
+                const property = cells[0].textContent.trim();
+                const entryDate = parseDate(cells[3].textContent.trim());
+                const exitDate = parseDate(cells[4].textContent.trim());
+                const status = row.dataset.status;
+
+                let show = true;
+                // from
+                if (fromDate && entryDate < fromDate) {
+                    show = false;
+                }
+                // to
+                if (toDate && exitDate > toDate) {
+                    show = false;
+                }
+                // property name
+                if (propInput !== 'all' && property !== propInput) {
+                    show = false;
+                }
+                // status
+                if (statusInput !== 'all' && status !== statusInput) {
+                    show = false;
+                }
+
+                row.style.display = show ? '' : 'none';
+            });
+        });
+    </script>
+
 </body>
 
-</html>
+<!-- new booking modal -->
+<div id="modal-wrapper" class="fixed inset-0 z-50 hidden">
+    <!-- overlay -->
+    <div id="modal-overlay" class="absolute inset-0 bg-black bg-opacity-50 opacity-0 transition-opacity duration-300">
+    </div>
 
+    <!-- modal box-->
+    <div class="flex items-center justify-center min-h-screen">
+        <div id="modal-box"
+            class="w-[500px] bg-[#F6F6F6] rounded-md transform transition-all duration-300 ease-out opacity-0 scale-75">
+
+            <div id="modal-content" class="w-full">
+
+                <div class="p-7 flex flex-col justify-center items-center w-full">
+
+                    <!-- the header -->
+                    <div class="flex justify-between w-full">
+                        <h1 class="text-lg font-semibold pb-4">New Booking</h1>
+
+                        <!-- X button -->
+                        <div id="close-modal" class="cursor-pointer h-fit">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                            </svg>
+
+                        </div>
+                    </div>
+
+                    <form class="flex gap-2 flex-col items-center w-full px-5">
+
+                        <!-- Name -->
+                        <div class="w-full">
+                            <label for="Name" class="text-xs font-semibold pb-2">Name</label>
+                            <input type="text" name="Name" id="Name" placeholder="Name"
+                                class="w-full rounded-md border px-2 py-1 text-sm">
+                        </div>
+
+                        <!-- National id -->
+                        <div class="w-full">
+                            <label for="id" class="text-xs font-semibold pb-2">National id</label>
+                            <input type="text" name="id" id="id" placeholder="National id"
+                                class="w-full rounded-md border px-2 py-1 text-sm">
+                        </div>
+
+                        <!-- Phone Number -->
+                        <div class="w-full">
+                            <label for="Number" class="text-xs font-semibold pb-2">Phone Number</label>
+                            <input type="text" name="Number" id="Number" placeholder="Phone Number"
+                                class="w-full rounded-md border px-2 py-1 text-sm">
+                        </div>
+
+                        <!-- Hotel name -->
+                        <div class="w-full">
+                            <label for="Hotel" class="text-xs font-semibold pb-2">Hotel Name</label>
+                            <select name="Hotel" id="Hotel" class="w-full rounded-md border px-2 py-1 text-sm">
+                                <option value="" hidden selected>Select Hotel Name</option>
+                                <option value="1">Hotel 1</option>
+                                <option value="2">Hotel 2</option>
+                                <option value="3">Hotel 3</option>
+                            </select>
+                        </div>
+
+                        <!-- Room Number -->
+                        <div class="w-full">
+                            <label for="Room" class="text-xs font-semibold pb-2">Room Number</label>
+                            <select name="Room" id="Room" class="w-full rounded-md border px-2 py-1 text-sm">
+                                <option value="" hidden selected>Select Room Number</option>
+                                <option value="1">Room 101</option>
+                                <option value="2">Room 102</option>
+                                <option value="3">Room 103</option>
+                            </select>
+                        </div>
+
+                        <!-- dates -->
+                        <div class="flex gap-2">
+                            <!-- Entry date -->
+                            <div class="w-full">
+                                <label for="EntryDate" class="text-xs font-semibold pb-2">Entry Date</label>
+                                <input type="date" name="EntryDate" id="EntryDate"
+                                    class="w-full rounded-md border px-2 py-1 text-sm">
+                            </div>
+
+                            <!-- Exit date -->
+                            <div class="w-full">
+                                <label for="ExitDate" class="text-xs font-semibold pb-2">Exit Date</label>
+                                <input type="date" name="ExitDate" id="ExitDate"
+                                    class="w-full rounded-md border px-2 py-1 text-sm">
+                            </div>
+                        </div>
+
+                        <!-- submit button -->
+                        <button type="submit"
+                            class="bg-[#4A4C4F] mt-4 text-white hover:bg-[#3e3f42] transition-all rounded-md p-2 w-36 text-xs font-semibold text-center">
+                            Add Booking
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</html>
 
 <!-- for search input -->
 <script>
@@ -706,6 +933,151 @@
 
         popover.addEventListener('click', e => {
             e.stopPropagation();
+        });
+    });
+</script>
+
+<!-- for new booking modal open/close -->
+<script>
+    const openBtn = document.getElementById('open-modal');
+    const closeBtn = document.getElementById('close-modal');
+    const wrapper = document.getElementById('modal-wrapper');
+    const overlay = document.getElementById('modal-overlay');
+    const box = document.getElementById('modal-box');
+
+    function showModal() {
+        // show the modal
+        wrapper.classList.remove('hidden');
+        // initial state
+        overlay.classList.replace('opacity-100', 'opacity-0');
+        box.classList.replace('opacity-100', 'opacity-0');
+        box.classList.replace('scale-100', 'scale-75');
+
+        requestAnimationFrame(() => {
+            // open animation 
+            overlay.classList.replace('opacity-0', 'opacity-100');
+            box.classList.replace('opacity-0', 'opacity-100');
+            box.classList.replace('scale-75', 'scale-100');
+        });
+    }
+
+    function hideModal() {
+        // colse animation 
+        overlay.classList.replace('opacity-100', 'opacity-0');
+        box.classList.replace('opacity-100', 'opacity-0');
+        box.classList.replace('scale-100', 'scale-75');
+        // hidden the modal
+        setTimeout(() => wrapper.classList.add('hidden'), 300);
+    }
+
+    openBtn.addEventListener('click', showModal);
+    closeBtn.addEventListener('click', hideModal);
+    overlay.addEventListener('click', hideModal);
+</script>
+
+<!-- for update the status (check in - check out - cancel) -->
+<script>
+    // for dates format
+    function formatDate(date) {
+        const yyyy = date.getFullYear();
+        const mm = String(date.getMonth() + 1).padStart(2, '0');
+        const dd = String(date.getDate()).padStart(2, '0');
+        return `${yyyy}/${mm}/${dd}`;
+    }
+
+    // check in button
+    document.querySelectorAll('.checkin-btn').forEach(btn => {
+        btn.addEventListener('click', async () => {
+            // pop window
+            if (!window.confirm('Are you sure you want to check in?')) {
+                return;
+            }
+
+            const row = btn.closest('tr');
+            const bookingId = row.dataset.bookingId;
+
+            try {
+
+                // any back-end function to send the data...
+
+
+                // hide the button and show the date
+                const pDate = row.querySelector('.checkin-date');
+                pDate.textContent = formatDate(new Date());
+                pDate.classList.remove('hidden');
+                btn.classList.add('hidden');
+
+                // enable check out button
+                row.querySelector('.checkout-btn').removeAttribute('disabled');
+
+                // change the sstatus to check in
+                row.querySelector('.status-cell').textContent = 'Check In';
+                row.dataset.status = 'checkIn';
+
+                // hide cancel button
+                row.querySelector('.cancel-btn').classList.add('hidden');
+            } catch {
+                alert('Check-in failed.');
+            }
+        });
+    });
+
+    // check out button
+    document.querySelectorAll('.checkout-btn').forEach(btn => {
+        btn.addEventListener('click', async () => {
+
+            // pop window
+            if (!window.confirm('Are you sure you want to check out?')) {
+                return;
+            }
+
+            const row = btn.closest('tr');
+            const bookingId = row.dataset.bookingId;
+
+            try {
+
+                // any back-end function to send the data...
+
+                // hide check out button and show the date
+                const pDate = row.querySelector('.checkout-date');
+                pDate.textContent = formatDate(new Date());
+                pDate.classList.remove('hidden');
+                btn.classList.add('hidden');
+
+                // change the status to check out 
+                row.querySelector('.status-cell').textContent = 'Check Out';
+                row.dataset.status = 'checkOut';
+            } catch {
+                alert('Check-out failed.');
+            }
+        });
+    });
+
+    // cancel button
+    document.querySelectorAll('.cancel-btn').forEach(btn => {
+        btn.addEventListener('click', async () => {
+            // pop window 
+            if (!window.confirm('Are you sure you want to cancel your reservation?')) {
+                return;
+            }
+
+            const row = btn.closest('tr');
+            const bookingId = row.dataset.bookingId;
+
+            try {
+                // any back-end functions to send the cancele request ...
+
+                // change the status to chancelled with red color
+                row.querySelector('.status-cell').textContent = 'Cancelled';
+                row.dataset.status = 'cancelled';
+                row.querySelector('.status-cell').classList.add('text-red-500');
+
+                // hide all the buttons (check in - check out - cancel)
+                row.querySelectorAll('button').forEach(b => b.classList.add('hidden'));
+            }
+            catch {
+                alert('Cancellation failed.');
+            }
         });
     });
 </script>

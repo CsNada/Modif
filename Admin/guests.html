@@ -3,7 +3,7 @@
 
 <head>
 
-    <title>Calendar</title>
+    <title></title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -99,10 +99,9 @@
                             <p>Invoices</p>
                         </a>
                     </li>
-
+                    
                     <!-- guests -->
-                    <li
-                        class="hover:bg-[#FFFFFF] transition-all duration-100 rounded text-[#FFFFFF] hover:text-[#1E2227] hover:fill-[#1E2227] mb-1 pl-1">
+                    <li class="bg-[#FFFFFF] rounded text-[#1E2227] font-bold mb-1 pl-1">
                         <a href="./guests.html" class="flex gap-2 items-center p-2">
                             <svg width="19" height="19" viewBox="0 0 28 36" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -129,7 +128,8 @@
                     </li>
 
                     <!-- Calendar -->
-                    <li class="bg-[#FFFFFF] rounded text-[#1E2227] font-bold mb-1 pl-1">
+                    <li
+                        class="hover:bg-[#FFFFFF] transition-all duration-100 rounded text-[#FFFFFF] hover:text-[#1E2227] hover:fill-[#1E2227] mb-1 pl-1">
                         <a href="./calendar.html" class="flex gap-2 items-center p-2">
                             <svg width="19" height="19" viewBox="0 0 27 36" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -192,6 +192,7 @@
                             <p>channel manger</p>
                         </a>
                     </li>
+
                 </ul>
             </nav>
 
@@ -214,6 +215,7 @@
                             <p>Reports</p>
                         </a>
                     </li>
+                    
                     <!-- User Management -->
                     <li class="pl-1 border-l border-[#EBEBEB]">
                         <a href="./usermanagement.html" class="flex gap-2 items-center p-1.5">
@@ -502,149 +504,68 @@
             </div>
 
             <!-- page -->
-            <div class="p-5 px-7">
-                <!-- header  -->
-                <div class="flex justify-between items-center">
-                    <!-- Total Hostels -->
-                    <div class="bg-[#141414] rounded-md px-5 py-2 text-white text-xs">
-                        <p>Total Hostels 4</p>
+            <div class="p-5 px-7 pt-10 space-y-6">
+
+                <!-- <div class="flex justify-end">
+                    <div class="flex gap-2 text-[#0079FF] text-xs font-semibold items-center px-5 py-1 border w-fit rounded-md cursor-pointer bg-blue-100/75 hover:bg-blue-200/75 transition-all">
+                        <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M3.898 0.00699997L4 0C4.18124 7.6429e-06 4.35634 0.0656426 4.49293 0.184767C4.62952 0.303891 4.71835 0.468446 4.743 0.648L4.75 0.75V3.249L7.25 3.25C7.43124 3.25001 7.60634 3.31564 7.74293 3.43477C7.87952 3.55389 7.96835 3.71845 7.993 3.898L8 4C7.99999 4.18124 7.93436 4.35634 7.81523 4.49293C7.69611 4.62952 7.53155 4.71835 7.352 4.743L7.25 4.75L4.75 4.749V7.25C4.74999 7.43124 4.68436 7.60634 4.56523 7.74293C4.44611 7.87952 4.28155 7.96835 4.102 7.993L4 8C3.81876 7.99999 3.64366 7.93436 3.50707 7.81523C3.37048 7.69611 3.28165 7.53155 3.257 7.352L3.25 7.25V4.749L0.75 4.75C0.568762 4.74999 0.393658 4.68436 0.257069 4.56523C0.120481 4.44611 0.0316483 4.28155 0.00699997 4.102L0 4C7.6429e-06 3.81876 0.0656426 3.64366 0.184767 3.50707C0.303891 3.37048 0.468446 3.28165 0.648 3.257L0.75 3.25L3.25 3.249V0.75C3.25001 0.568762 3.31564 0.393658 3.43477 0.257069C3.55389 0.120481 3.71845 0.0316483 3.898 0.00699997Z"
+                                fill="#0079FF" />
+                        </svg>
+
+                        <p>Add Column</p>
                     </div>
+                </div> -->
+                
+                <!-- the table -->
+                <div class="rounded-md shadow p-5">
+                    <!-- the table -->
+                    <div class="tab-content">
 
-                    <!-- buttons  -->
-                    <div class="space-x-5 text-white text-xs font-semibold">
-                        <a href="./calendarcode.html" class="bg-[#4A4C4F] rounded-md px-5 py-2 hover:bg-[#414245] transition-all">Create a
-                            code</a>
-                        <a href="./calendarcalender.html"
-                            class="bg-[#4A4C4F] rounded-md px-5 py-2 hover:bg-[#414245] transition-all">Calendar</a>
-                    </div>
-                </div>
+                        <table class="w-full text-left text-sm border-collapse">
+                            <thead class="text-[#667085]">
+                                <tr>
+                                    <th class="py-2">Name</th>
+                                    <th class="py-2">Email</th>
+                                    <th class="py-2">Company name</th>
+                                    <th class="py-2">Role</th>
+                                    <th class="py-2">Recent activity</th>
+                                </tr>
+                            </thead>
 
-                <!-- filter bar -->
-                <form class="flex justify-end items-center gap-10 pt-5">
+                            <tbody class="table-body">
 
-                    <!-- Room Types -->
-                    <div class="flex gap-2 items-center">
-                        <p class="text-[#B0B0B0] text-sm font-semibold">Room Types</p>
-                        <select name="Room-Types" id="Room-Types"
-                            class="bg-[#4A4C4F] rounded-md p-1.5 px-3 outline-none font-semibold text-white text-xs">
-                            <option value="All">All</option>
-                            <option value="">option 1</option>
-                            <option value="">option 2</option>
-                        </select>
-                    </div>
+                                <!-- row 1 -->
+                                <tr class="border-t hover:bg-gray-100/75 search-item">
+                                    <td class="py-4 font-semibold text-[#2B2F38]">Lindsey Stroud test</td>
+                                    <td class="py-4 text-[#5D6679]">lindsey.stroud@gmail.com</td>
+                                    <td class="py-4 text-[#5D6679]">Hatchbuck</td>
+                                    <td class="py-4 text-[#5D6679]">Manager</td>
+                                    <td class="py-4 text-[#5D6679]">5 Minutes ago</td>
+                                </tr>
 
-                    <!-- Hostels -->
-                    <div class="flex gap-2 items-center">
-                        <p class="text-[#B0B0B0] text-sm font-semibold">Hostels</p>
-                        <select name="Hostels" id="Hostels"
-                            class="bg-[#4A4C4F] rounded-md p-1.5 px-3 outline-none font-semibold text-white text-xs">
-                            <option value="All">All</option>
-                            <option value="">option 1</option>
-                            <option value="">option 2</option>
-                        </select>
-                    </div>
+                                <!-- row 2 -->
+                                <tr class="border-t hover:bg-gray-100/75 search-item">
+                                    <td class="py-4 font-semibold text-[#2B2F38]">Lindsey Stroud</td>
+                                    <td class="py-4 text-[#5D6679]">lindsey.stroud@gmail.com</td>
+                                    <td class="py-4 text-[#5D6679]">Hatchbuck</td>
+                                    <td class="py-4 text-[#5D6679]">Manager</td>
+                                    <td class="py-4 text-[#5D6679]">6 Hours ago</td>
+                                </tr>
 
-                    <!-- Floors -->
-                    <div class="flex gap-2 items-center">
-                        <p class="text-[#B0B0B0] text-sm font-semibold">Floors</p>
-                        <select name="Floors" id="Floors"
-                            class="bg-[#4A4C4F] rounded-md p-1.5 px-3 outline-none font-semibold text-white text-xs">
-                            <option value="All">All</option>
-                            <option value="">option 1</option>
-                            <option value="">option 2</option>
-                        </select>
-                    </div>
-                </form>
+                                <!-- row 3 -->
+                                <tr class="border-t hover:bg-gray-100/75 search-item">
+                                    <td class="py-4 font-semibold text-[#2B2F38]">Lindsey Stroud</td>
+                                    <td class="py-4 text-[#5D6679]">lindsey.stroud@gmail.com</td>
+                                    <td class="py-4 text-[#5D6679]">Hatchbuck</td>
+                                    <td class="py-4 text-[#5D6679]">Manager</td>
+                                    <td class="py-4 text-[#5D6679]">Dec 14, 2020</td>
+                                </tr>
 
-                <!-- boxes area -->
-                <div class="grid grid-cols-2 gap-5 pt-10 font-semibold text-xs">
-
-                    <!-- box 1 -->
-                    <div class="p-4 bg-[#202020] rounded-md text-white search-item">
-                        <!-- header  -->
-                        <div class="flex gap-5 items-center">
-                            <!-- icon and title -->
-                            <div class="flex gap-2 items-center">
-                                <svg width="20" height="12" viewBox="0 0 30 22" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M1.5 21.5C1.075 21.5 0.719 21.356 0.432 21.068C0.144 20.781 0 20.425 0 20V12.5C0 11.825 0.1375 11.2125 0.4125 10.6625C0.6875 10.1125 1.05 9.625 1.5 9.2V5C1.5 3.75 1.9375 2.6875 2.8125 1.8125C3.6875 0.9375 4.75 0.5 6 0.5H12C12.575 0.5 13.1125 0.6065 13.6125 0.8195C14.1125 1.0315 14.575 1.325 15 1.7C15.425 1.325 15.8875 1.0315 16.3875 0.8195C16.8875 0.6065 17.425 0.5 18 0.5H24C25.25 0.5 26.3125 0.9375 27.1875 1.8125C28.0625 2.6875 28.5 3.75 28.5 5V9.2C28.95 9.625 29.3125 10.1125 29.5875 10.6625C29.8625 11.2125 30 11.825 30 12.5V20C30 20.425 29.856 20.781 29.568 21.068C29.281 21.356 28.925 21.5 28.5 21.5C28.075 21.5 27.719 21.356 27.432 21.068C27.144 20.781 27 20.425 27 20V18.5H3V20C3 20.425 2.8565 20.781 2.5695 21.068C2.2815 21.356 1.925 21.5 1.5 21.5ZM16.5 8H25.5V5C25.5 4.575 25.356 4.2185 25.068 3.9305C24.781 3.6435 24.425 3.5 24 3.5H18C17.575 3.5 17.219 3.6435 16.932 3.9305C16.644 4.2185 16.5 4.575 16.5 5V8ZM4.5 8H13.5V5C13.5 4.575 13.3565 4.2185 13.0695 3.9305C12.7815 3.6435 12.425 3.5 12 3.5H6C5.575 3.5 5.2185 3.6435 4.9305 3.9305C4.6435 4.2185 4.5 4.575 4.5 5V8ZM3 15.5H27V12.5C27 12.075 26.856 11.7185 26.568 11.4305C26.281 11.1435 25.925 11 25.5 11H4.5C4.075 11 3.7185 11.1435 3.4305 11.4305C3.1435 11.7185 3 12.075 3 12.5V15.5Z"
-                                        fill="white" />
-                                </svg>
-
-                                <p>6 Bedded Bunker - test</p>
-                            </div>
-
-                            <!-- Floor No. -->
-                            <div class="bg-black rounded-md p-1 px-2">
-                                <p>Floor No. 07</p>
-                            </div>
-
-                            <!-- H1 -->
-                            <div class="bg-black rounded-md p-1 px-2 flex gap-2 items-center">
-                                <!-- icon  -->
-                                <svg width="15" height="12" viewBox="0 0 20 17" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M2.49967 14.8333V3.74999C2.49962 3.57893 2.55222 3.412 2.65031 3.27186C2.74841 3.13172 2.88726 3.02516 3.04801 2.96666L11.1072 0.0366607C11.1701 0.013749 11.2377 0.00635487 11.3041 0.0151053C11.3705 0.0238558 11.4338 0.0484928 11.4887 0.0869275C11.5436 0.125362 11.5884 0.176461 11.6193 0.235892C11.6502 0.295323 11.6664 0.361334 11.6663 0.428327V4.55583L16.9297 6.30999C17.0957 6.36529 17.2401 6.47143 17.3424 6.61337C17.4447 6.75531 17.4997 6.92586 17.4997 7.10083V14.8333H19.1663V16.5H0.833008V14.8333H2.49967ZM4.16634 14.8333H9.99967V2.21249L4.16634 4.33416V14.8333ZM15.833 14.8333V7.70166L11.6663 6.31249V14.8333H15.833Z"
-                                        fill="white" />
-                                </svg>
-
-
-                                <p>H1</p>
-                            </div>
-                        </div>
-
-                        <!-- rooms area -->
-                        <div class="grid grid-cols-10 lg:grid-cols-10 gap-2 pt-5 text-center">
-                            <a href="./calendardetails.html" class="cursor-pointer bg-black rounded-md py-2">101</a>
-                            <a href="./calendardetails.html" class="cursor-pointer bg-[#FF0000] rounded-md py-2">102</a>
-                            <a href="./calendardetails.html" class="cursor-pointer bg-[#FF6B00] rounded-md py-2">103</a>
-                        </div>
-                    </div>
-
-                    <!-- box 2 -->
-                    <div class="p-4 bg-[#202020] rounded-md text-white search-item">
-                        <!-- header  -->
-                        <div class="flex gap-5 items-center">
-                            <!-- icon and title -->
-                            <div class="flex gap-2 items-center">
-                                <svg width="20" height="12" viewBox="0 0 30 22" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M1.5 21.5C1.075 21.5 0.719 21.356 0.432 21.068C0.144 20.781 0 20.425 0 20V12.5C0 11.825 0.1375 11.2125 0.4125 10.6625C0.6875 10.1125 1.05 9.625 1.5 9.2V5C1.5 3.75 1.9375 2.6875 2.8125 1.8125C3.6875 0.9375 4.75 0.5 6 0.5H12C12.575 0.5 13.1125 0.6065 13.6125 0.8195C14.1125 1.0315 14.575 1.325 15 1.7C15.425 1.325 15.8875 1.0315 16.3875 0.8195C16.8875 0.6065 17.425 0.5 18 0.5H24C25.25 0.5 26.3125 0.9375 27.1875 1.8125C28.0625 2.6875 28.5 3.75 28.5 5V9.2C28.95 9.625 29.3125 10.1125 29.5875 10.6625C29.8625 11.2125 30 11.825 30 12.5V20C30 20.425 29.856 20.781 29.568 21.068C29.281 21.356 28.925 21.5 28.5 21.5C28.075 21.5 27.719 21.356 27.432 21.068C27.144 20.781 27 20.425 27 20V18.5H3V20C3 20.425 2.8565 20.781 2.5695 21.068C2.2815 21.356 1.925 21.5 1.5 21.5ZM16.5 8H25.5V5C25.5 4.575 25.356 4.2185 25.068 3.9305C24.781 3.6435 24.425 3.5 24 3.5H18C17.575 3.5 17.219 3.6435 16.932 3.9305C16.644 4.2185 16.5 4.575 16.5 5V8ZM4.5 8H13.5V5C13.5 4.575 13.3565 4.2185 13.0695 3.9305C12.7815 3.6435 12.425 3.5 12 3.5H6C5.575 3.5 5.2185 3.6435 4.9305 3.9305C4.6435 4.2185 4.5 4.575 4.5 5V8ZM3 15.5H27V12.5C27 12.075 26.856 11.7185 26.568 11.4305C26.281 11.1435 25.925 11 25.5 11H4.5C4.075 11 3.7185 11.1435 3.4305 11.4305C3.1435 11.7185 3 12.075 3 12.5V15.5Z"
-                                        fill="white" />
-                                </svg>
-
-                                <p>6 Bedded Bunker</p>
-                            </div>
-
-                            <!-- Floor No. -->
-                            <div class="bg-black rounded-md p-1 px-2">
-                                <p>Floor No. 07</p>
-                            </div>
-
-                            <!-- H1 -->
-                            <div class="bg-black rounded-md p-1 px-2 flex gap-2 items-center">
-                                <!-- icon  -->
-                                <svg width="15" height="12" viewBox="0 0 20 17" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M2.49967 14.8333V3.74999C2.49962 3.57893 2.55222 3.412 2.65031 3.27186C2.74841 3.13172 2.88726 3.02516 3.04801 2.96666L11.1072 0.0366607C11.1701 0.013749 11.2377 0.00635487 11.3041 0.0151053C11.3705 0.0238558 11.4338 0.0484928 11.4887 0.0869275C11.5436 0.125362 11.5884 0.176461 11.6193 0.235892C11.6502 0.295323 11.6664 0.361334 11.6663 0.428327V4.55583L16.9297 6.30999C17.0957 6.36529 17.2401 6.47143 17.3424 6.61337C17.4447 6.75531 17.4997 6.92586 17.4997 7.10083V14.8333H19.1663V16.5H0.833008V14.8333H2.49967ZM4.16634 14.8333H9.99967V2.21249L4.16634 4.33416V14.8333ZM15.833 14.8333V7.70166L11.6663 6.31249V14.8333H15.833Z"
-                                        fill="white" />
-                                </svg>
-
-
-                                <p>H1</p>
-                            </div>
-                        </div>
-
-                        <!-- rooms area -->
-                        <div class="grid grid-cols-10 gap-2 pt-5 text-center">
-                            <a href="./calendardetails.html" class="cursor-pointer bg-black rounded-md py-2">101</a>
-                            <a href="./calendardetails.html" class="cursor-pointer bg-[#FF0000] rounded-md py-2">102</a>
-                            <a href="./calendardetails.html" class="cursor-pointer bg-[#FF6B00] rounded-md py-2">103</a>
-                        </div>
+                                <!-- more rows -->
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
@@ -653,6 +574,13 @@
         </div>
 
     </div>
+
+
+
+
+
+
+
 
 </body>
 
