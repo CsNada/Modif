@@ -3,10 +3,13 @@
 
 <head>
 
-    <title></title>
+    <title>Guests</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/country-select-js@2.0.1/build/js/countrySelect.min.js"></script>
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/country-select-js@2.0.1/build/css/countrySelect.min.css" />
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;400;700&display=swap');
@@ -29,6 +32,18 @@
 
         .grid-lines span {
             transform: translateY(-50%);
+        }
+
+        /* Chrome, Safari, Edge, Opera */
+        input[type=number]::-webkit-outer-spin-button,
+        input[type=number]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        /* Firefox */
+        input[type=number] {
+            -moz-appearance: textfield;
         }
     </style>
 </head>
@@ -99,7 +114,7 @@
                             <p>Invoices</p>
                         </a>
                     </li>
-                    
+
                     <!-- guests -->
                     <li class="bg-[#FFFFFF] rounded text-[#1E2227] font-bold mb-1 pl-1">
                         <a href="./guests.html" class="flex gap-2 items-center p-2">
@@ -215,7 +230,7 @@
                             <p>Reports</p>
                         </a>
                     </li>
-                    
+
                     <!-- User Management -->
                     <li class="pl-1 border-l border-[#EBEBEB]">
                         <a href="./usermanagement.html" class="flex gap-2 items-center p-1.5">
@@ -506,68 +521,70 @@
             <!-- page -->
             <div class="p-5 px-7 pt-10 space-y-6">
 
-                <!-- <div class="flex justify-end">
-                    <div class="flex gap-2 text-[#0079FF] text-xs font-semibold items-center px-5 py-1 border w-fit rounded-md cursor-pointer bg-blue-100/75 hover:bg-blue-200/75 transition-all">
+                <!-- title -->
+                <div class="flex justify-between">
+                    <h1 class="text-lg font-semibold">Guests Management</h1>
+                    <div id="open-modal"
+                        class="flex gap-2 text-white text-xs font-semibold items-center px-5 py-1.5 border w-fit rounded-md cursor-pointer bg-[#4A4C4F] hover:bg-[#3e3f42] transition-all">
                         <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M3.898 0.00699997L4 0C4.18124 7.6429e-06 4.35634 0.0656426 4.49293 0.184767C4.62952 0.303891 4.71835 0.468446 4.743 0.648L4.75 0.75V3.249L7.25 3.25C7.43124 3.25001 7.60634 3.31564 7.74293 3.43477C7.87952 3.55389 7.96835 3.71845 7.993 3.898L8 4C7.99999 4.18124 7.93436 4.35634 7.81523 4.49293C7.69611 4.62952 7.53155 4.71835 7.352 4.743L7.25 4.75L4.75 4.749V7.25C4.74999 7.43124 4.68436 7.60634 4.56523 7.74293C4.44611 7.87952 4.28155 7.96835 4.102 7.993L4 8C3.81876 7.99999 3.64366 7.93436 3.50707 7.81523C3.37048 7.69611 3.28165 7.53155 3.257 7.352L3.25 7.25V4.749L0.75 4.75C0.568762 4.74999 0.393658 4.68436 0.257069 4.56523C0.120481 4.44611 0.0316483 4.28155 0.00699997 4.102L0 4C7.6429e-06 3.81876 0.0656426 3.64366 0.184767 3.50707C0.303891 3.37048 0.468446 3.28165 0.648 3.257L0.75 3.25L3.25 3.249V0.75C3.25001 0.568762 3.31564 0.393658 3.43477 0.257069C3.55389 0.120481 3.71845 0.0316483 3.898 0.00699997Z"
-                                fill="#0079FF" />
+                                fill="currentColor" />
                         </svg>
 
-                        <p>Add Column</p>
-                    </div>
-                </div> -->
-                
-                <!-- the table -->
-                <div class="rounded-md shadow p-5">
-                    <!-- the table -->
-                    <div class="tab-content">
-
-                        <table class="w-full text-left text-sm border-collapse">
-                            <thead class="text-[#667085]">
-                                <tr>
-                                    <th class="py-2">Name</th>
-                                    <th class="py-2">Email</th>
-                                    <th class="py-2">Company name</th>
-                                    <th class="py-2">Role</th>
-                                    <th class="py-2">Recent activity</th>
-                                </tr>
-                            </thead>
-
-                            <tbody class="table-body">
-
-                                <!-- row 1 -->
-                                <tr class="border-t hover:bg-gray-100/75 search-item">
-                                    <td class="py-4 font-semibold text-[#2B2F38]">Lindsey Stroud test</td>
-                                    <td class="py-4 text-[#5D6679]">lindsey.stroud@gmail.com</td>
-                                    <td class="py-4 text-[#5D6679]">Hatchbuck</td>
-                                    <td class="py-4 text-[#5D6679]">Manager</td>
-                                    <td class="py-4 text-[#5D6679]">5 Minutes ago</td>
-                                </tr>
-
-                                <!-- row 2 -->
-                                <tr class="border-t hover:bg-gray-100/75 search-item">
-                                    <td class="py-4 font-semibold text-[#2B2F38]">Lindsey Stroud</td>
-                                    <td class="py-4 text-[#5D6679]">lindsey.stroud@gmail.com</td>
-                                    <td class="py-4 text-[#5D6679]">Hatchbuck</td>
-                                    <td class="py-4 text-[#5D6679]">Manager</td>
-                                    <td class="py-4 text-[#5D6679]">6 Hours ago</td>
-                                </tr>
-
-                                <!-- row 3 -->
-                                <tr class="border-t hover:bg-gray-100/75 search-item">
-                                    <td class="py-4 font-semibold text-[#2B2F38]">Lindsey Stroud</td>
-                                    <td class="py-4 text-[#5D6679]">lindsey.stroud@gmail.com</td>
-                                    <td class="py-4 text-[#5D6679]">Hatchbuck</td>
-                                    <td class="py-4 text-[#5D6679]">Manager</td>
-                                    <td class="py-4 text-[#5D6679]">Dec 14, 2020</td>
-                                </tr>
-
-                                <!-- more rows -->
-                            </tbody>
-                        </table>
+                        <p>New Guest</p>
                     </div>
                 </div>
+
+                <!-- the table -->
+                <div class="tab-content rounded-md shadow p-5">
+
+                    <table class="w-full text-left text-sm border-collapse">
+                        <thead class="text-[#667085]">
+                            <tr>
+                                <th class="py-2">Name</th>
+                                <th class="py-2">Nationality</th>
+                                <th class="py-2">ID Type</th>
+                                <th class="py-2">ID Number</th>
+                                <th class="py-2">Phone Number</th>
+                                <th class="py-2">Email</th>
+                                <th class="py-2 text-center">Number of bookings</th>
+                                <th class="py-2 text-center">Total payments</th>
+                                <th class="py-2"></th>
+                            </tr>
+                        </thead>
+
+                        <tbody class="table-body">
+
+                            <!-- row 1 -->
+                            <tr class="border-t hover:bg-gray-100/75 search-item text-[#5D6679]">
+                                <td class="py-4 font-semibold">Nora</td>
+                                <td class="py-4">Saudi Arabia</td>
+                                <td class="py-4">National ID</td>
+                                <td class="py-4">0555555555</td>
+                                <td class="py-4">1111111111</td>
+                                <td class="py-4">Nora@gmail.com</td>
+                                <td class="py-4 text-center font-bold">2</td>
+                                <td class="py-4 text-center font-bold">700</td>
+                                <td class="flex justify-end items-center pr-1 py-3">
+                                    <button
+                                        class="edit p-1 px-2 text-white rounded-md cursor-pointer text-xs font-semibold bg-[#5B7A8F] hover:bg-[#516d7f] flex items-center gap-1">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="size-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
+                                        </svg>
+
+                                        <p>Edit</p>
+                                    </button>
+                                </td>
+                            </tr>
+
+                            <!-- more rows -->
+                        </tbody>
+                    </table>
+                </div>
+
             </div>
 
 
@@ -575,17 +592,231 @@
 
     </div>
 
-
-
-
-
-
-
-
 </body>
 
-</html>
+<!-- new guest modal -->
+<div id="modal-wrapper" class="fixed inset-0 z-50 hidden">
+    <!-- overlay -->
+    <div id="modal-overlay" class="absolute inset-0 bg-black bg-opacity-50 opacity-0 transition-opacity duration-300">
+    </div>
 
+    <!-- modal box-->
+    <div class="flex items-center justify-center min-h-screen">
+        <div id="modal-box"
+            class="w-[700px] bg-[#F6F6F6] rounded-md transform transition-all duration-300 ease-out opacity-0 scale-75">
+
+            <div id="modal-content" class="p-7 flex flex-col justify-center items-center w-full">
+
+                <!-- the header -->
+                <div class="flex justify-between w-full">
+                    <h1 class="text-lg font-semibold pb-4">New Guest</h1>
+
+                    <!-- X button -->
+                    <div id="close-modal" class="cursor-pointer h-fit">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                        </svg>
+
+                    </div>
+                </div>
+
+                <form class="flex gap-2 flex-col items-center w-full px-3">
+
+                    <!-- inputs -->
+                    <div class="w-full grid grid-cols-2 gap-4">
+                        <!-- Name -->
+                        <div class="w-full">
+                            <label for="Name" class="text-xs font-semibold pb-2">Name</label>
+                            <input type="text" name="Name" id="Name" placeholder="Name" required
+                                class="w-full rounded-md border px-2 py-1 text-sm">
+                        </div>
+
+                        <!-- Phone Number -->
+                        <div class="w-full">
+                            <label for="Phone" class="text-xs font-semibold pb-2">Phone Number</label>
+                            <input type="number" name="Phone" id="Phone" placeholder="05XXXXXXXX" required
+                                class="w-full rounded-md border px-2 py-1 text-sm no-spin">
+                        </div>
+
+                        <!-- ID Type -->
+                        <div class="w-full">
+                            <label for="idType" class="text-xs font-semibold pb-2">ID Type</label>
+                            <select name="idType" id="idType" required
+                                class="w-full rounded-md border px-2 py-1 text-sm">
+                                <option value="" hidden>Select ID Type</option>
+                                <option value="nationalId">National ID</option>
+                                <option value="passport">Passport</option>
+                                <option value="residencePermit">Residence Permit</option>
+                                <option value="gulfId">Gulf ID</option>
+                                <option value="familyId">Family ID</option>
+                                <option value="visitorId">Visitor ID</option>
+                            </select>
+                        </div>
+
+                        <!-- ID Number -->
+                        <div class="w-full">
+                            <label for="idNumber" class="text-xs font-semibold pb-2">ID Number</label>
+                            <input type="number" name="idNumber" id="idNumber" placeholder="ID Number" required
+                                class="w-full rounded-md border px-2 py-1 text-sm">
+                        </div>
+
+                        <!-- Nationality -->
+                        <div class="w-full">
+                            <label for="Nationality" class="text-xs font-semibold pb-2">Nationality</label>
+                            <input id="nationality" type="text" name="Nationality" placeholder="Select Nationality"
+                                list="countries" autocomplete="off" required
+                                class="w-full rounded-md border px-2 py-1 text-sm">
+                            <datalist id="countries"></datalist>
+
+                            <!-- error message -->
+                            <p id="nat-error" class="mt-1 text-red-600 text-xs font-semibold hidden">
+                                Please select a valid country from the list.
+                            </p>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="w-full">
+                            <label for="email" class="text-xs font-semibold pb-2">Email <span
+                                    class="text-[10px] text-gray-500">(optional)</span></label>
+                            <input type="email" name="email" id="email" placeholder="email@example.com"
+                                class="w-full rounded-md border px-2 py-1 text-sm">
+                        </div>
+
+                        <!-- Notes -->
+                        <div class="w-full col-span-2">
+                            <label for="notes" class="text-xs font-semibold pb-2">Notes <span
+                                    class="text-[10px] text-gray-500">(optional)</span></label>
+                            <textarea name="notes" id="notes" placeholder="Notes ..." rows="3"
+                                class="w-full rounded-md border px-2 py-1 text-sm resize-none"></textarea>
+                        </div>
+
+                    </div>
+
+                    <!-- submit button -->
+                    <button type="submit" id="submit-btn"
+                        class="bg-[#4A4C4F] mt-4 text-white hover:bg-[#3e3f42] transition-all rounded-md p-2 w-36 text-xs font-semibold text-center opacity-50">
+                        Add New Geust
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Edit guest modal -->
+<div id="modal-wrapper2" class="fixed inset-0 z-50 hidden">
+    <!-- overlay -->
+    <div id="modal-overlay2" class="absolute inset-0 bg-black bg-opacity-50 opacity-0 transition-opacity duration-300">
+    </div>
+
+    <!-- modal box-->
+    <div class="flex items-center justify-center min-h-screen">
+        <div id="modal-box2"
+            class="w-[700px] bg-[#F6F6F6] rounded-md transform transition-all duration-300 ease-out opacity-0 scale-75">
+
+            <div id="modal-content2" class="p-7 flex flex-col justify-center items-center w-full">
+
+                <!-- the header -->
+                <div class="flex justify-between w-full">
+                    <h1 class="text-lg font-semibold pb-4">Edit Guest info</h1>
+
+                    <!-- X button -->
+                    <div id="close-modal2" class="cursor-pointer h-fit">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                        </svg>
+
+                    </div>
+                </div>
+
+                <form class="flex gap-2 flex-col items-center w-full px-3">
+
+                    <!-- inputs -->
+                    <div class="w-full grid grid-cols-2 gap-4">
+                        <!-- Name -->
+                        <div class="w-full">
+                            <label for="Name" class="text-xs font-semibold pb-2">Name</label>
+                            <input type="text" name="Name" id="Name" placeholder="Name" value="Nora" required
+                                class="w-full rounded-md border px-2 py-1 text-sm">
+                        </div>
+
+                        <!-- Phone Number -->
+                        <div class="w-full">
+                            <label for="Phone" class="text-xs font-semibold pb-2">Phone Number</label>
+                            <input type="number" name="Phone" id="Phone" placeholder="05XXXXXXXX" value="05555555555"
+                                required class="w-full rounded-md border px-2 py-1 text-sm no-spin">
+                        </div>
+
+                        <!-- ID Type -->
+                        <div class="w-full">
+                            <label for="idType" class="text-xs font-semibold pb-2">ID Type</label>
+                            <select name="idType" id="idType" required
+                                class="w-full rounded-md border px-2 py-1 text-sm">
+                                <option value="" hidden>Select ID Type</option>
+                                <option value="nationalId" selected>National ID</option>
+                                <option value="passport">Passport</option>
+                                <option value="residencePermit">Residence Permit</option>
+                                <option value="gulfId">Gulf ID</option>
+                                <option value="familyId">Family ID</option>
+                                <option value="visitorId">Visitor ID</option>
+                            </select>
+                        </div>
+
+                        <!-- ID Number -->
+                        <div class="w-full">
+                            <label for="idNumber" class="text-xs font-semibold pb-2">ID Number</label>
+                            <input type="number" name="idNumber" id="idNumber" placeholder="ID Number" value="111111111"
+                                required class="w-full rounded-md border px-2 py-1 text-sm">
+                        </div>
+
+                        <!-- Nationality -->
+                        <div class="w-full">
+                            <label for="Nationality" class="text-xs font-semibold pb-2">Nationality</label>
+                            <input id="nationality-2" type="text" name="Nationality" placeholder="Select Nationality"
+                                list="countries-2" autocomplete="off" required value="Saudi Arabia"
+                                class="w-full rounded-md border px-2 py-1 text-sm">
+                            <datalist id="countries-2"></datalist>
+
+                            <!-- error message -->
+                            <p id="nat-error-2" class="mt-1 text-red-600 text-xs font-semibold hidden">
+                                Please select a valid country from the list.
+                            </p>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="w-full">
+                            <label for="email" class="text-xs font-semibold pb-2">Email <span
+                                    class="text-[10px] text-gray-500">(optional)</span></label>
+                            <input type="email" name="email" id="email" placeholder="email@example.com"
+                                value="Nora@gmail.com" class="w-full rounded-md border px-2 py-1 text-sm">
+                        </div>
+
+                        <!-- Notes -->
+                        <div class="w-full col-span-2">
+                            <label for="notes" class="text-xs font-semibold pb-2">Notes <span
+                                    class="text-[10px] text-gray-500">(optional)</span></label>
+                            <textarea name="notes" id="notes" placeholder="Notes ..." rows="3"
+                                class="w-full rounded-md border px-2 py-1 text-sm resize-none">Note ... </textarea>
+                        </div>
+
+                    </div>
+
+                    <!-- submit button -->
+                    <button type="submit" id="submit-btn-2"
+                        class="bg-[#4A4C4F] mt-4 text-white hover:bg-[#3e3f42] transition-all rounded-md p-2 w-36 text-xs font-semibold text-center">
+                        Upadte
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</html>
 
 <!-- for search input -->
 <script>
@@ -635,5 +866,205 @@
         popover.addEventListener('click', e => {
             e.stopPropagation();
         });
+    });
+</script>
+
+<!-- for new guest modal open/close -->
+<script>
+    const openBtn = document.getElementById('open-modal');
+    const closeBtn = document.getElementById('close-modal');
+    const wrapper = document.getElementById('modal-wrapper');
+    const overlay = document.getElementById('modal-overlay');
+    const box = document.getElementById('modal-box');
+
+    function showModal() {
+        // show the modal
+        wrapper.classList.remove('hidden');
+        // initial state
+        overlay.classList.replace('opacity-100', 'opacity-0');
+        box.classList.replace('opacity-100', 'opacity-0');
+        box.classList.replace('scale-100', 'scale-75');
+
+        requestAnimationFrame(() => {
+            // open animation 
+            overlay.classList.replace('opacity-0', 'opacity-100');
+            box.classList.replace('opacity-0', 'opacity-100');
+            box.classList.replace('scale-75', 'scale-100');
+        });
+    }
+
+    function hideModal() {
+        // colse animation 
+        overlay.classList.replace('opacity-100', 'opacity-0');
+        box.classList.replace('opacity-100', 'opacity-0');
+        box.classList.replace('scale-100', 'scale-75');
+        // hidden the modal
+        setTimeout(() => wrapper.classList.add('hidden'), 300);
+    }
+
+    openBtn.addEventListener('click', showModal);
+    closeBtn.addEventListener('click', hideModal);
+    overlay.addEventListener('click', hideModal);
+</script>
+
+<!-- for edit guest modal open/close -->
+<script>
+    const editButtons = document.querySelectorAll('.edit');
+    const closeBtn2 = document.getElementById('close-modal2');
+    const wrapper2 = document.getElementById('modal-wrapper2');
+    const overlay2 = document.getElementById('modal-overlay2');
+    const box2 = document.getElementById('modal-box2');
+
+    function showModal() {
+        // show the modal
+        wrapper2.classList.remove('hidden');
+        // initial state
+        overlay2.classList.replace('opacity-100', 'opacity-0');
+        box2.classList.replace('opacity-100', 'opacity-0');
+        box2.classList.replace('scale-100', 'scale-75');
+
+        requestAnimationFrame(() => {
+            // open animation 
+            overlay2.classList.replace('opacity-0', 'opacity-100');
+            box2.classList.replace('opacity-0', 'opacity-100');
+            box2.classList.replace('scale-75', 'scale-100');
+        });
+    }
+
+    function hideModal() {
+        // colse animation 
+        overlay2.classList.replace('opacity-100', 'opacity-0');
+        box2.classList.replace('opacity-100', 'opacity-0');
+        box2.classList.replace('scale-100', 'scale-75');
+        // hidden the modal
+        setTimeout(() => wrapper2.classList.add('hidden'), 300);
+    }
+
+    editButtons.forEach(btn => {
+        btn.addEventListener('click', showModal);
+    });
+    closeBtn2.addEventListener('click', hideModal);
+    overlay2.addEventListener('click', hideModal);
+</script>
+
+<!-- the Nationality datelist and verification -->
+<script>
+    // a list of all the countries A-Z
+    const countryNames = [
+        "Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Antigua and Barbuda", "Argentina", "Armenia", "Aruba", "Australia",
+        "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bhutan",
+        "Bolivia (Plurinational State of)", "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei Darussalam", "Bulgaria",
+        "Burkina Faso", "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Central African Republic", "Chad", "Chile", "China",
+        "Colombia", "Comoros", "Congo (Republic of the)", "Congo (Democratic Republic of the)", "Costa Rica", "Côte d'Ivoire",
+        "Croatia", "Cuba", "Curaçao", "Cyprus", "Czechia", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "Ecuador", "Egypt",
+        "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland", "France", "French Guiana",
+        "French Polynesia", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Greece", "Greenland", "Grenada", "Guadeloupe", "Guatemala",
+        "Guernsey", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Honduras", "Hong Kong", "Hungary", "Iceland", "India", "Indonesia",
+        "Iran (Islamic Republic of)", "Iraq", "Ireland", "Isle of Man", "Israel", "Italy", "Jamaica", "Japan", "Jersey", "Jordan", "Kazakhstan",
+        "Kenya", "Kiribati", "Korea (Democratic People’s Republic of)", "Korea (Republic of)", "Kuwait", "Kyrgyzstan", "Lao People’s Democratic Republic",
+        "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Macao", "Madagascar", "Malawi",
+        "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Martinique", "Mauritania", "Mauritius", "Mayotte", "Mexico", "Micronesia (Federated States of)",
+        "Moldova (Republic of)", "Monaco", "Mongolia", "Montenegro", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Nepal", "Netherlands",
+        "New Caledonia", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Niue", "Norfolk Island", "North Macedonia", "Northern Mariana Islands",
+        "Norway", "Oman", "Pakistan", "Palau", "Palestine, State of", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Pitcairn",
+        "Poland", "Portugal", "Puerto Rico", "Qatar", "Réunion", "Romania", "Russian Federation", "Rwanda", "Saint Barthélemy", "Saint Kitts and Nevis",
+        "Saint Lucia", "Saint Martin (French part)", "Saint Pierre and Miquelon", "Saint Vincent and the Grenadines", "Samoa", "San Marino",
+        "Sao Tomé and Príncipe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Sint Maarten (Dutch part)",
+        "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Georgia and the South Sandwich Islands", "South Sudan", "Spain",
+        "Sri Lanka", "Sudan", "Suriname", "Svalbard and Jan Mayen", "Sweden", "Switzerland", "Syrian Arab Republic", "Taiwan (Province of China)",
+        "Tajikistan", "Tanzania, United Republic of", "Thailand", "Timor-Leste", "Togo", "Tokelau", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey",
+        "Turkmenistan", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom of Great Britain and Northern Ireland", "United States of America",
+        "Uruguay", "Uzbekistan", "Vanuatu", "Venezuela (Bolivarian Republic of)", "Viet Nam", "Western Sahara", "Yemen", "Zambia", "Zimbabwe"
+    ];
+
+
+    /**** for New Guest Form ****/
+
+    // fill the datalist with options 
+    const dl = document.getElementById("countries");
+    countryNames.forEach(name => {
+        const opt = document.createElement("option");
+        opt.value = name;
+        dl.append(opt);
+    });
+
+    const form = document.getElementById("guest-form");
+    const inputNat = document.getElementById("nationality");
+    const errNat = document.getElementById("nat-error");
+    const submitBtn = document.getElementById("submit-btn");
+
+    // check if the value was from the values in the datalist or not
+    function isValidCountry(name) {
+        return countryNames.includes(name.trim());
+    }
+
+    // enable/disable the submit button - hide and show the message
+    inputNat.addEventListener("input", () => {
+        const val = inputNat.value;
+        if (isValidCountry(val)) {
+            // if true
+            errNat.classList.add("hidden");
+            inputNat.classList.remove("border-red-500");
+            submitBtn.disabled = false;
+            submitBtn.classList.remove("opacity-50", "cursor-not-allowed");
+        } else {
+            // if false
+            errNat.classList.add("hidden");
+            submitBtn.disabled = true;
+            submitBtn.classList.add("opacity-50", "cursor-not-allowed");
+        }
+    });
+
+    // check when show the message
+    inputNat.addEventListener("blur", () => {
+        if (inputNat.value && !isValidCountry(inputNat.value)) {
+            errNat.classList.remove("hidden");
+            inputNat.classList.add("border-red-500");
+        }
+    });
+
+
+    /**** for Edit Guest Form ****/
+
+    // fill the datalist with options 
+    const dl2 = document.getElementById("countries-2");
+    countryNames.forEach(name => {
+        const opt = document.createElement("option");
+        opt.value = name;
+        dl2.append(opt);
+    });
+
+    const inputNat2 = document.getElementById("nationality-2");
+    const errNat2 = document.getElementById("nat-error-2");
+    const submitBtn2 = document.getElementById("submit-btn-2");
+
+    // check if the value was from the values in the datalist or not
+    function isValidCountry(name) {
+        return countryNames.includes(name.trim());
+    }
+
+    // enable/disable the submit button - hide and show the message
+    inputNat2.addEventListener("input", () => {
+        const val = inputNat2.value;
+        if (isValidCountry(val)) {
+            // if true
+            errNat2.classList.add("hidden");
+            inputNat2.classList.remove("border-red-500");
+            submitBtn2.disabled = false;
+            submitBtn2.classList.remove("opacity-50", "cursor-not-allowed");
+        } else {
+            // if false
+            errNat2.classList.add("hidden");
+            submitBtn2.disabled = true;
+            submitBtn2.classList.add("opacity-50", "cursor-not-allowed");
+        }
+    });
+
+    // check when show the message
+    inputNat2.addEventListener("blur", () => {
+        if (inputNat2.value && !isValidCountry(inputNat2.value)) {
+            errNat2.classList.remove("hidden");
+            inputNat2.classList.add("border-red-500");
+        }
     });
 </script>
