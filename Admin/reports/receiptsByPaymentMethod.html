@@ -1,33 +1,16 @@
 <!DOCTYPE HTML>
-<html lang="ar">
+<html>
 
 <head>
 
-    <title>Reports</title>
+    <title>Receipts By Payment Method</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;400;700&display=swap');
 
         body {
             font-family: 'Tajawal', sans-serif;
-        }
-
-        /* إخفاء شريط التمرير في المتصفحات الحديثة */
-        .scroll-container::-webkit-scrollbar {
-            display: none;
-        }
-
-        .scroll-container {
-            -ms-overflow-style: none;
-            /* إخفاء الشريط في إنترنت إكسبلورر */
-            scrollbar-width: none;
-            /* إخفاء الشريط في فايرفوكس */
-        }
-
-        .grid-lines span {
-            transform: translateY(-50%);
         }
     </style>
 
@@ -259,6 +242,7 @@
         </nav>
 
     </div>
+    <!-- end Sidebar -->
 
     <!-- page Content -->
     <div class="flex-1 overflow-y-auto">
@@ -494,91 +478,106 @@
         <!-- end header -->
 
         <!-- page -->
-        <div dir="rtl" class="space-y-4 p-5">
+        <div class="space-y-4 p-5">
 
             <!-- the title -->
             <div class="flex gap-2 items-center py-3">
                 <a href="../reports.html">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                        stroke="currentColor" class="size-6">
+                        stroke="currentColor" class="size-6 rotate-180">
                         <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                     </svg>
                 </a>
-                <h3 class="font-semibold">نسبة التحصيل حسب طريقة الدفع</h3>
+                <h3 class="font-semibold">Receipt By Payment Method</h3>
             </div>
+            <!-- end the title -->
 
             <!-- filter bar -->
             <div id="filters" class="bg-white p-3 rounded-md shadow flex justify-between gap-4">
 
                 <!-- From -->
                 <div class="w-full">
-                    <label class="block text-sm font-medium text-gray-700">من تاريخ</label>
+                    <label class="block text-sm font-medium text-gray-700">From</label>
                     <input id="fromDate" type="date" class="mt-1 px-1 block w-full border border-gray-300 rounded-md" />
                 </div>
 
                 <!-- To -->
                 <div class="w-full">
-                    <label class="block text-sm font-medium text-gray-700">إلى تاريخ</label>
+                    <label class="block text-sm font-medium text-gray-700">To</label>
                     <input id="toDate" type="date" class="mt-1 px-1 block w-full border border-gray-300 rounded-md" />
                 </div>
 
                 <!-- payment method -->
                 <div class="w-full">
-                    <label class="block text-sm font-medium text-gray-700">طريقة الدفع</label>
+                    <label class="block text-sm font-medium text-gray-700">Payment Method</label>
                     <select id="method" class="mt-1 px-1 py-0.5 text-md block w-full border border-gray-300 rounded-md">
-                        <option value="">جميع الطرق</option>
-                        <option value="cash">نقدي</option>
-                        <option value="card">بطاقة</option>
-                        <option value="transfer">تحويل</option>
+                        <option value="">All</option>
+                        <option value="cash">Cash</option>
+                        <option value="card">Card</option>
+                        <option value="transfer">Transfer</option>
                     </select>
                 </div>
 
                 <!-- show button -->
                 <div class="self-end">
                     <button id="btnShow"
-                        class="px-4 py-1 bg-[#4A4C4F] text-white text-sm rounded-md hover:bg-[#3e3f42] transition w-28">عرض
-                        النتائج</button>
+                        class="px-4 py-1 bg-[#4A4C4F] text-white text-sm rounded-md hover:bg-[#3e3f42] transition w-28">Filter
+                    </button>
                 </div>
             </div>
             <!-- end filter bar -->
 
-            <!-- the boxes and char -->
-            <div class="flex gap-4">
+            <!-- the boxes and charts -->
+            <div class="grid grid-cols-3 gap-4 h-fit">
                 <!-- the boxes-->
-                <div id="summaries" class="w-3/4 grid grid-cols-1 sm:grid-cols-3 gap-4"></div>
+                <div id="summaries" class="grid grid-cols-2 gap-4"></div>
 
-                <!-- the char-->
-                <div class="bg-white p-4 rounded-md w-1/4 h-32 shadow">
-                    <canvas id="chart" class="w-full"></canvas>
+                <!-- the donut chart -->
+                <div class="bg-white p-4 rounded-md h-full shadow">
+                    <p class="text-sm font-semibold">Number per payment method</p>
+                    <div>
+                        <canvas id="chart" class="w-full h-[250px]"></canvas>
+                    </div>
+
                 </div>
+
+                <!-- bar chart -->
+                <div class="bg-white p-4 rounded-md h-full shadow">
+                    <p class="text-sm font-semibold pb-2">Amounts per payment method</p>
+                    <div class="">
+                        <canvas id="chart2" class="w-full h-[250px]"></canvas>
+                    </div>
+
+                </div>
+
             </div>
             <!-- end the boxes and char -->
 
-            <!-- the table-->
+            <!-- the table area -->
             <div class="bg-white rounded-lg shadow overflow-x-auto">
                 <!-- title -->
                 <div class="flex justify-between px-4 pt-4">
-                    <h3 class="text-lg font-semibold mb-4">التفاصيل</h3>
+                    <h3 class="text-lg font-semibold mb-4">Details</h3>
                     <!-- Export buttons -->
                     <div class="flex gap-2">
                         <button id="exportXlsx"
-                            class="px-4 py-1.5 h-fit text-sm bg-green-700 text-white rounded-md hover:bg-green-800 transition">تصدير
-                            Excel</button>
+                            class="px-4 py-1.5 h-fit text-sm bg-green-700 text-white rounded-md hover:bg-green-800 transition">
+                            Excel Export</button>
                         <button id="exportPdf"
-                            class="px-4 py-1.5 h-fit text-sm bg-[#af3a1f] text-white rounded-md hover:bg-[#90321c] transition">تصدير
-                            PDF</button>
+                            class="px-4 py-1.5 h-fit text-sm bg-[#af3a1f] text-white rounded-md hover:bg-[#90321c] transition">
+                            PDF Export</button>
                     </div>
                 </div>
 
                 <!-- the table (that will export as a pdf and excel) -->
                 <div id="details" class="p-5">
-                    <table class="min-w-full divide-y divide-gray-200">
+                    <table class="w-full divide-y divide-gray-200">
                         <thead class="bg-gray-50">
-                            <tr>
-                                <th class="px-4 py-2 text-right text-sm font-medium text-gray-500">التاريخ</th>
-                                <th class="px-4 py-2 text-right text-sm font-medium text-gray-500">رقم السند</th>
-                                <th class="px-4 py-2 text-right text-sm font-medium text-gray-500">طريقة الدفع</th>
-                                <th class="px-4 py-2 text-right text-sm font-medium text-gray-500">المبلغ</th>
+                            <tr class=" text-sm text-gray-500 text-left">
+                                <th class="px-4 py-2">Transaction Date</th>
+                                <th class="px-4 py-2">Receipt Number</th>
+                                <th class="px-4 py-2">Payment Method</th>
+                                <th class="px-4 py-2">Amount</th>
                             </tr>
                         </thead>
                         <!-- the row by JS -->
@@ -587,12 +586,14 @@
                 </div>
 
             </div>
-            <!-- end the table -->
+            <!-- end the table area -->
 
         </div>
         <!-- end page -->
 
     </div>
+    <!-- end page Content -->
+
 </body>
 
 </html>
@@ -645,6 +646,7 @@
 
 <!-- for data -->
 <script>
+
     // Fake data to show
     const data = [
         { date: '2025-07-20', ref: 'INV-001', method: 'cash', amount: 1200 },
@@ -668,19 +670,61 @@
 
     // generate the boxes
     function renderSummaries(rows) {
-        const sums = rows.reduce((acc, r) => {
-            acc[r.method] = (acc[r.method] || 0) + r.amount;
-            return acc;
-        }, {});
+        // get the amounts and counter for each payment method
+        const sums = {};
+        const counts = {};
+        rows.forEach(r => {
+            const key = String(r.method || '').trim().toLowerCase(); // "cash","card","transfer"
+            const amount = Number(r.amount) || 0;
+            if (!key) return;
+            sums[key] = (sums[key] || 0) + amount;
+            counts[key] = (counts[key] || 0) + 1;
+        });
+
+        // calculate the total
+        const total = Object.values(sums).reduce((a, b) => a + b, 0);
+
+        // saudi Riyal Currency Display Coordinator
+        const fmt = new Intl.NumberFormat('en-SA', {
+            // style: 'currency',
+            currency: 'SAR',
+            // currencyDisplay: 'code',
+            maximumFractionDigits: 0
+        });
+
+        // calculate the ratio (deals with division by zero)
+        const pct = (value) => total ? (value / total * 100) : 0;
+
+        // generate the boxes
+        const makeBox = (title, value, count) => {
+            const percent = pct(value);
+            const titleWithCount = (typeof count === 'number') ? `${title} (${count})` : title;
+            return `
+    <div class="bg-white p-4 rounded-md shadow">
+      <h4 class="text-sm text-gray-500">${titleWithCount}</h4>
+      <p class="pt-4 pb-2 pr-4 text-xl font-semibold">SAR ${fmt.format(value)}</p>
+      <p class="text-sm text-gray-500 mt-1">${percent.toFixed(1)}%</p>
+    </div>`;
+        };
+
+        const totalCount = Object.values(counts).reduce((a, b) => a + b, 0);
+
         const html = [
-            `<div class="bg-white p-4 rounded-md shadow"><h4 class="text-sm text-gray-500">نقدي</h4><p class="pt-4 pr-4 text-2xl font-semibold">$${sums.cash || 0}</p></div>`,
-            `<div class="bg-white p-4 rounded-md shadow"><h4 class="text-sm text-gray-500">بطاقة</h4><p class="pt-4 pr-4 text-2xl font-semibold">$${sums.card || 0}</p></div>`,
-            `<div class="bg-white p-4 rounded-md shadow"><h4 class="text-sm text-gray-500">تحويل</h4><p class="pt-4 pr-4 text-2xl font-semibold">$${sums.transfer || 0}</p></div>`
+            // methods boxes
+            makeBox('Cash', sums.cash || 0, counts.cash || 0),
+            makeBox('Card', sums.card || 0, counts.card || 0),
+            makeBox('Transfer', sums.transfer || 0, counts.transfer || 0),
+            // total box 
+            `<div class="bg-white p-4 rounded-md shadow">
+     <h4 class="text-sm text-gray-500">Total (${totalCount})</h4>
+     <p class="pt-4 pr-4 text-xl font-semibold">SAR ${fmt.format(total)}</p>
+   </div>`
         ];
+
         document.getElementById('summaries').innerHTML = html.join('');
     }
 
-    // generate the rows
+    // generate the rows in the table
     function renderTable(rows) {
         const tbody = document.querySelector('#details tbody');
         tbody.innerHTML = rows.map(r => `
@@ -693,14 +737,19 @@
       `).join('');
     }
 
-    // the char
+    // the donut chart
     let chart;
     function updateChart(rows) {
+
+        // get the data 
         const counts = rows.reduce((acc, r) => {
-            acc[r.method] = (acc[r.method] || 0) + r.amount;
+            const key = String(r.method || '').trim().toLowerCase(); // normalise
+            if (!key) return acc;
+            acc[key] = (acc[key] || 0) + 1; 
             return acc;
         }, {});
-        const labels = ['نقدي', 'بطاقة', 'تحويل'];
+
+        const labels = ['Cash', 'Card', 'Transfer'];
         const dataSet = [counts.cash || 0, counts.card || 0, counts.transfer || 0];
         const ctx = document.getElementById('chart').getContext('2d');
 
@@ -712,20 +761,20 @@
                 datasets: [{
                     data: dataSet,
                     backgroundColor: [
-                        '#b9c0d1', // نقدي
-                        '#9e9e9e', // بطاقة
-                        '#657397'  // تحويل
+                        '#b9c0d1', // cash
+                        '#9e9e9e', // card
+                        '#657397'  // transfer
                     ]
                 }]
             },
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
-                cutout: '60%',
+                cutout: '55%',
                 radius: '90%',
                 plugins: {
                     legend: {
-                        position: 'right', 
+                        position: 'right',
                         labels: {
                             boxWidth: 20, // the size of the color box
                             padding: 10,  // the spaces between text
@@ -740,7 +789,90 @@
                 },
                 layout: {
                     padding: {
-                        right: 20 
+                        right: 20
+                    }
+                }
+            }
+        });
+    }
+
+    // the bar chart
+    let chart2;
+    function updateBarChart(rows) {
+
+
+        // gat the data
+        const counts = rows.reduce((acc, r) => {
+            acc[r.method] = (acc[r.method] || 0) + r.amount;
+            return acc;
+        }, {});
+
+        const labels = ['Cash', 'Card', 'Transfer'];
+        const dataSet = [counts.cash || 0, counts.card || 0, counts.transfer || 0];
+
+        // the same color as the donut chart
+        const colors = [
+            '#b9c0d1', // cash
+            '#9e9e9e', // card
+            '#657397'  // transfer
+        ];
+
+        const ctx = document.getElementById('chart2').getContext('2d');
+        if (chart2) chart2.destroy();
+
+        // Local Formatter to display amounts in y-axis
+        const fmt = new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'SAR',
+            currencyDisplay: 'code',
+            maximumFractionDigits: 0
+        });
+
+        chart2 = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels,
+                datasets: [{
+                    label: 'Amount',
+                    data: dataSet,
+                    backgroundColor: colors,
+                    borderRadius: 3,
+                    barThickness: '20' // bar width
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false }, // We don't need the legend because the names are on the x-axis.
+                    tooltip: {
+                        padding: 6,
+                        callbacks: {
+                            label(ctx) {
+                                const v = ctx.raw ?? 0;
+                                return fmt.format(v);
+                            }
+                        }
+                    }
+                },
+                layout: { padding: { right: 20 } },
+                scales: {
+                    x: {
+                        grid: { display: false },
+                        ticks: { font: { size: 13 } }
+                    },
+                    y: {
+                        beginAtZero: true,
+                        grid: { color: '#f3f4f6' },
+                        ticks: {
+                            callback(value) { return fmt.format(Number(value)); },
+                            font: { size: 13 }
+                        }
+                    }
+                },
+                elements: {
+                    bar: {
+                        borderRadius: 6
                     }
                 }
             }
@@ -752,7 +884,7 @@
         const rows = filterData();
         const ws = XLSX.utils.json_to_sheet(rows);
         const wb = XLSX.utils.book_new();
-        XLSX.utils.book_append_sheet(wb, ws, 'ٌنسبة التحصيل حسب طريقة الدفع');
+        XLSX.utils.book_append_sheet(wb, ws, 'Receipt By Payment Method');
         XLSX.writeFile(wb, 'report.xlsx');
     };
 
@@ -774,6 +906,7 @@
         renderSummaries(data);
         renderTable(data);
         updateChart(data);
+        updateBarChart(data);
     }
 
     // connect the filter button
@@ -782,6 +915,7 @@
         renderSummaries(rows);
         renderTable(rows);
         updateChart(rows);
+        updateBarChart(rows);
     });
 
     // show all the date when opened the page
