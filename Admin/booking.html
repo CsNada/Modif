@@ -487,7 +487,6 @@
             <!-- the buttons on the header -->
             <div class="flex justify-between items-center text-xs py-2">
 
-
                 <a href="./dashboard.html"
                     class="bg-[#5B7A8F] hover:bg-[#516d7f] transition-all rounded-md cursor-pointer">
                     <p class="text-[#FFFFFF] p-1.5 px-4">Back</p>
@@ -533,7 +532,7 @@
             <!-- end the 4 boxes -->
 
             <!-- filter bar -->
-            <div id="filters" class="bg-white p-3 rounded-md shadow flex justify-between gap-2 mb-3">
+            <div id="filters" class="bg-white p-3 rounded-md shadow flex justify-between gap-1 mb-3">
 
                 <!-- From -->
                 <div class="w-full">
@@ -570,14 +569,23 @@
                         <option value="checkIn">Check In</option>
                         <option value="checkOut">Check Out</option>
                         <option value="cancelled">Cancelled</option>
+                    </select>
+                </div>
 
+                <!-- Source -->
+                <div class="w-full">
+                    <label for="Source" class="block text-sm font-medium text-gray-700">Source</label>
+                    <select id="Source" class="mt-1 px-1 py-0.5 text-sm block w-full border border-gray-300 rounded-md">
+                        <option value="all" selected>All Sources</option>
+                        <option value="Booking">Booking</option>
+                        <option value="Airbnb">Airbnb</option>
                     </select>
                 </div>
 
                 <!-- show button -->
                 <div class="self-end">
                     <button id="btnShow"
-                        class="px-4 py-1 bg-[#5B7A8F] hover:bg-[#516d7f] text-white text-sm rounded-md transition w-28">Filter</button>
+                        class="px-6 py-1 bg-[#5B7A8F] hover:bg-[#516d7f] text-white text-sm rounded-md transition">Filter</button>
                 </div>
             </div>
             <!-- end filter bar -->
@@ -607,8 +615,8 @@
                     <tbody class="table-body">
 
                         <!-- row 1 -->
-                        <tr data-booking-id="111" data-status="booking" class="border-t search-item text-[#5D6679]">
-                            <td class="py-4 font-semibold text-[#2B2F38]">12345</td>
+                        <tr data-booking-id="1" data-status="booking" class="border-t search-item text-[#5D6679]">
+                            <td class="py-4 font-semibold text-[#2B2F38]">AIR-555</td>
                             <td class="py-4 font-semibold">Property 1</td>
                             <td class="py-4 font-semibold">A201</td>
                             <td class="py-4">Alexander</td>
@@ -617,7 +625,7 @@
                             <td class="py-4">1</td>
                             <td class="py-4">250$</td>
                             <td class="py-4">Airbnb</td>
-                            <td class="status-cell py-4">Booking</td>
+                            <td class="status-cell py-4 font-bold text-gray-700">Booking</td>
                             <td class="py-4 text-center">
 
                                 <!-- if custmor didn't check in the button will be in -->
@@ -647,9 +655,9 @@
                             </td>
                         </tr>
 
-                        <!-- row 1 -->
-                        <tr data-booking-id="112" data-status="booking" class="border-t search-item text-[#5D6679]">
-                            <td class="py-4 font-semibold text-[#2B2F38]">67890</td>
+                        <!-- row 2 -->
+                        <tr data-booking-id="2" data-status="booking" class="border-t search-item text-[#5D6679]">
+                            <td class="py-4 font-semibold text-[#2B2F38]">A12345</td>
                             <td class="py-4 font-semibold">Property 2</td>
                             <td class="py-4 font-semibold">A220</td>
                             <td class="py-4">Alexander</td>
@@ -657,8 +665,8 @@
                             <td class="py-4">2025/07/28</td>
                             <td class="py-4">2</td>
                             <td class="py-4">500$</td>
-                            <td class="py-4">Airbnb</td>
-                            <td class="status-cell py-4">Booking</td>
+                            <td class="py-4">Booking</td>
+                            <td class="status-cell py-4 font-bold text-gray-700">Booking</td>
                             <td class="py-4 text-center">
 
                                 <!-- if custmor didn't check in the button will be in -->
@@ -718,6 +726,7 @@
             const toInput = document.getElementById('toDate').value;   // "YYYY-MM-DD"
             const propInput = document.getElementById('Property').value;
             const statusInput = document.getElementById('Status').value;
+            const sourceInput = document.getElementById('Source').value;
 
             const fromDate = fromInput ? parseDate(fromInput) : null;
             const toDate = toInput ? parseDate(toInput) : null;
@@ -728,6 +737,7 @@
                 const entryDate = parseDate(cells[3].textContent.trim());
                 const exitDate = parseDate(cells[4].textContent.trim());
                 const status = row.dataset.status;
+                const source = cells[8].textContent.trim();
 
                 let show = true;
                 // from
@@ -744,6 +754,10 @@
                 }
                 // status
                 if (statusInput !== 'all' && status !== statusInput) {
+                    show = false;
+                }
+                // source
+                if (sourceInput !== 'all' && source !== sourceInput) {
                     show = false;
                 }
 
@@ -867,6 +881,22 @@
         const input = document.getElementById('searchInput');
         const items = Array.from(document.querySelectorAll('.search-item'));
 
+        const params = new URLSearchParams(location.search);
+        const v = params.get('prefill');
+        if (v !== null) {
+            input.value = v;
+            const term = input.value.trim().toLowerCase();
+
+            items.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                if (text.includes(term)) {
+                    item.classList.remove('hidden');
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+        }
+        
         input.addEventListener('input', () => {
             const term = input.value.trim().toLowerCase();
 
@@ -879,6 +909,8 @@
                 }
             });
         });
+
+        
     });
 </script>
 

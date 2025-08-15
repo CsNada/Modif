@@ -12,6 +12,18 @@
         body {
             font-family: 'Tajawal', sans-serif;
         }
+        
+        /* إخفاء شريط التمرير في المتصفحات الحديثة */
+        .scroll-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        .scroll-container {
+            -ms-overflow-style: none;
+            /* إخفاء الشريط في إنترنت إكسبلورر */
+            scrollbar-width: none;
+            /* إخفاء الشريط في فايرفوكس */
+        }
     </style>
 </head>
 

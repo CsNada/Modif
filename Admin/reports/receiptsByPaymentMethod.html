@@ -272,6 +272,20 @@
                 <!-- icons buttons -->
                 <div class="px-3 p-1 flex gap-6">
 
+                    <a href="inbox.html" target="_blank" class="relative">
+                        <svg width="22" height="22" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                            fill="#4A4C4F">
+                            <path fill-rule="evenodd"
+                                d="M6.912 3a3 3 0 0 0-2.868 2.118l-2.411 7.838a3 3 0 0 0-.133.882V18a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3v-4.162c0-.299-.045-.596-.133-.882l-2.412-7.838A3 3 0 0 0 17.088 3H6.912Zm13.823 9.75-2.213-7.191A1.5 1.5 0 0 0 17.088 4.5H6.912a1.5 1.5 0 0 0-1.434 1.059L3.265 12.75H6.11a3 3 0 0 1 2.684 1.658l.256.513a1.5 1.5 0 0 0 1.342.829h3.218a1.5 1.5 0 0 0 1.342-.83l.256-.512a3 3 0 0 1 2.684-1.658h2.844Z"
+                                clip-rule="evenodd" />
+                        </svg>
+
+                        <!-- if there is messages unread, otherwise add class hidden -->
+                        <span class="absolute right-0 top-0 size-2 rounded-full bg-[#4169e1]"></span>
+                    </a>
+
+
+
                     <!-- calender icon -->
                     <form method="POST" id="dateForm">
                         <div class="relative inline-block" style="width:18px; height:20px;">
@@ -442,7 +456,7 @@
 
                         <!-- View more button -->
                         <div class="flex justify-center border-t py-2">
-                            <a href="../notification.html" class="flex gap-2 items-center w-fit text-sm">
+                            <a href="./notification.html" class="flex gap-2 items-center w-fit text-sm">
                                 <p>View more</p>
                                 <svg class="pt-1" width="16" height="14" viewBox="0 0 16 14" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -457,7 +471,7 @@
                 </div>
 
                 <!-- profile -->
-                <a href="../settings.html" class="flex items-center justify-between space-x-2 m-1 mx-3">
+                <a href="./settings.html" class="flex items-center justify-between space-x-2 m-1 mx-3">
                     <div class="flex items-center gap-2">
                         <svg width="30" height="30" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <ellipse cx="20" cy="20" rx="20" ry="19.5" fill="#4A4C4F" />
@@ -493,35 +507,58 @@
             <!-- end the title -->
 
             <!-- filter bar -->
-            <div id="filters" class="bg-white p-3 rounded-md shadow flex justify-between gap-4">
+            <div id="filters" class="bg-white p-3 rounded-md shadow flex justify-between gap-1">
 
                 <!-- From -->
                 <div class="w-full">
-                    <label class="block text-sm font-medium text-gray-700">From</label>
+                    <label for="fromDate" class="block text-sm font-medium text-gray-700">From</label>
                     <input id="fromDate" type="date" class="mt-1 px-1 block w-full border border-gray-300 rounded-md" />
                 </div>
 
                 <!-- To -->
                 <div class="w-full">
-                    <label class="block text-sm font-medium text-gray-700">To</label>
+                    <label for="toDate" class="block text-sm font-medium text-gray-700">To</label>
                     <input id="toDate" type="date" class="mt-1 px-1 block w-full border border-gray-300 rounded-md" />
                 </div>
 
                 <!-- payment method -->
                 <div class="w-full">
-                    <label class="block text-sm font-medium text-gray-700">Payment Method</label>
+                    <label for="method" class="block text-sm font-medium text-gray-700">Payment Method</label>
                     <select id="method" class="mt-1 px-1 py-0.5 text-md block w-full border border-gray-300 rounded-md">
                         <option value="">All</option>
                         <option value="cash">Cash</option>
                         <option value="card">Card</option>
                         <option value="transfer">Transfer</option>
+                        <option value="link">Link</option>
+                    </select>
+                </div>
+
+                <!-- Property -->
+                <div class="w-full">
+                    <label for="property" class="block text-sm font-medium text-gray-700">Property</label>
+                    <select id="property"
+                        class="mt-1 px-1 py-0.5 text-md block w-full border border-gray-300 rounded-md">
+                        <option value="">All</option>
+                        <option value="Property 1">Property 1</option>
+                        <option value="Property 2">Property 2</option>
+                        <option value="Property 3">Property 3</option>
+                    </select>
+                </div>
+
+                <!-- Source -->
+                <div class="w-full">
+                    <label for="source" class="block text-sm font-medium text-gray-700">Source</label>
+                    <select id="source" class="mt-1 px-1 py-0.5 text-md block w-full border border-gray-300 rounded-md">
+                        <option value="">All</option>
+                        <option value="Booking">Booking</option>
+                        <option value="Airbnb">Airbnb</option>
                     </select>
                 </div>
 
                 <!-- show button -->
                 <div class="self-end">
                     <button id="btnShow"
-                        class="px-4 py-1 bg-[#4A4C4F] text-white text-sm rounded-md hover:bg-[#3e3f42] transition w-28">Filter
+                        class="px-6 py-1 bg-[#4A4C4F] text-white text-sm rounded-md hover:bg-[#3e3f42] transition">Filter
                     </button>
                 </div>
             </div>
@@ -575,9 +612,12 @@
                         <thead class="bg-gray-50">
                             <tr class=" text-sm text-gray-500 text-left">
                                 <th class="px-4 py-2">Transaction Date</th>
+                                <th class="px-4 py-2">Property</th>
                                 <th class="px-4 py-2">Receipt Number</th>
                                 <th class="px-4 py-2">Payment Method</th>
+                                <th class="px-4 py-2">Amount (before fee)</th>
                                 <th class="px-4 py-2">Amount</th>
+                                <th class="px-4 py-2">Source</th>
                             </tr>
                         </thead>
                         <!-- the row by JS -->
@@ -649,9 +689,10 @@
 
     // Fake data to show
     const data = [
-        { date: '2025-07-20', ref: 'INV-001', method: 'cash', amount: 1200 },
-        { date: '2025-07-21', ref: 'INV-002', method: 'card', amount: 800 },
-        { date: '2025-07-22', ref: 'INV-003', method: 'transfer', amount: 450 },
+        { date: '2025-07-20', ref: 'INV-001', method: 'cash', amount: 1200, property: 'Property 1', source: 'Booking' },
+        { date: '2025-07-21', ref: 'INV-002', method: 'card', amount: 800, property: 'Property 2', source: 'Booking' },
+        { date: '2025-07-22', ref: 'INV-003', method: 'transfer', amount: 450, property: 'Property 1', source: 'Airbnb' },
+        { date: '2025-07-27', ref: 'INV-004', method: 'link', amount: 610, property: 'Property 3', source: 'Airbnb' },
         // more here ...
     ];
 
@@ -660,11 +701,15 @@
         const from = document.getElementById('fromDate').value;
         const to = document.getElementById('toDate').value;
         const method = document.getElementById('method').value;
+        const property = document.getElementById('property').value;
+        const source = document.getElementById('source').value;
 
         return data.filter(item => {
-            const okDate = (!from || item.date >= from) && (!to || item.date <= to);
-            const okMethod = !method || item.method === method;
-            return okDate && okMethod;
+            const Date = (!from || item.date >= from) && (!to || item.date <= to);
+            const Method = !method || item.method === method;
+            const Property = !property || item.property === property;
+            const Source = !source || item.source === source;
+            return Date && (Method && (Property && Source));
         });
     }
 
@@ -700,10 +745,10 @@
             const percent = pct(value);
             const titleWithCount = (typeof count === 'number') ? `${title} (${count})` : title;
             return `
-    <div class="bg-white p-4 rounded-md shadow">
-      <h4 class="text-sm text-gray-500">${titleWithCount}</h4>
-      <p class="pt-4 pb-2 pr-4 text-xl font-semibold">SAR ${fmt.format(value)}</p>
-      <p class="text-sm text-gray-500 mt-1">${percent.toFixed(1)}%</p>
+    <div class="bg-white p-3 rounded-md shadow">
+      <h4 class="text-xs text-gray-500">${titleWithCount}</h4>
+      <p class="pt-2 pb-1 text-xl font-semibold">SAR ${fmt.format(value)}</p>
+      <p class="text-xs text-gray-500 mt-0.5">${percent.toFixed(1)}%</p>
     </div>`;
         };
 
@@ -714,27 +759,58 @@
             makeBox('Cash', sums.cash || 0, counts.cash || 0),
             makeBox('Card', sums.card || 0, counts.card || 0),
             makeBox('Transfer', sums.transfer || 0, counts.transfer || 0),
+            makeBox('Link', sums.link || 0, counts.link || 0),
             // total box 
-            `<div class="bg-white p-4 rounded-md shadow">
-     <h4 class="text-sm text-gray-500">Total (${totalCount})</h4>
-     <p class="pt-4 pr-4 text-xl font-semibold">SAR ${fmt.format(total)}</p>
+            `<div class="bg-white p-4 rounded-md shadow col-span-2">
+     <h4 class="text-xs text-gray-500">Total (${totalCount})</h4>
+     <p class="pt-2 text-xl font-semibold">SAR ${fmt.format(total)}</p>
    </div>`
         ];
 
         document.getElementById('summaries').innerHTML = html.join('');
     }
 
+
+    // discount rate for "link" payments (example: 5%)
+    const LINK_FEE_PERCENT = 0.05; // 5%
+
+    // display amounts in order
+    function fmtAmount(n) {
+        if (n === null || n === undefined || Number.isNaN(n)) return '-';
+        return Number(n).toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 2 });
+    }
+
     // generate the rows in the table
     function renderTable(rows) {
         const tbody = document.querySelector('#details tbody');
-        tbody.innerHTML = rows.map(r => `
-        <tr class="search-item">
-          <td class="px-4 py-2 text-sm text-gray-700">${r.date}</td>
-          <td class="px-4 py-2 text-sm text-gray-700">${r.ref}</td>
-          <td class="px-4 py-2 text-sm text-gray-700">${r.method}</td>
-          <td class="px-4 py-2 text-sm font-semibold text-gray-800">${r.amount}</td>
-        </tr>
-      `).join('');
+        tbody.innerHTML = rows.map(r => {
+            // make sure to transfer the amount to the number
+            const raw = parseFloat(r.amount) || 0;
+
+            let beforeFee = '—';
+            let afterFee = fmtAmount(raw);
+
+            if (String(r.method || '').trim().toLowerCase() === 'link') {
+                // r.amount is the amount before discount
+                beforeFee = fmtAmount(raw);
+
+                // calculate the amount after deducting the percentage
+                const net = raw * (1 - LINK_FEE_PERCENT);
+                afterFee = fmtAmount(net);
+            }
+
+            return `
+      <tr class="search-item">
+        <td class="px-4 py-2 text-sm text-gray-700">${r.date}</td>
+        <td class="px-4 py-2 text-sm text-gray-700">${r.property}</td>
+        <td class="px-4 py-2 text-sm text-gray-700">${r.ref}</td>
+        <td class="px-4 py-2 text-sm text-gray-700">${r.method}</td>
+        <td class="px-4 py-2 text-sm text-gray-700">${beforeFee}</td>
+        <td class="px-4 py-2 text-sm font-semibold text-gray-700">${afterFee}</td>
+        <td class="px-4 py-2 text-sm font-semibold text-gray-700">${r.source}</td>
+      </tr>
+    `;
+        }).join('');
     }
 
     // the donut chart
@@ -745,12 +821,12 @@
         const counts = rows.reduce((acc, r) => {
             const key = String(r.method || '').trim().toLowerCase(); // normalise
             if (!key) return acc;
-            acc[key] = (acc[key] || 0) + 1; 
+            acc[key] = (acc[key] || 0) + 1;
             return acc;
         }, {});
 
-        const labels = ['Cash', 'Card', 'Transfer'];
-        const dataSet = [counts.cash || 0, counts.card || 0, counts.transfer || 0];
+        const labels = ['Cash', 'Card', 'Transfer', 'Link'];
+        const dataSet = [counts.cash || 0, counts.card || 0, counts.transfer || 0, counts.link || 0];
         const ctx = document.getElementById('chart').getContext('2d');
 
         if (chart) chart.destroy();
@@ -763,7 +839,8 @@
                     backgroundColor: [
                         '#b9c0d1', // cash
                         '#9e9e9e', // card
-                        '#657397'  // transfer
+                        '#657397',  // transfer
+                        '#50586c'  // link
                     ]
                 }]
             },
@@ -807,14 +884,15 @@
             return acc;
         }, {});
 
-        const labels = ['Cash', 'Card', 'Transfer'];
-        const dataSet = [counts.cash || 0, counts.card || 0, counts.transfer || 0];
+        const labels = ['Cash', 'Card', 'Transfer', 'Link'];
+        const dataSet = [counts.cash || 0, counts.card || 0, counts.transfer || 0, counts.link || 0];
 
         // the same color as the donut chart
         const colors = [
             '#b9c0d1', // cash
             '#9e9e9e', // card
-            '#657397'  // transfer
+            '#657397',  // transfer
+            '#50586c'  // link
         ];
 
         const ctx = document.getElementById('chart2').getContext('2d');
