@@ -272,7 +272,7 @@
                 <!-- icons buttons -->
                 <div class="px-3 p-1 flex gap-6">
 
-                    <a href="inbox.html" target="_blank" class="relative">
+                    <a href="../inbox.html" target="_blank" class="relative">
                         <svg width="22" height="22" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                             fill="#4A4C4F">
                             <path fill-rule="evenodd"
@@ -283,8 +283,6 @@
                         <!-- if there is messages unread, otherwise add class hidden -->
                         <span class="absolute right-0 top-0 size-2 rounded-full bg-[#4169e1]"></span>
                     </a>
-
-
 
                     <!-- calender icon -->
                     <form method="POST" id="dateForm">
@@ -456,7 +454,7 @@
 
                         <!-- View more button -->
                         <div class="flex justify-center border-t py-2">
-                            <a href="./notification.html" class="flex gap-2 items-center w-fit text-sm">
+                            <a href="../notification.html" class="flex gap-2 items-center w-fit text-sm">
                                 <p>View more</p>
                                 <svg class="pt-1" width="16" height="14" viewBox="0 0 16 14" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -471,7 +469,7 @@
                 </div>
 
                 <!-- profile -->
-                <a href="./settings.html" class="flex items-center justify-between space-x-2 m-1 mx-3">
+                <a href="../settings.html" class="flex items-center justify-between space-x-2 m-1 mx-3">
                     <div class="flex items-center gap-2">
                         <svg width="30" height="30" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <ellipse cx="20" cy="20" rx="20" ry="19.5" fill="#4A4C4F" />
@@ -502,28 +500,28 @@
                         <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                     </svg>
                 </a>
-                <h3 class="font-semibold">Receipt By Payment Method</h3>
+                <a href="../reports.html" class="font-semibold hover:underline">Receipt By Payment Method</a>
             </div>
             <!-- end the title -->
 
             <!-- filter bar -->
-            <div id="filters" class="bg-white p-3 rounded-md shadow flex justify-between gap-1">
+            <div id="filters" class="bg-white p-3 rounded-md shadow flex justify-between gap-1 text-sm">
 
                 <!-- From -->
                 <div class="w-full">
-                    <label for="fromDate" class="block text-sm font-medium text-gray-700">From</label>
+                    <label for="fromDate" class="block font-medium text-gray-700">From</label>
                     <input id="fromDate" type="date" class="mt-1 px-1 block w-full border border-gray-300 rounded-md" />
                 </div>
 
                 <!-- To -->
                 <div class="w-full">
-                    <label for="toDate" class="block text-sm font-medium text-gray-700">To</label>
+                    <label for="toDate" class="block font-medium text-gray-700">To</label>
                     <input id="toDate" type="date" class="mt-1 px-1 block w-full border border-gray-300 rounded-md" />
                 </div>
 
                 <!-- payment method -->
                 <div class="w-full">
-                    <label for="method" class="block text-sm font-medium text-gray-700">Payment Method</label>
+                    <label for="method" class="block font-medium text-gray-700">Payment Method</label>
                     <select id="method" class="mt-1 px-1 py-0.5 text-md block w-full border border-gray-300 rounded-md">
                         <option value="">All</option>
                         <option value="cash">Cash</option>
@@ -535,7 +533,7 @@
 
                 <!-- Property -->
                 <div class="w-full">
-                    <label for="property" class="block text-sm font-medium text-gray-700">Property</label>
+                    <label for="property" class="block font-medium text-gray-700">Property</label>
                     <select id="property"
                         class="mt-1 px-1 py-0.5 text-md block w-full border border-gray-300 rounded-md">
                         <option value="">All</option>
@@ -555,19 +553,13 @@
                     </select>
                 </div>
 
-                <!-- show button -->
-                <div class="self-end">
-                    <button id="btnShow"
-                        class="px-6 py-1 bg-[#4A4C4F] text-white text-sm rounded-md hover:bg-[#3e3f42] transition">Filter
-                    </button>
-                </div>
             </div>
             <!-- end filter bar -->
 
             <!-- the boxes and charts -->
-            <div class="grid grid-cols-3 gap-4 h-fit">
+            <div class="grid grid-cols-3 gap-2 h-fit">
                 <!-- the boxes-->
-                <div id="summaries" class="grid grid-cols-2 gap-4"></div>
+                <div id="summaries" class="grid grid-cols-2 gap-2"></div>
 
                 <!-- the donut chart -->
                 <div class="bg-white p-4 rounded-md h-full shadow">
@@ -591,18 +583,18 @@
             <!-- end the boxes and char -->
 
             <!-- the table area -->
-            <div class="bg-white rounded-lg shadow overflow-x-auto">
+            <div class="bg-white rounded-md shadow overflow-x-auto">
                 <!-- title -->
                 <div class="flex justify-between px-4 pt-4">
-                    <h3 class="text-lg font-semibold mb-4">Details</h3>
+                    <h3 class="text-lg font-semibold">Details</h3>
                     <!-- Export buttons -->
-                    <div class="flex gap-2">
+                    <div class="flex gap-2 text-xs text-white">
                         <button id="exportXlsx"
-                            class="px-4 py-1.5 h-fit text-sm bg-green-700 text-white rounded-md hover:bg-green-800 transition">
-                            Excel Export</button>
+                            class="px-4 py-1.5 h-fit bg-green-700 rounded-md hover:bg-green-800 transition">Excel
+                            Export</button>
                         <button id="exportPdf"
-                            class="px-4 py-1.5 h-fit text-sm bg-[#af3a1f] text-white rounded-md hover:bg-[#90321c] transition">
-                            PDF Export</button>
+                            class="px-4 py-1.5 h-fit bg-[#af3a1f] rounded-md hover:bg-[#90321c] transition">PDF
+                            Export</button>
                     </div>
                 </div>
 
@@ -687,13 +679,12 @@
 <!-- for data -->
 <script>
 
-    // Fake data to show
+    // data
     const data = [
         { date: '2025-07-20', ref: 'INV-001', method: 'cash', amount: 1200, property: 'Property 1', source: 'Booking' },
         { date: '2025-07-21', ref: 'INV-002', method: 'card', amount: 800, property: 'Property 2', source: 'Booking' },
         { date: '2025-07-22', ref: 'INV-003', method: 'transfer', amount: 450, property: 'Property 1', source: 'Airbnb' },
-        { date: '2025-07-27', ref: 'INV-004', method: 'link', amount: 610, property: 'Property 3', source: 'Airbnb' },
-        // more here ...
+        { date: '2025-07-27', ref: 'INV-004', method: 'link', amount: 610, property: 'Property 1', source: 'Airbnb' },
     ];
 
     // filter the rows by the inputs
@@ -705,12 +696,20 @@
         const source = document.getElementById('source').value;
 
         return data.filter(item => {
-            const Date = (!from || item.date >= from) && (!to || item.date <= to);
-            const Method = !method || item.method === method;
-            const Property = !property || item.property === property;
-            const Source = !source || item.source === source;
-            return Date && (Method && (Property && Source));
+            const inDateRange = (!from || item.date >= from) && (!to || item.date <= to);
+            const methodOk = !method || item.method === method;
+            const propertyOk = !property || item.property === property;
+            const sourceOk = !source || item.source === source;
+            return inDateRange && methodOk && propertyOk && sourceOk;
         });
+    }
+
+    function applyFilters() {
+        const rows = filterData();
+        renderSummaries(rows);
+        renderTable(rows);
+        updateChart(rows);
+        updateBarChart(rows);
     }
 
     // generate the boxes
@@ -747,7 +746,7 @@
             return `
     <div class="bg-white p-3 rounded-md shadow">
       <h4 class="text-xs text-gray-500">${titleWithCount}</h4>
-      <p class="pt-2 pb-1 text-xl font-semibold">SAR ${fmt.format(value)}</p>
+      <p class="pt-2 pb-1 text-lg font-semibold">SAR ${fmt.format(value)}</p>
       <p class="text-xs text-gray-500 mt-0.5">${percent.toFixed(1)}%</p>
     </div>`;
         };
@@ -763,13 +762,12 @@
             // total box 
             `<div class="bg-white p-4 rounded-md shadow col-span-2">
      <h4 class="text-xs text-gray-500">Total (${totalCount})</h4>
-     <p class="pt-2 text-xl font-semibold">SAR ${fmt.format(total)}</p>
+     <p class="pt-2 text-lg font-semibold">SAR ${fmt.format(total)}</p>
    </div>`
         ];
 
         document.getElementById('summaries').innerHTML = html.join('');
     }
-
 
     // discount rate for "link" payments (example: 5%)
     const LINK_FEE_PERCENT = 0.05; // 5%
@@ -783,7 +781,14 @@
     // generate the rows in the table
     function renderTable(rows) {
         const tbody = document.querySelector('#details tbody');
+        
+        if (!rows || rows.length === 0) {
+            tbody.innerHTML = `<tr><td colspan="7" class="px-4 py-4 text-sm text-center text-gray-500">No records found.</td></tr>`;
+            return;
+        }
+
         tbody.innerHTML = rows.map(r => {
+            
             // make sure to transfer the amount to the number
             const raw = parseFloat(r.amount) || 0;
 
@@ -987,15 +992,33 @@
         updateBarChart(data);
     }
 
-    // connect the filter button
-    document.getElementById('btnShow').addEventListener('click', () => {
-        const rows = filterData();
-        renderSummaries(rows);
-        renderTable(rows);
-        updateChart(rows);
-        updateBarChart(rows);
-    });
+    // debounce 
+    function debounce(fn, wait = 150) {
+        let t;
+        return function (...args) {
+            clearTimeout(t);
+            t = setTimeout(() => fn.apply(this, args), wait);
+        };
+    }
+
+    (function connectFiltersAuto() {
+        const ids = ['fromDate', 'toDate', 'method', 'property', 'source'];
+        const debouncedApply = debounce(applyFilters, 120);
+
+        ids.forEach(id => {
+            const el = document.getElementById(id);
+            if (!el) return;
+            // for select and date use 'change'
+            el.addEventListener('change', debouncedApply);
+
+            // for text inputs (if any) also listen to input
+            if (el.tagName === 'INPUT' && el.type === 'text') {
+                el.addEventListener('input', debouncedApply);
+            }
+        });
+    })();
 
     // show all the date when opened the page
     window.addEventListener('DOMContentLoaded', initRender);
+    applyFilters();
 </script>

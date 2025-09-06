@@ -3,7 +3,7 @@
 
 <head>
 
-    <title>Reports</title>
+    <title>Expenses by Item Category</title>
     <script src="https://cdn.tailwindcss.com"></script>
 
     <style>
@@ -14,6 +14,14 @@
         }
     </style>
 
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- SheetJS for Excel export -->
+    <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+    <!-- jsPDF & html2canvas for PDF export -->
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
 </head>
 
 <body class="bg-[#F6F6F6]/50 font-sans flex h-screen">
@@ -23,7 +31,7 @@
 
         <!-- logo -->
         <div class="flex flex-col items-center">
-            <img src="../img/Admin/logo white.png" alt="Logo" class="h-12" />
+            <img src="../../img/Admin/logo white.png" alt="Logo" class="h-12" />
         </div>
 
         <!-- main section -->
@@ -35,7 +43,7 @@
                 <!-- dashboard -->
                 <li
                     class="hover:bg-[#FFFFFF] transition-all duration-100 rounded text-[#FFFFFF] hover:text-[#1E2227] hover:fill-[#1E2227] mb-1 pl-1.5">
-                    <a href="./dashboard.html" class="flex gap-2 items-center p-2">
+                    <a href="../dashboard.html" class="flex gap-2 items-center p-2">
                         <svg width="17" height="17" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M12.7413 7.64476V0H22.9343V7.64476H12.7413ZM0 12.7413V0H10.193V12.7413H0ZM12.7413 22.9343V10.193H22.9343V22.9343H12.7413ZM0 22.9343V15.2895H10.193V22.9343H0ZM2.54825 10.193H7.64476V2.54825H2.54825V10.193ZM15.2895 20.386H20.386V12.7413H15.2895V20.386ZM15.2895 5.09651H20.386V2.54825H15.2895V5.09651ZM2.54825 20.386H7.64476V17.8378H2.54825V20.386Z"
@@ -49,7 +57,7 @@
                 <!-- Properties -->
                 <li
                     class="hover:bg-[#FFFFFF] transition-all duration-100 rounded text-[#FFFFFF] hover:text-[#1E2227] hover:fill-[#1E2227] mb-1 pl-1">
-                    <a href="./properties.html" class="flex gap-2 items-center p-2">
+                    <a href="../properties.html" class="flex gap-2 items-center p-2">
                         <svg width="19" height="19" viewBox="0 0 25 29" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M7.32008 28.2923C6.60356 28.2923 5.99038 27.9605 5.48056 27.2967C4.97074 26.633 4.7154 25.8342 4.71453 24.9002V12.7731L2.10897 15.3597C1.80499 15.6424 1.4793 15.7628 1.13189 15.7209C0.784482 15.6791 0.502214 15.4597 0.285084 15.0629C0.0679543 14.666 -0.0188976 14.242 0.0245284 13.7908C0.0679543 13.3396 0.241658 12.9722 0.545639 12.6883L12.2381 1.02774C12.4769 0.801594 12.7323 0.631985 13.0041 0.518913C13.2759 0.40584 13.5526 0.349304 13.834 0.349304C14.1154 0.349304 14.3924 0.40584 14.6651 0.518913C14.9379 0.631985 15.1928 0.801594 15.4299 1.02774L19.0451 4.63193V3.69908C19.0451 2.99237 19.2353 2.39196 19.6157 1.89783C19.9961 1.40371 20.4573 1.15608 20.9992 1.15495C21.5412 1.15381 22.0028 1.40144 22.3841 1.89783C22.7654 2.39422 22.9552 2.99464 22.9534 3.69908V8.53293L27.1223 12.6883C27.4046 12.971 27.5731 13.3385 27.6278 13.7908C27.6825 14.2431 27.6009 14.6671 27.3829 15.0629C27.1649 15.4586 26.8826 15.678 26.5361 15.7209C26.1895 15.7639 25.8638 15.6435 25.559 15.3597L22.9534 12.7731V24.9002C22.9534 25.833 22.6985 26.6319 22.1887 27.2967C21.6789 27.9616 21.0653 28.2935 20.3479 28.2923H17.7423C17.0258 28.2923 16.4126 27.9605 15.9028 27.2967C15.393 26.633 15.1376 25.8342 15.1367 24.9002V18.1158H12.5312V24.9002C12.5312 25.833 12.2763 26.6319 11.7665 27.2967C11.2566 27.9616 10.643 28.2935 9.92564 28.2923H7.32008ZM7.32008 24.9002H9.92564V18.1158C9.92564 17.183 10.181 16.3847 10.6917 15.7209C11.2024 15.0572 11.8155 14.7248 12.5312 14.7236H15.1367C15.8533 14.7236 16.4669 15.0561 16.9776 15.7209C17.4883 16.3858 17.7432 17.1841 17.7423 18.1158V24.9002H20.3479V10.1866L13.834 3.74148L7.32008 10.1866V24.9002ZM11.2284 11.3739H16.4395C16.4395 10.4693 16.179 9.72697 15.6579 9.14691C15.1367 8.56685 14.5288 8.27738 13.834 8.27851C13.1392 8.27964 12.5312 8.56968 12.0101 9.14861C11.489 9.72754 11.2284 10.4693 11.2284 11.3739Z"
@@ -64,7 +72,7 @@
                 <!-- Invoices -->
                 <li
                     class="hover:bg-[#FFFFFF] transition-all duration-100 rounded text-[#FFFFFF] hover:text-[#1E2227] hover:fill-[#1E2227] mb-1 pl-1">
-                    <a href="./invoices.html" class="flex gap-2 items-center p-2">
+                    <a href="../invoices.html" class="flex gap-2 items-center p-2">
                         <svg width="19" height="19" viewBox="0 0 27 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M10.7145 29.3549L11.8424 31.3175C12.7469 32.8731 14.2097 32.8731 15.1142 31.3175L16.242 29.3549C17.046 27.9593 18.4419 27.8575 19.3575 29.1369C21.3452 31.8991 22.9644 30.9832 22.9644 27.1161V10.7319C22.9755 4.87311 21.9259 3.40479 17.7049 3.40479H9.26285C5.04185 3.40479 3.99219 4.87311 3.99219 10.7319V27.1016C3.99219 30.9832 5.62252 31.8845 7.59902 29.1369C8.51469 27.8575 9.91052 27.9593 10.7145 29.3549Z"
@@ -82,7 +90,7 @@
                 <!-- guests -->
                 <li
                     class="hover:bg-[#FFFFFF] transition-all duration-100 rounded text-[#FFFFFF] hover:text-[#1E2227] hover:fill-[#1E2227] mb-1 pl-1">
-                    <a href="./guests.html" class="flex gap-2 items-center p-2">
+                    <a href="../guests.html" class="flex gap-2 items-center p-2">
                         <svg width="19" height="19" viewBox="0 0 28 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M10.2926 16.0993C7.63491 15.983 5.52441 13.1481 5.52441 9.65905C5.52441 6.09726 7.73541 3.20422 10.4824 3.20422C13.2182 3.20422 15.4404 6.09726 15.4404 9.65905C15.4292 13.1481 13.3187 15.983 10.6611 16.0993C10.5494 16.0848 10.4154 16.0848 10.2926 16.0993Z"
@@ -109,7 +117,7 @@
                 <!-- Calendar -->
                 <li
                     class="hover:bg-[#FFFFFF] transition-all duration-100 rounded text-[#FFFFFF] hover:text-[#1E2227] hover:fill-[#1E2227] mb-1 pl-1">
-                    <a href="./calendar.html" class="flex gap-2 items-center p-2">
+                    <a href="../calendar.html" class="flex gap-2 items-center p-2">
                         <svg width="19" height="19" viewBox="0 0 27 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M9.13379 3.87714V8.2385" stroke="currentColor" stroke-width="1.5"
                                 stroke-linecap="round" stroke-linejoin="round" />
@@ -143,7 +151,7 @@
                 <!-- Maintenance Requests -->
                 <li
                     class="hover:bg-[#FFFFFF] transition-all duration-100 rounded text-[#FFFFFF] hover:text-[#1E2227] hover:fill-[#1E2227] mb-1 pl-1.5">
-                    <a href="./maintenancerequests.html" class="flex gap-2 items-center p-2">
+                    <a href="../maintenancerequests.html" class="flex gap-2 items-center p-2">
                         <svg width="17" height="17" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M2.26148 0.531372L0.974609 1.81824L3.24157 5.73863L4.71172 5.52301L13.6855 14.4978L12.92 15.2328C12.528 15.6249 12.528 16.2188 12.92 16.6108L13.318 17.0097C13.71 17.4018 14.3098 17.4018 14.6038 17.0097L15.7682 18.1731C15.6702 18.7612 15.7682 19.46 16.2582 19.95L21.5566 25.2181C22.6348 26.2962 24.3989 26.2962 25.477 25.2181C26.7512 24.0419 26.7394 22.2836 25.6613 21.2055L20.3933 15.9062C19.9032 15.4161 19.2044 15.2201 18.6164 15.4161L17.3295 14.2527C17.6235 13.8607 17.6235 13.2609 17.3295 12.9659L16.962 12.5993C16.8729 12.5064 16.7659 12.4325 16.6475 12.382C16.5291 12.3315 16.4017 12.3054 16.2729 12.3054C16.1442 12.3054 16.0168 12.3315 15.8984 12.382C15.78 12.4325 15.673 12.5064 15.5839 12.5993L14.941 13.2423L5.96722 4.26848L6.18088 2.79834L2.26148 0.531372ZM21.3734 0.561755C19.4396 0.401019 16.8757 1.68299 15.6761 2.79736C14.2 4.27338 14.4411 6.2032 15.6143 8.06636L13.5326 10.1491L15.0027 11.8025C15.7868 11.1164 16.9433 11.1164 17.7274 11.8025L18.1263 12.2004L18.2184 12.2925L19.076 11.435C20.848 12.4768 22.6926 12.6268 24.099 11.2203C25.4712 9.94619 26.9589 6.80399 26.2729 4.94181L23.5168 7.78997C23.1248 8.18201 22.5309 8.18201 22.1388 7.78997L19.2897 4.94181C19.1968 4.85271 19.1228 4.74574 19.0723 4.62734C19.0218 4.50893 18.9958 4.38153 18.9958 4.2528C18.9958 4.12407 19.0218 3.99667 19.0723 3.87827C19.1228 3.75986 19.1968 3.65289 19.2897 3.56379L22.1398 0.71563C21.8948 0.629382 21.6498 0.585277 21.3734 0.561755ZM10.5923 12.7826L7.03847 16.3354C6.65653 16.2509 6.26626 16.2098 5.87509 16.2129C3.13082 16.2129 0.974609 18.3691 0.974609 21.1134C0.974609 23.8577 3.13082 26.0139 5.87509 26.0139C8.61937 26.0139 10.7756 23.8577 10.7756 21.1134C10.7756 20.6106 10.6962 20.1274 10.5609 19.6737L12.6436 17.5909L12.3379 17.193C11.5538 16.4089 11.5597 15.2211 12.2457 14.436L10.5923 12.7826ZM18.1881 17.2548C18.3106 17.2548 18.4262 17.2783 18.5242 17.3773L24.3137 23.1657C24.5097 23.3618 24.5097 23.6734 24.3137 23.8694C24.1176 24.0655 23.804 24.0655 23.608 23.8694L17.8205 18.081C17.6245 17.885 17.6245 17.5733 17.8205 17.3773C17.9185 17.2793 18.0655 17.2548 18.1881 17.2548ZM6.5494 18.5701L8.41747 20.4391L7.74316 22.9805L5.20177 23.6548L3.33272 21.7858L4.00703 19.2444L6.5494 18.5701Z"
@@ -158,7 +166,7 @@
                 <!-- channel manger -->
                 <li
                     class="hover:bg-[#FFFFFF] transition-all duration-100 rounded text-[#FFFFFF] hover:text-[#1E2227] hover:fill-[#1E2227] mb-1 pl-1">
-                    <a href="./channelmanager.html" class="flex gap-2 items-center p-2">
+                    <a href="../channelmanager.html" class="flex gap-2 items-center p-2">
                         <svg width="21" height="18" viewBox="0 0 23 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M19 13.9999C18.3793 14.0031 17.7748 14.1987 17.27 14.5599L14.82 13.1099C14.9362 12.7512 14.9969 12.3769 15 11.9999C14.9971 11.1153 14.7011 10.2567 14.1583 9.55824C13.6155 8.85981 12.8565 8.36102 12 8.13988V5.81988C12.6672 5.58399 13.2296 5.11981 13.5876 4.5094C13.9457 3.89899 14.0765 3.18164 13.9568 2.48415C13.8371 1.78665 13.4747 1.15392 12.9337 0.697777C12.3926 0.241635 11.7077 -0.00854492 11 -0.00854492C10.2923 -0.00854492 9.60741 0.241635 9.06634 0.697777C8.52527 1.15392 8.16288 1.78665 8.04321 2.48415C7.92353 3.18164 8.05429 3.89899 8.41237 4.5094C8.77045 5.11981 9.33279 5.58399 10 5.81988V8.13988C9.14353 8.36102 8.38451 8.85981 7.84169 9.55824C7.29887 10.2567 7.00287 11.1153 7 11.9999C7.0031 12.3769 7.0638 12.7512 7.18 13.1099L4.73 14.5599C4.22516 14.1987 3.62072 14.0031 3 13.9999C2.40666 13.9999 1.82664 14.1758 1.33329 14.5055C0.839943 14.8351 0.455426 15.3037 0.228363 15.8518C0.00129986 16.4 -0.0581102 17.0032 0.0576455 17.5852C0.173401 18.1671 0.459123 18.7016 0.878681 19.1212C1.29824 19.5408 1.83279 19.8265 2.41473 19.9422C2.99667 20.058 3.59987 19.9986 4.14805 19.7715C4.69623 19.5445 5.16477 19.1599 5.49441 18.6666C5.82405 18.1732 6 17.5932 6 16.9999C5.9963 16.729 5.95594 16.4599 5.88 16.1999L8.18 14.8299C8.92945 15.5749 9.94326 15.9931 11 15.9931C12.0567 15.9931 13.0706 15.5749 13.82 14.8299L16.12 16.1999C15.9524 16.8055 15.9793 17.4484 16.1967 18.038C16.4141 18.6275 16.8112 19.1339 17.3318 19.4857C17.8525 19.8374 18.4705 20.0169 19.0986 19.9986C19.7267 19.9803 20.3332 19.7653 20.8325 19.3839C21.3318 19.0024 21.6988 18.4738 21.8816 17.8727C22.0644 17.2715 22.0538 16.6281 21.8514 16.0332C21.6489 15.4384 21.2648 14.9221 20.7532 14.5573C20.2416 14.1925 19.6284 13.9975 19 13.9999ZM3 17.9999C2.80222 17.9999 2.60888 17.9412 2.44443 17.8314C2.27998 17.7215 2.15181 17.5653 2.07612 17.3826C2.00043 17.1998 1.98063 16.9988 2.01922 16.8048C2.0578 16.6108 2.15304 16.4326 2.29289 16.2928C2.43275 16.1529 2.61093 16.0577 2.80491 16.0191C2.99889 15.9805 3.19996 16.0003 3.38268 16.076C3.56541 16.1517 3.72159 16.2799 3.83147 16.4443C3.94135 16.6088 4 16.8021 4 16.9999C4 17.2651 3.89464 17.5195 3.70711 17.707C3.51957 17.8945 3.26522 17.9999 3 17.9999ZM11 1.99988C11.1978 1.99988 11.3911 2.05853 11.5556 2.16841C11.72 2.27829 11.8482 2.43447 11.9239 2.6172C11.9996 2.79993 12.0194 3.00099 11.9808 3.19497C11.9422 3.38895 11.847 3.56714 11.7071 3.70699C11.5673 3.84684 11.3891 3.94208 11.1951 3.98067C11.0011 4.01925 10.8 3.99945 10.6173 3.92376C10.4346 3.84807 10.2784 3.7199 10.1685 3.55545C10.0587 3.391 10 3.19766 10 2.99988C10 2.73467 10.1054 2.48031 10.2929 2.29278C10.4804 2.10524 10.7348 1.99988 11 1.99988ZM11 13.9999C10.6044 13.9999 10.2178 13.8826 9.88886 13.6628C9.55996 13.4431 9.30362 13.1307 9.15224 12.7652C9.00087 12.3998 8.96126 11.9977 9.03843 11.6097C9.1156 11.2217 9.30608 10.8654 9.58579 10.5857C9.86549 10.306 10.2219 10.1155 10.6098 10.0383C10.9978 9.96114 11.3999 10.0007 11.7654 10.1521C12.1308 10.3035 12.4432 10.5598 12.6629 10.8887C12.8827 11.2176 13 11.6043 13 11.9999C13 12.5303 12.7893 13.039 12.4142 13.4141C12.0391 13.7892 11.5304 13.9999 11 13.9999ZM19 17.9999C18.8022 17.9999 18.6089 17.9412 18.4444 17.8314C18.28 17.7215 18.1518 17.5653 18.0761 17.3826C18.0004 17.1998 17.9806 16.9988 18.0192 16.8048C18.0578 16.6108 18.153 16.4326 18.2929 16.2928C18.4327 16.1529 18.6109 16.0577 18.8049 16.0191C18.9989 15.9805 19.2 16.0003 19.3827 16.076C19.5654 16.1517 19.7216 16.2799 19.8315 16.4443C19.9414 16.6088 20 16.8021 20 16.9999C20 17.2651 19.8946 17.5195 19.7071 17.707C19.5196 17.8945 19.2652 17.9999 19 17.9999Z"
@@ -179,7 +187,7 @@
             <ul>
                 <!-- Reports -->
                 <li class="pl-1 border-l border-[#EBEBEB]">
-                    <a href="./reports.html" class="flex gap-2 items-center p-1.5">
+                    <a href="../reports.html" class="flex gap-2 items-center p-1.5">
                         <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
                             <path
                                 d="M5.625 1.5c-1.036 0-1.875.84-1.875 1.875v17.25c0 1.035.84 1.875 1.875 1.875h12.75c1.035 0 1.875-.84 1.875-1.875V12.75A3.75 3.75 0 0 0 16.5 9h-1.875a1.875 1.875 0 0 1-1.875-1.875V5.25A3.75 3.75 0 0 0 9 1.5H5.625Z" />
@@ -192,7 +200,7 @@
 
                 <!-- User Management -->
                 <li class="pl-1 border-l border-[#EBEBEB]">
-                    <a href="./usermanagement.html" class="flex gap-2 items-center p-1.5">
+                    <a href="../usermanagement.html" class="flex gap-2 items-center p-1.5">
                         <svg width="18" height="18" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <ellipse cx="12.4997" cy="8" rx="4.16667" ry="4" fill="white" />
                             <path
@@ -206,7 +214,7 @@
 
                 <!-- Platform Integration -->
                 <li class="pl-1.5 border-l border-[#EBEBEB]">
-                    <a href="./platformintegration.html" class="flex gap-2 items-center p-1.5">
+                    <a href="../platformintegration.html" class="flex gap-2 items-center p-1.5">
                         <svg width="16" height="16" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M6.66667 15.5833V14.1667H9.33333V15.5833H13.3333V17H2.66667V15.5833H6.66667ZM0 12.75V0H16V12.75H0Z"
@@ -219,7 +227,7 @@
 
                 <!-- Settings -->
                 <li class="pl-1 border-l border-[#EBEBEB]">
-                    <a href="./settings.html" class="flex gap-2 items-center p-1.5">
+                    <a href="../settings.html" class="flex gap-2 items-center p-1.5">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M12.6318 2C13.0675 2 13.2858 2.00028 13.4629 2.07031C13.6878 2.15934 13.8726 2.32699 13.9834 2.54199C14.0707 2.71127 14.0925 2.92789 14.1357 3.36133C14.2177 4.18213 14.2589 4.59316 14.4307 4.81836C14.6486 5.10394 15.0033 5.251 15.3594 5.20312C15.64 5.16528 15.9591 4.90323 16.5977 4.38086C16.9353 4.10467 17.1045 3.96713 17.2861 3.90918C17.5165 3.8357 17.7655 3.84826 17.9873 3.94434C18.1622 4.0201 18.3167 4.17412 18.625 4.48242L19.5176 5.375C19.8258 5.68323 19.9799 5.83787 20.0557 6.0127C20.1517 6.23455 20.1643 6.48357 20.0908 6.71387C20.0328 6.89534 19.8942 7.0641 19.6182 7.40137C19.0958 8.03946 18.8349 8.35905 18.7969 8.63965C18.7489 8.99576 18.896 9.35039 19.1816 9.56836C19.4068 9.7401 19.8176 9.78112 20.6387 9.86328C21.0724 9.90669 21.2897 9.92921 21.459 10.0166C21.6737 10.1275 21.8408 10.3124 21.9297 10.5371C21.9998 10.7143 22 10.9323 22 11.3682V12.6318C22 13.0675 21.9997 13.2858 21.9297 13.4629C21.8407 13.6878 21.673 13.8726 21.458 13.9834C21.2887 14.0706 21.0721 14.0925 20.6387 14.1357C19.8181 14.2177 19.4078 14.259 19.1826 14.4307C18.8967 14.6486 18.7498 15.0031 18.7979 15.3594C18.8357 15.6399 19.0969 15.9594 19.6191 16.5977C19.8947 16.9345 20.0328 17.103 20.0908 17.2842C20.1645 17.5146 20.1518 17.7643 20.0557 17.9863C19.9799 18.1611 19.8257 18.316 19.5176 18.624L18.625 19.5166C18.3167 19.8249 18.1622 19.9789 17.9873 20.0547C17.7654 20.1508 17.5165 20.1633 17.2861 20.0898C17.1045 20.0319 16.9352 19.8943 16.5977 19.6182C15.9588 19.0956 15.6392 18.8336 15.3584 18.7959C15.0026 18.7483 14.6484 18.8953 14.4307 19.1807C14.2588 19.4059 14.2177 19.8166 14.1357 20.6377C14.0924 21.0714 14.0707 21.2886 13.9834 21.458C13.8725 21.6729 13.6877 21.8407 13.4629 21.9297C13.2856 21.9998 13.067 22 12.6309 22H11.3682C10.9323 22 10.7143 21.9998 10.5371 21.9297C10.3124 21.8408 10.1275 21.6737 10.0166 21.459C9.92921 21.2897 9.90669 21.0724 9.86328 20.6387C9.78112 19.8176 9.7401 19.4068 9.56836 19.1816C9.35039 18.896 8.99576 18.7489 8.63965 18.7969C8.35905 18.8349 8.03946 19.0958 7.40137 19.6182C7.0641 19.8942 6.89534 20.0328 6.71387 20.0908C6.48357 20.1643 6.23455 20.1517 6.0127 20.0557C5.83787 19.9799 5.68323 19.8258 5.375 19.5176L4.48242 18.625C4.17412 18.3167 4.0201 18.1622 3.94434 17.9873C3.84826 17.7655 3.8357 17.5165 3.90918 17.2861C3.96713 17.1045 4.10467 16.9353 4.38086 16.5977C4.90323 15.9591 5.16528 15.64 5.20312 15.3594C5.251 15.0033 5.10394 14.6486 4.81836 14.4307C4.59316 14.2589 4.18213 14.2177 3.36133 14.1357C2.92789 14.0925 2.71127 14.0707 2.54199 13.9834C2.32699 13.8726 2.15934 13.6878 2.07031 13.4629C2.00028 13.2858 2 13.0675 2 12.6318V11.3682C2 10.9323 2.00023 10.7143 2.07031 10.5371C2.15921 10.3124 2.32634 10.1275 2.54102 10.0166C2.71035 9.92922 2.9276 9.90669 3.36133 9.86328C4.18237 9.7811 4.59316 9.74021 4.81836 9.56836C5.10372 9.3505 5.25086 8.99645 5.20312 8.64062C5.16537 8.35987 4.90335 8.03991 4.38086 7.40137C4.10503 7.06427 3.96714 6.89531 3.90918 6.71387C3.83569 6.48354 3.84827 6.23456 3.94434 6.0127C4.02008 5.83785 4.17418 5.68324 4.48242 5.375L5.375 4.48242C5.68326 4.17417 5.83783 4.02009 6.0127 3.94434C6.23457 3.84823 6.48352 3.8357 6.71387 3.90918C6.89541 3.96713 7.06487 4.10482 7.40234 4.38086C8.04077 4.90307 8.35992 5.16444 8.64062 5.20215C8.99654 5.24992 9.3505 5.10287 9.56836 4.81738C9.74013 4.59218 9.78112 4.18199 9.86328 3.36133C9.9067 2.92763 9.92924 2.71034 10.0166 2.54102C10.1275 2.32633 10.3124 2.15921 10.5371 2.07031C10.7143 2.00025 10.9323 2 11.3682 2H12.6318Z"
@@ -264,7 +272,7 @@
                 <!-- icons buttons -->
                 <div class="px-3 p-1 flex gap-6">
 
-                    <a href="inbox.html" target="_blank" class="relative">
+                    <a href="../inbox.html" target="_blank" class="relative">
                         <svg width="22" height="22" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                             fill="#4A4C4F">
                             <path fill-rule="evenodd"
@@ -275,8 +283,6 @@
                         <!-- if there is messages unread, otherwise add class hidden -->
                         <span class="absolute right-0 top-0 size-2 rounded-full bg-[#4169e1]"></span>
                     </a>
-
-
 
                     <!-- calender icon -->
                     <form method="POST" id="dateForm">
@@ -448,7 +454,7 @@
 
                         <!-- View more button -->
                         <div class="flex justify-center border-t py-2">
-                            <a href="./notification.html" class="flex gap-2 items-center w-fit text-sm">
+                            <a href="../notification.html" class="flex gap-2 items-center w-fit text-sm">
                                 <p>View more</p>
                                 <svg class="pt-1" width="16" height="14" viewBox="0 0 16 14" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -463,7 +469,7 @@
                 </div>
 
                 <!-- profile -->
-                <a href="./settings.html" class="flex items-center justify-between space-x-2 m-1 mx-3">
+                <a href="../settings.html" class="flex items-center justify-between space-x-2 m-1 mx-3">
                     <div class="flex items-center gap-2">
                         <svg width="30" height="30" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <ellipse cx="20" cy="20" rx="20" ry="19.5" fill="#4A4C4F" />
@@ -484,155 +490,120 @@
         <!-- end header -->
 
         <!-- page -->
-        <div class="p-5 px-10">
+        <div class="space-y-4 p-5">
 
-            <h1 class="py-7 font-semibold text-xl">Reports</h1>
+            <!-- the title -->
+            <div class="flex gap-2 items-center py-3">
+                <a href="../reports.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="size-6 rotate-180">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                    </svg>
+                </a>
+                <a href="../reports.html" class="font-semibold hover:underline">Receipts by Item Category</a>
+            </div>
+            <!-- end the title -->
 
-            <!-- section 1 (Administration) -->
-            <div class="pb-10 search-item">
+            <!-- filter bar -->
+            <div id="filters" class="bg-white p-3 rounded-md shadow flex justify-between gap-1 text-sm">
 
-                <h1 class="font-semibold pb-3">Administration</h1>
+                <!-- From -->
+                <div class="w-full">
+                    <label for="fromDate" class="block font-medium text-gray-700">From</label>
+                    <input id="fromDate" type="date" class="mt-1 px-1 block w-full border border-gray-300 rounded-md" />
+                </div>
 
-                <!-- reports area -->
-                <div class="grid grid-cols-4 gap-5 text-sm">
-                    <!-- 1 -->
-                    <a href="reports/monthlyTransactions.html"
-                        class="flex justify-center items-center bg-gray-100/60 hover:bg-gray-200/40 hover:underline transition-all search-item shadow border-b-2 border-[#4A4C4F] rounded-sm h-20">
-                        <p>Monthly Transactions</p>
-                    </a>
+                <!-- To -->
+                <div class="w-full">
+                    <label for="toDate" class="block font-medium text-gray-700">To</label>
+                    <input id="toDate" type="date" class="mt-1 px-1 block w-full border border-gray-300 rounded-md" />
+                </div>
 
-                    <!-- 2 -->
-                    <a href="reports/dailyTransactions.html"
-                        class="flex justify-center items-center bg-gray-100/60 hover:bg-gray-200/40 hover:underline transition-all search-item shadow border-b-2 border-[#4A4C4F] rounded-sm h-20">
-                        <p>Daily Transactions</p>
-                    </a>
+                <!-- Category -->
+                <div class="w-full">
+                    <label for="category" class="block font-medium text-gray-700">Category</label>
+                    <select id="category"
+                        class="mt-1 px-1 py-0.5 text-md block w-full border border-gray-300 rounded-md">
+                        <option value="">All</option>
+                        <option value="maintenance">Maintenance</option>
+                        <option value="cleaning">Cleaning</option>
+                        <option value="service">Service</option>
+                        <option value="invoice">Invoice</option>
+                    </select>
+                </div>
+
+                <!-- Property -->
+                <div class="w-full">
+                    <label for="property" class="block font-medium text-gray-700">Property</label>
+                    <select id="property"
+                        class="mt-1 px-1 py-0.5 text-md block w-full border border-gray-300 rounded-md">
+                        <option value="">All</option>
+                        <option value="Property 1">Property 1</option>
+                        <option value="Property 2">Property 2</option>
+                        <option value="Property 3">Property 3</option>
+                    </select>
                 </div>
 
             </div>
-            <!-- end section 1 (Administration) -->
+            <!-- end filter bar -->
 
-            <!-- section 2 (Activities) -->
-            <div class="pb-10 search-item">
-                <h1 class="font-semibold pb-3">Activities</h1>
+            <!-- the boxes and charts -->
+            <div class="grid grid-cols-3 gap-2 h-fit mt-3">
+                <!-- the boxes-->
+                <div id="summaries" class="grid grid-cols-2 gap-2"></div>
 
-                <!-- reports area -->
-                <div class="grid grid-cols-4 gap-5 text-sm">
-                    <!-- 1 -->
-                    <a href="./reports/transactionsByActivity.html"
-                        class="flex justify-center items-center bg-gray-100/60 hover:bg-gray-200/40 hover:underline transition-all search-item shadow border-b-2 border-[#4A4C4F] rounded-sm h-20">
-                        <p>Transactions by Activity</p>
-                    </a>
+                <!-- the donut chart -->
+                <div class="bg-white p-4 rounded-md h-full shadow">
+                    <p class="text-sm font-semibold">Number per item type</p>
+                    <div>
+                        <canvas id="chart" class="w-full h-[250px]"></canvas>
+                    </div>
                 </div>
 
+                <!-- bar chart -->
+                <div class="bg-white p-4 rounded-md h-full shadow">
+                    <p class="text-sm font-semibold pb-2">Amounts per item type</p>
+                    <div class="">
+                        <canvas id="chart2" class="w-full h-[250px]"></canvas>
+                    </div>
+                </div>
             </div>
-            <!-- end section 2 (Activities) -->
+            <!-- end the boxes and charts -->
 
-            <!-- section 3 (Revenue) -->
-            <div class="pb-10 search-item">
-                <h1 class="font-semibold pb-3">Revenue</h1>
-
-                <!-- reports area -->
-                <div class="grid grid-cols-4 gap-5 text-sm">
-                    <!-- 1 -->
-                    <a href="./reports/revenueByService.html"
-                        class="flex justify-center items-center bg-gray-100/60 hover:bg-gray-200/40 hover:underline transition-all search-item shadow border-b-2 border-[#4A4C4F] rounded-sm h-20">
-                        <p>Revenue by Service</p>
-                    </a>
+            <!-- the table area -->
+            <div class="bg-white rounded-md shadow overflow-x-auto mt-4">
+                <!-- title -->
+                <div class="flex justify-between px-4 pt-4">
+                    <h3 class="text-lg font-semibold">Expenses by Item Category</h3>
+                    <!-- Export buttons -->
+                    <div class="flex gap-2 text-xs text-white">
+                        <button id="exportXlsx"
+                            class="px-4 py-1.5 h-fit bg-green-700 rounded-md hover:bg-green-800 transition">Excel
+                            Export</button>
+                        <button id="exportPdf"
+                            class="px-4 py-1.5 h-fit bg-[#af3a1f] rounded-md hover:bg-[#90321c] transition">PDF
+                            Export</button>
+                    </div>
                 </div>
 
-            </div>
-            <!-- end section 3 (Revenue) -->
-
-            <!-- section 4 (Finance) -->
-            <div class="pb-10 search-item">
-                <h1 class="font-semibold pb-3">Finance</h1>
-
-                <!-- reports area -->
-                <div class="grid grid-cols-4 gap-5 text-sm">
-                    <!-- 1 -->
-                    <a href="./reports/receiptsByPaymentMethod.html"
-                        class="flex justify-center items-center bg-gray-100/60 hover:bg-gray-200/40 hover:underline transition-all search-item shadow border-b-2 border-[#4A4C4F] rounded-sm h-20">
-                        <p>Receipts by Payment
-                            Method</p>
-                    </a>
-
-                    <!-- 2 -->
-                    <a href="./reports/receiptsByItemCategory.html"
-                        class="flex justify-center items-center bg-gray-100/60 hover:bg-gray-200/40 hover:underline transition-all search-item shadow border-b-2 border-[#4A4C4F] rounded-sm h-20">
-                        <p>Receipts by Item Category</p>
-                    </a>
-
-                    <!-- 3 -->
-                    <a href="./reports/receiptsByEmployee.html"
-                        class="flex justify-center items-center bg-gray-100/60 hover:bg-gray-200/40 hover:underline transition-all search-item shadow border-b-2 border-[#4A4C4F] rounded-sm h-20">
-                        <p>Receipts by Employee</p>
-                    </a>
-
-                    <!-- 4 -->
-                    <a href="./reports/expensesByPaymentMethod.html"
-                        class="flex justify-center items-center bg-gray-100/60 hover:bg-gray-200/40 hover:underline transition-all search-item shadow border-b-2 border-[#4A4C4F] rounded-sm h-20">
-                        <p>Expenses by Payment Method</p>
-                    </a>
-
-                    <!-- 5 -->
-                    <a href="./reports/expensesByPaymentCard.html"
-                        class="flex justify-center items-center bg-gray-100/60 hover:bg-gray-200/40 hover:underline transition-all search-item shadow border-b-2 border-[#4A4C4F] rounded-sm h-20">
-                        <p>Expenses by Payment Card</p>
-                    </a>
-
-                    <!-- 6 -->
-                    <a href="./reports/expensesByItemCategory.html"
-                        class="flex justify-center items-center bg-gray-100/60 hover:bg-gray-200/40 hover:underline transition-all search-item shadow border-b-2 border-[#4A4C4F] rounded-sm h-20">
-                        <p>Expenses by Item Category</p>
-                    </a>
-
-                    <!-- 7 -->
-                    <a href="./reports/expensesByEmployee.html"
-                        class="flex justify-center items-center bg-gray-100/60 hover:bg-gray-200/40 hover:underline transition-all search-item shadow border-b-2 border-[#4A4C4F] rounded-sm h-20">
-                        <p>Expenses by Employee</p>
-                    </a>
-
-                    <!-- 8 -->
-                    <a href="./reports/billsOfExchangeByEmployee.html"
-                        class="flex justify-center items-center bg-gray-100/60 hover:bg-gray-200/40 hover:underline transition-all search-item shadow border-b-2 border-[#4A4C4F] rounded-sm h-20">
-                        <p>Bills of Exchange by Employee</p>
-                    </a>
+                <!-- the table (that will export as a pdf and excel) -->
+                <div id="details" class="p-5">
+                    <table class="w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr class="text-sm text-gray-500 text-left">
+                                <th class="px-4 py-2">Transaction Date</th>
+                                <th class="px-4 py-2">Property</th>
+                                <th class="px-4 py-2">Item Type</th>
+                                <th class="px-4 py-2">Reference</th>
+                                <th class="px-4 py-2">Amount</th>
+                            </tr>
+                        </thead>
+                        <!-- the row by JS -->
+                        <tbody class="bg-white divide-y divide-gray-200"></tbody>
+                    </table>
                 </div>
-
             </div>
-            <!-- end section 4 (Finance) -->
-
-            <!-- section 5 (Operations) -->
-            <div class="pb-10 search-item">
-                <h1 class="font-semibold pb-3">Operations</h1>
-
-                <!-- reports area -->
-                <div class="grid grid-cols-4 gap-5 text-sm">
-                    <!-- 1 -->
-                    <a href="./reports/occupancyByType&Unit.html"
-                        class="flex justify-center items-center bg-gray-100/60 hover:bg-gray-200/40 hover:underline transition-all search-item shadow border-b-2 border-[#4A4C4F] rounded-sm h-20">
-                        <p>Occupancy by Type & Unit</p>
-                    </a>
-                </div>
-
-            </div>
-            <!-- end section 5 (Operations) -->
-
-            <!-- section 6 (Taxes & Levies)  -->
-            <div class="pb-10 search-item">
-                <h1 class="font-semibold pb-3">Taxes & Levies</h1>
-
-                <!-- reports area -->
-                <div class="grid grid-cols-4 gap-5 text-sm">
-                    <!-- 1 -->
-                    <a href="./reports/valueAddedTax _VAT.html"
-                        class="flex justify-center items-center bg-gray-100/60 hover:bg-gray-200/40 hover:underline transition-all search-item shadow border-b-2 border-[#4A4C4F] rounded-sm h-20">
-                        <p>Value‑Added Tax (VAT)</p>
-                    </a>
-                </div>
-
-            </div>
-            <!-- end section 6 (Taxes & Levies) -->
+            <!-- end the table area -->
 
         </div>
         <!-- end page -->
@@ -648,18 +619,13 @@
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         const input = document.getElementById('searchInput');
-        const items = Array.from(document.querySelectorAll('.search-item'));
 
         input.addEventListener('input', () => {
             const term = input.value.trim().toLowerCase();
 
-            items.forEach(item => {
+            document.querySelectorAll('.search-item').forEach(item => {
                 const text = item.textContent.toLowerCase();
-                if (text.includes(term)) {
-                    item.classList.remove('hidden');
-                } else {
-                    item.classList.add('hidden');
-                }
+                item.classList.toggle('hidden', !text.includes(term));
             });
         });
     });
@@ -693,4 +659,268 @@
             e.stopPropagation();
         });
     });
+</script>
+
+<!-- for data -->
+<script>
+    // data
+    const data = [
+        { date: '2025-07-20', ref: 'EXP-001', category: 'maintenance', amount: 1200, property: 'Property 1' },
+        { date: '2025-07-21', ref: 'EXP-002', category: 'service', amount: 800, property: 'Property 2' },
+        { date: '2025-07-22', ref: 'EXP-003', category: 'cleaning', amount: 450, property: 'Property 1' },
+        { date: '2025-07-27', ref: 'EXP-004', category: 'invoice', amount: 610, property: 'Property 1' },
+        { date: '2025-08-01', ref: 'EXP-005', category: 'maintenance', amount: 3000, property: 'Property 2' },
+    ];
+
+    // filter the rows by the inputs
+    function filterData() {
+        const from = document.getElementById('fromDate').value;
+        const to = document.getElementById('toDate').value;
+        const category = document.getElementById('category').value;
+        const property = document.getElementById('property').value;
+
+        return data.filter(item => {
+            const inDateRange = (!from || item.date >= from) && (!to || item.date <= to);
+            const itemOk = !category || item.category === category;
+            const propertyOk = !property || item.property === property;
+            return inDateRange && itemOk && propertyOk;
+        });
+    }
+
+    function applyFilters() {
+        const rows = filterData();
+        renderSummaries(rows);
+        renderTable(rows);
+        updateChart(rows);
+        updateBarChart(rows);
+    }
+
+    // generate the boxes
+    function renderSummaries(rows) {
+        // get sums and counts by category
+        const sums = {};
+        const counts = {};
+        rows.forEach(r => {
+            const key = String(r.category || '').trim().toLowerCase();
+            const amount = Number(r.amount) || 0;
+            if (!key) return;
+            sums[key] = (sums[key] || 0) + amount;
+            counts[key] = (counts[key] || 0) + 1;
+        });
+
+        const total = Object.values(sums).reduce((a, b) => a + b, 0);
+
+        const fmt = new Intl.NumberFormat('en-SA', { currency: 'SAR', maximumFractionDigits: 0 });
+
+        const pct = (value) => total ? (value / total * 100) : 0;
+
+        const makeBox = (title, value, count) => {
+            const percent = pct(value);
+            const titleWithCount = (typeof count === 'number') ? `${title} (${count})` : title;
+            return `
+<div class="bg-white p-3 rounded-md shadow">
+  <h4 class="text-xs text-gray-500">${titleWithCount}</h4>
+  <p class="pt-2 pb-1 text-md font-semibold">SAR ${fmt.format(value)}</p>
+  <p class="text-xs text-gray-500 mt-0.5">${percent.toFixed(1)}%</p>
+</div>`;
+        };
+
+        const htmlParts = [];
+        // create boxes for each known type (keeps order)
+        htmlParts.push(makeBox('Maintenance', sums.maintenance || 0, counts.maintenance || 0));
+        htmlParts.push(makeBox('Service', sums.service || 0, counts.service || 0));
+        htmlParts.push(makeBox('Cleaning', sums.cleaning || 0, counts.cleaning || 0));
+        htmlParts.push(makeBox('Invoice', sums.invoice || 0, counts.invoice || 0));
+
+        // total box spanning two columns
+        const totalCount = Object.values(counts).reduce((a, b) => a + b, 0);
+        htmlParts.push(`<div class="bg-white p-4 rounded-md shadow col-span-2">
+  <h4 class="text-xs text-gray-500">Total (${totalCount})</h4>
+  <p class="pt-2 text-lg font-semibold">SAR ${fmt.format(total)}</p>
+</div>`);
+
+        document.getElementById('summaries').innerHTML = htmlParts.join('');
+    }
+
+    // display amounts in order
+    function fmtAmount(n) {
+        if (n === null || n === undefined || Number.isNaN(n)) return '-';
+        return Number(n).toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 2 });
+    }
+
+    // generate the rows in the table
+    function renderTable(rows) {
+        const tbody = document.querySelector('#details tbody');
+
+        if (!rows || rows.length === 0) {
+            tbody.innerHTML = `<tr><td colspan="5" class="px-4 py-4 text-sm text-center text-gray-500">No records found.</td></tr>`;
+            return;
+        }
+        
+        tbody.innerHTML = rows.map(r => {
+            const raw = parseFloat(r.amount) || 0;
+            const amountDisp = fmtAmount(raw);
+
+            return `
+<tr class="search-item">
+  <td class="px-4 py-2 text-sm text-gray-700">${r.date}</td>
+  <td class="px-4 py-2 text-sm text-gray-700 whitespace-nowrap">${r.property}</td>
+  <td class="px-4 py-2 text-sm text-gray-700">${r.category}</td>
+  <td class="px-4 py-2 text-sm text-gray-700">${r.ref}</td>
+  <td class="px-4 py-2 text-sm font-semibold text-gray-700">${amountDisp}</td>
+</tr>
+`;
+        }).join('');
+    }
+
+    // the donut chart
+    let chart;
+    function updateChart(rows) {
+        // get the data
+        const counts = rows.reduce((acc, r) => {
+            const key = String(r.category || '').trim().toLowerCase();
+            if (!key) return acc;
+            acc[key] = (acc[key] || 0) + 1;
+            return acc;
+        }, {});
+
+        const labels = ['Maintenance', 'Service', 'Cleaning', 'Invoice'];
+        const dataSet = [counts.maintenance || 0, counts.service || 0, counts.cleaning || 0, counts.invoice || 0];
+        const ctx = document.getElementById('chart').getContext('2d');
+
+        if (chart) chart.destroy();
+        chart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels,
+                datasets: [{
+                    data: dataSet,
+                    backgroundColor: [
+                        '#b9c0d1', // Maintenance
+                        '#9e9e9e', // Service
+                        '#657397', // Cleaning
+                        '#50586c'  // Invoice
+                    ]
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '55%',
+                radius: '90%',
+                plugins: {
+                    legend: {
+                        position: 'right',
+                        labels: { boxWidth: 20, padding: 10, font: { size: 13 } }
+                    }
+                }
+            }
+        });
+    }
+
+    // the bar chart (amounts)
+    let chart2;
+    function updateBarChart(rows) {
+        const sums = rows.reduce((acc, r) => {
+            acc[r.category] = (acc[r.category] || 0) + Number(r.amount || 0);
+            return acc;
+        }, {});
+
+        const labels = ['Maintenance', 'Service', 'Cleaning', 'Invoice'];
+        const dataSet = [sums.maintenance || 0, sums.service || 0, sums.cleaning || 0, sums.invoice || 0];
+
+        const colors = ['#b9c0d1', '#9e9e9e', '#657397', '#50586c'];
+
+        const ctx = document.getElementById('chart2').getContext('2d');
+        if (chart2) chart2.destroy();
+
+        const fmt = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'SAR', currencyDisplay: 'code', maximumFractionDigits: 0 });
+
+        chart2 = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels,
+                datasets: [{ label: 'Amount', data: dataSet, backgroundColor: colors, borderRadius: 3, barThickness: '20' }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        padding: 6,
+                        callbacks: {
+                            label(ctx) {
+                                const v = ctx.raw ?? 0; return fmt.format(v);
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: { grid: { display: false }, ticks: { font: { size: 13 } } },
+                    y: {
+                        beginAtZero: true,
+                        grid: { color: '#f3f4f6' },
+                        ticks: { callback(value) { return fmt.format(Number(value)); }, font: { size: 13 } }
+                    }
+                }
+            }
+        });
+    }
+
+    // export as excel
+    document.getElementById('exportXlsx').onclick = () => {
+        const rows = filterData();
+        const ws = XLSX.utils.json_to_sheet(rows);
+        const wb = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(wb, ws, 'Expenses By Item Category');
+        XLSX.writeFile(wb, 'Expenses By Item Category.xlsx');
+    };
+
+    // export as pdf
+    document.getElementById('exportPdf').onclick = async () => {
+        const table = document.getElementById('details');
+        const canvas = await html2canvas(table);
+        const imgData = canvas.toDataURL('image/png');
+        const { jsPDF } = window.jspdf;
+        const pdf = new jsPDF({ unit: 'px', format: 'a4' });
+        const pdfWidth = pdf.internal.pageSize.getWidth();
+        const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
+        pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+        pdf.save('Expenses By Item Category.pdf');
+    };
+
+    // to show all the data initially
+    function initRender() {
+        renderSummaries(data);
+        renderTable(data);
+        updateChart(data);
+        updateBarChart(data);
+    }
+
+    // debounce
+    function debounce(fn, wait = 150) {
+        let t;
+        return function (...args) {
+            clearTimeout(t);
+            t = setTimeout(() => fn.apply(this, args), wait);
+        };
+    }
+
+    (function connectFiltersAuto() {
+        const ids = ['fromDate', 'toDate', 'category', 'property'];
+        const debouncedApply = debounce(applyFilters, 120);
+
+        ids.forEach(id => {
+            const el = document.getElementById(id);
+            if (!el) return;
+            el.addEventListener('change', debouncedApply);
+            if (el.tagName === 'INPUT' && el.type === 'text') {
+                el.addEventListener('change', debouncedApply);
+            }
+        });
+    })();
+
+    window.addEventListener('DOMContentLoaded', initRender);
+    applyFilters();
 </script>
